@@ -1,4 +1,4 @@
-import { useScrollAnimation } from '../hooks/useScrollAnimation'
+import { useScrollAnimation } from "../hooks/useScrollAnimation";
 
 /**
  * ScrollAnimation component that applies scroll-triggered animations to its children
@@ -12,37 +12,39 @@ import { useScrollAnimation } from '../hooks/useScrollAnimation'
  * @param {React.ReactNode} props.children - Child elements to animate
  */
 const ScrollAnimation = ({
-  animation = 'fade-in',
+  animation = "fade-in",
   threshold = 0.1,
-  rootMargin = '0px 0px -50px 0px',
+  rootMargin = "0px 0px -50px 0px",
   triggerOnce = true,
-  stagger = '',
-  className = '',
+  stagger = "",
+  className = "",
   children,
   ...props
 }) => {
   const { ref, isVisible } = useScrollAnimation({
     threshold,
     rootMargin,
-    triggerOnce
-  })
+    triggerOnce,
+  });
 
-  const animationClass = `scroll-${animation}`
-  const visibleClass = isVisible ? 'visible' : ''
-  const staggerClass = stagger || ''
-  
+  const animationClass = `scroll-${animation}`;
+  const visibleClass = isVisible ? "visible" : "";
+  const staggerClass = stagger || "";
+
   const combinedClassName = [
     animationClass,
     visibleClass,
     staggerClass,
-    className
-  ].filter(Boolean).join(' ')
+    className,
+  ]
+    .filter(Boolean)
+    .join(" ");
 
   return (
     <div ref={ref} className={combinedClassName} {...props}>
       {children}
     </div>
-  )
-}
+  );
+};
 
-export default ScrollAnimation
+export default ScrollAnimation;

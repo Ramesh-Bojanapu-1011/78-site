@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from "react";
 
 /**
  * Custom hook for scroll-triggered animations using Intersection Observer
@@ -11,47 +11,47 @@ import { useEffect, useRef, useState } from 'react'
 export const useScrollAnimation = (options = {}) => {
   const {
     threshold = 0.1,
-    rootMargin = '0px 0px -50px 0px',
-    triggerOnce = true
-  } = options
+    rootMargin = "0px 0px -50px 0px",
+    triggerOnce = true,
+  } = options;
 
-  const ref = useRef(null)
-  const [isVisible, setIsVisible] = useState(false)
-  const [hasTriggered, setHasTriggered] = useState(false)
+  const ref = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const [hasTriggered, setHasTriggered] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            setIsVisible(true)
+            setIsVisible(true);
             if (triggerOnce) {
-              setHasTriggered(true)
+              setHasTriggered(true);
             }
           } else if (!triggerOnce) {
-            setIsVisible(false)
+            setIsVisible(false);
           }
-        })
+        });
       },
       {
         threshold,
-        rootMargin
-      }
-    )
+        rootMargin,
+      },
+    );
 
     if (ref.current) {
-      observer.observe(ref.current)
+      observer.observe(ref.current);
     }
 
     return () => {
       if (ref.current) {
-        observer.unobserve(ref.current)
+        observer.unobserve(ref.current);
       }
-    }
-  }, [threshold, rootMargin, triggerOnce])
+    };
+  }, [threshold, rootMargin, triggerOnce]);
 
-  return { ref, isVisible, hasTriggered }
-}
+  return { ref, isVisible, hasTriggered };
+};
 
 /**
  * Hook for multiple elements with scroll animations
@@ -60,52 +60,59 @@ export const useScrollAnimation = (options = {}) => {
  */
 export const useMultipleScrollAnimations = (elements = []) => {
   const [animationStates, setAnimationStates] = useState(
-    elements.map(() => ({ isVisible: false, hasTriggered: false }))
-  )
+    elements.map(() => ({ isVisible: false, hasTriggered: false })),
+  );
 
-  const refs = useRef(elements.map(() => null))
+  const refs = useRef(elements.map(() => null));
 
   useEffect(() => {
     const observers = elements.map((element, index) => {
-      const { threshold = 0.1, rootMargin = '0px 0px -50px 0px', triggerOnce = true } = element
+      const {
+        threshold = 0.1,
+        rootMargin = "0px 0px -50px 0px",
+        triggerOnce = true,
+      } = element;
 
       return new IntersectionObserver(
         (entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
-              setAnimationStates(prev => {
-                const newStates = [...prev]
-                newStates[index] = { isVisible: true, hasTriggered: true }
-                return newStates
-              })
+              setAnimationStates((prev) => {
+                const newStates = [...prev];
+                newStates[index] = { isVisible: true, hasTriggered: true };
+                return newStates;
+              });
             } else if (!triggerOnce) {
-              setAnimationStates(prev => {
-                const newStates = [...prev]
-                newStates[index] = { isVisible: false, hasTriggered: prev[index].hasTriggered }
-                return newStates
-              })
+              setAnimationStates((prev) => {
+                const newStates = [...prev];
+                newStates[index] = {
+                  isVisible: false,
+                  hasTriggered: prev[index].hasTriggered,
+                };
+                return newStates;
+              });
             }
-          })
+          });
         },
-        { threshold, rootMargin }
-      )
-    })
+        { threshold, rootMargin },
+      );
+    });
 
     // Observe all elements
     refs.current.forEach((ref, index) => {
       if (ref && observers[index]) {
-        observers[index].observe(ref)
+        observers[index].observe(ref);
       }
-    })
+    });
 
     return () => {
       observers.forEach((observer, index) => {
         if (refs.current[index] && observer) {
-          observer.unobserve(refs.current[index])
+          observer.unobserve(refs.current[index]);
         }
-      })
-    }
-  }, [elements])
+      });
+    };
+  }, [elements]);
 
-  return { refs, animationStates }
-}
+  return { refs, animationStates };
+};

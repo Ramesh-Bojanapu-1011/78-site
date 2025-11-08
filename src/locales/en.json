@@ -662,7 +662,7 @@
         }
       }
     },
-    
+
     "wellnessExpert": {
       "title": "Meet Your Wellness Expert",
       "subtitle": "I'm here to guide your wellness journey with personalized care and expertise.",
@@ -1086,7 +1086,7 @@
         }
       }
     },
-      "services": {
+    "services": {
       "title": "Spa Therapy Services",
       "subtitle": "Professional wellness treatments designed to restore balance and promote healing",
       "deepTissueMassage": "Deep Tissue Massage",
@@ -1179,7 +1179,7 @@
         }
       }
     },
-      "services": {
+    "services": {
       "title": "Holistic Healing Services",
       "subtitle": "Ancient wisdom meets modern healing for complete mind-body-spirit wellness",
       "energyHealing": "Energy Healing",
@@ -1296,15 +1296,15 @@
       "title": "Featured Articles",
       "subtitle": "Our most popular and insightful posts"
     },
-  "brands": {
-    "title": "Healthy Brand Growing With Us",
-    "names": [
-      "Mindful Wellness",
-      "Natural Health",
-      "Balance Life",
-      "Growth Path"
-    ]
-  },
+    "brands": {
+      "title": "Healthy Brand Growing With Us",
+      "names": [
+        "Mindful Wellness",
+        "Natural Health",
+        "Balance Life",
+        "Growth Path"
+      ]
+    },
     "latestNews": {
       "title": "Latest News",
       "subtitle": "Stay updated with the latest health and wellness insights"
@@ -1409,19 +1409,31 @@
         "name": "Dr. Sarah Mitchell",
         "role": "Certified Nutritionist",
         "bio": "15+ years helping individuals achieve optimal health through personalized nutrition and lifestyle changes",
-        "expertise": ["Clinical Nutrition", "Weight Management", "Metabolic Health"]
+        "expertise": [
+          "Clinical Nutrition",
+          "Weight Management",
+          "Metabolic Health"
+        ]
       },
       "mike": {
         "name": "Mike Rodriguez",
         "role": "Personal Trainer",
         "bio": "Expert in functional fitness and injury prevention, helping clients build strength and mobility",
-        "expertise": ["Strength Training", "Rehabilitation", "Sports Performance"]
+        "expertise": [
+          "Strength Training",
+          "Rehabilitation",
+          "Sports Performance"
+        ]
       },
       "emma": {
         "name": "Emma Thompson",
         "role": "Mental Health Counselor",
         "bio": "Specialized in stress management, anxiety reduction, and building healthy mental wellness habits",
-        "expertise": ["Stress Management", "Mindfulness", "Cognitive Behavioral Therapy"]
+        "expertise": [
+          "Stress Management",
+          "Mindfulness",
+          "Cognitive Behavioral Therapy"
+        ]
       }
     },
     "cta": {
@@ -2068,7 +2080,12 @@
     "author": {
       "name": "Nora Alvarez, RD",
       "bio": "Nora Alvarez is a registered dietitian with over 10 years of experience in clinical nutrition and metabolic health. She specializes in helping individuals optimize their metabolism through evidence-based nutrition and lifestyle interventions.",
-      "expertise": ["Clinical Nutrition", "Metabolic Health", "Weight Management", "Sports Nutrition"]
+      "expertise": [
+        "Clinical Nutrition",
+        "Metabolic Health",
+        "Weight Management",
+        "Sports Nutrition"
+      ]
     },
     "sidebar": {
       "relatedPosts": "Related Articles",

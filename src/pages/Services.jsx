@@ -1,47 +1,53 @@
-import { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-import { getCurrentUser, isAuthenticated } from '../utils/auth'
-import Navbar from '../components/Navbar'
-import PricingSection from '../components/PricingSection'
-import WellnessServicesGrid from '../components/WellnessServicesGrid'
-import Footer from '../components/Footer'
-import ScrollAnimation from '../components/ScrollAnimation'
-import { useTranslation } from 'react-i18next'
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { getCurrentUser, isAuthenticated } from "../utils/auth";
+import Navbar from "../components/Navbar";
+import PricingSection from "../components/PricingSection";
+import WellnessServicesGrid from "../components/WellnessServicesGrid";
+import Footer from "../components/Footer";
+import ScrollAnimation from "../components/ScrollAnimation";
+import { useTranslation } from "react-i18next";
 
 export default function Services() {
-  const navigate = useNavigate()
-  const { t } = useTranslation()
-  const [isDark, setIsDark] = useState(false)
+  const navigate = useNavigate();
+  const { t } = useTranslation();
+  const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
     if (!isAuthenticated()) {
-      navigate('/login', { replace: true })
+      navigate("/login", { replace: true });
     }
     // Theme detection
-    const checkDark = () => setIsDark(document.documentElement.classList.contains('dark'))
-    checkDark()
-    const observer = new MutationObserver(checkDark)
-    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] })
-    return () => observer.disconnect()
-  }, [navigate])
+    const checkDark = () =>
+      setIsDark(document.documentElement.classList.contains("dark"));
+    checkDark();
+    const observer = new MutationObserver(checkDark);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+    return () => observer.disconnect();
+  }, [navigate]);
 
   // Smooth scroll to section if hash is present
   useEffect(() => {
-    const { hash } = window.location
+    const { hash } = window.location;
     if (hash) {
-      const el = document.querySelector(hash)
+      const el = document.querySelector(hash);
       if (el) {
         setTimeout(() => {
-          el.scrollIntoView({ behavior: 'smooth', block: 'start' })
-        }, 0)
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 0);
       }
     }
-  }, [])
+  }, []);
 
-  const user = getCurrentUser()
+  const user = getCurrentUser();
 
   return (
-    <div className={`${isDark ? 'bg-gray-900 text-white' : 'bg-white text-black'}`}>
+    <div
+      className={`${isDark ? "bg-gray-900 text-white" : "bg-white text-black"}`}
+    >
       <Navbar user={user} />
 
       {/* Showcase */}
@@ -58,7 +64,7 @@ export default function Services() {
           className="absolute inset-0 w-full h-full object-cover"
         >
           <source src="/78Sv.mp4" type="video/mp4" />
-          {t('services.video.notSupported')}
+          {t("services.video.notSupported")}
         </video>
 
         {/* Overlay (darken video for readability) */}
@@ -67,19 +73,19 @@ export default function Services() {
         {/* Content */}
         <div className="relative z-10 px-6 max-w-4xl">
           <h1 className="text-4xl font-extrabold mb-4 leading-tight text-white">
-            {t('services.showcase.title')}
+            {t("services.showcase.title")}
           </h1>
           <p className="mt-6 text-xl text-white/80 max-w-3xl mx-auto">
-            {t('services.showcase.subtitle')}
+            {t("services.showcase.subtitle")}
           </p>
           <div className="mt-8 flex gap-4 justify-center">
             {/* Book Consultation Button */}
             <a
               href="/contact"
               className="btn-animate-strong inline-flex items-center rounded-lg px-8 py-4 font-bold text-lg transition-all duration-300 text-white shadow-lg hover:shadow-xl"
-              style={{ backgroundColor: '#0A5950' }}
+              style={{ backgroundColor: "#0A5950" }}
             >
-              {t('services.showcase.reachOutButton')}
+              {t("services.showcase.reachOutButton")}
             </a>
           </div>
         </div>
@@ -89,15 +95,25 @@ export default function Services() {
       <WellnessServicesGrid />
 
       {/* Feature Showcase Section */}
-      <section className={`py-20 transition-colors duration-500 ${isDark ? 'bg-gray-800' : 'bg-gray-50'}`}>
+      <section
+        className={`py-20 transition-colors duration-500 ${isDark ? "bg-gray-800" : "bg-gray-50"}`}
+      >
         <div className="mx-auto max-w-7xl px-4">
           <ScrollAnimation animation="fade-up">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-extrabold mb-4" style={{ color: '#0A5950' }}>
-                {t('services.features.title', 'Why Choose Our Platform')}
+              <h2
+                className="text-4xl md:text-5xl font-extrabold mb-4"
+                style={{ color: "#0A5950" }}
+              >
+                {t("services.features.title", "Why Choose Our Platform")}
               </h2>
-              <p className={`text-lg ${isDark ? 'text-gray-300' : 'text-gray-600'} max-w-2xl mx-auto`}>
-                {t('services.features.subtitle', 'Experience the next level of wellness management with our comprehensive platform')}
+              <p
+                className={`text-lg ${isDark ? "text-gray-300" : "text-gray-600"} max-w-2xl mx-auto`}
+              >
+                {t(
+                  "services.features.subtitle",
+                  "Experience the next level of wellness management with our comprehensive platform",
+                )}
               </p>
             </div>
           </ScrollAnimation>
@@ -107,34 +123,84 @@ export default function Services() {
             <div className="space-y-8">
               {/* Feature 1 - Real-time Progress */}
               <ScrollAnimation animation="fade-right" delay={0.1}>
-                <div className={`p-8 rounded-3xl shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-105 ${isDark ? 'bg-gray-700' : 'bg-white'}`}>
-                  <div className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6" style={{ backgroundColor: '#0A5950' }}>
-                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                <div
+                  className={`p-8 rounded-3xl shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-105 ${isDark ? "bg-gray-700" : "bg-white"}`}
+                >
+                  <div
+                    className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6"
+                    style={{ backgroundColor: "#0A5950" }}
+                  >
+                    <svg
+                      className="w-8 h-8 text-white"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+                      />
                     </svg>
                   </div>
-                  <h3 className={`text-xl font-bold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>
-                    {t('services.features.realTimeProgress.title', 'Real-time Progress Tracking')}
+                  <h3
+                    className={`text-xl font-bold mb-3 ${isDark ? "text-white" : "text-gray-900"}`}
+                  >
+                    {t(
+                      "services.features.realTimeProgress.title",
+                      "Real-time Progress Tracking",
+                    )}
                   </h3>
-                  <p className={`leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
-                    {t('services.features.realTimeProgress.description', 'Gain actionable insights with our real-time progress tracking and analytics dashboard')}
+                  <p
+                    className={`leading-relaxed ${isDark ? "text-gray-300" : "text-gray-600"}`}
+                  >
+                    {t(
+                      "services.features.realTimeProgress.description",
+                      "Gain actionable insights with our real-time progress tracking and analytics dashboard",
+                    )}
                   </p>
                 </div>
               </ScrollAnimation>
 
               {/* Feature 2 - Customizable Plans */}
               <ScrollAnimation animation="fade-right" delay={0.2}>
-                <div className={`p-8 rounded-3xl shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-105 ${isDark ? 'bg-gray-700' : 'bg-white'}`}>
-                  <div className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6" style={{ backgroundColor: '#0A5950' }}>
-                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                <div
+                  className={`p-8 rounded-3xl shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-105 ${isDark ? "bg-gray-700" : "bg-white"}`}
+                >
+                  <div
+                    className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6"
+                    style={{ backgroundColor: "#0A5950" }}
+                  >
+                    <svg
+                      className="w-8 h-8 text-white"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
+                      />
                     </svg>
                   </div>
-                  <h3 className={`text-xl font-bold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>
-                    {t('services.features.customizablePlans.title', 'Customizable Wellness Plans')}
+                  <h3
+                    className={`text-xl font-bold mb-3 ${isDark ? "text-white" : "text-gray-900"}`}
+                  >
+                    {t(
+                      "services.features.customizablePlans.title",
+                      "Customizable Wellness Plans",
+                    )}
                   </h3>
-                  <p className={`leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
-                    {t('services.features.customizablePlans.description', 'Streamline your wellness journey with personalized and automated wellness programs')}
+                  <p
+                    className={`leading-relaxed ${isDark ? "text-gray-300" : "text-gray-600"}`}
+                  >
+                    {t(
+                      "services.features.customizablePlans.description",
+                      "Streamline your wellness journey with personalized and automated wellness programs",
+                    )}
                   </p>
                 </div>
               </ScrollAnimation>
@@ -144,9 +210,12 @@ export default function Services() {
             <div className="flex items-center justify-center">
               <ScrollAnimation animation="zoom-in" delay={0.15}>
                 <div className="relative">
-                  <div className="absolute inset-0 rounded-3xl blur-2xl opacity-20" style={{ backgroundColor: '#0A5950' }}></div>
-                  <img 
-                    src="/images/78Simg7.jpg" 
+                  <div
+                    className="absolute inset-0 rounded-3xl blur-2xl opacity-20"
+                    style={{ backgroundColor: "#0A5950" }}
+                  ></div>
+                  <img
+                    src="/images/78Simg7.jpg"
                     alt="Wellness Professional"
                     className="relative rounded-3xl shadow-2xl w-full max-w-md object-cover"
                   />
@@ -158,34 +227,84 @@ export default function Services() {
             <div className="space-y-8">
               {/* Feature 3 - Mobile Accessibility */}
               <ScrollAnimation animation="fade-left" delay={0.1}>
-                <div className={`p-8 rounded-3xl shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-105 ${isDark ? 'bg-gray-700' : 'bg-white'}`}>
-                  <div className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6" style={{ backgroundColor: '#0A5950' }}>
-                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                <div
+                  className={`p-8 rounded-3xl shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-105 ${isDark ? "bg-gray-700" : "bg-white"}`}
+                >
+                  <div
+                    className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6"
+                    style={{ backgroundColor: "#0A5950" }}
+                  >
+                    <svg
+                      className="w-8 h-8 text-white"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
+                      />
                     </svg>
                   </div>
-                  <h3 className={`text-xl font-bold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>
-                    {t('services.features.mobileAccess.title', 'Mobile Accessibility')}
+                  <h3
+                    className={`text-xl font-bold mb-3 ${isDark ? "text-white" : "text-gray-900"}`}
+                  >
+                    {t(
+                      "services.features.mobileAccess.title",
+                      "Mobile Accessibility",
+                    )}
                   </h3>
-                  <p className={`leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
-                    {t('services.features.mobileAccess.description', 'Manage your wellness journey on the go with our fully responsive mobile-friendly platform')}
+                  <p
+                    className={`leading-relaxed ${isDark ? "text-gray-300" : "text-gray-600"}`}
+                  >
+                    {t(
+                      "services.features.mobileAccess.description",
+                      "Manage your wellness journey on the go with our fully responsive mobile-friendly platform",
+                    )}
                   </p>
                 </div>
               </ScrollAnimation>
 
               {/* Feature 4 - Enhanced Security */}
               <ScrollAnimation animation="fade-left" delay={0.2}>
-                <div className={`p-8 rounded-3xl shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-105 ${isDark ? 'bg-gray-700' : 'bg-white'}`}>
-                  <div className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6" style={{ backgroundColor: '#0A5950' }}>
-                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                <div
+                  className={`p-8 rounded-3xl shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-105 ${isDark ? "bg-gray-700" : "bg-white"}`}
+                >
+                  <div
+                    className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6"
+                    style={{ backgroundColor: "#0A5950" }}
+                  >
+                    <svg
+                      className="w-8 h-8 text-white"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+                      />
                     </svg>
                   </div>
-                  <h3 className={`text-xl font-bold mb-3 ${isDark ? 'text-white' : 'text-gray-900'}`}>
-                    {t('services.features.enhancedSecurity.title', 'Enhanced Privacy & Security')}
+                  <h3
+                    className={`text-xl font-bold mb-3 ${isDark ? "text-white" : "text-gray-900"}`}
+                  >
+                    {t(
+                      "services.features.enhancedSecurity.title",
+                      "Enhanced Privacy & Security",
+                    )}
                   </h3>
-                  <p className={`leading-relaxed ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
-                    {t('services.features.enhancedSecurity.description', 'Protect your sensitive health data with our state-of-the-art security measures')}
+                  <p
+                    className={`leading-relaxed ${isDark ? "text-gray-300" : "text-gray-600"}`}
+                  >
+                    {t(
+                      "services.features.enhancedSecurity.description",
+                      "Protect your sensitive health data with our state-of-the-art security measures",
+                    )}
                   </p>
                 </div>
               </ScrollAnimation>
@@ -202,10 +321,10 @@ export default function Services() {
         id="because-you-matter"
         className="relative py-24 transition-colors duration-300 overflow-hidden"
         style={{
-          backgroundImage: 'url(/images/63H6.jpg)',
-          backgroundAttachment: 'fixed',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
+          backgroundImage: "url(/images/63H6.jpg)",
+          backgroundAttachment: "fixed",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
         }}
       >
         {/* Black Overlay */}
@@ -215,11 +334,14 @@ export default function Services() {
           {/* Section Header */}
           <ScrollAnimation animation="fade-up">
             <div className="text-center mb-16">
-              <h3 className="text-lg font-semibold tracking-wider uppercase mb-4" style={{ color: '#0A5950' }}>
-                {t('services.becauseYouMatter.sectionTitle')}
+              <h3
+                className="text-lg font-semibold tracking-wider uppercase mb-4"
+                style={{ color: "#0A5950" }}
+              >
+                {t("services.becauseYouMatter.sectionTitle")}
               </h3>
               <h2 className="text-4xl md:text-5xl font-extrabold mb-6 text-white">
-                {t('services.becauseYouMatter.title')}
+                {t("services.becauseYouMatter.title")}
               </h2>
             </div>
           </ScrollAnimation>
@@ -230,15 +352,18 @@ export default function Services() {
             <ScrollAnimation animation="fade-up" delay={0.1}>
               <div className="bg-white/95 backdrop-blur-sm p-8 rounded-2xl transition-all duration-300 hover:shadow-2xl hover:bg-white shadow-lg">
                 <div className="mb-4">
-                  <span className="text-sm font-bold tracking-wider uppercase" style={{ color: '#0A5950' }}>
-                    {t('services.becauseYouMatter.step1.badge')}
+                  <span
+                    className="text-sm font-bold tracking-wider uppercase"
+                    style={{ color: "#0A5950" }}
+                  >
+                    {t("services.becauseYouMatter.step1.badge")}
                   </span>
                 </div>
                 <h3 className="text-2xl font-bold mb-4 text-gray-900">
-                  {t('services.becauseYouMatter.step1.title')}
+                  {t("services.becauseYouMatter.step1.title")}
                 </h3>
                 <p className="leading-relaxed text-gray-600">
-                  {t('services.becauseYouMatter.step1.description')}
+                  {t("services.becauseYouMatter.step1.description")}
                 </p>
               </div>
             </ScrollAnimation>
@@ -247,15 +372,18 @@ export default function Services() {
             <ScrollAnimation animation="fade-up" delay={0.2}>
               <div className="bg-white/95 backdrop-blur-sm p-8 rounded-2xl transition-all duration-300 hover:shadow-2xl hover:bg-white shadow-lg">
                 <div className="mb-4">
-                  <span className="text-sm font-bold tracking-wider uppercase" style={{ color: '#0A5950' }}>
-                    {t('services.becauseYouMatter.step2.badge')}
+                  <span
+                    className="text-sm font-bold tracking-wider uppercase"
+                    style={{ color: "#0A5950" }}
+                  >
+                    {t("services.becauseYouMatter.step2.badge")}
                   </span>
                 </div>
                 <h3 className="text-2xl font-bold mb-4 text-gray-900">
-                  {t('services.becauseYouMatter.step2.title')}
+                  {t("services.becauseYouMatter.step2.title")}
                 </h3>
                 <p className="leading-relaxed text-gray-600">
-                  {t('services.becauseYouMatter.step2.description')}
+                  {t("services.becauseYouMatter.step2.description")}
                 </p>
               </div>
             </ScrollAnimation>
@@ -264,15 +392,18 @@ export default function Services() {
             <ScrollAnimation animation="fade-up" delay={0.3}>
               <div className="bg-white/95 backdrop-blur-sm p-8 rounded-2xl transition-all duration-300 hover:shadow-2xl hover:bg-white shadow-lg">
                 <div className="mb-4">
-                  <span className="text-sm font-bold tracking-wider uppercase" style={{ color: '#0A5950' }}>
-                    {t('services.becauseYouMatter.step3.badge')}
+                  <span
+                    className="text-sm font-bold tracking-wider uppercase"
+                    style={{ color: "#0A5950" }}
+                  >
+                    {t("services.becauseYouMatter.step3.badge")}
                   </span>
                 </div>
                 <h3 className="text-2xl font-bold mb-4 text-gray-900">
-                  {t('services.becauseYouMatter.step3.title')}
+                  {t("services.becauseYouMatter.step3.title")}
                 </h3>
                 <p className="leading-relaxed text-gray-600">
-                  {t('services.becauseYouMatter.step3.description')}
+                  {t("services.becauseYouMatter.step3.description")}
                 </p>
               </div>
             </ScrollAnimation>
@@ -281,7 +412,10 @@ export default function Services() {
       </section>
 
       {/* 6) CTA - Looking For Suitable Coaches */}
-      <section id="cta" className={`py-32 transition-colors duration-500 ${isDark ? 'bg-gray-900' : 'bg-white'} relative overflow-hidden`}>
+      <section
+        id="cta"
+        className={`py-32 transition-colors duration-500 ${isDark ? "bg-gray-900" : "bg-white"} relative overflow-hidden`}
+      >
         <style>{`
           @keyframes float-hover {
             0%, 100% { transform: translateY(-15px) scale(1.08) rotate(2deg); }
@@ -419,39 +553,53 @@ export default function Services() {
               <ScrollAnimation animation="fade-up">
                 {/* Badge */}
                 <div className="flex items-center justify-center mb-6">
-                  <span className="text-sm font-semibold tracking-widest uppercase" style={{ color: '#0A5950' }}>
-                    {t('services.cta.keepGoingOn', 'KEEP GOING ON')}
+                  <span
+                    className="text-sm font-semibold tracking-widest uppercase"
+                    style={{ color: "#0A5950" }}
+                  >
+                    {t("services.cta.keepGoingOn", "KEEP GOING ON")}
                   </span>
                 </div>
 
                 {/* Main Heading */}
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6" style={{ color: '#0A5950' }}>
-                  {t('services.cta.lookingForCoaches', 'Looking For Suitable Coaches')}
+                <h2
+                  className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6"
+                  style={{ color: "#0A5950" }}
+                >
+                  {t(
+                    "services.cta.lookingForCoaches",
+                    "Looking For Suitable Coaches",
+                  )}
                 </h2>
 
                 {/* Description */}
-                <p className={`text-lg leading-relaxed mb-10 ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>
-                  {t('services.cta.coachesDescription', 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi.')}
+                <p
+                  className={`text-lg leading-relaxed mb-10 ${isDark ? "text-gray-300" : "text-gray-600"}`}
+                >
+                  {t(
+                    "services.cta.coachesDescription",
+                    "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi.",
+                  )}
                 </p>
 
                 {/* Explore Now Button */}
                 <a
                   href="/contact"
                   className="inline-flex items-center gap-3 rounded-full px-10 py-5 font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
-                  style={{ 
-                    backgroundColor: '#0A5950',
-                    color: 'white'
+                  style={{
+                    backgroundColor: "#0A5950",
+                    color: "white",
                   }}
                   onMouseEnter={(e) => {
-                    e.target.style.backgroundColor = 'black'
-                    e.target.style.transform = 'scale(1.05)'
+                    e.target.style.backgroundColor = "black";
+                    e.target.style.transform = "scale(1.05)";
                   }}
                   onMouseLeave={(e) => {
-                    e.target.style.backgroundColor = '#0A5950'
-                    e.target.style.transform = 'scale(1)'
+                    e.target.style.backgroundColor = "#0A5950";
+                    e.target.style.transform = "scale(1)";
                   }}
                 >
-                  {t('services.cta.exploreNow', 'Explore Now')}
+                  {t("services.cta.exploreNow", "Explore Now")}
                 </a>
               </ScrollAnimation>
             </div>
@@ -461,7 +609,5 @@ export default function Services() {
 
       <Footer />
     </div>
-  )
+  );
 }
-
-
