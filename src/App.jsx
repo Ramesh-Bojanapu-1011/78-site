@@ -1,17 +1,10 @@
-import React, { Suspense, lazy } from "react";
-import {
-  BrowserRouter,
-  Navigate,
-  Route,
-  Routes,
-  useLocation,
-} from "react-router-dom";
+import { lazy } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import AdminProtectedRoute from "./components/AdminProtectedRoute";
 import ProtectedRoute from "./components/ProtectedRoute";
 import ScrollToTop from "./components/ScrollToTop";
 import { ThemeProvider } from "./components/theme-provider";
-import { debugRoute } from "./utils/debug";
 
 // Lazy load all page components
 const Login = lazy(() => import("./pages/Login"));
@@ -35,23 +28,10 @@ const OngoingSupport = lazy(() => import("./pages/OngoingSupport"));
 const NutritionPlans = lazy(() => import("./pages/NutritionPlans"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
-// Component to handle route debugging
-function RouteDebugger() {
-  const location = useLocation();
-
-  React.useEffect(() => {
-    console.log("🛣️ Route changed to:", location.pathname);
-    debugRoute(location.pathname);
-  }, [location.pathname]);
-
-  return null;
-}
-
 function App() {
   return (
     <ThemeProvider>
       <BrowserRouter>
-        <RouteDebugger />
         <ScrollToTop />
 
         <Routes>
