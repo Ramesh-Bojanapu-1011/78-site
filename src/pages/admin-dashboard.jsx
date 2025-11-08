@@ -1,33 +1,32 @@
-import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import { useTranslation } from "react-i18next";
-import { LanguageSelector } from "../components/language-selector";
-import { getCurrentUser, logoutUser } from "../utils/auth";
-import { useTheme } from "../components/theme-provider";
 import {
-  PieChart,
-  Pie,
-  Cell,
-  ResponsiveContainer,
-  Legend,
-  Tooltip,
-} from "recharts";
-import {
-  Users,
+  Activity,
+  AlertTriangle,
+  BarChart3,
+  Download,
+  Filter,
+  LogOut,
+  Moon,
+  Search,
+  Sun,
+  Trash2,
   UserCheck,
   UserPlus,
-  Activity,
-  Search,
-  Filter,
-  Download,
-  LogOut,
-  Settings,
-  BarChart3,
-  Trash2,
-  AlertTriangle,
-  Moon,
-  Sun,
+  Users,
 } from "lucide-react";
+import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+import { Link, useNavigate } from "react-router-dom";
+import {
+  Cell,
+  Legend,
+  Pie,
+  PieChart,
+  ResponsiveContainer,
+  Tooltip,
+} from "recharts";
+import { LanguageSelector } from "../components/language-selector";
+import { useTheme } from "../components/theme-provider";
+import { logoutUser } from "../utils/auth";
 
 function getUsersFromLocalStorage() {
   const users = localStorage.getItem("users");
@@ -367,15 +366,15 @@ export default function AdminDashboard() {
             : "bg-white/80 border-slate-200/60"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
             <div className="flex items-center space-x-4">
               <Link
                 to="/"
-                className="flex items-center space-x-3 hover:opacity-80 transition-opacity"
+                className="flex items-center space-x-3 transition-opacity hover:opacity-80"
               >
-                <img src="/Logo.jpg" alt="Logo" className="h-8 w-auto" />
+                <img src="/Logo.jpg" alt="Logo" className="w-auto h-8" />
               </Link>
             </div>
 
@@ -392,9 +391,9 @@ export default function AdminDashboard() {
                 title={isDark ? "Switch to Light Mode" : "Switch to Dark Mode"}
               >
                 {isDark ? (
-                  <Sun className="h-5 w-5" />
+                  <Sun className="w-5 h-5" />
                 ) : (
-                  <Moon className="h-5 w-5" />
+                  <Moon className="w-5 h-5" />
                 )}
               </button>
 
@@ -410,7 +409,7 @@ export default function AdminDashboard() {
                   }`}
                   title={t("nav.logout")}
                 >
-                  <LogOut className="h-4 w-4" />
+                  <LogOut className="w-4 h-4" />
                   <span className="hidden sm:inline">{t("nav.logout")}</span>
                 </button>
               </div>
@@ -420,7 +419,7 @@ export default function AdminDashboard() {
       </header>
 
       {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <main className="px-4 py-8 mx-auto max-w-7xl sm:px-6 lg:px-8">
         {/* Welcome Section */}
         <div className="mb-8">
           <h2
@@ -479,7 +478,7 @@ export default function AdminDashboard() {
         </div>
 
         {/* Statistics Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+        <div className="grid grid-cols-1 gap-6 mb-8 md:grid-cols-3">
           <div
             className={`rounded-xl shadow-sm border p-6 hover:shadow-md transition-shadow ${
               isDark
@@ -596,7 +595,7 @@ export default function AdminDashboard() {
         </div>
 
         {/* Analytics Charts Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+        <div className="grid grid-cols-1 gap-6 mb-8 lg:grid-cols-2">
           {/* User Status Distribution Pie Chart */}
           <div
             className={`rounded-xl shadow-sm border p-6 ${
@@ -605,7 +604,7 @@ export default function AdminDashboard() {
                 : "bg-white border-slate-200/60"
             }`}
           >
-            <div className="flex items-center space-x-2 mb-4">
+            <div className="flex items-center mb-4 space-x-2">
               <BarChart3
                 className={`h-5 w-5 ${
                   isDark ? "text-[#0FD5C3]" : "text-[#0A5950]"
@@ -667,7 +666,7 @@ export default function AdminDashboard() {
                 : "bg-white border-slate-200/60"
             }`}
           >
-            <div className="flex items-center space-x-2 mb-4">
+            <div className="flex items-center mb-4 space-x-2">
               <Activity
                 className={`h-5 w-5 ${
                   isDark ? "text-[#0FD5C3]" : "text-[#0A5950]"
@@ -695,9 +694,7 @@ export default function AdminDashboard() {
                   cx="50%"
                   cy="50%"
                   labelLine={false}
-                  label={({ name, percent }) =>
-                    `${(percent * 100).toFixed(0)}%`
-                  }
+                  label={({ percent }) => `${(percent * 100).toFixed(0)}%`}
                   outerRadius={80}
                   fill="#8884d8"
                   dataKey="value"
@@ -740,7 +737,7 @@ export default function AdminDashboard() {
                 : "border-slate-200/60 bg-slate-50/50"
             }`}
           >
-            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
               <div>
                 <h3
                   className={`text-lg font-semibold ${
@@ -761,7 +758,7 @@ export default function AdminDashboard() {
               <div className="relative">
                 <button
                   onClick={() => setShowExportMenu(!showExportMenu)}
-                  className="btn-animate-strong flex items-center space-x-2 rounded-lg px-4 py-2 font-medium text-sm transition-all duration-300 text-white shadow-md hover:shadow-lg"
+                  className="flex items-center px-4 py-2 space-x-2 text-sm font-medium text-white transition-all duration-300 rounded-lg shadow-md btn-animate-strong hover:shadow-lg"
                   style={{ backgroundColor: "#0A5950" }}
                   onMouseEnter={(e) =>
                     (e.currentTarget.style.backgroundColor = "#0D7168")
@@ -804,7 +801,7 @@ export default function AdminDashboard() {
                             : "text-slate-700 hover:bg-slate-50"
                         }`}
                       >
-                        <Download className="h-4 w-4" />
+                        <Download className="w-4 h-4" />
                         <span>Export as CSV</span>
                       </button>
                       <button
@@ -815,7 +812,7 @@ export default function AdminDashboard() {
                             : "text-slate-700 hover:bg-slate-50"
                         }`}
                       >
-                        <Download className="h-4 w-4" />
+                        <Download className="w-4 h-4" />
                         <span>Export as JSON</span>
                       </button>
                       <button
@@ -826,7 +823,7 @@ export default function AdminDashboard() {
                             : "text-slate-700 hover:bg-slate-50"
                         }`}
                       >
-                        <Download className="h-4 w-4" />
+                        <Download className="w-4 h-4" />
                         <span>Export as Excel</span>
                       </button>
                       <div
@@ -864,7 +861,7 @@ export default function AdminDashboard() {
                 : "border-slate-200/60 bg-white"
             }`}
           >
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col gap-4 sm:flex-row">
               {/* Search */}
               <div className="flex-1">
                 <div className="relative">
@@ -1045,7 +1042,7 @@ export default function AdminDashboard() {
                           : t("admin.filters.inactive")}
                       </span>
                     </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                    <td className="px-6 py-4 text-sm font-medium whitespace-nowrap">
                       <div className="flex space-x-2">
                         {editingUserId === user.id ? (
                           // Edit mode - show delete button and cancel
@@ -1058,7 +1055,7 @@ export default function AdminDashboard() {
                                   : "text-red-600 hover:text-red-900 hover:bg-red-50"
                               }`}
                             >
-                              <Trash2 className="h-4 w-4" />
+                              <Trash2 className="w-4 h-4" />
                               <span>{t("admin.actions.delete")}</span>
                             </button>
                             <button
@@ -1095,7 +1092,7 @@ export default function AdminDashboard() {
 
           {/* Empty State */}
           {filteredUsers.length === 0 && (
-            <div className="text-center py-12">
+            <div className="py-12 text-center">
               <Users
                 className={`mx-auto h-12 w-12 ${
                   isDark ? "text-gray-600" : "text-slate-400"
@@ -1126,13 +1123,13 @@ export default function AdminDashboard() {
 
       {/* Delete Confirmation Modal */}
       {showDeleteConfirm && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
           <div
             className={`rounded-lg p-6 max-w-md w-full mx-4 ${
               isDark ? "bg-gray-800" : "bg-white"
             }`}
           >
-            <div className="flex items-center space-x-3 mb-4">
+            <div className="flex items-center mb-4 space-x-3">
               <div
                 className={`p-2 rounded-full ${
                   isDark ? "bg-red-900/30" : "bg-red-100"
@@ -1163,7 +1160,7 @@ export default function AdminDashboard() {
               })}
             </p>
 
-            <div className="flex space-x-3 justify-end">
+            <div className="flex justify-end space-x-3">
               <button
                 onClick={cancelDeleteUser}
                 className={`px-4 py-2 text-sm font-medium rounded-lg transition-colors ${
@@ -1176,7 +1173,7 @@ export default function AdminDashboard() {
               </button>
               <button
                 onClick={confirmDeleteUser}
-                className="px-4 py-2 text-sm font-medium text-white bg-red-600 hover:bg-red-700 rounded-lg transition-colors"
+                className="px-4 py-2 text-sm font-medium text-white transition-colors bg-red-600 rounded-lg hover:bg-red-700"
               >
                 {t("admin.deleteConfirm.confirm")}
               </button>
@@ -1187,7 +1184,7 @@ export default function AdminDashboard() {
 
       {/* Export Success Notification */}
       {showExportSuccess && (
-        <div className="fixed bottom-4 right-4 z-50 animate-in slide-in-from-bottom-5">
+        <div className="fixed z-50 bottom-4 right-4 animate-in slide-in-from-bottom-5">
           <div
             className={`rounded-lg shadow-lg border px-6 py-4 flex items-center space-x-3 ${
               isDark
@@ -1225,7 +1222,7 @@ export default function AdminDashboard() {
               }`}
             >
               <svg
-                className="h-5 w-5"
+                className="w-5 h-5"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"

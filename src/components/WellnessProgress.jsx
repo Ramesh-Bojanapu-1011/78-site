@@ -1,4 +1,3 @@
-import React from "react";
 import { useTranslation } from "react-i18next";
 
 const DEFAULT_ITEMS = [
@@ -12,14 +11,14 @@ function ProgressBar({ label, value }) {
   return (
     <div className="space-y-1">
       <div className="flex items-center justify-between text-sm">
-        <span className="text-gray-700 dark:text-white/90 font-medium">
+        <span className="font-medium text-gray-700 dark:text-white/90">
           {label}
         </span>
-        <span className="text-gray-600 dark:text-white/70 font-semibold">
+        <span className="font-semibold text-gray-600 dark:text-white/70">
           {value} %
         </span>
       </div>
-      <div className="h-3 w-full rounded-full bg-gray-200 dark:bg-white/10 overflow-hidden">
+      <div className="w-full h-3 overflow-hidden bg-gray-200 rounded-full dark:bg-white/10">
         <div
           className="h-full bg-green-500 rounded-full"
           style={{ width: `${value}%` }}
@@ -43,12 +42,12 @@ export default function WellnessProgress({
       id="wellness-progress"
       className="py-20 bg-gray-50 dark:bg-gray-900"
     >
-      <div className="mx-auto max-w-6xl px-4 grid md:grid-cols-2 gap-12 items-start">
+      <div className="grid items-start max-w-6xl gap-12 px-4 mx-auto md:grid-cols-2">
         <div>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white">
+          <h2 className="text-3xl font-extrabold text-gray-900 md:text-4xl dark:text-white">
             {translatedTitle}
           </h2>
-          <p className="mt-4 text-gray-600 dark:text-white/70 leading-relaxed">
+          <p className="mt-4 leading-relaxed text-gray-600 dark:text-white/70">
             {translatedDescription}
           </p>
         </div>

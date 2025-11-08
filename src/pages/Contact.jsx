@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { getCurrentUser, isAuthenticated } from "../utils/auth";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-import ScrollAnimation from "../components/ScrollAnimation";
-import FAQ from "../components/FAQ";
 import { useTranslation } from "react-i18next";
-import { useTheme } from "../components/theme-provider";
+import { useNavigate } from "react-router-dom";
+import FAQ from "../components/FAQ";
+import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
+import ScrollAnimation from "../components/ScrollAnimation";
+import { getCurrentUser, isAuthenticated } from "../utils/auth";
 
 export default function Contact() {
   const [user, setUser] = useState(null);
@@ -24,7 +23,6 @@ export default function Contact() {
   const navigate = useNavigate();
   const { t } = useTranslation();
   const [isDark, setIsDark] = useState(false);
-  const [videoLoading, setVideoLoading] = useState(false);
 
   useEffect(() => {
     const checkDark = () =>
@@ -120,7 +118,7 @@ export default function Contact() {
       {/* Showcase */}
       <section
         id="showcase"
-        className="relative overflow-hidden h-screen flex items-center justify-center text-center"
+        className="relative flex items-center justify-center h-screen overflow-hidden text-center"
       >
         {/* Fallback Background */}
         <div
@@ -133,7 +131,7 @@ export default function Contact() {
           loop
           muted
           playsInline
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 object-cover w-full h-full"
           onLoadedData={() => {
             console.log("Video loaded successfully");
           }}
@@ -149,25 +147,25 @@ export default function Contact() {
         <div className="absolute inset-0 bg-black/50"></div>
 
         {/* Content */}
-        <div className="relative z-10 px-6 max-w-4xl">
+        <div className="relative z-10 max-w-4xl px-6">
           <ScrollAnimation animation="slide-up" stagger="scroll-stagger-1">
-            <h1 className="mt-4 text-4xl font-extrabold mb-4 leading-tight text-white">
+            <h1 className="mt-4 mb-4 text-4xl font-extrabold leading-tight text-white">
               {t("contact.hero.title")}
             </h1>
           </ScrollAnimation>
 
           <ScrollAnimation animation="slide-up" stagger="scroll-stagger-2">
-            <p className="mt-6 text-xl text-white/80 max-w-3xl mx-auto">
+            <p className="max-w-3xl mx-auto mt-6 text-xl text-white/80">
               {t("contact.hero.subtitle")}
             </p>
           </ScrollAnimation>
 
           <ScrollAnimation animation="slide-up" stagger="scroll-stagger-3">
-            <div className="mt-8 flex gap-4 justify-center">
+            <div className="flex justify-center gap-4 mt-8">
               {/* Primary Button */}
               <a
                 href="#contact"
-                className="btn-animate-strong inline-flex items-center rounded-lg px-8 py-4 font-bold text-lg transition-all duration-300 text-white shadow-lg hover:shadow-xl"
+                className="inline-flex items-center px-8 py-4 text-lg font-bold text-white transition-all duration-300 rounded-lg shadow-lg btn-animate-strong hover:shadow-xl"
                 style={{ backgroundColor: "#0A5950" }}
               >
                 {t("contact.hero.primaryCta")}
@@ -182,9 +180,9 @@ export default function Contact() {
         id="contact"
         className={`py-20 transition-colors duration-500 ${isDark ? "bg-gray-900" : "bg-white"}`}
       >
-        <div className="mx-auto max-w-5xl px-4">
+        <div className="max-w-5xl px-4 mx-auto">
           <ScrollAnimation animation="slide-up" stagger="scroll-stagger-1">
-            <div className="text-center mb-12">
+            <div className="mb-12 text-center">
               <h2
                 className={`text-4xl font-extrabold mb-4 ${isDark ? "text-white" : "text-gray-900"}`}
               >
@@ -212,7 +210,7 @@ export default function Contact() {
                 onSubmit={handleSubmit}
                 className={`w-full rounded-2xl shadow-xl p-6 md:p-8 border ${isDark ? "bg-gray-800 border-gray-700" : "bg-white border-gray-200"}`}
               >
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
                   <div>
                     <label
                       htmlFor="name"
@@ -396,7 +394,7 @@ export default function Contact() {
                   )}
                 </div>
 
-                <div className="mt-6 flex items-start gap-3">
+                <div className="flex items-start gap-3 mt-6">
                   <input
                     id="consent"
                     name="consent"
@@ -424,11 +422,11 @@ export default function Contact() {
                   <p className="mt-2 text-sm text-red-500">{errors.consent}</p>
                 )}
 
-                <div className="mt-8 flex items-center gap-4">
+                <div className="flex items-center gap-4 mt-8">
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="btn-animate-strong inline-flex items-center rounded-lg px-6 py-3 font-semibold transition-all whitespace-nowrap text-white shadow-lg disabled:opacity-70"
+                    className="inline-flex items-center px-6 py-3 font-semibold text-white transition-all rounded-lg shadow-lg btn-animate-strong whitespace-nowrap disabled:opacity-70"
                     style={{ backgroundColor: "#0A5950" }}
                     onMouseEnter={(e) =>
                       (e.currentTarget.style.backgroundColor = "#084540")
@@ -457,9 +455,9 @@ export default function Contact() {
       <section
         className={`py-20 transition-colors duration-500 ${isDark ? "bg-gray-900" : "bg-white"}`}
       >
-        <div className="mx-auto max-w-7xl px-4">
+        <div className="px-4 mx-auto max-w-7xl">
           <ScrollAnimation animation="slide-up" stagger="scroll-stagger-1">
-            <div className="text-center mb-16">
+            <div className="mb-16 text-center">
               <h2
                 className={`text-4xl font-extrabold mb-4 ${isDark ? "text-white" : "text-gray-900"}`}
               >
@@ -509,9 +507,9 @@ export default function Contact() {
       <section
         className={`py-20 transition-colors duration-500 ${isDark ? "bg-gray-800" : "bg-gray-50"}`}
       >
-        <div className="mx-auto max-w-7xl px-4">
+        <div className="px-4 mx-auto max-w-7xl">
           <ScrollAnimation animation="slide-up" stagger="scroll-stagger-1">
-            <div className="text-center mb-16">
+            <div className="mb-16 text-center">
               <h2
                 className={`text-4xl font-extrabold mb-4 ${isDark ? "text-white" : "text-gray-900"}`}
               >
@@ -526,7 +524,7 @@ export default function Contact() {
           </ScrollAnimation>
 
           <ScrollAnimation animation="slide-up" stagger="scroll-stagger-2">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
               {/* Phone */}
               <div
                 className={`rounded-xl p-8 text-center shadow-lg hover:shadow-xl transition-shadow duration-300 border ${
@@ -536,7 +534,7 @@ export default function Contact() {
                 }`}
               >
                 <div
-                  className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6"
+                  className="flex items-center justify-center w-16 h-16 mx-auto mb-6 rounded-full"
                   style={{ backgroundColor: "#0d6664" }}
                 >
                   <svg
@@ -573,7 +571,7 @@ export default function Contact() {
                 }`}
               >
                 <div
-                  className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6"
+                  className="flex items-center justify-center w-16 h-16 mx-auto mb-6 rounded-full"
                   style={{ backgroundColor: "#0d6664" }}
                 >
                   <svg
@@ -611,7 +609,7 @@ export default function Contact() {
                 }`}
               >
                 <div
-                  className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6"
+                  className="flex items-center justify-center w-16 h-16 mx-auto mb-6 rounded-full"
                   style={{ backgroundColor: "#0d6664" }}
                 >
                   <svg
@@ -654,7 +652,7 @@ export default function Contact() {
       <section className="relative py-32 overflow-hidden">
         {/* Background Image */}
         <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed"
+          className="absolute inset-0 bg-fixed bg-center bg-no-repeat bg-cover"
           style={{
             backgroundImage: "url(/images/78ConCta.jpg)",
           }}
@@ -664,17 +662,17 @@ export default function Contact() {
         <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40"></div>
 
         {/* Content */}
-        <div className="relative z-10 mx-auto max-w-7xl px-4">
+        <div className="relative z-10 px-4 mx-auto max-w-7xl">
           <div className="text-left">
             {/* Left Side - Text Content */}
             <div className="space-y-8">
               <ScrollAnimation animation="slide-up" stagger="scroll-stagger-1">
                 <div className="space-y-6">
-                  <h2 className="text-4xl font-extrabold text-white leading-tight mb-4">
+                  <h2 className="mb-4 text-4xl font-extrabold leading-tight text-white">
                     {t("contact.ctaBanner.title")}
                   </h2>
 
-                  <p className="text-xl text-white/90 leading-relaxed">
+                  <p className="text-xl leading-relaxed text-white/90">
                     {t("contact.ctaBanner.desc")}
                   </p>
                 </div>
@@ -684,7 +682,7 @@ export default function Contact() {
                 <div className="flex justify-start">
                   <a
                     href="#contact2"
-                    className="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white rounded-xl transition-all duration-300 transform hover:scale-105"
+                    className="relative inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white transition-all duration-300 transform group rounded-xl hover:scale-105"
                     style={{
                       backgroundColor: "#0A5950",
                       boxShadow: "0 10px 30px rgba(10, 89, 80, 0.4)",
@@ -694,7 +692,7 @@ export default function Contact() {
                       {t("contact.ctaBanner.ctaPrimary")}
                     </span>
                     <div
-                      className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                      className="absolute inset-0 transition-opacity duration-300 opacity-0 rounded-xl group-hover:opacity-100"
                       style={{
                         background:
                           "linear-gradient(to right, #084540, #073d38)",

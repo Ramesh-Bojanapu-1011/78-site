@@ -1,6 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
 const CARDS = [
   {
@@ -57,18 +56,18 @@ export default function WellnessServicesGrid({
 
   return (
     <section id="wellness-grid" className="py-20 bg-gray-50 dark:bg-gray-900">
-      <div className="mx-auto max-w-7xl px-4">
-        <div className="text-center mb-16">
+      <div className="px-4 mx-auto max-w-7xl">
+        <div className="mb-16 text-center">
           <p
-            className="text-sm uppercase tracking-widest font-semibold"
+            className="text-sm font-semibold tracking-widest uppercase"
             style={{ color: "#0A5950" }}
           >
             {t(eyebrow)}
           </p>
-          <h2 className="mt-3 text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white">
+          <h2 className="mt-3 text-4xl font-extrabold text-gray-900 md:text-5xl dark:text-white">
             {t(title)}
           </h2>
-          <p className="mt-4 text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          <p className="max-w-3xl mx-auto mt-4 text-lg text-gray-600 dark:text-gray-300">
             {t(subtitle)}
           </p>
         </div>
@@ -78,19 +77,19 @@ export default function WellnessServicesGrid({
             <Link
               key={c.titleKey}
               to={c.href}
-              className="group bg-white dark:bg-gray-800 rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 block"
+              className="block overflow-hidden transition-all duration-300 bg-white shadow-lg group dark:bg-gray-800 rounded-3xl hover:shadow-2xl hover:-translate-y-2"
             >
               <article>
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <img
                     src={c.img}
                     alt={t(c.titleKey)}
-                    className="h-full w-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110"
                   />
                   {/* Hashtag Badge */}
                   <div className="absolute top-6 left-6">
                     <span
-                      className="inline-block px-4 py-2 text-white text-sm font-bold rounded-lg shadow-md"
+                      className="inline-block px-4 py-2 text-sm font-bold text-white rounded-lg shadow-md"
                       style={{ backgroundColor: "#0A5950" }}
                     >
                       {c.tag}
@@ -98,10 +97,10 @@ export default function WellnessServicesGrid({
                   </div>
                 </div>
                 <div className="p-8">
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">
+                  <h3 className="mb-3 text-2xl font-bold text-gray-900 dark:text-white">
                     {t(c.titleKey)}
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                  <p className="leading-relaxed text-gray-600 dark:text-gray-300">
                     {t(c.descriptionKey)}
                   </p>
                 </div>

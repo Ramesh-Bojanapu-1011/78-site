@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { debugRoute } from "../utils/debug";
 
@@ -11,19 +11,19 @@ const NotFound = () => {
   }, [location.pathname]);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50">
-      <div className="max-w-md w-full text-center">
+    <div className="flex items-center justify-center min-h-screen bg-gray-50">
+      <div className="w-full max-w-md text-center">
         <div className="mb-8">
-          <h1 className="text-9xl font-bold text-gray-300">404</h1>
-          <h2 className="text-2xl font-semibold text-gray-700 mb-4">
+          <h1 className="font-bold text-gray-300 text-9xl">404</h1>
+          <h2 className="mb-4 text-2xl font-semibold text-gray-700">
             Page Not Found
           </h2>
-          <p className="text-gray-600 mb-8">
+          <p className="mb-8 text-gray-600">
             Sorry, the page you are looking for doesn't exist or has been moved.
           </p>
-          <p className="text-sm text-gray-500 mb-4">
+          <p className="mb-4 text-sm text-gray-500">
             Requested path:{" "}
-            <code className="bg-gray-200 px-2 py-1 rounded">
+            <code className="px-2 py-1 bg-gray-200 rounded">
               {location.pathname}
             </code>
           </p>
@@ -32,14 +32,14 @@ const NotFound = () => {
         <div className="space-y-4">
           <Link
             to="/home"
-            className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
+            className="inline-block px-6 py-3 text-white transition-colors bg-blue-600 rounded-lg hover:bg-blue-700"
           >
             Go to Home
           </Link>
           <div>
             <Link
               to="/login"
-              className="text-blue-600 hover:text-blue-800 underline"
+              className="text-blue-600 underline hover:text-blue-800"
             >
               Back to Login
             </Link>

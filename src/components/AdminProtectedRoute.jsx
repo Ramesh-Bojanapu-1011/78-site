@@ -1,5 +1,5 @@
 import { Navigate } from "react-router-dom";
-import { isAuthenticated, isAdmin, getCurrentUser } from "../utils/auth";
+import { getCurrentUser, isAdmin, isAuthenticated } from "../utils/auth";
 
 export default function AdminProtectedRoute({ children }) {
   const user = getCurrentUser();

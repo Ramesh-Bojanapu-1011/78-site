@@ -1,11 +1,9 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { getCurrentUser, logoutUser, isAuthenticated } from "../utils/auth";
-import Navbar from "../components/Navbar";
-import Counter from "../components/Counter";
-import Footer from "../components/Footer";
 import { useTranslation } from "react-i18next";
-import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
+import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
+import { getCurrentUser, isAuthenticated } from "../utils/auth";
 
 export default function Home2() {
   const navigate = useNavigate();
@@ -30,11 +28,6 @@ export default function Home2() {
   }, [navigate]);
 
   const user = getCurrentUser();
-
-  function handleLogout() {
-    logoutUser();
-    navigate("/login", { replace: true });
-  }
 
   // Testimonials data array
   const testimonials = [
@@ -103,7 +96,7 @@ export default function Home2() {
       {/* 1 Showcase */}
       <section
         id="showcase"
-        className="relative overflow-hidden h-screen flex items-center justify-center text-center"
+        className="relative flex items-center justify-center h-screen overflow-hidden text-center"
       >
         {/* Background Video */}
         <video
@@ -111,7 +104,7 @@ export default function Home2() {
           loop
           muted
           playsInline
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 object-cover w-full h-full"
         >
           <source src="/78H2v.mp4" type="video/mp4" />
           {t("common.videoNotSupported")}
@@ -121,7 +114,7 @@ export default function Home2() {
         <div className="absolute inset-0 bg-black/50"></div>
 
         {/* Content */}
-        <div className="relative z-10 px-6 max-w-4xl">
+        <div className="relative z-10 max-w-4xl px-6">
           <motion.h1
             className="text-4xl font-extrabold leading-tight text-white whitespace-nowrap"
             initial={{ opacity: 0, y: 50 }}
@@ -131,7 +124,7 @@ export default function Home2() {
             {t("home2.showcase.title")}
           </motion.h1>
           <motion.p
-            className="mt-6 text-xl text-white/80 max-w-3xl mx-auto"
+            className="max-w-3xl mx-auto mt-6 text-xl text-white/80"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -139,7 +132,7 @@ export default function Home2() {
             {t("home2.showcase.subtitle")}
           </motion.p>
           <motion.div
-            className="mt-8 flex gap-4 justify-center"
+            className="flex justify-center gap-4 mt-8"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
@@ -147,7 +140,7 @@ export default function Home2() {
             {/* Primary Button */}
             <a
               href="/services"
-              className="btn-animate-strong inline-flex items-center rounded-lg px-8 py-4 font-bold text-lg transition-all duration-300 text-white shadow-lg hover:shadow-xl"
+              className="inline-flex items-center px-8 py-4 text-lg font-bold text-white transition-all duration-300 rounded-lg shadow-lg btn-animate-strong hover:shadow-xl"
               style={{ backgroundColor: "#0A5950" }}
             >
               {t("home2.showcase.exploreButton")}
@@ -163,10 +156,10 @@ export default function Home2() {
           isDark ? "bg-gray-800" : "bg-gradient-to-b from-gray-50 to-white"
         }`}
       >
-        <div className="mx-auto max-w-7xl px-4">
+        <div className="px-4 mx-auto max-w-7xl">
           {/* Header Section */}
           <motion.div
-            className="text-center mb-12"
+            className="mb-12 text-center"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -200,7 +193,7 @@ export default function Home2() {
             {/* Start Now Button */}
             <motion.a
               href="/services"
-              className="inline-flex items-center gap-2 rounded-full px-10 py-4 font-bold text-lg transition-all duration-300 shadow-lg hover:shadow-2xl text-white"
+              className="inline-flex items-center gap-2 px-10 py-4 text-lg font-bold text-white transition-all duration-300 rounded-full shadow-lg hover:shadow-2xl"
               style={{ backgroundColor: "#0A5950" }}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -227,7 +220,7 @@ export default function Home2() {
           </motion.div>
 
           {/* Three Column Images */}
-          <div className="grid md:grid-cols-3 gap-8 mt-16 max-w-5xl mx-auto">
+          <div className="grid max-w-5xl gap-8 mx-auto mt-16 md:grid-cols-3">
             {[
               {
                 image: "/images/78H2img1.jpg",
@@ -257,11 +250,11 @@ export default function Home2() {
                 viewport={{ once: true }}
                 whileHover={{ y: -10 }}
               >
-                <div className="relative overflow-hidden rounded-full shadow-lg group w-64 h-64">
+                <div className="relative w-64 h-64 overflow-hidden rounded-full shadow-lg group">
                   <img
                     src={service.image}
                     alt={service.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
                   />
                 </div>
               </motion.div>
@@ -278,8 +271,8 @@ export default function Home2() {
           backgroundColor: "#0A5950",
         }}
       >
-        <div className="mx-auto max-w-7xl px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="px-4 mx-auto max-w-7xl">
+          <div className="grid items-center gap-12 lg:grid-cols-2">
             {/* Left Side - Content */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
@@ -289,18 +282,18 @@ export default function Home2() {
             >
               {/* About Us Badge */}
               <div className="flex items-center gap-2 mb-6">
-                <span className="text-white/90 font-semibold tracking-wider uppercase text-sm">
+                <span className="text-sm font-semibold tracking-wider uppercase text-white/90">
                   {t("home2.healthyBodyCoaching.badge")}
                 </span>
               </div>
 
               {/* Main Title */}
-              <h2 className="text-5xl font-extrabold text-white mb-6 leading-tight">
+              <h2 className="mb-6 text-5xl font-extrabold leading-tight text-white">
                 {t("home2.healthyBodyCoaching.title")}
               </h2>
 
               {/* Description */}
-              <p className="text-white/80 text-lg leading-relaxed mb-8">
+              <p className="mb-8 text-lg leading-relaxed text-white/80">
                 {t("home2.healthyBodyCoaching.description")}
               </p>
 
@@ -309,20 +302,20 @@ export default function Home2() {
                 {/* Personal Growth */}
                 <div>
                   <div className="flex justify-between mb-2">
-                    <span className="text-white font-semibold">
+                    <span className="font-semibold text-white">
                       {t(
                         "home2.healthyBodyCoaching.progress.personalGrowth.label",
                       )}
                     </span>
-                    <span className="text-white font-bold">
+                    <span className="font-bold text-white">
                       {t(
                         "home2.healthyBodyCoaching.progress.personalGrowth.value",
                       )}
                     </span>
                   </div>
-                  <div className="h-3 bg-white/20 rounded-full overflow-hidden">
+                  <div className="h-3 overflow-hidden rounded-full bg-white/20">
                     <motion.div
-                      className="h-full rounded-full bg-white"
+                      className="h-full bg-white rounded-full"
                       style={{
                         width: "96%",
                       }}
@@ -337,20 +330,20 @@ export default function Home2() {
                 {/* Life-Work Balance */}
                 <div>
                   <div className="flex justify-between mb-2">
-                    <span className="text-white font-semibold">
+                    <span className="font-semibold text-white">
                       {t(
                         "home2.healthyBodyCoaching.progress.lifeWorkBalance.label",
                       )}
                     </span>
-                    <span className="text-white font-bold">
+                    <span className="font-bold text-white">
                       {t(
                         "home2.healthyBodyCoaching.progress.lifeWorkBalance.value",
                       )}
                     </span>
                   </div>
-                  <div className="h-3 bg-white/20 rounded-full overflow-hidden">
+                  <div className="h-3 overflow-hidden rounded-full bg-white/20">
                     <motion.div
-                      className="h-full rounded-full bg-white"
+                      className="h-full bg-white rounded-full"
                       style={{
                         width: "82%",
                       }}
@@ -365,20 +358,20 @@ export default function Home2() {
                 {/* Stress Management */}
                 <div>
                   <div className="flex justify-between mb-2">
-                    <span className="text-white font-semibold">
+                    <span className="font-semibold text-white">
                       {t(
                         "home2.healthyBodyCoaching.progress.stressManagement.label",
                       )}
                     </span>
-                    <span className="text-white font-bold">
+                    <span className="font-bold text-white">
                       {t(
                         "home2.healthyBodyCoaching.progress.stressManagement.value",
                       )}
                     </span>
                   </div>
-                  <div className="h-3 bg-white/20 rounded-full overflow-hidden">
+                  <div className="h-3 overflow-hidden rounded-full bg-white/20">
                     <motion.div
-                      className="h-full rounded-full bg-white"
+                      className="h-full bg-white rounded-full"
                       style={{
                         width: "76%",
                       }}
@@ -402,7 +395,7 @@ export default function Home2() {
             >
               {/* First Image */}
               <motion.div
-                className="rounded-3xl overflow-hidden shadow-2xl"
+                className="overflow-hidden shadow-2xl rounded-3xl"
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
@@ -412,13 +405,13 @@ export default function Home2() {
                 <img
                   src="/images/78H2img4.jpg"
                   alt="Wellness therapy"
-                  className="w-full h-64 object-cover"
+                  className="object-cover w-full h-64"
                 />
               </motion.div>
 
               {/* Second Image */}
               <motion.div
-                className="rounded-3xl overflow-hidden shadow-2xl"
+                className="overflow-hidden shadow-2xl rounded-3xl"
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
@@ -428,13 +421,13 @@ export default function Home2() {
                 <img
                   src="/images/78H2img5.jpg"
                   alt="Yoga and meditation"
-                  className="w-full h-64 object-cover"
+                  className="object-cover w-full h-64"
                 />
               </motion.div>
 
               {/* Third Image */}
               <motion.div
-                className="rounded-3xl overflow-hidden shadow-2xl"
+                className="overflow-hidden shadow-2xl rounded-3xl"
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: 0.6 }}
@@ -444,7 +437,7 @@ export default function Home2() {
                 <img
                   src="/images/78H2img6.jpg"
                   alt="Sound healing"
-                  className="w-full h-64 object-cover"
+                  className="object-cover w-full h-64"
                 />
               </motion.div>
             </motion.div>
@@ -459,17 +452,17 @@ export default function Home2() {
           isDark ? "bg-gray-900" : "bg-white"
         }`}
       >
-        <div className="mx-auto max-w-7xl px-4">
+        <div className="px-4 mx-auto max-w-7xl">
           {/* Header */}
           <motion.div
-            className="text-center mb-16"
+            className="mb-16 text-center"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
             <span
-              className="text-sm font-semibold tracking-wider uppercase mb-4 block"
+              className="block mb-4 text-sm font-semibold tracking-wider uppercase"
               style={{ color: "#0A5950" }}
             >
               {t("home2.holisticWellness.badge", "HOLISTIC APPROACH")}
@@ -497,7 +490,7 @@ export default function Home2() {
           </motion.div>
 
           {/* Wellness Benefits Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+          <div className="grid gap-8 mb-16 md:grid-cols-2 lg:grid-cols-4">
             {[
               {
                 icon: (
@@ -636,14 +629,14 @@ export default function Home2() {
 
           {/* Statistics Section */}
           <motion.div
-            className="rounded-3xl p-12 relative overflow-hidden"
+            className="relative p-12 overflow-hidden rounded-3xl"
             style={{ backgroundColor: "#0A5950" }}
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <div className="grid md:grid-cols-3 gap-12 relative z-10">
+            <div className="relative z-10 grid gap-12 md:grid-cols-3">
               {[
                 {
                   number: "1000+",
@@ -675,10 +668,10 @@ export default function Home2() {
                   transition={{ duration: 0.6, delay: idx * 0.15 }}
                   viewport={{ once: true }}
                 >
-                  <div className="text-5xl font-extrabold text-white mb-3">
+                  <div className="mb-3 text-5xl font-extrabold text-white">
                     {stat.number}
                   </div>
-                  <div className="text-white/80 text-lg font-medium">
+                  <div className="text-lg font-medium text-white/80">
                     {stat.label}
                   </div>
                 </motion.div>
@@ -686,8 +679,8 @@ export default function Home2() {
             </div>
 
             {/* Decorative Elements */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-32 translate-x-32"></div>
-            <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/5 rounded-full translate-y-24 -translate-x-24"></div>
+            <div className="absolute top-0 right-0 w-64 h-64 translate-x-32 -translate-y-32 rounded-full bg-white/5"></div>
+            <div className="absolute bottom-0 left-0 w-48 h-48 -translate-x-24 translate-y-24 rounded-full bg-white/5"></div>
           </motion.div>
 
           {/* Call to Action */}
@@ -700,7 +693,7 @@ export default function Home2() {
           >
             <motion.a
               href="/services"
-              className="inline-flex items-center gap-3 rounded-full px-12 py-5 font-bold text-xl transition-all duration-300 shadow-2xl text-white"
+              className="inline-flex items-center gap-3 px-12 py-5 text-xl font-bold text-white transition-all duration-300 rounded-full shadow-2xl"
               style={{ backgroundColor: "#0A5950" }}
               whileHover={{ scale: 1.05, y: -3 }}
               whileTap={{ scale: 0.95 }}
@@ -730,8 +723,8 @@ export default function Home2() {
         className="py-24"
         style={{ backgroundColor: "#0A5950" }}
       >
-        <div className="mx-auto max-w-7xl px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
+        <div className="px-4 mx-auto max-w-7xl">
+          <div className="grid items-start gap-12 lg:grid-cols-2">
             {/* Left Side - Header & Rating */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
@@ -741,13 +734,13 @@ export default function Home2() {
             >
               {/* Badge */}
               <div className="flex items-center gap-2 mb-6">
-                <span className="text-white/90 font-semibold tracking-wider uppercase text-sm">
+                <span className="text-sm font-semibold tracking-wider uppercase text-white/90">
                   {t("home2.testimonials.badge", "OUR HAPPY CLIENTS")}
                 </span>
               </div>
 
               {/* Main Heading */}
-              <h2 className="text-5xl font-extrabold text-white mb-6 leading-tight">
+              <h2 className="mb-6 text-5xl font-extrabold leading-tight text-white">
                 {t(
                   "home2.testimonials.heading",
                   "Hear What Our Global Clients Say",
@@ -755,7 +748,7 @@ export default function Home2() {
               </h2>
 
               {/* Description */}
-              <p className="text-white/80 text-lg leading-relaxed mb-8">
+              <p className="mb-8 text-lg leading-relaxed text-white/80">
                 {t(
                   "home2.testimonials.description",
                   "A selection of testimonials from Heali clients. Read what my clients say about our health coach, workshop, retreats and healing services.",
@@ -766,7 +759,7 @@ export default function Home2() {
               <div className="mb-6">
                 <div className="flex items-end gap-2 mb-2">
                   <span className="text-6xl font-bold text-white">4.9</span>
-                  <span className="text-2xl text-white/80 mb-2">/5</span>
+                  <span className="mb-2 text-2xl text-white/80">/5</span>
                 </div>
 
                 {/* Stars */}
@@ -783,7 +776,7 @@ export default function Home2() {
                   ))}
                 </div>
 
-                <p className="text-white/70 text-sm">
+                <p className="text-sm text-white/70">
                   {t("home2.testimonials.reviewsCount", "Base on 1445 reviews")}
                 </p>
               </div>
@@ -801,7 +794,7 @@ export default function Home2() {
                       key={idx}
                       src={img}
                       alt={`Client ${idx + 1}`}
-                      className="w-12 h-12 rounded-full border-2 border-white object-cover"
+                      className="object-cover w-12 h-12 border-2 border-white rounded-full"
                     />
                   ))}
                 </div>
@@ -811,7 +804,7 @@ export default function Home2() {
             {/* Right Side - Testimonial Cards with Navigation */}
             <div className="relative">
               {/* Navigation Buttons */}
-              <div className="absolute -left-16 top-1/2 -translate-y-1/2 flex flex-col gap-4 z-10">
+              <div className="absolute z-10 flex flex-col gap-4 -translate-y-1/2 -left-16 top-1/2">
                 {/* Up Arrow */}
                 <button
                   onClick={() =>
@@ -819,7 +812,7 @@ export default function Home2() {
                       prev === 0 ? testimonials.length - 1 : prev - 1,
                     )
                   }
-                  className="w-12 h-12 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur-sm flex items-center justify-center transition-all duration-300 hover:scale-110"
+                  className="flex items-center justify-center w-12 h-12 transition-all duration-300 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur-sm hover:scale-110"
                   aria-label="Previous testimonial"
                 >
                   <svg
@@ -845,7 +838,7 @@ export default function Home2() {
                       prev === testimonials.length - 1 ? 0 : prev + 1,
                     )
                   }
-                  className="w-12 h-12 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur-sm flex items-center justify-center transition-all duration-300 hover:scale-110"
+                  className="flex items-center justify-center w-12 h-12 transition-all duration-300 rounded-full bg-white/20 hover:bg-white/30 backdrop-blur-sm hover:scale-110"
                   aria-label="Next testimonial"
                 >
                   <svg
@@ -870,7 +863,7 @@ export default function Home2() {
                 {/* First Testimonial Card - Always visible */}
                 <motion.div
                   key={`testimonial-1-${currentTestimonialIndex}`}
-                  className="bg-white rounded-2xl p-8 shadow-xl"
+                  className="p-8 bg-white shadow-xl rounded-2xl"
                   initial={{ opacity: 0, y: 50 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -50 }}
@@ -887,7 +880,7 @@ export default function Home2() {
                   </svg>
 
                   {/* Testimonial Text */}
-                  <p className="text-gray-700 text-lg leading-relaxed mb-6">
+                  <p className="mb-6 text-lg leading-relaxed text-gray-700">
                     {testimonials[currentTestimonialIndex].content}
                   </p>
 
@@ -896,13 +889,13 @@ export default function Home2() {
                     <img
                       src={testimonials[currentTestimonialIndex].image}
                       alt={testimonials[currentTestimonialIndex].name}
-                      className="w-14 h-14 rounded-full object-cover"
+                      className="object-cover rounded-full w-14 h-14"
                     />
                     <div>
-                      <h4 className="text-gray-900 font-semibold text-lg">
+                      <h4 className="text-lg font-semibold text-gray-900">
                         {testimonials[currentTestimonialIndex].name}
                       </h4>
-                      <p className="text-gray-500 text-sm">
+                      <p className="text-sm text-gray-500">
                         {testimonials[currentTestimonialIndex].role}
                       </p>
                     </div>
@@ -912,7 +905,7 @@ export default function Home2() {
                 {/* Second Testimonial Card - Shows next testimonial */}
                 <motion.div
                   key={`testimonial-2-${currentTestimonialIndex}`}
-                  className="bg-white rounded-2xl p-8 shadow-xl"
+                  className="p-8 bg-white shadow-xl rounded-2xl"
                   initial={{ opacity: 0, y: 50 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -50 }}
@@ -929,7 +922,7 @@ export default function Home2() {
                   </svg>
 
                   {/* Testimonial Text */}
-                  <p className="text-black text-lg leading-relaxed mb-6">
+                  <p className="mb-6 text-lg leading-relaxed text-black">
                     {
                       testimonials[
                         (currentTestimonialIndex + 1) % testimonials.length
@@ -950,17 +943,17 @@ export default function Home2() {
                           (currentTestimonialIndex + 1) % testimonials.length
                         ].name
                       }
-                      className="w-14 h-14 rounded-full object-cover"
+                      className="object-cover rounded-full w-14 h-14"
                     />
                     <div>
-                      <h4 className="text-black font-semibold text-lg">
+                      <h4 className="text-lg font-semibold text-black">
                         {
                           testimonials[
                             (currentTestimonialIndex + 1) % testimonials.length
                           ].name
                         }
                       </h4>
-                      <p className="text-black text-sm">
+                      <p className="text-sm text-black">
                         {
                           testimonials[
                             (currentTestimonialIndex + 1) % testimonials.length
@@ -990,9 +983,9 @@ export default function Home2() {
         <div className="absolute inset-0 bg-black/50"></div>
 
         {/* Content */}
-        <div className="relative z-10 max-w-2xl px-6 flex flex-col items-center justify-center text-center">
+        <div className="relative z-10 flex flex-col items-center justify-center max-w-2xl px-6 text-center">
           <motion.h2
-            className="text-4xl font-extrabold text-white mb-4"
+            className="mb-4 text-4xl font-extrabold text-white"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
@@ -1003,7 +996,7 @@ export default function Home2() {
 
           {/* Subtext */}
           <motion.p
-            className="text-xl text-white/80 mb-8"
+            className="mb-8 text-xl text-white/80"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -1014,7 +1007,7 @@ export default function Home2() {
 
           {/* Button */}
           <motion.button
-            className="btn-animate-strong inline-flex items-center rounded-lg px-8 py-4 font-bold text-lg transition-all duration-300 text-white shadow-lg hover:shadow-xl"
+            className="inline-flex items-center px-8 py-4 text-lg font-bold text-white transition-all duration-300 rounded-lg shadow-lg btn-animate-strong hover:shadow-xl"
             style={{ backgroundColor: "#0A5950" }}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}

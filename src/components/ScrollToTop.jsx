@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
 import { ChevronUp } from "lucide-react";
+import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 
 const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -43,7 +43,7 @@ const ScrollToTop = () => {
       {isVisible && (
         <button
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 z-50 text-white p-3 rounded-full shadow-lg transition-all duration-300 ease-in-out transform hover:scale-110 hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2"
+          className="fixed z-50 p-3 text-white transition-all duration-300 ease-in-out transform rounded-full shadow-lg bottom-8 right-8 hover:scale-110 hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2"
           style={{ backgroundColor: "#0A5950" }}
           aria-label="Scroll to top"
         >

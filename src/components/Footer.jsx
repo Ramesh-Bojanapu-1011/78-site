@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
 export default function Footer() {
   const navigate = useNavigate();
@@ -24,11 +24,11 @@ export default function Footer() {
       className={`${isDark ? "bg-gray-900 text-white" : "bg-white text-black"} border-t border-gray-200 dark:border-gray-700`}
     >
       {/* Main Footer Content */}
-      <div className="mx-auto max-w-7xl px-4 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="px-4 py-16 mx-auto max-w-7xl">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           {/* Company Information and Social Media */}
           <div className="lg:col-span-1">
-            <img src="/Logo.jpg" alt="Logo" className="h-10 w-auto mb-4" />
+            <img src="/Logo.jpg" alt="Logo" className="w-auto h-10 mb-4" />
             <p
               className={`${isDark ? "text-gray-400" : "text-black"} mb-6 leading-relaxed`}
             >
@@ -50,7 +50,7 @@ export default function Footer() {
               </a>
               <a
                 href="https://x.com/"
-                className="w-10 h-10 rounded-full flex items-center justify-center bg-black text-white hover:bg-gray-800 transition-all duration-300"
+                className="flex items-center justify-center w-10 h-10 text-white transition-all duration-300 bg-black rounded-full hover:bg-gray-800"
               >
                 <svg
                   className="w-5 h-5"
@@ -221,7 +221,7 @@ export default function Footer() {
       <div
         className={`border-t ${isDark ? "border-gray-700" : "border-gray-200"}`}
       >
-        <div className="mx-auto max-w-7xl px-4 py-6">
+        <div className="px-4 py-6 mx-auto max-w-7xl">
           <div className="text-center">
             <p className={`${isDark ? "text-gray-400" : "text-black"} text-sm`}>
               {t("footer.copyright")}

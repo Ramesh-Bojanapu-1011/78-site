@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { getCurrentUser, logoutUser, isAuthenticated } from "../utils/auth";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-import ScrollAnimation from "../components/ScrollAnimation";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
+import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
+import ScrollAnimation from "../components/ScrollAnimation";
+import { getCurrentUser, isAuthenticated } from "../utils/auth";
 
 export default function About() {
   const navigate = useNavigate();
@@ -37,7 +37,7 @@ export default function About() {
       {/* Showcase */}
       <section
         id="showcase"
-        className="relative overflow-hidden h-screen flex items-center justify-center text-center"
+        className="relative flex items-center justify-center h-screen overflow-hidden text-center"
       >
         {/* Background Video */}
         <video
@@ -45,7 +45,7 @@ export default function About() {
           loop
           muted
           playsInline
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 object-cover w-full h-full"
         >
           <source src="/78Av.mp4" type="video/mp4" />
           Your browser does not support the video tag.
@@ -55,25 +55,25 @@ export default function About() {
         <div className="absolute inset-0 bg-black/50"></div>
 
         {/* Content */}
-        <div className="relative z-10 px-6 max-w-4xl">
+        <div className="relative z-10 max-w-4xl px-6">
           <ScrollAnimation animation="slide-up" stagger="scroll-stagger-1">
-            <h1 className="mt-4 text-4xl font-extrabold mb-4 leading-tight text-white">
+            <h1 className="mt-4 mb-4 text-4xl font-extrabold leading-tight text-white">
               {t("about.showcase.title")}
             </h1>
           </ScrollAnimation>
 
           <ScrollAnimation animation="slide-up" stagger="scroll-stagger-2">
-            <p className="mt-6 text-xl text-white/80 max-w-3xl mx-auto">
+            <p className="max-w-3xl mx-auto mt-6 text-xl text-white/80">
               {t("about.showcase.subtitle")}
             </p>
           </ScrollAnimation>
 
           <ScrollAnimation animation="slide-up" stagger="scroll-stagger-3">
-            <div className="mt-8 flex gap-4 justify-center">
+            <div className="flex justify-center gap-4 mt-8">
               {/* Primary Button */}
               <a
                 href="/contact"
-                className="btn-animate-strong inline-flex items-center rounded-lg px-8 py-4 font-bold text-lg transition-all duration-300 text-white shadow-lg hover:shadow-xl"
+                className="inline-flex items-center px-8 py-4 text-lg font-bold text-white transition-all duration-300 rounded-lg shadow-lg btn-animate-strong hover:shadow-xl"
                 style={{ backgroundColor: "#0A5950" }}
               >
                 {t("about.showcase.connectButton")}
@@ -90,8 +90,8 @@ export default function About() {
           isDark ? "bg-gray-800" : "bg-gray-50"
         }`}
       >
-        <div className="mx-auto max-w-7xl px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="px-4 mx-auto max-w-7xl">
+          <div className="grid items-center gap-12 lg:grid-cols-2">
             {/* Left Content */}
             <div
               className={`space-y-8 ${isDark ? "text-white" : "text-gray-900"}`}
@@ -99,7 +99,7 @@ export default function About() {
               <ScrollAnimation animation="slide-up" stagger="scroll-stagger-1">
                 <div className="mb-4">
                   <span
-                    className="text-sm font-semibold uppercase tracking-wider"
+                    className="text-sm font-semibold tracking-wider uppercase"
                     style={{ color: "#0A5950" }}
                   >
                     {t("about.wellnessProcess.badge", "WHO WE ARE")}
@@ -124,7 +124,7 @@ export default function About() {
                 <div className="flex flex-wrap gap-4">
                   <a
                     href="/contact"
-                    className="inline-flex items-center gap-2 px-8 py-4 text-white rounded-full font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+                    className="inline-flex items-center gap-2 px-8 py-4 font-semibold text-white transition-all duration-300 rounded-full shadow-lg hover:shadow-xl hover:scale-105"
                     style={{ backgroundColor: "#0A5950" }}
                   >
                     <span>
@@ -200,7 +200,7 @@ export default function About() {
             {/* Right Content - Image with Badges */}
             <div className="relative">
               <ScrollAnimation animation="fade-in" stagger="scroll-stagger-4">
-                <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+                <div className="relative overflow-hidden shadow-2xl rounded-3xl">
                   <img
                     src="/images/78Aimg1.jpg"
                     alt="Health Coaching Professional"
@@ -235,7 +235,7 @@ export default function About() {
                       <img
                         src="/images/78Bimg7.jpg"
                         alt="Success Stories"
-                        className="w-24 h-16 rounded-lg object-cover"
+                        className="object-cover w-24 h-16 rounded-lg"
                       />
                     </div>
                   </div>
@@ -254,14 +254,14 @@ export default function About() {
         }`}
         dir="ltr"
       >
-        <div className="mx-auto max-w-7xl px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="px-4 mx-auto max-w-7xl">
+          <div className="grid items-center gap-12 lg:grid-cols-2">
             {/* Left Content - Images */}
             <div className="relative">
               <ScrollAnimation animation="fade-in" stagger="scroll-stagger-1">
                 <div className="relative">
                   {/* Main Image */}
-                  <div className="rounded-3xl overflow-hidden shadow-2xl">
+                  <div className="overflow-hidden shadow-2xl rounded-3xl">
                     <img
                       src="/images/78Aimg2.jpg"
                       alt="Happy and Energetic Lifestyle"
@@ -270,11 +270,11 @@ export default function About() {
                   </div>
 
                   {/* Overlapping Small Image */}
-                  <div className="absolute -bottom-6 -right-6 w-64 h-64 rounded-3xl overflow-hidden shadow-2xl border-8 border-white dark:border-gray-900">
+                  <div className="absolute w-64 h-64 overflow-hidden border-8 border-white shadow-2xl -bottom-6 -right-6 rounded-3xl dark:border-gray-900">
                     <img
                       src="/images/78Aimg3.jpg"
                       alt="Yoga and Wellness Practice"
-                      className="w-full h-full object-cover"
+                      className="object-cover w-full h-full"
                     />
                   </div>
                 </div>
@@ -288,7 +288,7 @@ export default function About() {
               <ScrollAnimation animation="slide-up" stagger="scroll-stagger-2">
                 <div className="mb-4">
                   <span
-                    className="text-sm font-semibold uppercase tracking-wider"
+                    className="text-sm font-semibold tracking-wider uppercase"
                     style={{ color: "#0A5950" }}
                   >
                     {t("about.whyChooseUs.badge", "WHY CHOOSE US")}
@@ -307,7 +307,7 @@ export default function About() {
 
               {/* Features List */}
               <ScrollAnimation animation="slide-up" stagger="scroll-stagger-3">
-                <div className="space-y-6 mt-8">
+                <div className="mt-8 space-y-6">
                   {[
                     {
                       text: t(
@@ -336,7 +336,7 @@ export default function About() {
                   ].map((feature, index) => (
                     <div key={index} className="flex items-start gap-4 group">
                       <div
-                        className="w-1 h-12 rounded-full transition-all duration-300 group-hover:h-16"
+                        className="w-1 h-12 transition-all duration-300 rounded-full group-hover:h-16"
                         style={{ backgroundColor: "#0A5950" }}
                       ></div>
                       <p
@@ -363,10 +363,10 @@ export default function About() {
         }`}
         dir="ltr"
       >
-        <div className="mx-auto max-w-7xl px-4">
+        <div className="px-4 mx-auto max-w-7xl">
           {/* Header */}
           <ScrollAnimation animation="slide-up" stagger="scroll-stagger-1">
-            <div className="text-center mb-16">
+            <div className="mb-16 text-center">
               <h2
                 className={`text-4xl md:text-5xl font-extrabold mb-4 ${isDark ? "text-white" : "text-gray-900"}`}
               >
@@ -381,7 +381,7 @@ export default function About() {
           </ScrollAnimation>
 
           {/* Main Content */}
-          <div className="grid lg:grid-cols-3 gap-8">
+          <div className="grid gap-8 lg:grid-cols-3">
             {/* Center - Expert Image Card */}
             <div className="lg:col-span-1">
               <ScrollAnimation animation="fade-in" stagger="scroll-stagger-2">
@@ -396,14 +396,14 @@ export default function About() {
                     <img
                       src="/images/78Aimg4.jpg"
                       alt="Wellness Expert"
-                      className="w-full h-96 object-cover"
+                      className="object-cover w-full h-96"
                     />
-                    <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6">
-                      <h3 className="text-2xl font-bold text-white mb-1">
+                    <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
+                      <h3 className="mb-1 text-2xl font-bold text-white">
                         {t("about.wellnessExpert.expertName")}
                       </h3>
                       <p
-                        className="font-semibold text-sm uppercase tracking-wide"
+                        className="text-sm font-semibold tracking-wide uppercase"
                         style={{ color: "#0A5950" }}
                       >
                         {t("about.wellnessExpert.expertTagline")}
@@ -482,7 +482,7 @@ export default function About() {
             </div>
 
             {/* Right - Content & Features */}
-            <div className="lg:col-span-2 space-y-6">
+            <div className="space-y-6 lg:col-span-2">
               <ScrollAnimation animation="slide-up" stagger="scroll-stagger-3">
                 {/* Description */}
                 <div
@@ -507,7 +507,7 @@ export default function About() {
 
               {/* Highlights Grid */}
               <ScrollAnimation animation="slide-up" stagger="scroll-stagger-4">
-                <div className="grid md:grid-cols-3 gap-4">
+                <div className="grid gap-4 md:grid-cols-3">
                   {[
                     {
                       icon: (
@@ -575,7 +575,7 @@ export default function About() {
                       }
                     >
                       <div
-                        className="w-12 h-12 rounded-lg flex items-center justify-center mb-4"
+                        className="flex items-center justify-center w-12 h-12 mb-4 rounded-lg"
                         style={{
                           backgroundColor: "rgba(10, 89, 80, 0.2)",
                           color: "#0A5950",
@@ -605,10 +605,10 @@ export default function About() {
         }`}
         dir="ltr"
       >
-        <div className="mx-auto max-w-7xl px-4">
+        <div className="px-4 mx-auto max-w-7xl">
           {/* Header */}
           <ScrollAnimation animation="slide-up" stagger="scroll-stagger-1">
-            <div className="text-center mb-16">
+            <div className="mb-16 text-center">
               {/* Icon and Badge */}
               <div className="flex items-center justify-center gap-2 mb-4">
                 <svg
@@ -624,7 +624,7 @@ export default function About() {
                   />
                 </svg>
                 <span
-                  className="text-sm font-bold uppercase tracking-wider"
+                  className="text-sm font-bold tracking-wider uppercase"
                   style={{ color: "#0A5950" }}
                 >
                   {t("about.ourTeam.badge")}
@@ -644,16 +644,16 @@ export default function About() {
 
           {/* Team Grid */}
           <ScrollAnimation animation="fade-in" stagger="scroll-stagger-2">
-            <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-6 px-4 items-start">
+            <div className="grid items-start gap-6 px-4 lg:grid-cols-4 md:grid-cols-2">
               {t("about.ourTeam.teamMembers", { returnObjects: true }).map(
                 (member, index) => (
-                  <div key={index} className="relative group h-full">
+                  <div key={index} className="relative h-full group">
                     {/* Card with rounded image */}
                     <div className="relative overflow-hidden rounded-[40px] shadow-2xl h-[500px] w-full transform transition-all duration-300 hover:scale-105">
                       <img
                         src={member.image}
                         alt={member.name}
-                        className="w-full h-full object-cover"
+                        className="object-cover w-full h-full"
                       />
 
                       {/* Gradient Overlay */}
@@ -661,10 +661,10 @@ export default function About() {
 
                       {/* Member Info Overlay */}
                       <div className="absolute bottom-0 left-0 right-0 p-6 text-center text-white">
-                        <h3 className="text-2xl font-bold mb-2">
+                        <h3 className="mb-2 text-2xl font-bold">
                           {member.name}
                         </h3>
-                        <p className="text-base mb-4 text-white/90">
+                        <p className="mb-4 text-base text-white/90">
                           {member.role}
                         </p>
 
@@ -674,7 +674,7 @@ export default function About() {
                             href="https://www.facebook.com/"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="w-10 h-10 rounded-full flex items-center justify-center bg-white/20 backdrop-blur-sm hover:bg-white/30 transition-all duration-300 transform hover:scale-110"
+                            className="flex items-center justify-center w-10 h-10 transition-all duration-300 transform rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30 hover:scale-110"
                           >
                             <svg
                               className="w-5 h-5 text-white"
@@ -688,7 +688,7 @@ export default function About() {
                             href="https://www.instagram.com/"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="w-10 h-10 rounded-full flex items-center justify-center bg-white/20 backdrop-blur-sm hover:bg-white/30 transition-all duration-300 transform hover:scale-110"
+                            className="flex items-center justify-center w-10 h-10 transition-all duration-300 transform rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30 hover:scale-110"
                           >
                             <svg
                               className="w-5 h-5 text-white"
@@ -702,7 +702,7 @@ export default function About() {
                             href="https://x.com/"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="w-10 h-10 rounded-full flex items-center justify-center bg-white/20 backdrop-blur-sm hover:bg-white/30 transition-all duration-300 transform hover:scale-110"
+                            className="flex items-center justify-center w-10 h-10 transition-all duration-300 transform rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30 hover:scale-110"
                           >
                             <svg
                               className="w-5 h-5 text-white"
@@ -728,7 +728,7 @@ export default function About() {
         {/* Background Image with Black Overlay */}
         <div className="absolute inset-0">
           <div
-            className="w-full h-full bg-cover bg-center bg-no-repeat"
+            className="w-full h-full bg-center bg-no-repeat bg-cover"
             style={{
               backgroundImage: "url(/images/78Acta.jpg)",
             }}
@@ -736,17 +736,17 @@ export default function About() {
           <div className="absolute inset-0 bg-black/60"></div>
         </div>
 
-        <div className="relative z-10 mx-auto max-w-7xl px-4">
+        <div className="relative z-10 px-4 mx-auto max-w-7xl">
           {/* Main CTA Content */}
-          <div className="text-center mb-16">
+          <div className="mb-16 text-center">
             <ScrollAnimation animation="slide-up" stagger="scroll-stagger-1">
-              <h2 className="text-3xl md:text-4xl font-extrabold mb-6 leading-tight text-white">
+              <h2 className="mb-6 text-3xl font-extrabold leading-tight text-white md:text-4xl">
                 {t("about.cta.title")} {t("about.cta.titleAccent")}
               </h2>
             </ScrollAnimation>
 
             <ScrollAnimation animation="slide-up" stagger="scroll-stagger-3">
-              <p className="text-xl max-w-3xl mx-auto mb-12 leading-relaxed text-white/90">
+              <p className="max-w-3xl mx-auto mb-12 text-xl leading-relaxed text-white/90">
                 {t("about.cta.description")}
               </p>
             </ScrollAnimation>
@@ -755,7 +755,7 @@ export default function About() {
               <div className="flex justify-center">
                 <a
                   href="/contact"
-                  className="inline-flex items-center px-10 py-5 text-white rounded-full font-bold text-lg shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
+                  className="inline-flex items-center px-10 py-5 text-lg font-bold text-white transition-all duration-300 rounded-full shadow-xl hover:shadow-2xl hover:scale-105"
                   style={{ backgroundColor: "#0A5950" }}
                 >
                   {t("about.cta.primaryButton")}
@@ -766,10 +766,10 @@ export default function About() {
 
           {/* Features Grid */}
           <ScrollAnimation animation="slide-up" stagger="scroll-stagger-6">
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="p-8 rounded-2xl transition-all duration-300 hover:scale-105 bg-white/10 backdrop-blur-md border border-white/20">
+            <div className="grid gap-8 md:grid-cols-3">
+              <div className="p-8 transition-all duration-300 border rounded-2xl hover:scale-105 bg-white/10 backdrop-blur-md border-white/20">
                 <div
-                  className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6"
+                  className="flex items-center justify-center w-16 h-16 mb-6 rounded-2xl"
                   style={{ backgroundColor: "rgba(10, 89, 80, 0.1)" }}
                 >
                   <svg
@@ -787,7 +787,7 @@ export default function About() {
                     />
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-white">
+                <h3 className="mb-3 text-xl font-bold text-white">
                   {t("about.cta.trustIndicators.certifiedProfessionals.title")}
                 </h3>
                 <p className="leading-relaxed text-white/80">
@@ -797,9 +797,9 @@ export default function About() {
                 </p>
               </div>
 
-              <div className="p-8 rounded-2xl transition-all duration-300 hover:scale-105 bg-white/10 backdrop-blur-md border border-white/20">
+              <div className="p-8 transition-all duration-300 border rounded-2xl hover:scale-105 bg-white/10 backdrop-blur-md border-white/20">
                 <div
-                  className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6"
+                  className="flex items-center justify-center w-16 h-16 mb-6 rounded-2xl"
                   style={{ backgroundColor: "rgba(10, 89, 80, 0.1)" }}
                 >
                   <svg
@@ -817,7 +817,7 @@ export default function About() {
                     />
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-white">
+                <h3 className="mb-3 text-xl font-bold text-white">
                   {t("about.cta.trustIndicators.provenResults.title")}
                 </h3>
                 <p className="leading-relaxed text-white/80">
@@ -825,9 +825,9 @@ export default function About() {
                 </p>
               </div>
 
-              <div className="p-8 rounded-2xl transition-all duration-300 hover:scale-105 bg-white/10 backdrop-blur-md border border-white/20">
+              <div className="p-8 transition-all duration-300 border rounded-2xl hover:scale-105 bg-white/10 backdrop-blur-md border-white/20">
                 <div
-                  className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6"
+                  className="flex items-center justify-center w-16 h-16 mb-6 rounded-2xl"
                   style={{ backgroundColor: "rgba(10, 89, 80, 0.1)" }}
                 >
                   <svg
@@ -845,7 +845,7 @@ export default function About() {
                     />
                   </svg>
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-white">
+                <h3 className="mb-3 text-xl font-bold text-white">
                   {t("about.cta.trustIndicators.personalizedCare.title")}
                 </h3>
                 <p className="leading-relaxed text-white/80">

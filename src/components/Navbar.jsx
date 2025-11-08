@@ -1,16 +1,16 @@
+import { ChevronDown, LogOut } from "lucide-react";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import { ThemeToggle } from "./theme-toggle";
-import { LanguageSelector } from "./language-selector";
+import { useNavigate } from "react-router-dom";
+import { logoutUser } from "../utils/auth";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "./dropdown-menu";
-import { logoutUser } from "../utils/auth";
-import { ChevronDown, LogOut } from "lucide-react";
+import { LanguageSelector } from "./language-selector";
+import { ThemeToggle } from "./theme-toggle";
 
 export default function Navbar({ user }) {
   const { t } = useTranslation();
@@ -46,22 +46,22 @@ export default function Navbar({ user }) {
     <header
       className={`sticky top-0 z-50 border-b border-black/10 dark:border-white/10 transition-colors ${isDark ? "bg-gray-900 text-white" : "bg-white text-black"}`}
     >
-      <nav className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
+      <nav className="flex items-center justify-between max-w-6xl px-4 py-3 mx-auto">
         {/* Logo - Fixed Left */}
         <div className="flex-shrink-0">
           <a href="#hero" className="flex items-center gap-3">
-            <img src="/Logo.jpg" alt="Logo" className="h-8 w-auto" />
+            <img src="/Logo.jpg" alt="Logo" className="w-auto h-8" />
             <span className="sr-only">Home</span>
           </a>
         </div>
 
-        <ul className="hidden md:flex items-center gap-8">
+        <ul className="items-center hidden gap-8 md:flex">
           <li>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <button className="inline-flex items-center gap-1 hover:text-[#0A5950] dark:hover:text-[#0A5950] transition-colors">
                   {t("nav.home")}
-                  <ChevronDown className="h-4 w-4" />
+                  <ChevronDown className="w-4 h-4" />
                 </button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="start" className="w-52">
@@ -89,7 +89,7 @@ export default function Navbar({ user }) {
               <DropdownMenuTrigger asChild>
                 <button className="inline-flex items-center gap-1 hover:text-[#0A5950] dark:hover:text-[#0A5950] transition-colors">
                   {t("nav.services")}
-                  <ChevronDown className="h-4 w-4" />
+                  <ChevronDown className="w-4 h-4" />
                 </button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="start" className="w-56">
@@ -102,7 +102,7 @@ export default function Navbar({ user }) {
                 </DropdownMenuItem>
 
                 {/* Separator */}
-                <div className="h-px bg-gray-200 dark:bg-gray-700 mx-2 my-1" />
+                <div className="h-px mx-2 my-1 bg-gray-200 dark:bg-gray-700" />
 
                 {[
                   { label: t("nav.sportsTraining"), path: "/services/yoga" },
@@ -165,11 +165,11 @@ export default function Navbar({ user }) {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden inline-flex items-center justify-center rounded-md border border-black/10 dark:border-white/10 px-3 py-2 hover:bg-black/5 dark:hover:bg-white/5"
+            className="inline-flex items-center justify-center px-3 py-2 border rounded-md md:hidden border-black/10 dark:border-white/10 hover:bg-black/5 dark:hover:bg-white/5"
             aria-label="Menu"
           >
             <svg
-              className="h-5 w-5"
+              className="w-5 h-5"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
@@ -195,7 +195,7 @@ export default function Navbar({ user }) {
             aria-label={t("nav.logout")}
             title={t("nav.logout")}
           >
-            <LogOut className="h-5 w-5" />
+            <LogOut className="w-5 h-5" />
             <span className="sr-only">{t("nav.logout")}</span>
           </button>
         </div>

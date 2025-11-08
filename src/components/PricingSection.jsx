@@ -1,6 +1,6 @@
+import { Check } from "lucide-react";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Check } from "lucide-react";
 import ScrollAnimation from "./ScrollAnimation";
 
 export default function PricingSection() {
@@ -140,18 +140,18 @@ export default function PricingSection() {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 transition-colors duration-300">
-      <div className="mx-auto max-w-7xl px-4">
+    <section className="py-20 transition-colors duration-300 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
+      <div className="px-4 mx-auto max-w-7xl">
         {/* Header */}
         <ScrollAnimation animation="fade-up">
-          <div className="text-center mb-16">
+          <div className="mb-16 text-center">
             <p
-              className="text-sm font-semibold tracking-wider uppercase mb-4"
+              className="mb-4 text-sm font-semibold tracking-wider uppercase"
               style={{ color: "#0A5950" }}
             >
               {t("pricingSection.label", { defaultValue: "OUR PRICING" })}
             </p>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+            <h2 className="mb-6 text-4xl font-bold text-gray-900 md:text-5xl dark:text-white">
               {t("pricingSection.title", {
                 defaultValue: "Choose The Best Plan",
               })}
@@ -160,7 +160,7 @@ export default function PricingSection() {
                 defaultValue: "That You Want",
               })}
             </h2>
-            <p className="text-gray-600 dark:text-gray-400 max-w-3xl mx-auto text-lg">
+            <p className="max-w-3xl mx-auto text-lg text-gray-600 dark:text-gray-400">
               {t("pricingSection.description", {
                 defaultValue:
                   "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et.",
@@ -172,7 +172,7 @@ export default function PricingSection() {
         {/* Toggle */}
         <ScrollAnimation animation="fade-up" delay={0.1}>
           <div className="flex justify-center mb-12">
-            <div className="inline-flex rounded-full bg-gray-100 dark:bg-gray-700 p-1">
+            <div className="inline-flex p-1 bg-gray-100 rounded-full dark:bg-gray-700">
               <button
                 onClick={() => setIsMonthly(true)}
                 className={`px-8 py-3 rounded-full font-semibold transition-all duration-300 ${
@@ -200,7 +200,7 @@ export default function PricingSection() {
         </ScrollAnimation>
 
         {/* Pricing Cards */}
-        <div className="grid md:grid-cols-3 gap-8 lg:gap-6">
+        <div className="grid gap-8 md:grid-cols-3 lg:gap-6">
           {plans.map((plan, index) => (
             <ScrollAnimation
               key={plan.id}
@@ -219,7 +219,7 @@ export default function PricingSection() {
                 {plan.featured && (
                   <div className="absolute top-6 right-6">
                     <span
-                      className="bg-white px-4 py-1 rounded-full text-sm font-bold"
+                      className="px-4 py-1 text-sm font-bold bg-white rounded-full"
                       style={{ color: "#0A5950" }}
                     >
                       {t("pricingSection.popular", { defaultValue: "POPULAR" })}
@@ -277,10 +277,10 @@ export default function PricingSection() {
                 </div>
 
                 {/* Divider */}
-                {plan.featured && <div className="h-px bg-white/20 mb-8" />}
+                {plan.featured && <div className="h-px mb-8 bg-white/20" />}
 
                 {/* Features */}
-                <ul className="space-y-4 mb-10">
+                <ul className="mb-10 space-y-4">
                   {plan.features.map((feature, idx) => (
                     <li key={idx} className="flex items-start">
                       <div

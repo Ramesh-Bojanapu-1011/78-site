@@ -4,7 +4,6 @@ import { getCurrentUser, isAuthenticated } from "../utils/auth";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import ScrollAnimation from "../components/ScrollAnimation";
-import { useTranslation } from "react-i18next";
 
 export default function NutritionPlans() {
   const [user, setUser] = useState(null);
@@ -14,7 +13,6 @@ export default function NutritionPlans() {
   const [openIndex, setOpenIndex] = useState(0);
   const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
   const navigate = useNavigate();
-  const { t } = useTranslation();
 
   // Testimonials data
   const testimonials = [
@@ -102,29 +100,29 @@ export default function NutritionPlans() {
           loop
           muted
           playsInline
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 object-cover w-full h-full"
         >
           <source src="/78S3v.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <div className="absolute inset-0 bg-black/50"></div>
-        <div className="relative z-10 px-6 max-w-4xl">
+        <div className="relative z-10 max-w-4xl px-6">
           <ScrollAnimation animation="fade-in" stagger="scroll-stagger-1">
-            <h1 className="text-3xl md:text-4xl font-extrabold leading-tight text-white whitespace-nowrap">
+            <h1 className="text-3xl font-extrabold leading-tight text-white md:text-4xl whitespace-nowrap">
               Nourish Your Mind Through Nutrition
             </h1>
           </ScrollAnimation>
           <ScrollAnimation animation="fade-in" stagger="scroll-stagger-2">
-            <p className="mt-6 text-base md:text-lg text-gray-200 max-w-2xl mx-auto leading-relaxed whitespace-nowrap">
+            <p className="max-w-2xl mx-auto mt-6 text-base leading-relaxed text-gray-200 md:text-lg whitespace-nowrap">
               Discover how proper nutrition supports mental wellness, reduces
               stress, and enhances cognitive function
             </p>
           </ScrollAnimation>
           <ScrollAnimation animation="fade-in" stagger="scroll-stagger-3">
-            <div className="mt-6 flex gap-4 justify-center">
+            <div className="flex justify-center gap-4 mt-6">
               <a
                 href="/contact"
-                className="btn-animate-strong rounded-lg px-6 py-3 font-bold text-base transition-all duration-300 text-white shadow-lg hover:shadow-xl whitespace-nowrap"
+                className="px-6 py-3 text-base font-bold text-white transition-all duration-300 rounded-lg shadow-lg btn-animate-strong hover:shadow-xl whitespace-nowrap"
                 style={{ backgroundColor: "#0A5950" }}
               >
                 Start Your Mental Wellness Journey
@@ -142,9 +140,9 @@ export default function NutritionPlans() {
           (isDark ? "bg-black text-white" : "bg-white text-gray-900")
         }
       >
-        <div className="relative mx-auto max-w-7xl px-4">
+        <div className="relative px-4 mx-auto max-w-7xl">
           {/* Title Section */}
-          <div className="text-center mb-4">
+          <div className="mb-4 text-center">
             <ScrollAnimation animation="fade-in" stagger="scroll-stagger-1">
               <h1
                 className={`text-3xl md:text-4xl font-bold mb-3 ${isDark ? "text-white" : "text-gray-800"}`}
@@ -163,22 +161,22 @@ export default function NutritionPlans() {
           </div>
 
           {/* Four Nutrition Program Types Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
+          <div className="grid grid-cols-1 gap-8 mt-12 sm:grid-cols-2 lg:grid-cols-4">
             {/* Brain-Boosting Foods */}
             <ScrollAnimation animation="fade-in" stagger="scroll-stagger-4">
               <div className="text-center">
                 <h3
-                  className="text-xl font-bold mb-6"
+                  className="mb-6 text-xl font-bold"
                   style={{ color: "#0A5950" }}
                 >
                   BRAIN-BOOSTING FOODS
                 </h3>
-                <div className="mb-6 flex justify-center">
-                  <div className="relative w-48 h-48 rounded-full overflow-hidden shadow-xl border-4 border-white">
+                <div className="flex justify-center mb-6">
+                  <div className="relative w-48 h-48 overflow-hidden border-4 border-white rounded-full shadow-xl">
                     <img
                       src="/images/78S4img1.jpg"
                       alt="Brain-Boosting Foods"
-                      className="w-full h-full object-cover"
+                      className="object-cover w-full h-full"
                     />
                   </div>
                 </div>
@@ -197,17 +195,17 @@ export default function NutritionPlans() {
             <ScrollAnimation animation="fade-in" stagger="scroll-stagger-5">
               <div className="text-center">
                 <h3
-                  className="text-xl font-bold mb-6"
+                  className="mb-6 text-xl font-bold"
                   style={{ color: "#0A5950" }}
                 >
                   MOOD-STABILIZING NUTRITION
                 </h3>
-                <div className="mb-6 flex justify-center">
-                  <div className="relative w-48 h-48 rounded-full overflow-hidden shadow-xl border-4 border-white">
+                <div className="flex justify-center mb-6">
+                  <div className="relative w-48 h-48 overflow-hidden border-4 border-white rounded-full shadow-xl">
                     <img
                       src="/images/78S4img2.jpg"
                       alt="Mood-Stabilizing Nutrition"
-                      className="w-full h-full object-cover"
+                      className="object-cover w-full h-full"
                     />
                   </div>
                 </div>
@@ -226,17 +224,17 @@ export default function NutritionPlans() {
             <ScrollAnimation animation="fade-in" stagger="scroll-stagger-6">
               <div className="text-center">
                 <h3
-                  className="text-xl font-bold mb-6"
+                  className="mb-6 text-xl font-bold"
                   style={{ color: "#0A5950" }}
                 >
                   STRESS-REDUCING DIETS
                 </h3>
-                <div className="mb-6 flex justify-center">
-                  <div className="relative w-48 h-48 rounded-full overflow-hidden shadow-xl border-4 border-white">
+                <div className="flex justify-center mb-6">
+                  <div className="relative w-48 h-48 overflow-hidden border-4 border-white rounded-full shadow-xl">
                     <img
                       src="/images/78S4img3.jpg"
                       alt="Stress-Reducing Diets"
-                      className="w-full h-full object-cover"
+                      className="object-cover w-full h-full"
                     />
                   </div>
                 </div>
@@ -254,17 +252,17 @@ export default function NutritionPlans() {
             <ScrollAnimation animation="fade-in" stagger="scroll-stagger-7">
               <div className="text-center">
                 <h3
-                  className="text-xl font-bold mb-6"
+                  className="mb-6 text-xl font-bold"
                   style={{ color: "#0A5950" }}
                 >
                   SLEEP & MENTAL RECOVERY
                 </h3>
-                <div className="mb-6 flex justify-center">
-                  <div className="relative w-48 h-48 rounded-full overflow-hidden shadow-xl border-4 border-white">
+                <div className="flex justify-center mb-6">
+                  <div className="relative w-48 h-48 overflow-hidden border-4 border-white rounded-full shadow-xl">
                     <img
                       src="/images/78S4img4.jpg"
                       alt="Sleep & Mental Recovery"
-                      className="w-full h-full object-cover"
+                      className="object-cover w-full h-full"
                     />
                   </div>
                 </div>
@@ -284,9 +282,9 @@ export default function NutritionPlans() {
 
       {/* FAQ */}
       <section className={isDark ? "py-20 bg-black" : "py-20 bg-white"}>
-        <div className="mx-auto max-w-6xl px-4">
+        <div className="max-w-6xl px-4 mx-auto">
           {/* Header */}
-          <div className="text-center mb-16">
+          <div className="mb-16 text-center">
             <ScrollAnimation animation="fade-in" stagger="scroll-stagger-1">
               <h2
                 className={`text-4xl md:text-5xl font-bold mb-4 ${isDark ? "text-white" : "text-gray-900"}`}
@@ -305,7 +303,7 @@ export default function NutritionPlans() {
           </div>
 
           {/* FAQ Grid */}
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid gap-6 md:grid-cols-2">
             {[
               {
                 question: "How does nutrition affect mental health?",
@@ -445,16 +443,16 @@ export default function NutritionPlans() {
       </section>
 
       {/* Testimonials */}
-      <section className="relative py-20 text-gray-900 transition-colors duration-500 overflow-hidden">
+      <section className="relative py-20 overflow-hidden text-gray-900 transition-colors duration-500">
         {/* Background Image */}
         <div
-          className="absolute inset-0 z-0 bg-fixed bg-cover bg-center bg-no-repeat"
+          className="absolute inset-0 z-0 bg-fixed bg-center bg-no-repeat bg-cover"
           style={{ backgroundImage: "url('/images/78S4img5.jpg')" }}
         >
           <div className="absolute inset-0 bg-black/60"></div>
         </div>
 
-        <div className="relative z-10 mx-auto max-w-7xl px-4">
+        <div className="relative z-10 px-4 mx-auto max-w-7xl">
           <div className="grid lg:grid-cols-[300px,1fr] gap-12 items-start">
             {/* Left Side - Title and Navigation */}
             <div className="space-y-6">
@@ -470,7 +468,7 @@ export default function NutritionPlans() {
                   </svg>
                 </div>
 
-                <h2 className="text-3xl font-bold text-white leading-tight">
+                <h2 className="text-3xl font-bold leading-tight text-white">
                   What our
                   <br />
                   customers are
@@ -482,7 +480,7 @@ export default function NutritionPlans() {
                 <div className="flex gap-4 pt-4">
                   <button
                     onClick={handlePrevTestimonial}
-                    className="w-10 h-10 rounded-full flex items-center justify-center transition-all hover:scale-110"
+                    className="flex items-center justify-center w-10 h-10 transition-all rounded-full hover:scale-110"
                     style={{ backgroundColor: "#0A5950" }}
                   >
                     <svg
@@ -501,7 +499,7 @@ export default function NutritionPlans() {
                   </button>
                   <button
                     onClick={handleNextTestimonial}
-                    className="w-10 h-10 rounded-full flex items-center justify-center transition-all hover:scale-110"
+                    className="flex items-center justify-center w-10 h-10 transition-all rounded-full hover:scale-110"
                     style={{ backgroundColor: "#0A5950" }}
                   >
                     <svg
@@ -531,13 +529,13 @@ export default function NutritionPlans() {
                 }}
               >
                 {/* First Pair */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 min-w-full">
+                <div className="grid min-w-full grid-cols-1 gap-6 md:grid-cols-2">
                   {testimonials.slice(0, 2).map((testimonial, index) => (
                     <div
                       key={index}
-                      className="bg-white rounded-lg p-6 shadow-md hover:shadow-xl transition-shadow duration-300"
+                      className="p-6 transition-shadow duration-300 bg-white rounded-lg shadow-md hover:shadow-xl"
                     >
-                      <p className="text-gray-700 text-sm leading-relaxed mb-6">
+                      <p className="mb-6 text-sm leading-relaxed text-gray-700">
                         {testimonial.text}
                       </p>
 
@@ -561,7 +559,7 @@ export default function NutritionPlans() {
                         <img
                           src={testimonial.image}
                           alt={testimonial.name}
-                          className="w-12 h-12 rounded-full object-cover"
+                          className="object-cover w-12 h-12 rounded-full"
                         />
                         <div>
                           <h4 className="font-semibold text-gray-900">
@@ -577,13 +575,13 @@ export default function NutritionPlans() {
                 </div>
 
                 {/* Second Pair */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 min-w-full">
+                <div className="grid min-w-full grid-cols-1 gap-6 md:grid-cols-2">
                   {testimonials.slice(2, 4).map((testimonial, index) => (
                     <div
                       key={index + 2}
-                      className="bg-white rounded-lg p-6 shadow-md hover:shadow-xl transition-shadow duration-300"
+                      className="p-6 transition-shadow duration-300 bg-white rounded-lg shadow-md hover:shadow-xl"
                     >
-                      <p className="text-gray-700 text-sm leading-relaxed mb-6">
+                      <p className="mb-6 text-sm leading-relaxed text-gray-700">
                         {testimonial.text}
                       </p>
 
@@ -607,7 +605,7 @@ export default function NutritionPlans() {
                         <img
                           src={testimonial.image}
                           alt={testimonial.name}
-                          className="w-12 h-12 rounded-full object-cover"
+                          className="object-cover w-12 h-12 rounded-full"
                         />
                         <div>
                           <h4 className="font-semibold text-gray-900">
@@ -629,15 +627,15 @@ export default function NutritionPlans() {
 
       {/* Mental Health Benefits */}
       <section className={isDark ? "py-20 bg-black" : "py-20 bg-white"}>
-        <div className="mx-auto max-w-7xl px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="px-4 mx-auto max-w-7xl">
+          <div className="grid items-center gap-12 lg:grid-cols-2">
             {/* Left side - Image */}
             <ScrollAnimation
               animation="slide-in-left"
               stagger="scroll-stagger-1"
             >
               <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-gray-200 to-gray-300 rounded-3xl transform -rotate-6"></div>
+                <div className="absolute inset-0 transform bg-gradient-to-br from-gray-200 to-gray-300 rounded-3xl -rotate-6"></div>
                 <img
                   src="/images/78S4img6.jpg"
                   alt="Mental Health Benefits"
@@ -652,10 +650,10 @@ export default function NutritionPlans() {
               stagger="scroll-stagger-2"
             >
               <div
-                className="relative rounded-3xl p-12"
+                className="relative p-12 rounded-3xl"
                 style={{ backgroundColor: "#0A5950" }}
               >
-                <h2 className="text-4xl font-serif mb-8 text-white">
+                <h2 className="mb-8 font-serif text-4xl text-white">
                   Mental Health Benefits
                 </h2>
 
@@ -663,7 +661,7 @@ export default function NutritionPlans() {
                   {/* Benefit 1 */}
                   <div className="flex items-start space-x-4">
                     <svg
-                      className="w-6 h-6 text-white flex-shrink-0 mt-1"
+                      className="flex-shrink-0 w-6 h-6 mt-1 text-white"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -675,7 +673,7 @@ export default function NutritionPlans() {
                         d="M17 8l4 4m0 0l-4 4m4-4H3"
                       />
                     </svg>
-                    <p className="text-white leading-relaxed">
+                    <p className="leading-relaxed text-white">
                       <strong>Reduced Anxiety & Stress:</strong> Experience
                       calmer nerves and lower stress levels through foods that
                       regulate cortisol production and support your nervous
@@ -687,7 +685,7 @@ export default function NutritionPlans() {
                   {/* Benefit 2 */}
                   <div className="flex items-start space-x-4">
                     <svg
-                      className="w-6 h-6 text-white flex-shrink-0 mt-1"
+                      className="flex-shrink-0 w-6 h-6 mt-1 text-white"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -699,7 +697,7 @@ export default function NutritionPlans() {
                         d="M17 8l4 4m0 0l-4 4m4-4H3"
                       />
                     </svg>
-                    <p className="text-white leading-relaxed">
+                    <p className="leading-relaxed text-white">
                       <strong>Enhanced Mood & Emotional Stability:</strong>{" "}
                       Boost serotonin and dopamine levels naturally through
                       targeted nutrition. Say goodbye to mood swings and hello
@@ -711,7 +709,7 @@ export default function NutritionPlans() {
                   {/* Benefit 3 */}
                   <div className="flex items-start space-x-4">
                     <svg
-                      className="w-6 h-6 text-white flex-shrink-0 mt-1"
+                      className="flex-shrink-0 w-6 h-6 mt-1 text-white"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -723,7 +721,7 @@ export default function NutritionPlans() {
                         d="M17 8l4 4m0 0l-4 4m4-4H3"
                       />
                     </svg>
-                    <p className="text-white leading-relaxed">
+                    <p className="leading-relaxed text-white">
                       <strong>Improved Cognitive Function:</strong> Sharpen your
                       memory, focus, and mental clarity with brain-nourishing
                       foods rich in omega-3s and antioxidants. Combat brain fog
@@ -735,7 +733,7 @@ export default function NutritionPlans() {
                   {/* Benefit 4 */}
                   <div className="flex items-start space-x-4">
                     <svg
-                      className="w-6 h-6 text-white flex-shrink-0 mt-1"
+                      className="flex-shrink-0 w-6 h-6 mt-1 text-white"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -747,7 +745,7 @@ export default function NutritionPlans() {
                         d="M17 8l4 4m0 0l-4 4m4-4H3"
                       />
                     </svg>
-                    <p className="text-white leading-relaxed">
+                    <p className="leading-relaxed text-white">
                       <strong>Better Sleep & Mental Recovery:</strong> Achieve
                       restorative sleep through foods that support melatonin
                       production and circadian rhythm regulation. Wake up
@@ -769,18 +767,18 @@ export default function NutritionPlans() {
         }
       >
         <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed"
+          className="absolute inset-0 bg-fixed bg-center bg-no-repeat bg-cover"
           style={{ backgroundImage: `url('/images/78S4CTA.jpg')` }}
         ></div>
         <div className="absolute inset-0 bg-black/50"></div>
-        <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
+        <div className="relative z-10 max-w-5xl px-6 mx-auto text-center">
           <ScrollAnimation animation="fade-in" stagger="scroll-stagger-1">
-            <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-6 leading-tight">
+            <h2 className="mb-6 text-3xl font-extrabold leading-tight text-white md:text-4xl">
               Transform Your Mental Health Through Food
             </h2>
           </ScrollAnimation>
           <ScrollAnimation animation="fade-in" stagger="scroll-stagger-2">
-            <p className="text-base md:text-lg text-white max-w-2xl mx-auto mb-10">
+            <p className="max-w-2xl mx-auto mb-10 text-base text-white md:text-lg">
               Boost your well-being with personalized nutrition strategies.
             </p>
           </ScrollAnimation>
@@ -788,7 +786,7 @@ export default function NutritionPlans() {
             <div className="flex justify-center">
               <button
                 onClick={() => navigate("/contact")}
-                className="btn-animate-strong rounded-lg px-10 py-4 font-bold text-lg transition-all duration-300 text-white shadow-lg hover:shadow-2xl transform hover:scale-105"
+                className="px-10 py-4 text-lg font-bold text-white transition-all duration-300 transform rounded-lg shadow-lg btn-animate-strong hover:shadow-2xl hover:scale-105"
                 style={{ backgroundColor: "#0A5950" }}
               >
                 Begin Your Mental Wellness Journey

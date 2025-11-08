@@ -1,13 +1,13 @@
 import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import { getCurrentUser, isAuthenticated } from "../utils/auth";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
+import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
+import { getCurrentUser, isAuthenticated } from "../utils/auth";
 
 export default function BlogPost3() {
   const navigate = useNavigate();
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   useEffect(() => {
     if (!isAuthenticated()) {
@@ -18,7 +18,7 @@ export default function BlogPost3() {
   const user = getCurrentUser();
 
   return (
-    <div className="bg-white dark:bg-gray-900 text-black dark:text-white transition-colors">
+    <div className="text-black transition-colors bg-white dark:bg-gray-900 dark:text-white">
       <Navbar user={user} />
 
       {/* Hero Section */}
@@ -32,10 +32,10 @@ export default function BlogPost3() {
       >
         <div className="absolute inset-0 bg-black/60"></div>
 
-        <div className="relative mx-auto max-w-6xl px-4 py-16">
+        <div className="relative max-w-6xl px-4 py-16 mx-auto">
           <div className="max-w-4xl">
             <div className="flex items-center gap-2 mb-4">
-              <span className="px-3 py-1 bg-white/20 rounded-full text-sm">
+              <span className="px-3 py-1 text-sm rounded-full bg-white/20">
                 {t("blogPost3.hero.category")}
               </span>
               <span className="text-white/80">•</span>
@@ -45,18 +45,18 @@ export default function BlogPost3() {
               <span className="text-white/80">•</span>
               <span className="text-white/80">{t("blogPost3.hero.date")}</span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
+            <h1 className="mb-6 text-4xl font-bold md:text-5xl">
               {t("blogPost3.hero.title")}
             </h1>
             <div className="flex items-center gap-4">
               <img
                 src="/images/63BT3.jpg"
                 alt={t("blogPost3.hero.author")}
-                className="w-12 h-12 rounded-full object-cover"
+                className="object-cover w-12 h-12 rounded-full"
               />
               <div>
                 <p className="font-semibold">{t("blogPost3.hero.author")}</p>
-                <p className="text-white/80 text-sm">
+                <p className="text-sm text-white/80">
                   {t("blogPost3.hero.authorRole")}
                 </p>
               </div>
@@ -67,29 +67,29 @@ export default function BlogPost3() {
 
       {/* Main Content */}
       <section className="py-16">
-        <div className="mx-auto max-w-6xl px-4">
-          <div className="grid lg:grid-cols-3 gap-12">
+        <div className="max-w-6xl px-4 mx-auto">
+          <div className="grid gap-12 lg:grid-cols-3">
             {/* Main Content */}
             <div className="lg:col-span-2">
               <article className="prose prose-lg max-w-none dark:prose-invert">
                 <img
                   src="/images/63B3.jpg"
                   alt="Boost Your Metabolism"
-                  className="w-full h-64 object-cover rounded-xl mb-8"
+                  className="object-cover w-full h-64 mb-8 rounded-xl"
                 />
 
-                <p className="text-xl text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
+                <p className="mb-8 text-xl leading-relaxed text-gray-600 dark:text-gray-400">
                   {t("blogPost3.content.intro")}
                 </p>
 
-                <h2 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">
+                <h2 className="mb-6 text-2xl font-bold text-gray-900 dark:text-white">
                   {t("blogPost3.content.section1.title")}
                 </h2>
                 <p className="mb-6">
                   {t("blogPost3.content.section1.description")}
                 </p>
 
-                <h3 className="text-xl font-semibold mb-4 text-gray-800 dark:text-gray-200">
+                <h3 className="mb-4 text-xl font-semibold text-gray-800 dark:text-gray-200">
                   {t("blogPost3.content.section1.subtitle")}
                 </h3>
                 <ul className="mb-6 space-y-2">
@@ -104,24 +104,24 @@ export default function BlogPost3() {
                     : []
                   ).map((pitfall, index) => (
                     <li key={index} className="flex items-start gap-3">
-                      <span className="text-indigo-500 text-lg">✗</span>
+                      <span className="text-lg text-indigo-500">✗</span>
                       <span>{pitfall}</span>
                     </li>
                   ))}
                 </ul>
 
-                <h2 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">
+                <h2 className="mb-6 text-2xl font-bold text-gray-900 dark:text-white">
                   {t("blogPost3.content.section2.title")}
                 </h2>
                 <p className="mb-6">
                   {t("blogPost3.content.section2.description")}
                 </p>
 
-                <div className="bg-green-50 dark:bg-green-900/20 p-6 rounded-xl mb-8">
-                  <h4 className="font-semibold mb-3 text-green-800 dark:text-green-200">
+                <div className="p-6 mb-8 bg-green-50 dark:bg-green-900/20 rounded-xl">
+                  <h4 className="mb-3 font-semibold text-green-800 dark:text-green-200">
                     {t("blogPost3.content.section2.matrixTitle")}
                   </h4>
-                  <div className="grid md:grid-cols-2 gap-4">
+                  <div className="grid gap-4 md:grid-cols-2">
                     {(Array.isArray(
                       t("blogPost3.content.section2.matrixItems", {
                         returnObjects: true,
@@ -144,7 +144,7 @@ export default function BlogPost3() {
                   </div>
                 </div>
 
-                <h3 className="text-xl font-semibold mb-4 text-gray-800 dark:text-gray-200">
+                <h3 className="mb-4 text-xl font-semibold text-gray-800 dark:text-gray-200">
                   {t("blogPost3.content.section2.factorsTitle")}
                 </h3>
                 <ol className="mb-8 space-y-3 list-decimal list-inside">
@@ -164,14 +164,14 @@ export default function BlogPost3() {
                   ))}
                 </ol>
 
-                <h2 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">
+                <h2 className="mb-6 text-2xl font-bold text-gray-900 dark:text-white">
                   {t("blogPost3.content.section3.title")}
                 </h2>
                 <p className="mb-6">
                   {t("blogPost3.content.section3.description")}
                 </p>
 
-                <h3 className="text-xl font-semibold mb-4 text-gray-800 dark:text-gray-200">
+                <h3 className="mb-4 text-xl font-semibold text-gray-800 dark:text-gray-200">
                   {t("blogPost3.content.section3.subtitle")}
                 </h3>
                 <ul className="mb-8 space-y-3">
@@ -186,7 +186,7 @@ export default function BlogPost3() {
                     : []
                   ).map((block, index) => (
                     <li key={index} className="flex items-start gap-3">
-                      <span className="text-indigo-500 text-lg">•</span>
+                      <span className="text-lg text-indigo-500">•</span>
                       <span>
                         <strong>{block.title}:</strong> {block.description}
                       </span>
@@ -194,17 +194,17 @@ export default function BlogPost3() {
                   ))}
                 </ul>
 
-                <h2 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">
+                <h2 className="mb-6 text-2xl font-bold text-gray-900 dark:text-white">
                   {t("blogPost3.content.section4.title")}
                 </h2>
                 <p className="mb-6">
                   {t("blogPost3.content.section4.description")}
                 </p>
 
-                <h3 className="text-xl font-semibold mb-4 text-gray-800 dark:text-gray-200">
+                <h3 className="mb-4 text-xl font-semibold text-gray-800 dark:text-gray-200">
                   {t("blogPost3.content.section4.subtitle")}
                 </h3>
-                <div className="grid md:grid-cols-2 gap-4 mb-8">
+                <div className="grid gap-4 mb-8 md:grid-cols-2">
                   {(Array.isArray(
                     t("blogPost3.content.section4.tools", {
                       returnObjects: true,
@@ -217,9 +217,9 @@ export default function BlogPost3() {
                   ).map((tool, index) => (
                     <div
                       key={index}
-                      className="p-4 border border-gray-200 dark:border-gray-700 rounded-lg"
+                      className="p-4 border border-gray-200 rounded-lg dark:border-gray-700"
                     >
-                      <h4 className="font-semibold mb-2">{tool.name}</h4>
+                      <h4 className="mb-2 font-semibold">{tool.name}</h4>
                       <p className="text-sm text-gray-600 dark:text-gray-400">
                         {tool.description}
                       </p>
@@ -227,15 +227,15 @@ export default function BlogPost3() {
                   ))}
                 </div>
 
-                <h2 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">
+                <h2 className="mb-6 text-2xl font-bold text-gray-900 dark:text-white">
                   {t("blogPost3.content.section5.title")}
                 </h2>
                 <p className="mb-6">
                   {t("blogPost3.content.section5.description")}
                 </p>
 
-                <div className="bg-green-50 dark:bg-green-900/20 p-6 rounded-xl mb-8">
-                  <h4 className="font-semibold mb-3 text-green-800 dark:text-green-200">
+                <div className="p-6 mb-8 bg-green-50 dark:bg-green-900/20 rounded-xl">
+                  <h4 className="mb-3 font-semibold text-green-800 dark:text-green-200">
                     {t("blogPost3.content.section5.boundariesTitle")}
                   </h4>
                   <ul className="space-y-2 text-green-700 dark:text-green-300">
@@ -254,21 +254,21 @@ export default function BlogPost3() {
                   </ul>
                 </div>
 
-                <h3 className="text-xl font-semibold mb-4 text-gray-800 dark:text-gray-200">
+                <h3 className="mb-4 text-xl font-semibold text-gray-800 dark:text-gray-200">
                   {t("blogPost3.content.section5.expectationsTitle")}
                 </h3>
                 <p className="mb-6">
                   {t("blogPost3.content.section5.expectationsDescription")}
                 </p>
 
-                <h2 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">
+                <h2 className="mb-6 text-2xl font-bold text-gray-900 dark:text-white">
                   {t("blogPost3.content.section6.title")}
                 </h2>
                 <p className="mb-6">
                   {t("blogPost3.content.section6.description")}
                 </p>
 
-                <h3 className="text-xl font-semibold mb-4 text-gray-800 dark:text-gray-200">
+                <h3 className="mb-4 text-xl font-semibold text-gray-800 dark:text-gray-200">
                   {t("blogPost3.content.section6.subtitle")}
                 </h3>
                 <ul className="mb-8 space-y-3">
@@ -283,7 +283,7 @@ export default function BlogPost3() {
                     : []
                   ).map((example, index) => (
                     <li key={index} className="flex items-start gap-3">
-                      <span className="text-indigo-500 text-lg">•</span>
+                      <span className="text-lg text-indigo-500">•</span>
                       <span>
                         <strong>{example.title}:</strong> {example.description}
                       </span>
@@ -291,14 +291,14 @@ export default function BlogPost3() {
                   ))}
                 </ul>
 
-                <h2 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">
+                <h2 className="mb-6 text-2xl font-bold text-gray-900 dark:text-white">
                   {t("blogPost3.content.section7.title")}
                 </h2>
                 <p className="mb-6">
                   {t("blogPost3.content.section7.description")}
                 </p>
 
-                <h3 className="text-xl font-semibold mb-4 text-gray-800 dark:text-gray-200">
+                <h3 className="mb-4 text-xl font-semibold text-gray-800 dark:text-gray-200">
                   {t("blogPost3.content.section7.subtitle")}
                 </h3>
                 <ul className="mb-8 space-y-3">
@@ -313,21 +313,21 @@ export default function BlogPost3() {
                     : []
                   ).map((reason, index) => (
                     <li key={index} className="flex items-start gap-3">
-                      <span className="text-indigo-500 text-lg">•</span>
+                      <span className="text-lg text-indigo-500">•</span>
                       <span>{reason}</span>
                     </li>
                   ))}
                 </ul>
 
-                <h2 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">
+                <h2 className="mb-6 text-2xl font-bold text-gray-900 dark:text-white">
                   {t("blogPost3.content.section8.title")}
                 </h2>
                 <p className="mb-6">
                   {t("blogPost3.content.section8.description")}
                 </p>
 
-                <div className="bg-green-50 dark:bg-green-900/20 p-6 rounded-xl mb-8">
-                  <h4 className="font-semibold mb-3 text-green-800 dark:text-green-200">
+                <div className="p-6 mb-8 bg-green-50 dark:bg-green-900/20 rounded-xl">
+                  <h4 className="mb-3 font-semibold text-green-800 dark:text-green-200">
                     {t("blogPost3.content.section8.checklistTitle")}
                   </h4>
                   <ul className="space-y-2 text-green-700 dark:text-green-300">
@@ -346,14 +346,14 @@ export default function BlogPost3() {
                   </ul>
                 </div>
 
-                <h2 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">
+                <h2 className="mb-6 text-2xl font-bold text-gray-900 dark:text-white">
                   {t("blogPost3.content.section9.title")}
                 </h2>
                 <p className="mb-6">
                   {t("blogPost3.content.section9.description")}
                 </p>
 
-                <h3 className="text-xl font-semibold mb-4 text-gray-800 dark:text-gray-200">
+                <h3 className="mb-4 text-xl font-semibold text-gray-800 dark:text-gray-200">
                   {t("blogPost3.content.section9.subtitle")}
                 </h3>
                 <ul className="mb-8 space-y-3">
@@ -368,7 +368,7 @@ export default function BlogPost3() {
                     : []
                   ).map((strategy, index) => (
                     <li key={index} className="flex items-start gap-3">
-                      <span className="text-indigo-500 text-lg">•</span>
+                      <span className="text-lg text-indigo-500">•</span>
                       <span>
                         <strong>{strategy.title}:</strong>{" "}
                         {strategy.description}
@@ -377,7 +377,7 @@ export default function BlogPost3() {
                   ))}
                 </ul>
 
-                <h2 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white">
+                <h2 className="mb-6 text-2xl font-bold text-gray-900 dark:text-white">
                   {t("blogPost3.content.conclusion.title")}
                 </h2>
                 <p className="mb-8">
@@ -390,18 +390,18 @@ export default function BlogPost3() {
               </article>
 
               {/* Author Bio */}
-              <div className="mt-12 p-6 bg-gray-50 dark:bg-gray-800 rounded-xl">
+              <div className="p-6 mt-12 bg-gray-50 dark:bg-gray-800 rounded-xl">
                 <div className="flex items-start gap-4">
                   <img
                     src="/images/63BT3.jpg"
                     alt={t("blogPost3.author.name")}
-                    className="w-16 h-16 rounded-full object-cover"
+                    className="object-cover w-16 h-16 rounded-full"
                   />
                   <div>
-                    <h3 className="text-xl font-bold mb-2">
+                    <h3 className="mb-2 text-xl font-bold">
                       {t("blogPost3.author.name")}
                     </h3>
-                    <p className="text-gray-600 dark:text-gray-400 mb-3">
+                    <p className="mb-3 text-gray-600 dark:text-gray-400">
                       {t("blogPost3.author.bio")}
                     </p>
                     <div className="flex gap-2">
@@ -417,7 +417,7 @@ export default function BlogPost3() {
                       ).map((expertise, index) => (
                         <span
                           key={index}
-                          className="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 text-sm rounded-full"
+                          className="px-3 py-1 text-sm text-green-800 bg-green-100 rounded-full dark:bg-green-900 dark:text-green-200"
                         >
                           {expertise}
                         </span>
@@ -431,8 +431,8 @@ export default function BlogPost3() {
             {/* Sidebar */}
             <div className="lg:col-span-1">
               {/* Related Posts */}
-              <div className="bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-200 dark:border-gray-700">
-                <h3 className="font-bold text-lg mb-4">
+              <div className="p-6 bg-white border border-gray-200 dark:bg-gray-800 rounded-xl dark:border-gray-700">
+                <h3 className="mb-4 text-lg font-bold">
                   {t("blogPost3.sidebar.relatedPosts")}
                 </h3>
                 <div className="space-y-4">
@@ -440,7 +440,7 @@ export default function BlogPost3() {
                     className="cursor-pointer group"
                     onClick={() => navigate("/blog/1")}
                   >
-                    <h4 className="font-semibold group-hover:text-green-600 transition-colors">
+                    <h4 className="font-semibold transition-colors group-hover:text-green-600">
                       {t("blogPost3.sidebar.post1.title")}
                     </h4>
                     <p className="text-sm text-gray-600 dark:text-gray-400">
@@ -451,7 +451,7 @@ export default function BlogPost3() {
                     className="cursor-pointer group"
                     onClick={() => navigate("/blog/2")}
                   >
-                    <h4 className="font-semibold group-hover:text-green-600 transition-colors">
+                    <h4 className="font-semibold transition-colors group-hover:text-green-600">
                       {t("blogPost3.sidebar.post2.title")}
                     </h4>
                     <p className="text-sm text-gray-600 dark:text-gray-400">

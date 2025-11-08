@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { getCurrentUser, isAuthenticated } from "../utils/auth";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-import ScrollAnimation from "../components/ScrollAnimation";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
+import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
+import ScrollAnimation from "../components/ScrollAnimation";
+import { getCurrentUser, isAuthenticated } from "../utils/auth";
 
 export default function Blog() {
   const navigate = useNavigate();
   const { t } = useTranslation();
-  const [activeCategory, setActiveCategory] = useState("all");
+
   const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
@@ -71,17 +71,6 @@ export default function Blog() {
     },
   ];
 
-  const categories = [
-    { name: "all", label: t("blogPage.categories.all"), count: 3 },
-    { name: "wellness", label: t("blogPage.categories.wellness"), count: 1 },
-    {
-      name: "motivation",
-      label: t("blogPage.categories.motivation"),
-      count: 1,
-    },
-    { name: "nutrition", label: t("blogPage.categories.nutrition"), count: 1 },
-  ];
-
   const handleBlogClick = (blogId) => {
     navigate(`/blog/${blogId}`);
   };
@@ -95,7 +84,7 @@ export default function Blog() {
       {/* Showcase */}
       <section
         id="showcase"
-        className="relative overflow-hidden h-screen flex items-center justify-center text-center"
+        className="relative flex items-center justify-center h-screen overflow-hidden text-center"
       >
         {/* Background Video */}
         <video
@@ -103,7 +92,7 @@ export default function Blog() {
           loop
           muted
           playsInline
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 object-cover w-full h-full"
         >
           <source src="/78BlogV.mp4" type="video/mp4" />
           Your browser does not support the video tag.
@@ -113,31 +102,31 @@ export default function Blog() {
         <div className="absolute inset-0 bg-black/50"></div>
 
         {/* Content */}
-        <div className="relative z-10 px-6 max-w-4xl">
+        <div className="relative z-10 max-w-4xl px-6">
           <ScrollAnimation animation="fade-in" stagger="scroll-stagger-1">
-            <p className="text-sm tracking-widest text-green-300 font-medium">
+            <p className="text-sm font-medium tracking-widest text-green-300">
               {t("blogPage.showcase.tagline")}
             </p>
           </ScrollAnimation>
 
           <ScrollAnimation animation="slide-up" stagger="scroll-stagger-2">
-            <h1 className="mt-4 text-4xl font-extrabold mb-4 leading-tight text-white">
+            <h1 className="mt-4 mb-4 text-4xl font-extrabold leading-tight text-white">
               {t("blogPage.showcase.title")}
             </h1>
           </ScrollAnimation>
 
           <ScrollAnimation animation="slide-up" stagger="scroll-stagger-3">
-            <p className="mt-6 text-xl text-white/80 max-w-3xl mx-auto">
+            <p className="max-w-3xl mx-auto mt-6 text-xl text-white/80">
               {t("blogPage.showcase.subtitle")}
             </p>
           </ScrollAnimation>
 
           <ScrollAnimation animation="slide-up" stagger="scroll-stagger-4">
-            <div className="mt-8 flex gap-4 justify-center">
+            <div className="flex justify-center gap-4 mt-8">
               {/* Primary Button */}
               <a
                 href="/services"
-                className="btn-animate-strong inline-flex items-center rounded-lg px-8 py-4 font-bold text-lg transition-all duration-300 text-white shadow-lg hover:shadow-xl"
+                className="inline-flex items-center px-8 py-4 text-lg font-bold text-white transition-all duration-300 rounded-lg shadow-lg btn-animate-strong hover:shadow-xl"
                 style={{ backgroundColor: "#0A5950" }}
               >
                 {t("blogPage.showcase.subscribeButton")}
@@ -152,9 +141,9 @@ export default function Blog() {
         dir="ltr"
         className={`py-20 transition-colors duration-500 ${isDark ? "bg-gray-900" : "bg-gray-50"}`}
       >
-        <div className="mx-auto max-w-7xl px-4">
+        <div className="px-4 mx-auto max-w-7xl">
           {/* Header */}
-          <div className="text-center mb-16">
+          <div className="mb-16 text-center">
             <ScrollAnimation animation="slide-up" stagger="scroll-stagger-1">
               <h2
                 className={`text-4xl font-extrabold mb-4 ${isDark ? "text-white" : "text-gray-900"}`}
@@ -165,7 +154,7 @@ export default function Blog() {
           </div>
 
           {/* Brands Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
+          <div className="grid items-center grid-cols-2 gap-8 md:grid-cols-4">
             {(() => {
               const brandNames =
                 t("blogPage.brands.names", { returnObjects: true }) || [];
@@ -236,9 +225,9 @@ export default function Blog() {
       <section
         className={`py-20 transition-colors duration-500 ${isDark ? "bg-gray-900" : "bg-white"}`}
       >
-        <div className="mx-auto max-w-7xl px-4">
+        <div className="px-4 mx-auto max-w-7xl">
           {/* Header */}
-          <div className="text-center mb-16">
+          <div className="mb-16 text-center">
             <ScrollAnimation animation="slide-up" stagger="scroll-stagger-1">
               <h2
                 className={`text-4xl font-extrabold mb-4 ${isDark ? "text-white" : "text-gray-900"}`}
@@ -256,7 +245,7 @@ export default function Blog() {
           </div>
 
           {/* Articles Grid */}
-          <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          <div className="grid gap-8 mx-auto md:grid-cols-3 max-w-7xl">
             {blogPosts.map((post, index) => {
               const staggerClasses = [
                 "scroll-stagger-3",
@@ -281,7 +270,7 @@ export default function Blog() {
                       <img
                         src={post.image}
                         alt={post.title}
-                        className="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-500"
+                        className="object-cover w-full transition-transform duration-500 h-72 group-hover:scale-110"
                       />
                     </div>
 
@@ -362,12 +351,12 @@ export default function Blog() {
                       {/* Read Now Button */}
                       <button
                         onClick={() => handleBlogClick(post.id)}
-                        className="inline-flex items-center gap-2 font-semibold text-base hover:gap-3 transition-all duration-300 group/btn"
+                        className="inline-flex items-center gap-2 text-base font-semibold transition-all duration-300 hover:gap-3 group/btn"
                         style={{ color: "#0A5950" }}
                       >
                         <span>Read Now</span>
                         <span
-                          className="w-10 h-10 rounded-full flex items-center justify-center transition-colors duration-300"
+                          className="flex items-center justify-center w-10 h-10 transition-colors duration-300 rounded-full"
                           style={{ backgroundColor: "#0A5950" }}
                           onMouseEnter={(e) =>
                             (e.currentTarget.style.backgroundColor = "#084540")
@@ -405,9 +394,9 @@ export default function Blog() {
       <section
         className={`py-20 transition-colors duration-500 ${isDark ? "bg-gray-800" : "bg-gray-50"}`}
       >
-        <div className="mx-auto max-w-7xl px-4">
+        <div className="px-4 mx-auto max-w-7xl">
           {/* Header */}
-          <div className="text-center mb-16">
+          <div className="mb-16 text-center">
             <ScrollAnimation animation="slide-up" stagger="scroll-stagger-1">
               <h2
                 className={`text-5xl font-extrabold mb-6 ${isDark ? "text-white" : "text-gray-900"}`}
@@ -427,11 +416,11 @@ export default function Blog() {
           {/* Content Blocks - Updated Modern Design */}
           <div className="relative">
             {/* Background Decorative Elements */}
-            <div className="absolute inset-0 flex items-center justify-center opacity-5 pointer-events-none">
-              <div className="w-96 h-96 bg-green-500 rounded-full blur-3xl"></div>
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-5">
+              <div className="bg-green-500 rounded-full w-96 h-96 blur-3xl"></div>
             </div>
 
-            <div className="relative grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="relative grid gap-6 md:grid-cols-2 lg:grid-cols-4">
               {[
                 {
                   id: 1,
@@ -495,7 +484,7 @@ export default function Blog() {
                         <img
                           src={item.image}
                           alt={item.title}
-                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                          className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110"
                         />
                       </div>
 
@@ -518,7 +507,7 @@ export default function Blog() {
 
                         {/* Decorative Line */}
                         <div
-                          className="w-12 h-1 rounded-full mb-4 group-hover:w-20 transition-all duration-500"
+                          className="w-12 h-1 mb-4 transition-all duration-500 rounded-full group-hover:w-20"
                           style={{
                             background:
                               "linear-gradient(to right, #0A5950, transparent)",
@@ -534,13 +523,13 @@ export default function Blog() {
 
                         {/* Read More Link */}
                         <div
-                          className="mt-4 flex items-center gap-2 font-semibold text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                          className="flex items-center gap-2 mt-4 text-sm font-semibold transition-opacity duration-300 opacity-0 group-hover:opacity-100"
                           style={{ color: "#0A5950" }}
                         >
                           <span>Learn More</span>
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
-                            className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300"
+                            className="w-4 h-4 transition-transform duration-300 transform group-hover:translate-x-1"
                             fill="none"
                             viewBox="0 0 24 24"
                             stroke="currentColor"
@@ -556,7 +545,7 @@ export default function Blog() {
                       </div>
 
                       {/* Hover Glow Effect */}
-                      <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+                      <div className="absolute inset-0 transition-opacity duration-500 opacity-0 pointer-events-none rounded-3xl group-hover:opacity-100">
                         <div
                           className={`absolute inset-0 rounded-3xl blur-xl bg-gradient-to-br ${item.gradient} opacity-20`}
                         ></div>
@@ -575,9 +564,9 @@ export default function Blog() {
         className={`py-20 transition-colors duration-500 ${isDark ? "bg-gray-800" : "bg-gray-50"}`}
       >
         {" "}
-        <div className="mx-auto max-w-6xl px-4">
+        <div className="max-w-6xl px-4 mx-auto">
           {/* Heading */}
-          <div className="text-center mb-16">
+          <div className="mb-16 text-center">
             <ScrollAnimation animation="slide-up" stagger="scroll-stagger-1">
               <h2
                 className={`text-4xl font-extrabold mb-4 ${isDark ? "text-white" : "text-gray-900"}`}
@@ -595,7 +584,7 @@ export default function Blog() {
           </div>
 
           {/* Authors Grid */}
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid gap-8 md:grid-cols-3">
             {[
               {
                 name: t("blogPage.authors.sarah.name"),
@@ -628,20 +617,6 @@ export default function Blog() {
                 icon: "🧠",
               },
             ].map((author, index) => {
-              // Assign different animations based on card position
-              const getAnimationType = (index) => {
-                switch (index) {
-                  case 0:
-                    return "slide-in-left";
-                  case 1:
-                    return "fade-in";
-                  case 2:
-                    return "slide-in-right";
-                  default:
-                    return "fade-in";
-                }
-              };
-
               // Create staggered delays for each author card
               const staggerClasses = [
                 "scroll-stagger-3",
@@ -666,7 +641,7 @@ export default function Blog() {
                       <img
                         src={author.image}
                         alt={author.name}
-                        className="w-full h-full object-cover"
+                        className="object-cover w-full h-full"
                         style={
                           index === 1 ? { objectPosition: "center top" } : {}
                         }
@@ -700,13 +675,13 @@ export default function Blog() {
         {/* Background Image */}
         <div className="absolute inset-0">
           <div
-            className="w-full h-full bg-cover bg-center bg-fixed"
+            className="w-full h-full bg-fixed bg-center bg-cover"
             style={{ backgroundImage: "url(/images/78BCTA.jpg)" }}
           ></div>
           <div className="absolute inset-0 bg-black/60"></div>
         </div>
 
-        <div className="relative mx-auto max-w-4xl px-4">
+        <div className="relative max-w-4xl px-4 mx-auto">
           <div className="text-center">
             {/* Content */}
             <div className="space-y-6">
@@ -726,7 +701,7 @@ export default function Blog() {
                 <div className="flex justify-center">
                   <a
                     href="/contact"
-                    className="btn-animate-strong inline-flex items-center rounded-lg px-8 py-4 font-bold text-lg transition-all duration-300 text-white shadow-lg hover:shadow-xl"
+                    className="inline-flex items-center px-8 py-4 text-lg font-bold text-white transition-all duration-300 rounded-lg shadow-lg btn-animate-strong hover:shadow-xl"
                     style={{ backgroundColor: "#0A5950" }}
                   >
                     {t("blogPage.cta.startButton")}

@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 // Simple, reusable timetable component inspired by the provided template
@@ -248,9 +248,9 @@ function ClassesTimetable({ title, events = SAMPLE_EVENTS }) {
 
   return (
     <section id="classes-timetable" className="py-20 bg-white dark:bg-gray-900">
-      <div className="mx-auto max-w-6xl px-4">
+      <div className="max-w-6xl px-4 mx-auto">
         <div className="text-center">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white">
+          <h2 className="text-3xl font-extrabold text-gray-900 md:text-4xl dark:text-white">
             {translatedTitle}
           </h2>
           <p className="mt-3 text-gray-600 dark:text-white/70">
@@ -259,7 +259,7 @@ function ClassesTimetable({ title, events = SAMPLE_EVENTS }) {
         </div>
 
         {/* Filters */}
-        <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+        <div className="flex flex-wrap items-center justify-center gap-3 mt-6">
           {CATEGORIES.map((cat) => (
             <button
               key={cat.id}
@@ -286,7 +286,7 @@ function ClassesTimetable({ title, events = SAMPLE_EVENTS }) {
               {DAYS.map((d) => (
                 <div
                   key={d.key}
-                  className="p-4 text-center text-sm md:text-base font-semibold text-gray-700 dark:text-white"
+                  className="p-4 text-sm font-semibold text-center text-gray-700 md:text-base dark:text-white"
                 >
                   {t(d.labelKey)}
                 </div>
@@ -300,7 +300,7 @@ function ClassesTimetable({ title, events = SAMPLE_EVENTS }) {
                 className={`grid grid-cols-8 border-t border-black/10 dark:border-white/10 ${rowIdx % 2 === 0 ? "bg-white dark:bg-transparent" : "bg-gray-50/50 dark:bg-white/5"}`}
               >
                 {/* Time label */}
-                <div className="p-4 text-center text-sm font-semibold text-gray-600 dark:text-white/70">
+                <div className="p-4 text-sm font-semibold text-center text-gray-600 dark:text-white/70">
                   {time}
                 </div>
                 {/* Day cells */}
@@ -315,15 +315,15 @@ function ClassesTimetable({ title, events = SAMPLE_EVENTS }) {
                       {items.map((evt, i) => (
                         <div
                           key={i}
-                          className="rounded-lg bg-white dark:bg-gray-800 shadow-sm p-3 text-center"
+                          className="p-3 text-center bg-white rounded-lg shadow-sm dark:bg-gray-800"
                         >
                           <div className={`font-semibold ${evt.color}`}>
                             {t(evt.titleKey)}
                           </div>
-                          <div className="text-xs text-gray-500 dark:text-white/60 mt-1">
+                          <div className="mt-1 text-xs text-gray-500 dark:text-white/60">
                             {time} - {evt.end}
                           </div>
-                          <div className="text-xs font-medium text-gray-700 dark:text-white/80 mt-1">
+                          <div className="mt-1 text-xs font-medium text-gray-700 dark:text-white/80">
                             {evt.coach}
                           </div>
                         </div>

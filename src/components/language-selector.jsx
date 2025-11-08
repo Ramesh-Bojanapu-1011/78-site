@@ -1,5 +1,5 @@
-import { useTranslation } from "react-i18next";
 import { Globe } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import { useLanguage } from "../hooks/useLanguage";
 import {
   DropdownMenu,
@@ -42,7 +42,7 @@ export function LanguageSelector({ variant = "default" }) {
           title={t("common.language")}
         >
           <Globe
-            className="h-5 w-5"
+            className="w-5 h-5"
             style={{
               color: isDark ? "#ffffff" : "#374151",
             }}

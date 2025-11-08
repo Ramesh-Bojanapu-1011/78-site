@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
-import { getCurrentUser, isAuthenticated } from "../utils/auth";
+import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import PricingSection from "../components/PricingSection";
-import WellnessServicesGrid from "../components/WellnessServicesGrid";
-import Footer from "../components/Footer";
 import ScrollAnimation from "../components/ScrollAnimation";
-import { useTranslation } from "react-i18next";
+import WellnessServicesGrid from "../components/WellnessServicesGrid";
+import { getCurrentUser, isAuthenticated } from "../utils/auth";
 
 export default function Services() {
   const navigate = useNavigate();
@@ -53,7 +53,7 @@ export default function Services() {
       {/* Showcase */}
       <section
         id="showcase"
-        className="relative overflow-hidden h-screen flex items-center justify-center text-center"
+        className="relative flex items-center justify-center h-screen overflow-hidden text-center"
       >
         {/* Background Video */}
         <video
@@ -61,7 +61,7 @@ export default function Services() {
           loop
           muted
           playsInline
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 object-cover w-full h-full"
         >
           <source src="/78Sv.mp4" type="video/mp4" />
           {t("services.video.notSupported")}
@@ -71,18 +71,18 @@ export default function Services() {
         <div className="absolute inset-0 bg-black/50"></div>
 
         {/* Content */}
-        <div className="relative z-10 px-6 max-w-4xl">
-          <h1 className="text-4xl font-extrabold mb-4 leading-tight text-white">
+        <div className="relative z-10 max-w-4xl px-6">
+          <h1 className="mb-4 text-4xl font-extrabold leading-tight text-white">
             {t("services.showcase.title")}
           </h1>
-          <p className="mt-6 text-xl text-white/80 max-w-3xl mx-auto">
+          <p className="max-w-3xl mx-auto mt-6 text-xl text-white/80">
             {t("services.showcase.subtitle")}
           </p>
-          <div className="mt-8 flex gap-4 justify-center">
+          <div className="flex justify-center gap-4 mt-8">
             {/* Book Consultation Button */}
             <a
               href="/contact"
-              className="btn-animate-strong inline-flex items-center rounded-lg px-8 py-4 font-bold text-lg transition-all duration-300 text-white shadow-lg hover:shadow-xl"
+              className="inline-flex items-center px-8 py-4 text-lg font-bold text-white transition-all duration-300 rounded-lg shadow-lg btn-animate-strong hover:shadow-xl"
               style={{ backgroundColor: "#0A5950" }}
             >
               {t("services.showcase.reachOutButton")}
@@ -98,11 +98,11 @@ export default function Services() {
       <section
         className={`py-20 transition-colors duration-500 ${isDark ? "bg-gray-800" : "bg-gray-50"}`}
       >
-        <div className="mx-auto max-w-7xl px-4">
+        <div className="px-4 mx-auto max-w-7xl">
           <ScrollAnimation animation="fade-up">
-            <div className="text-center mb-16">
+            <div className="mb-16 text-center">
               <h2
-                className="text-4xl md:text-5xl font-extrabold mb-4"
+                className="mb-4 text-4xl font-extrabold md:text-5xl"
                 style={{ color: "#0A5950" }}
               >
                 {t("services.features.title", "Why Choose Our Platform")}
@@ -118,7 +118,7 @@ export default function Services() {
             </div>
           </ScrollAnimation>
 
-          <div className="grid lg:grid-cols-3 gap-8 items-center">
+          <div className="grid items-center gap-8 lg:grid-cols-3">
             {/* Left Column - Features 1 & 2 */}
             <div className="space-y-8">
               {/* Feature 1 - Real-time Progress */}
@@ -127,7 +127,7 @@ export default function Services() {
                   className={`p-8 rounded-3xl shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-105 ${isDark ? "bg-gray-700" : "bg-white"}`}
                 >
                   <div
-                    className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6"
+                    className="flex items-center justify-center w-16 h-16 mb-6 rounded-2xl"
                     style={{ backgroundColor: "#0A5950" }}
                   >
                     <svg
@@ -169,7 +169,7 @@ export default function Services() {
                   className={`p-8 rounded-3xl shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-105 ${isDark ? "bg-gray-700" : "bg-white"}`}
                 >
                   <div
-                    className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6"
+                    className="flex items-center justify-center w-16 h-16 mb-6 rounded-2xl"
                     style={{ backgroundColor: "#0A5950" }}
                   >
                     <svg
@@ -217,7 +217,7 @@ export default function Services() {
                   <img
                     src="/images/78Simg7.jpg"
                     alt="Wellness Professional"
-                    className="relative rounded-3xl shadow-2xl w-full max-w-md object-cover"
+                    className="relative object-cover w-full max-w-md shadow-2xl rounded-3xl"
                   />
                 </div>
               </ScrollAnimation>
@@ -231,7 +231,7 @@ export default function Services() {
                   className={`p-8 rounded-3xl shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-105 ${isDark ? "bg-gray-700" : "bg-white"}`}
                 >
                   <div
-                    className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6"
+                    className="flex items-center justify-center w-16 h-16 mb-6 rounded-2xl"
                     style={{ backgroundColor: "#0A5950" }}
                   >
                     <svg
@@ -273,7 +273,7 @@ export default function Services() {
                   className={`p-8 rounded-3xl shadow-lg transition-all duration-300 hover:shadow-2xl hover:scale-105 ${isDark ? "bg-gray-700" : "bg-white"}`}
                 >
                   <div
-                    className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6"
+                    className="flex items-center justify-center w-16 h-16 mb-6 rounded-2xl"
                     style={{ backgroundColor: "#0A5950" }}
                   >
                     <svg
@@ -319,7 +319,7 @@ export default function Services() {
       {/* Because You Matter - How It Works Section */}
       <section
         id="because-you-matter"
-        className="relative py-24 transition-colors duration-300 overflow-hidden"
+        className="relative py-24 overflow-hidden transition-colors duration-300"
         style={{
           backgroundImage: "url(/images/63H6.jpg)",
           backgroundAttachment: "fixed",
@@ -330,27 +330,27 @@ export default function Services() {
         {/* Black Overlay */}
         <div className="absolute inset-0 bg-black/70"></div>
 
-        <div className="relative z-10 mx-auto max-w-7xl px-4">
+        <div className="relative z-10 px-4 mx-auto max-w-7xl">
           {/* Section Header */}
           <ScrollAnimation animation="fade-up">
-            <div className="text-center mb-16">
+            <div className="mb-16 text-center">
               <h3
-                className="text-lg font-semibold tracking-wider uppercase mb-4"
+                className="mb-4 text-lg font-semibold tracking-wider uppercase"
                 style={{ color: "#0A5950" }}
               >
                 {t("services.becauseYouMatter.sectionTitle")}
               </h3>
-              <h2 className="text-4xl md:text-5xl font-extrabold mb-6 text-white">
+              <h2 className="mb-6 text-4xl font-extrabold text-white md:text-5xl">
                 {t("services.becauseYouMatter.title")}
               </h2>
             </div>
           </ScrollAnimation>
 
           {/* Three Steps Grid */}
-          <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
+          <div className="grid gap-8 md:grid-cols-3 lg:gap-12">
             {/* Step 1 */}
             <ScrollAnimation animation="fade-up" delay={0.1}>
-              <div className="bg-white/95 backdrop-blur-sm p-8 rounded-2xl transition-all duration-300 hover:shadow-2xl hover:bg-white shadow-lg">
+              <div className="p-8 transition-all duration-300 shadow-lg bg-white/95 backdrop-blur-sm rounded-2xl hover:shadow-2xl hover:bg-white">
                 <div className="mb-4">
                   <span
                     className="text-sm font-bold tracking-wider uppercase"
@@ -359,7 +359,7 @@ export default function Services() {
                     {t("services.becauseYouMatter.step1.badge")}
                   </span>
                 </div>
-                <h3 className="text-2xl font-bold mb-4 text-gray-900">
+                <h3 className="mb-4 text-2xl font-bold text-gray-900">
                   {t("services.becauseYouMatter.step1.title")}
                 </h3>
                 <p className="leading-relaxed text-gray-600">
@@ -370,7 +370,7 @@ export default function Services() {
 
             {/* Step 2 */}
             <ScrollAnimation animation="fade-up" delay={0.2}>
-              <div className="bg-white/95 backdrop-blur-sm p-8 rounded-2xl transition-all duration-300 hover:shadow-2xl hover:bg-white shadow-lg">
+              <div className="p-8 transition-all duration-300 shadow-lg bg-white/95 backdrop-blur-sm rounded-2xl hover:shadow-2xl hover:bg-white">
                 <div className="mb-4">
                   <span
                     className="text-sm font-bold tracking-wider uppercase"
@@ -379,7 +379,7 @@ export default function Services() {
                     {t("services.becauseYouMatter.step2.badge")}
                   </span>
                 </div>
-                <h3 className="text-2xl font-bold mb-4 text-gray-900">
+                <h3 className="mb-4 text-2xl font-bold text-gray-900">
                   {t("services.becauseYouMatter.step2.title")}
                 </h3>
                 <p className="leading-relaxed text-gray-600">
@@ -390,7 +390,7 @@ export default function Services() {
 
             {/* Step 3 */}
             <ScrollAnimation animation="fade-up" delay={0.3}>
-              <div className="bg-white/95 backdrop-blur-sm p-8 rounded-2xl transition-all duration-300 hover:shadow-2xl hover:bg-white shadow-lg">
+              <div className="p-8 transition-all duration-300 shadow-lg bg-white/95 backdrop-blur-sm rounded-2xl hover:shadow-2xl hover:bg-white">
                 <div className="mb-4">
                   <span
                     className="text-sm font-bold tracking-wider uppercase"
@@ -399,7 +399,7 @@ export default function Services() {
                     {t("services.becauseYouMatter.step3.badge")}
                   </span>
                 </div>
-                <h3 className="text-2xl font-bold mb-4 text-gray-900">
+                <h3 className="mb-4 text-2xl font-bold text-gray-900">
                   {t("services.becauseYouMatter.step3.title")}
                 </h3>
                 <p className="leading-relaxed text-gray-600">
@@ -479,77 +479,77 @@ export default function Services() {
             box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.7);
           }
         `}</style>
-        <div className="mx-auto max-w-7xl px-4">
+        <div className="px-4 mx-auto max-w-7xl">
           {/* Decorative Images Positioned Around Content */}
           <div className="relative">
             {/* Top Left Image */}
             <ScrollAnimation animation="fade-up" delay={0.1}>
-              <div className="hidden lg:block absolute -top-12 left-0 w-44 h-56 cta-image-wrapper hover-float">
+              <div className="absolute left-0 hidden h-56 lg:block -top-12 w-44 cta-image-wrapper hover-float">
                 <img
                   src="/images/78S6img1.jpg"
                   alt="Wellness"
-                  className="w-full h-full object-cover rounded-2xl shadow-xl transition-all duration-300"
+                  className="object-cover w-full h-full transition-all duration-300 shadow-xl rounded-2xl"
                 />
               </div>
             </ScrollAnimation>
 
             {/* Top Center-Left Image */}
             <ScrollAnimation animation="fade-up" delay={0.15}>
-              <div className="hidden lg:block absolute -top-16 left-52 w-40 h-48 cta-image-wrapper hover-shake">
+              <div className="absolute hidden w-40 h-48 lg:block -top-16 left-52 cta-image-wrapper hover-shake">
                 <img
                   src="/images/78Bimg1.jpg"
                   alt="Fitness"
-                  className="w-full h-full object-cover rounded-2xl shadow-xl transition-all duration-300"
+                  className="object-cover w-full h-full transition-all duration-300 shadow-xl rounded-2xl"
                 />
               </div>
             </ScrollAnimation>
 
             {/* Top Right Image */}
             <ScrollAnimation animation="fade-up" delay={0.2}>
-              <div className="hidden lg:block absolute -top-12 right-0 w-44 h-56 cta-image-wrapper hover-bounce">
+              <div className="absolute right-0 hidden h-56 lg:block -top-12 w-44 cta-image-wrapper hover-bounce">
                 <img
                   src="/images/78S2Im1.jpg"
                   alt="Yoga"
-                  className="w-full h-full object-cover rounded-2xl shadow-xl transition-all duration-300"
+                  className="object-cover w-full h-full transition-all duration-300 shadow-xl rounded-2xl"
                 />
               </div>
             </ScrollAnimation>
 
             {/* Bottom Left Image */}
             <ScrollAnimation animation="fade-up" delay={0.25}>
-              <div className="hidden lg:block absolute bottom-8 left-8 w-40 h-52 cta-image-wrapper hover-pulse">
+              <div className="absolute hidden w-40 lg:block bottom-8 left-8 h-52 cta-image-wrapper hover-pulse">
                 <img
                   src="/images/78S3img4.jpg"
                   alt="Nutrition"
-                  className="w-full h-full object-cover rounded-2xl shadow-xl transition-all duration-300"
+                  className="object-cover w-full h-full transition-all duration-300 shadow-xl rounded-2xl"
                 />
               </div>
             </ScrollAnimation>
 
             {/* Bottom Center-Left Image */}
             <ScrollAnimation animation="fade-up" delay={0.3}>
-              <div className="hidden lg:block absolute bottom-12 left-56 w-36 h-48 cta-image-wrapper hover-rotate">
+              <div className="absolute hidden h-48 lg:block bottom-12 left-56 w-36 cta-image-wrapper hover-rotate">
                 <img
                   src="/images/78S4img1.jpg"
                   alt="Training"
-                  className="w-full h-full object-cover rounded-2xl shadow-xl transition-all duration-300"
+                  className="object-cover w-full h-full transition-all duration-300 shadow-xl rounded-2xl"
                 />
               </div>
             </ScrollAnimation>
 
             {/* Bottom Right Image */}
             <ScrollAnimation animation="fade-up" delay={0.35}>
-              <div className="hidden lg:block absolute bottom-8 right-12 w-40 h-52 cta-image-wrapper hover-zoom">
+              <div className="absolute hidden w-40 lg:block bottom-8 right-12 h-52 cta-image-wrapper hover-zoom">
                 <img
                   src="/images/78S4img5.jpg"
                   alt="Meditation"
-                  className="w-full h-full object-cover rounded-2xl shadow-xl transition-all duration-300"
+                  className="object-cover w-full h-full transition-all duration-300 shadow-xl rounded-2xl"
                 />
               </div>
             </ScrollAnimation>
 
             {/* Central Content */}
-            <div className="relative z-10 text-center py-32 max-w-3xl mx-auto">
+            <div className="relative z-10 max-w-3xl py-32 mx-auto text-center">
               <ScrollAnimation animation="fade-up">
                 {/* Badge */}
                 <div className="flex items-center justify-center mb-6">
@@ -563,7 +563,7 @@ export default function Services() {
 
                 {/* Main Heading */}
                 <h2
-                  className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6"
+                  className="mb-6 text-3xl font-bold md:text-4xl lg:text-5xl"
                   style={{ color: "#0A5950" }}
                 >
                   {t(
@@ -585,7 +585,7 @@ export default function Services() {
                 {/* Explore Now Button */}
                 <a
                   href="/contact"
-                  className="inline-flex items-center gap-3 rounded-full px-10 py-5 font-semibold text-lg transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
+                  className="inline-flex items-center gap-3 px-10 py-5 text-lg font-semibold transition-all duration-300 rounded-full shadow-lg hover:shadow-xl hover:scale-105"
                   style={{
                     backgroundColor: "#0A5950",
                     color: "white",

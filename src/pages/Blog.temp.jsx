@@ -9,7 +9,7 @@ import { useTranslation } from "react-i18next";
 export default function Blog() {
   const navigate = useNavigate();
   const { t } = useTranslation();
-  const [activeCategory, setActiveCategory] = useState("all");
+
   const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
@@ -71,17 +71,6 @@ export default function Blog() {
     },
   ];
 
-  const categories = [
-    { name: "all", label: t("blogPage.categories.all"), count: 3 },
-    { name: "wellness", label: t("blogPage.categories.wellness"), count: 1 },
-    {
-      name: "motivation",
-      label: t("blogPage.categories.motivation"),
-      count: 1,
-    },
-    { name: "nutrition", label: t("blogPage.categories.nutrition"), count: 1 },
-  ];
-
   const handleBlogClick = (blogId) => {
     navigate(`/blog/${blogId}`);
   };
@@ -95,7 +84,7 @@ export default function Blog() {
       {/* Showcase */}
       <section
         id="showcase"
-        className="relative overflow-hidden h-screen flex items-center justify-center text-center"
+        className="relative flex items-center justify-center h-screen overflow-hidden text-center"
       >
         {/* Background Video */}
         <video
@@ -103,7 +92,7 @@ export default function Blog() {
           loop
           muted
           playsInline
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 object-cover w-full h-full"
         >
           <source src="/63Blog.mp4" type="video/mp4" />
           Your browser does not support the video tag.
@@ -113,31 +102,31 @@ export default function Blog() {
         <div className="absolute inset-0 bg-black/50"></div>
 
         {/* Content */}
-        <div className="relative z-10 px-6 max-w-4xl">
+        <div className="relative z-10 max-w-4xl px-6">
           <ScrollAnimation animation="fade-in" stagger="scroll-stagger-1">
-            <p className="text-sm tracking-widest text-green-300 font-medium">
+            <p className="text-sm font-medium tracking-widest text-green-300">
               {t("blogPage.showcase.tagline")}
             </p>
           </ScrollAnimation>
 
           <ScrollAnimation animation="slide-up" stagger="scroll-stagger-2">
-            <h1 className="mt-4 text-4xl font-extrabold mb-4 leading-tight text-white">
+            <h1 className="mt-4 mb-4 text-4xl font-extrabold leading-tight text-white">
               {t("blogPage.showcase.title")}
             </h1>
           </ScrollAnimation>
 
           <ScrollAnimation animation="slide-up" stagger="scroll-stagger-3">
-            <p className="mt-6 text-xl text-white/80 max-w-3xl mx-auto">
+            <p className="max-w-3xl mx-auto mt-6 text-xl text-white/80">
               {t("blogPage.showcase.subtitle")}
             </p>
           </ScrollAnimation>
 
           <ScrollAnimation animation="slide-up" stagger="scroll-stagger-4">
-            <div className="mt-8 flex gap-4 justify-center">
+            <div className="flex justify-center gap-4 mt-8">
               {/* Primary Button */}
               <a
                 href="/services"
-                className="btn-animate-strong inline-flex items-center rounded-lg px-8 py-4 font-bold text-lg transition-all duration-300 text-white shadow-lg hover:shadow-xl"
+                className="inline-flex items-center px-8 py-4 text-lg font-bold text-white transition-all duration-300 rounded-lg shadow-lg btn-animate-strong hover:shadow-xl"
                 style={{ backgroundColor: "#4CAF50" }}
               >
                 {t("blogPage.showcase.subscribeButton")}
@@ -151,9 +140,9 @@ export default function Blog() {
       <section
         className={`py-20 transition-colors duration-500 ${isDark ? "bg-gray-900" : "bg-gray-50"}`}
       >
-        <div className="mx-auto max-w-7xl px-4">
+        <div className="px-4 mx-auto max-w-7xl">
           {/* Header */}
-          <div className="text-center mb-16">
+          <div className="mb-16 text-center">
             <ScrollAnimation animation="slide-up" stagger="scroll-stagger-1">
               <h2
                 className={`text-4xl font-extrabold mb-4 ${isDark ? "text-white" : "text-gray-900"}`}
@@ -164,7 +153,7 @@ export default function Blog() {
           </div>
 
           {/* Brands Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-8 items-center">
+          <div className="grid items-center grid-cols-2 gap-8 md:grid-cols-5">
             {[1, 2, 3, 4, 5].map((index) => {
               const staggerClasses = [
                 "scroll-stagger-2",
@@ -182,7 +171,7 @@ export default function Blog() {
                   animation="fade-in"
                   stagger={staggerClass}
                 >
-                  <div className="flex items-center justify-center opacity-60 hover:opacity-100 transition-opacity duration-300">
+                  <div className="flex items-center justify-center transition-opacity duration-300 opacity-60 hover:opacity-100">
                     {/* Brand Logo Placeholder */}
                     <div className="flex items-center gap-2">
                       {index === 1 ? (
@@ -347,9 +336,9 @@ export default function Blog() {
       <section
         className={`py-20 transition-colors duration-500 ${isDark ? "bg-gray-900" : "bg-white"}`}
       >
-        <div className="mx-auto max-w-7xl px-4">
+        <div className="px-4 mx-auto max-w-7xl">
           {/* Header */}
-          <div className="text-center mb-16">
+          <div className="mb-16 text-center">
             <ScrollAnimation animation="slide-up" stagger="scroll-stagger-1">
               <h2
                 className={`text-4xl font-extrabold mb-4 ${isDark ? "text-white" : "text-gray-900"}`}
@@ -367,7 +356,7 @@ export default function Blog() {
           </div>
 
           {/* Articles Grid */}
-          <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          <div className="grid gap-8 mx-auto md:grid-cols-3 max-w-7xl">
             {blogPosts.map((post, index) => {
               const staggerClasses = [
                 "scroll-stagger-3",
@@ -392,7 +381,7 @@ export default function Blog() {
                       <img
                         src={post.image}
                         alt={post.title}
-                        className="w-full h-72 object-cover group-hover:scale-110 transition-transform duration-500"
+                        className="object-cover w-full transition-transform duration-500 h-72 group-hover:scale-110"
                       />
                     </div>
 
@@ -468,10 +457,10 @@ export default function Blog() {
                       {/* Read Now Button */}
                       <button
                         onClick={() => handleBlogClick(post.id)}
-                        className="inline-flex items-center gap-2 text-teal-600 dark:text-teal-500 font-semibold text-base hover:gap-3 transition-all duration-300 group/btn"
+                        className="inline-flex items-center gap-2 text-base font-semibold text-teal-600 transition-all duration-300 dark:text-teal-500 hover:gap-3 group/btn"
                       >
                         <span>Read Now</span>
-                        <span className="w-10 h-10 rounded-full bg-teal-600 dark:bg-teal-500 flex items-center justify-center group-hover/btn:bg-teal-700 dark:group-hover/btn:bg-teal-600 transition-colors duration-300">
+                        <span className="flex items-center justify-center w-10 h-10 transition-colors duration-300 bg-teal-600 rounded-full dark:bg-teal-500 group-hover/btn:bg-teal-700 dark:group-hover/btn:bg-teal-600">
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             className="w-5 h-5 text-white"
@@ -501,9 +490,9 @@ export default function Blog() {
       <section
         className={`py-20 transition-colors duration-500 ${isDark ? "bg-gray-800" : "bg-gray-50"}`}
       >
-        <div className="mx-auto max-w-7xl px-4">
+        <div className="px-4 mx-auto max-w-7xl">
           {/* Header */}
-          <div className="text-center mb-16">
+          <div className="mb-16 text-center">
             <ScrollAnimation animation="slide-up" stagger="scroll-stagger-1">
               <h2
                 className={`text-5xl font-extrabold mb-6 ${isDark ? "text-white" : "text-gray-900"}`}
@@ -523,11 +512,11 @@ export default function Blog() {
           {/* Content Blocks - Updated Modern Design */}
           <div className="relative">
             {/* Background Decorative Elements */}
-            <div className="absolute inset-0 flex items-center justify-center opacity-5 pointer-events-none">
-              <div className="w-96 h-96 bg-green-500 rounded-full blur-3xl"></div>
+            <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-5">
+              <div className="bg-green-500 rounded-full w-96 h-96 blur-3xl"></div>
             </div>
 
-            <div className="relative grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="relative grid gap-6 md:grid-cols-2 lg:grid-cols-4">
               {[
                 {
                   id: 1,
@@ -591,7 +580,7 @@ export default function Blog() {
                         <img
                           src={item.image}
                           alt={item.title}
-                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                          className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-110"
                         />
                         {/* Gradient Overlay */}
                         <div
@@ -600,7 +589,7 @@ export default function Blog() {
 
                         {/* Icon Badge */}
                         <div className="absolute top-4 right-4">
-                          <div className="w-14 h-14 flex items-center justify-center rounded-full bg-white/90 backdrop-blur-sm shadow-lg transform group-hover:rotate-12 transition-transform duration-500">
+                          <div className="flex items-center justify-center transition-transform duration-500 transform rounded-full shadow-lg w-14 h-14 bg-white/90 backdrop-blur-sm group-hover:rotate-12">
                             <span className="text-3xl">{item.icon}</span>
                           </div>
                         </div>
@@ -618,7 +607,7 @@ export default function Blog() {
                         </h3>
 
                         {/* Decorative Line */}
-                        <div className="w-12 h-1 bg-gradient-to-r from-green-500 to-transparent rounded-full mb-4 group-hover:w-20 transition-all duration-500"></div>
+                        <div className="w-12 h-1 mb-4 transition-all duration-500 rounded-full bg-gradient-to-r from-green-500 to-transparent group-hover:w-20"></div>
 
                         {/* Description */}
                         <p
@@ -628,11 +617,11 @@ export default function Blog() {
                         </p>
 
                         {/* Read More Link */}
-                        <div className="mt-4 flex items-center gap-2 text-green-600 dark:text-green-400 font-semibold text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div className="flex items-center gap-2 mt-4 text-sm font-semibold text-green-600 transition-opacity duration-300 opacity-0 dark:text-green-400 group-hover:opacity-100">
                           <span>Learn More</span>
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
-                            className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300"
+                            className="w-4 h-4 transition-transform duration-300 transform group-hover:translate-x-1"
                             fill="none"
                             viewBox="0 0 24 24"
                             stroke="currentColor"
@@ -648,7 +637,7 @@ export default function Blog() {
                       </div>
 
                       {/* Hover Glow Effect */}
-                      <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+                      <div className="absolute inset-0 transition-opacity duration-500 opacity-0 pointer-events-none rounded-3xl group-hover:opacity-100">
                         <div
                           className={`absolute inset-0 rounded-3xl blur-xl bg-gradient-to-br ${item.gradient} opacity-20`}
                         ></div>
@@ -667,9 +656,9 @@ export default function Blog() {
         className={`py-20 transition-colors duration-500 ${isDark ? "bg-gray-800" : "bg-gray-50"}`}
       >
         {" "}
-        <div className="mx-auto max-w-6xl px-4">
+        <div className="max-w-6xl px-4 mx-auto">
           {/* Heading */}
-          <div className="text-center mb-16">
+          <div className="mb-16 text-center">
             <ScrollAnimation animation="slide-up" stagger="scroll-stagger-1">
               <h2
                 className={`text-4xl font-extrabold mb-4 ${isDark ? "text-white" : "text-gray-900"}`}
@@ -687,7 +676,7 @@ export default function Blog() {
           </div>
 
           {/* Authors Grid */}
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid gap-8 md:grid-cols-3">
             {[
               {
                 name: t("blogPage.authors.sarah.name"),
@@ -748,54 +737,54 @@ export default function Blog() {
                   animation={getAnimationType(index)}
                   stagger={staggerClass}
                 >
-                  <div className="relative group cursor-pointer">
+                  <div className="relative cursor-pointer group">
                     {/* Author Card with Background Image */}
-                    <div className="relative h-80 rounded-xl overflow-hidden">
+                    <div className="relative overflow-hidden h-80 rounded-xl">
                       {/* Background Image */}
                       <div
-                        className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-500 group-hover:scale-110"
+                        className="absolute inset-0 transition-transform duration-500 bg-center bg-no-repeat bg-cover group-hover:scale-110"
                         style={{ backgroundImage: `url(${author.image})` }}
                       />
 
                       {/* Overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-black/40 to-black/60 transition-all duration-500 group-hover:from-black/40 group-hover:via-black/20 group-hover:to-black/40" />
+                      <div className="absolute inset-0 transition-all duration-500 bg-gradient-to-br from-black/60 via-black/40 to-black/60 group-hover:from-black/40 group-hover:via-black/20 group-hover:to-black/40" />
 
                       {/* Main Content - Always Centered */}
-                      <div className="relative z-10 h-full flex flex-col items-center justify-center text-center p-6">
+                      <div className="relative z-10 flex flex-col items-center justify-center h-full p-6 text-center">
                         {/* Author Profile Image */}
-                        <div className="w-20 h-20 mb-4 rounded-full overflow-hidden border-4 border-white/30 shadow-lg group-hover:border-white/50 transition-all duration-300">
+                        <div className="w-20 h-20 mb-4 overflow-hidden transition-all duration-300 border-4 rounded-full shadow-lg border-white/30 group-hover:border-white/50">
                           <img
                             src={author.image}
                             alt={author.name}
-                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                            className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-110"
                           />
                         </div>
 
                         {/* Name */}
-                        <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-white transition-colors duration-300">
+                        <h3 className="mb-2 text-2xl font-bold text-white transition-colors duration-300 group-hover:text-white">
                           {author.name}
                         </h3>
 
                         {/* Role */}
-                        <p className="text-green-300 font-medium group-hover:text-green-200 transition-colors duration-300">
+                        <p className="font-medium text-green-300 transition-colors duration-300 group-hover:text-green-200">
                           {author.role}
                         </p>
                       </div>
 
                       {/* Hover Details Overlay */}
-                      <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-center p-6 opacity-0 group-hover:opacity-100 transition-all duration-500 bg-black/20 backdrop-blur-sm">
-                        <p className="text-white/90 text-sm leading-relaxed mb-4 max-h-20 overflow-hidden">
+                      <div className="absolute inset-0 z-20 flex flex-col items-center justify-center p-6 text-center transition-all duration-500 opacity-0 group-hover:opacity-100 bg-black/20 backdrop-blur-sm">
+                        <p className="mb-4 overflow-hidden text-sm leading-relaxed text-white/90 max-h-20">
                           {author.bio}
                         </p>
 
                         {/* Skills */}
-                        <div className="flex flex-wrap gap-2 justify-center">
+                        <div className="flex flex-wrap justify-center gap-2">
                           {author.expertise
                             .slice(0, 3)
                             .map((skill, skillIndex) => (
                               <span
                                 key={skillIndex}
-                                className="px-3 py-1 bg-green-600/80 text-white text-xs rounded-full backdrop-blur-sm"
+                                className="px-3 py-1 text-xs text-white rounded-full bg-green-600/80 backdrop-blur-sm"
                               >
                                 {skill}
                               </span>
@@ -820,15 +809,15 @@ export default function Blog() {
           <img
             src="/images/healthcare.jpg"
             alt="Health and Wellness Background"
-            className="w-full h-full object-cover opacity-20"
+            className="object-cover w-full h-full opacity-20"
           />
           <div
             className={`absolute inset-0 ${isDark ? "bg-black/70" : "bg-white/80"}`}
           ></div>
         </div>
 
-        <div className="relative mx-auto max-w-7xl px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="relative px-4 mx-auto max-w-7xl">
+          <div className="grid items-center gap-12 lg:grid-cols-2">
             {/* Left Side - Content */}
             <div className="space-y-8">
               <ScrollAnimation animation="slide-up" stagger="scroll-stagger-1">
@@ -848,10 +837,10 @@ export default function Blog() {
               </ScrollAnimation>
 
               <ScrollAnimation animation="slide-up" stagger="scroll-stagger-3">
-                <div className="flex flex-col sm:flex-row gap-4">
+                <div className="flex flex-col gap-4 sm:flex-row">
                   <a
                     href="/contact"
-                    className="btn-animate-strong inline-flex items-center rounded-lg px-8 py-4 font-bold text-lg transition-all duration-300 text-white shadow-lg hover:shadow-xl"
+                    className="inline-flex items-center px-8 py-4 text-lg font-bold text-white transition-all duration-300 rounded-lg shadow-lg btn-animate-strong hover:shadow-xl"
                     style={{ backgroundColor: "#4CAF50" }}
                   >
                     {t("blogPage.cta.startButton")}
@@ -873,22 +862,22 @@ export default function Blog() {
 
               {/* Trust Indicators */}
               <ScrollAnimation animation="slide-up" stagger="scroll-stagger-4">
-                <div className="flex items-center space-x-6 pt-8">
+                <div className="flex items-center pt-8 space-x-6">
                   <div className="flex items-center space-x-2">
                     <img
                       src="https://randomuser.me/api/portraits/women/44.jpg"
                       alt="User"
-                      className="w-8 h-8 rounded-full border-2 border-green-500"
+                      className="w-8 h-8 border-2 border-green-500 rounded-full"
                     />
                     <img
                       src="https://randomuser.me/api/portraits/men/32.jpg"
                       alt="User"
-                      className="w-8 h-8 rounded-full border-2 border-green-500 -ml-2"
+                      className="w-8 h-8 -ml-2 border-2 border-green-500 rounded-full"
                     />
                     <img
                       src="https://randomuser.me/api/portraits/women/68.jpg"
                       alt="User"
-                      className="w-8 h-8 rounded-full border-2 border-green-500 -ml-2"
+                      className="w-8 h-8 -ml-2 border-2 border-green-500 rounded-full"
                     />
                   </div>
                   <div
@@ -906,14 +895,14 @@ export default function Blog() {
               <ScrollAnimation animation="slide-up" stagger="scroll-stagger-5">
                 <div className="grid grid-cols-2 gap-4">
                   {/* Main Image */}
-                  <div className="col-span-2 relative group">
+                  <div className="relative col-span-2 group">
                     <img
                       src="/images/63B10.jpg"
                       alt="Health and Wellness"
-                      className="w-full h-64 object-cover rounded-2xl shadow-2xl group-hover:scale-105 transition-transform duration-500"
+                      className="object-cover w-full h-64 transition-transform duration-500 shadow-2xl rounded-2xl group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-green-500/20 rounded-2xl group-hover:bg-green-500/10 transition-colors duration-500"></div>
-                    <div className="absolute bottom-4 left-4 text-white">
+                    <div className="absolute inset-0 transition-colors duration-500 bg-green-500/20 rounded-2xl group-hover:bg-green-500/10"></div>
+                    <div className="absolute text-white bottom-4 left-4">
                       <div className="text-sm font-medium">
                         {t("blogPage.cta.imageLabels.mainImage.title")}
                       </div>
@@ -928,10 +917,10 @@ export default function Blog() {
                     <img
                       src="/images/63B8.jpg"
                       alt="Nutrition"
-                      className="w-full h-32 object-cover rounded-xl shadow-lg group-hover:scale-105 transition-transform duration-500"
+                      className="object-cover w-full h-32 transition-transform duration-500 shadow-lg rounded-xl group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-black/30 rounded-xl group-hover:bg-black/20 transition-colors duration-500"></div>
-                    <div className="absolute bottom-2 left-2 text-white text-xs font-medium">
+                    <div className="absolute inset-0 transition-colors duration-500 bg-black/30 rounded-xl group-hover:bg-black/20"></div>
+                    <div className="absolute text-xs font-medium text-white bottom-2 left-2">
                       {t("blogPage.cta.imageLabels.nutrition")}
                     </div>
                   </div>
@@ -940,10 +929,10 @@ export default function Blog() {
                     <img
                       src="/images/63B9.jpg"
                       alt="Fitness"
-                      className="w-full h-32 object-cover rounded-xl shadow-lg group-hover:scale-105 transition-transform duration-500"
+                      className="object-cover w-full h-32 transition-transform duration-500 shadow-lg rounded-xl group-hover:scale-105"
                     />
-                    <div className="absolute inset-0 bg-black/30 rounded-xl group-hover:bg-black/20 transition-colors duration-500"></div>
-                    <div className="absolute bottom-2 left-2 text-white text-xs font-medium">
+                    <div className="absolute inset-0 transition-colors duration-500 bg-black/30 rounded-xl group-hover:bg-black/20"></div>
+                    <div className="absolute text-xs font-medium text-white bottom-2 left-2">
                       {t("blogPage.cta.imageLabels.fitness")}
                     </div>
                   </div>
