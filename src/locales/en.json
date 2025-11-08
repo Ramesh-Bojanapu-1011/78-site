@@ -1,0 +1,2381 @@
+{
+  "nav": {
+    "home": "Home",
+    "home1": "Home 1",
+    "home2": "Home 2",
+    "about": "About Us",
+    "services": "Services",
+    "allServices": "All Services",
+    "sportsTraining": "Yoga",
+    "spaTherapies": "Weight Loss Program",
+    "holisticHealing": "Nutrition Counseling",
+    "nutritionPlans": "Mental Health",
+    "mindfulLiving": "Ayurvedic Treatment",
+    "wellnessEvents": "Theta Healing",
+    "blog": "Blog",
+    "contact": "Contact Us",
+    "logout": "Log Out"
+  },
+  "common": {
+    "language": "Language",
+    "english": "English",
+    "arabic": "Arabic",
+    "hebrew": "Hebrew",
+    "videoNotSupported": "Your browser does not support the video tag.",
+    "viewDetails": "View Details"
+  },
+  "footer": {
+    "companyDescription": "Connecting individuals with certified health professionals worldwide to achieve optimal wellness and health goals.",
+    "quickLinks": "Quick Links",
+    "ourServices": "Our Services",
+    "contactUs": "Contact Us",
+    "home1": "Home1",
+    "home2": "Home2",
+    "about": "About",
+    "services": "Services",
+    "blog": "Blog",
+    "contact": "Contact",
+    "sportsTraining": "Yoga",
+    "spaTherapies": "Weight Loss Program",
+    "holisticHealing": "Nutrition Counseling",
+    "nutritionPlans": "Mental Health",
+    "mindfulLiving": "Ayurvedic Treatment",
+    "wellnessEvents": "Theta Healing",
+    "phone": "+192 123 4567",
+    "email": "info@wellnesshub.com",
+    "address": "123 Wellness Street, Health City, Country",
+    "copyright": "© 2025 WellnessHub. All rights reserved."
+  },
+  "login": {
+    "welcomeBack": "Welcome back",
+    "loginToContinue": "Login to continue",
+    "email": "Email",
+    "password": "Password",
+    "emailPlaceholder": "you@example.com",
+    "passwordPlaceholder": "Enter your password",
+    "signIn": "Sign in",
+    "forgotPassword": "Forgot your password?",
+    "reset": "Reset",
+    "noAccount": "Don't have an account?",
+    "register": "Register",
+    "errorEmailPassword": "Please enter email and password"
+  },
+  "forgotPassword": {
+    "resetPassword": "Reset Password",
+    "setNewPassword": "Set New Password",
+    "enterEmailToContinue": "Enter your email to continue",
+    "createNewPassword": "Create a new password",
+    "email": "Email",
+    "emailPlaceholder": "you@example.com",
+    "newPassword": "New Password",
+    "confirmPassword": "Confirm Password",
+    "newPasswordPlaceholder": "Enter new password",
+    "confirmPasswordPlaceholder": "Confirm new password",
+    "continue": "Continue",
+    "back": "Back",
+    "resetPasswordButton": "Reset Password",
+    "rememberPassword": "Remember your password?",
+    "signIn": "Sign in",
+    "errorEmailRequired": "Please enter your email address",
+    "errorEmailNotFound": "Email address not found",
+    "errorPasswordLength": "Password must be at least 6 characters",
+    "errorPasswordsMismatch": "Passwords do not match",
+    "successEmailVerified": "Email verified! Please enter your new password.",
+    "successPasswordReset": "Password reset successfully! Redirecting to login..."
+  },
+  "register": {
+    "createAccount": "Create your account",
+    "joinUs": "Join us and get started",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "firstNamePlaceholder": "First name",
+    "lastNamePlaceholder": "Last name",
+    "emailPlaceholder": "you@example.com",
+    "passwordPlaceholder": "At least 6 characters",
+    "confirmPasswordPlaceholder": "Re-enter your password",
+    "createAccountButton": "Create Account",
+    "forgotPassword": "Forgot your password?",
+    "reset": "Reset",
+    "alreadyHaveAccount": "Already have an account?",
+    "login": "Login",
+    "errorNameRequired": "Please enter your first and last name",
+    "errorEmailInvalid": "Please enter a valid email",
+    "errorPasswordLength": "Password must be at least 6 characters",
+    "errorPasswordsMismatch": "Passwords do not match"
+  },
+  "home": {
+    "expertTeam": {
+      "title": "Let's Check Out Our Expert Team",
+      "exploreNow": "Explore Now",
+      "stats": {
+        "yearsOfExperience": "Years Of Experience",
+        "hoursOfCoaching": "Hours Of Coaching",
+        "completedCourses": "Completed Courses"
+      }
+    },
+    "showcase": {
+      "title": "Transform Your Wellness Journey",
+      "subtitle": "Discover personalized health programs and  comprehensive wellness solutions.",
+      "exploreButton": "Start Your Journey",
+      "reachOutButton": "Get Consultation"
+    },
+    "welcome": {
+      "label": "YOUR BENEFITS",
+      "title": "Our Health Coaching Benefits",
+      "description": "Transform your health and wellness with personalized coaching programs designed to help you achieve your fitness goals, improve your overall well-being, and create lasting positive changes in your lifestyle.",
+      "startButton": "Start Now",
+      "benefits": {
+        "increaseMotivation": {
+          "title": "Increase Motivation",
+          "description": "Stay motivated and committed to your health goals with personalized support and guidance."
+        },
+        "betterTimeManagement": {
+          "title": "Better Time Management",
+          "description": "Learn to balance your wellness routine with your busy lifestyle effectively."
+        },
+        "improveSelfAwareness": {
+          "title": "Improve Self-Awareness",
+          "description": "Develop a deeper understanding of your body, mind, and health needs."
+        },
+        "communicationSkills": {
+          "title": "Communication Skills",
+          "description": "Enhance your ability to communicate your health needs and goals effectively."
+        }
+      }
+    },
+    "services": {
+      "title": "Our Services",
+      "subtitle": "Comprehensive health and wellness programs tailored to your needs",
+      "balanceBodyMind": {
+        "title": "Balance Body & Mind",
+        "description": "Integrate physical fitness with mental health practices for holistic well-being."
+      },
+      "healthyDailyLife": {
+        "title": "Healthy Daily Life",
+        "description": "Build sustainable daily habits and routines that support your wellness goals."
+      },
+      "nutritionStrategies": {
+        "title": "Nutrition Strategies",
+        "description": "Personalized nutrition counseling and meal planning for optimal health."
+      },
+      "workoutRoutines": {
+        "title": "Workout Routines",
+        "description": "Custom fitness programs designed by certified trainers for your specific goals."
+      },
+      "ctaButton": "Explore Our Programs"
+    },
+    "testimonials": {
+      "label": "TESTIMONIALS",
+      "title": "Our Customers Say",
+      "subtitle": "Hear from our satisfied clients who transformed their wellness journey",
+      "testimonial1": {
+        "name": "Darline Robertson",
+        "role": "UX Designer",
+        "title": "Take Charge of Your Life",
+        "content": "The personalized nutrition plan completely transformed my approach to healthy eating. The coaches were incredibly supportive and knowledgeable throughout my journey. I've never felt better!",
+        "author": "by Thomas Bradley"
+      },
+      "testimonial2": {
+        "name": "Courtney Henry",
+        "role": "UI Designer",
+        "title": "Ways to Get Motivated",
+        "content": "I have really enjoyed the course and the course content in doing my Advanced Certificate in Nutritional Counselling. The support that I received especially due to a medical health issue and having to pause for a little while was accommodated by them.",
+        "author": "by Sarah Mitchell"
+      },
+      "testimonial3": {
+        "name": "Darrell Steward",
+        "role": "Developer",
+        "title": "Boost Your Metabolism",
+        "content": "As a busy professional, I struggled to maintain a healthy lifestyle. The wellness coaching program gave me practical tools and strategies that fit seamlessly into my schedule. Highly recommend!",
+        "author": "by Michael Johnson"
+      }
+    },
+    "cta": {
+      "programsLabel": "WELLNESS PROGRAMS",
+      "title": "A peek of our wellness creations",
+      "subtitle": "Transform your health with our proven wellness programs",
+      "contentBox": {
+        "programsLabel": "PROGRAMS",
+        "title": "A peek of our wellness creations",
+        "description": "Our comprehensive wellness programs combine nutrition, fitness, and mindfulness to create lasting transformation in your health journey. Discover personalized solutions designed for your unique needs.",
+        "features": {
+          "personalizedPlans": "Personalized wellness plans",
+          "expertGuidance": "Expert guidance and support",
+          "provenResults": "Proven results and success stories"
+        },
+        "exploreButton": "EXPLORE PROGRAMS"
+      }
+    },
+    "hero": {
+      "title": "Transform Your Health & Wellness Journey",
+      "description": "A comprehensive platform built for individuals to access personalized health programs, expert guidance, and wellness solutions worldwide.",
+      "exploreBlogsButton": "Explore Wellness Tips",
+      "getStartedButton": "Start Your Journey"
+    },
+    "about": {
+      "title": "About Us",
+      "subtitle": "Empowering Your Digital Success",
+      "description": "We are a global health and wellness platform built to connect individuals with certified health professionals across every specialty. Our mission is to simplify access to healthcare by offering secure consultations, personalized wellness plans, and real-time support. With experts in nutrition, fitness, mental health, preventive care, and more, we make it easy to find the right health professional for every need. By combining transparency, accessibility, and innovation, we ensure that both clients and health professionals can thrive. Together, we are shaping the future of healthcare through trust, opportunity, and wellness.",
+      "stats": {
+        "projectsCompleted": "Wellness Programs Completed",
+        "happyClients": "Healthy Clients"
+      },
+      "features": {
+        "fastDelivery": {
+          "title": "Quick Response",
+          "description": "Fast response times for health consultations and support"
+        },
+        "qualityAssurance": {
+          "title": "Quality Care",
+          "description": "Rigorous standards and quality control for all health services"
+        },
+        "support24": {
+          "title": "24/7 Support",
+          "description": "Round-the-clock assistance for all your wellness needs"
+        }
+      },
+      "ctaButton": "Learn More About Us",
+      "clientsPartners": {
+        "title": "Our Clients & Partners",
+        "description": "We work with individuals, families, and organizations to create comprehensive wellness solutions that deliver real results."
+      },
+      "whatWeOffer": {
+        "title": "What We Offer",
+        "bodyBalance": {
+          "title": "Body Balance",
+          "duration": "60 MINUTES",
+          "description": "A comprehensive wellness program that combines physical fitness with mental health practices, meditation, and stress management techniques for holistic well-being."
+        },
+        "zumba": {
+          "title": "Zumba",
+          "duration": "45 MINUTES",
+          "description": "High-energy dance fitness classes that combine Latin dance rhythms with effective cardio workouts to help you stay motivated and healthy."
+        },
+        "basicPilates": {
+          "title": "Basic Pilates",
+          "duration": "50 MINUTES",
+          "description": "Strengthen your core and improve your posture with our beginner-friendly Pilates classes. Focus on controlled movements, breathing techniques, and building a strong foundation for overall body strength and flexibility."
+        },
+        "yogaZen": {
+          "title": "Yoga Zen",
+          "duration": "75 MINUTES",
+          "description": "Find your inner peace and balance through our gentle Yoga Zen practice. This meditative class combines slow movements, deep breathing, and mindfulness techniques to reduce stress and enhance mental clarity."
+        },
+        "readMore": "Read More"
+      }
+    },
+    "blog": {
+      "title": "Latest Blog",
+      "subtitle": "Insights, tips, and wellness stories",
+      "showLess": "Show Less",
+      "seeAllPosts": "See All Posts",
+      "posts": {}
+    },
+    "aboutUs": {
+      "label": "ABOUT US",
+      "title": "How Can We Help You?",
+      "description1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehen derit in voluptate velit esse cillum dolore.",
+      "description2": "We work with world-class experts to create wellbeing human centered tools and courses unite sustainable growth.",
+      "coachName": "Ms Taylor Smith",
+      "coachRole": "Coaches",
+      "moreInfoButton": "More Info"
+    },
+    "customerSolutions": {
+      "imageAlt": "Health coaching performance overview",
+      "statsTitle": "Client Success Overview",
+      "stats": {
+        "newGoals": "New Goals",
+        "qualified": "Qualified",
+        "proposal": "Proposal",
+        "closed": "Closed"
+      },
+      "title": "Customer-Driven Solutions with HealthWellness",
+      "description": "At HealthWellness, we focus on delivering tailored solutions that meet your customers' needs. With advanced technology and AI-powered CRM systems, we help businesses build stronger customer relationships.",
+      "features": {
+        "personalizedEngagement": "Personalized Engagement",
+        "seamlessIntegration": "Seamless Integration",
+        "smartDataAnalytics": "Smart Data Analytics",
+        "support247": "24/7 Customer Support"
+      },
+      "statistics": {
+        "businessPartners": "Business Partners",
+        "satisfiedCustomers": "Satisfied Customers",
+        "yearsOfExcellence": "Years of Excellence"
+      }
+    },
+    "contact": {
+      "title": "Let's Transform Your Health Journey",
+      "description": "Whether it's starting a new wellness routine or optimizing your current health plan, we're here to help you achieve your health goals with personalized, evidence-based solutions.",
+      "features": {
+        "webMobile": "Personalized wellness programs",
+        "futureReady": "Future-ready health strategies",
+        "transparent": "Transparent process & regular check-ins",
+        "support": "Dedicated long-term wellness support"
+      },
+      "startProjectButton": "Start Your Wellness Journey"
+    }
+  },
+  "mindfulLiving": {
+    "title": "Mindful Living",
+    "description": "Create balance, reduce stress, and cultivate awareness through simple daily mindfulness practices.",
+    "connectButton": "Talk to a Wellness Coach",
+    "learnMore": "Learn More",
+    "servicesTitle": "MINDFUL LIVING",
+    "strategiesTitle": "Build a calmer, more intentional life",
+    "strategiesDescription": "We guide you with practical, evidence-based tools to bring mindfulness into your everyday routines—breathwork, movement, journaling, and gentle habit-building.",
+
+    "strategicTitle": "A compassionate, structured path to mindfulness",
+    "strategicDescription": "Our approach blends mindful awareness, gentle accountability, and supportive coaching to help you sustain calm and clarity in the long run.",
+    "dataDriven": "Evidence-based mindfulness techniques",
+    "multiChannel": "Breathwork, movement, journaling, reflection",
+    "roiFocused": "Sustainable habits for lasting balance",
+    "marketingServicesTitle": "Mindful Living Focus Areas",
+    "socialMediaManagement": "Breathwork and grounding exercises",
+    "ppcGoogleAds": "Mindful movement and stretching flows",
+    "emailMarketing": "Journaling prompts for clarity",
+    "contentMarketing": "Guided meditations and reflections",
+    "analyticsReporting": "Weekly check-ins and progress tracking",
+
+    "marketingProcessTitle": "Your Mindful Living Journey",
+    "marketingProcessDescription": "A supportive progression that meets you where you are and grows with you over time.",
+    "researchStrategyTitle": "Assess & Intend",
+    "researchStrategyDescription": "Identify stress patterns, energy rhythms, and intentions for your mindful routine.",
+    "contentCreationTitle": "Practice & Integrate",
+    "contentCreationDescription": "Introduce short, consistent practices—breath, movement, and reflection—to your day.",
+    "campaignExecutionTitle": "Sustain & Adjust",
+    "campaignExecutionDescription": "Adapt practices to your lifestyle and build resilience with gentle accountability.",
+    "optimizeScaleTitle": "Deepen & Flourish",
+    "optimizeScaleDescription": "Strengthen your awareness, expand your toolkit, and maintain balance long-term.",
+
+    "benefits": {
+      "mindfulBreathing": "Mindful Breathing",
+      "gentleMovement": "Gentle Movement",
+      "dailyReflection": "Daily Reflection",
+      "stressReduction": "Stress Reduction"
+    },
+
+    "faq": {
+      "badge": "MINDFUL LIVING FAQ",
+      "title": "Common Questions About Mindful Living",
+      "questions": {
+        "q1": {
+          "question": "What is mindful living?",
+          "answer": "Mindful living is the practice of bringing conscious awareness to your daily activities, thoughts, and emotions. It involves being present in the moment and cultivating a sense of calm and clarity in your everyday life."
+        },
+        "q2": {
+          "question": "How much time do I need to practice mindfulness?",
+          "answer": "Even just 5-10 minutes a day can make a significant difference. We'll help you start with small, manageable practices that fit into your existing routine and gradually build from there."
+        },
+        "q3": {
+          "question": "Do I need any special equipment or experience?",
+          "answer": "No special equipment is needed! Mindful living can be practiced anywhere, anytime. Our approach focuses on simple techniques like breathing exercises, gentle movement, and reflection that anyone can learn."
+        },
+        "q4": {
+          "question": "How will mindful living help with stress?",
+          "answer": "Mindful practices help activate your body's relaxation response, reduce cortisol levels, and improve your ability to handle challenging situations with greater calm and clarity."
+        },
+        "q5": {
+          "question": "Can mindful living improve my relationships?",
+          "answer": "Absolutely! By practicing mindfulness, you develop greater emotional awareness and empathy, which helps you communicate more effectively, listen more deeply, and respond thoughtfully rather than react impulsively in your relationships."
+        }
+      }
+    },
+
+    "testimonials": {
+      "title": "What Our Members Say",
+      "subtitle": "Real stories from people who transformed their daily lives through mindful living",
+      "member1": {
+        "name": "Sarah Martinez",
+        "role": "Marketing Professional",
+        "content": "The mindful breathing exercises completely changed how I handle work stress. I feel more centered and focused throughout my day. The gentle approach made it easy to stick with."
+      },
+      "member2": {
+        "name": "Michael Chen",
+        "role": "Software Engineer",
+        "content": "I was skeptical about mindfulness, but the daily reflection practices helped me sleep better and feel more balanced. The techniques are simple but incredibly effective."
+      },
+      "member3": {
+        "name": "Emily Rodriguez",
+        "role": "Teacher",
+        "content": "The gentle movement sequences and breathing exercises have been life-changing. I feel more patient and present with my students, and my anxiety has decreased significantly."
+      },
+      "member4": {
+        "name": "James Wilson",
+        "role": "Healthcare Worker",
+        "content": "Working in healthcare can be overwhelming, but the mindful living practices help me stay grounded. The journaling prompts and breathing techniques are perfect for busy schedules."
+      }
+    },
+
+    "practices": {
+      "title": "Mindful Living Practices",
+      "subtitle": "Simple, effective techniques to bring mindfulness into your daily life",
+      "breathingExercises": "Breathing Exercises",
+      "gentleMovement": "Gentle Movement",
+      "dailyReflection": "Daily Reflection",
+      "mindfulEating": "Mindful Eating",
+      "bodyScan": "Body Scan",
+      "gratitudePractice": "Gratitude Practice",
+      "walkingMeditation": "Walking Meditation",
+      "stressRelief": "Stress Relief"
+    },
+
+    "ctaTitle": "Begin Your Mindful Living Journey Today",
+    "ctaDescription": "Transform your daily life with guided mindfulness practices and expert support",
+    "startProjectButton": "Start Your Journey",
+    "viewServicesButton": "View All Programs",
+
+    "digitalMarketingSolutionsTitle": "Mindful Living Tools",
+    "digitalMarketingSolutionsDescription": "A practical toolkit to bring mindfulness into real life—simple, flexible, and sustainable.",
+    "breathingRoutines": "Mindful breathing routines",
+    "movementSequences": "Gentle movement sequences",
+    "guidedMeditations": "Guided meditations",
+    "journalingPrompts": "Daily journaling prompts",
+    "microHabits": "Micro-habits for balance",
+    "reflectionTemplates": "Weekly reflection templates",
+    "intentionSetting": "Personal intention setting",
+    "communityPractice": "Community and shared practice"
+  },
+  "home2": {
+    "showcase": {
+      "featuredWork": "HEALTH & WELLNESS",
+      "title": "Transform Your Health Journey",
+      "subtitle": "Discover personalized wellness programs and expert guidance",
+      "exploreButton": "Start Your Journey",
+      "reachOutButton": "Get Consultation"
+    },
+    "testimonials": {
+      "title": "What Our Fantastic Clients Say",
+      "subtitle": "Real people, real transformations on their wellness journey",
+      "verifiedClient": "Verified Member",
+      "reviewsCount": "Based on 1445 reviews",
+      "clients": {
+        "sophia": {
+          "name": "Sarah Martinez",
+          "role": "Wellness Member",
+          "content": "The personalized nutrition program completely transformed my relationship with food. I lost 30 pounds and gained incredible energy. The support was amazing throughout my journey."
+        },
+        "david": {
+          "name": "Michael Chen",
+          "role": "Wellness Member",
+          "content": "After joining the fitness program, I achieved my weight loss goals and improved my mental health significantly. The holistic approach made all the difference."
+        },
+        "aisha": {
+          "name": "Emily Rodriguez",
+          "role": "Wellness Member",
+          "content": "The mental health support I received was life-changing. The mindfulness techniques and counseling helped me manage stress and anxiety in ways I never thought possible."
+        }
+      }
+    },
+    "contactCta": {
+      "title": "Transform Your Health & Wellness Journey",
+      "subtitle": "Join thousands discovering personalized wellness with certified health professionals.",
+      "button": "Start Your Wellness Journey"
+    },
+    "becauseYouMatter": {
+      "title": "Because Your Health Matters",
+      "subtitle": "We believe that everyone deserves access to comprehensive health and wellness support. Our mission is to empower you to take control of your health journey.",
+      "services": {
+        "familyMedicine": {
+          "title": "Family & Community Health",
+          "description": "Comprehensive healthcare services for individuals and families, focusing on preventive care and community wellness."
+        },
+        "certifiedProfessionals": {
+          "title": "Certified Health Professionals",
+          "description": "Our team consists of licensed healthcare providers, nutritionists, fitness trainers, and mental health specialists."
+        },
+        "improveLife": {
+          "title": "Transform Your Life",
+          "description": "Experience lasting change through our evidence-based programs designed to improve your physical, mental, and emotional well-being."
+        }
+      }
+    },
+    "whyChooseHealthCoach": {
+      "title": "Motivate The Mind And Set Your Body Free",
+      "subtitle": "Transform your health journey with personalized coaching and expert guidance.",
+      "startButton": "Start Now",
+      "services": {
+        "nutritionStrategies": {
+          "title": "Nutrition Strategies",
+          "description": "Personalized meal plans and dietary guidance tailored to your health goals and lifestyle preferences."
+        },
+        "workoutRoutines": {
+          "title": "Workout Routines",
+          "description": "Custom fitness programs designed by certified trainers to help you achieve your physical wellness goals."
+        },
+        "supportMotivation": {
+          "title": "Support & Motivation",
+          "description": "Continuous encouragement and professional support to keep you motivated throughout your wellness journey."
+        }
+      }
+    },
+    "healthyBodyCoaching": {
+      "badge": "ABOUT US",
+      "title": "Get Healthy Body With Our Coaching",
+      "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae.",
+      "progress": {
+        "personalGrowth": {
+          "label": "Personal Growth",
+          "value": "96%"
+        },
+        "lifeWorkBalance": {
+          "label": "Life-Work Balance",
+          "value": "82%"
+        },
+        "stressManagement": {
+          "label": "Stress Management",
+          "value": "76%"
+        }
+      }
+    },
+    "wellnessPrograms": {
+      "title": "Wellness Programs",
+      "subtitle": "Comprehensive health and wellness solutions for your journey",
+      "programs": {
+        "balanceBodyMind": {
+          "title": "Balance Body & Mind",
+          "subtitle": "The relationship between the mind and body is complex."
+        },
+        "physicalActivity": {
+          "title": "Physical Activity",
+          "subtitle": "Walking, running, dancing, swimming, yoga are a few physical activity."
+        },
+        "fitnessPerformance": {
+          "title": "Fitness & Performance",
+          "subtitle": "We're here to help you overcome the barriers in the way to a healthier."
+        },
+        "exerciseProgram": {
+          "title": "Exercise Program",
+          "subtitle": "The relationship between the mind and body is complex."
+        },
+        "healthyDailyLife": {
+          "title": "Healthy Daily Life",
+          "subtitle": "People are most productive when they wake up, and setting up a routine."
+        },
+        "improvingHealth": {
+          "title": "Improving Health",
+          "subtitle": "The best solution of course is combining diet improvements together."
+        }
+      }
+    },
+    "experienceStats": {
+      "title": "Over 20 Years of Experience",
+      "subtitle": "Health Coaches look at exercise, eating, wellness, and food not just as calories and weight loss, but also on mental, physical, and spiritual terms.",
+      "button": "REQUEST A FREE CONSULTATION",
+      "stats": {
+        "workoutSessions": {
+          "number": "200+",
+          "label": "Workout Sessions"
+        },
+        "happyCustomers": {
+          "number": "148+",
+          "label": "Happy Customers"
+        },
+        "programDays": {
+          "number": "90",
+          "label": "Days of Program"
+        }
+      }
+    },
+    "holisticWellness": {
+      "badge": "HOLISTIC APPROACH",
+      "title": "Transform Your Health & Wellness Journey",
+      "subtitle": "Experience comprehensive wellness solutions that nurture your body, mind, and spirit. Our integrated approach ensures lasting transformation.",
+      "benefits": {
+        "physical": {
+          "title": "Physical Vitality",
+          "description": "Build strength, endurance, and optimal body function through personalized fitness programs."
+        },
+        "mental": {
+          "title": "Mental Clarity",
+          "description": "Develop mindfulness, reduce stress, and enhance cognitive performance with proven techniques."
+        },
+        "nutrition": {
+          "title": "Nutritional Balance",
+          "description": "Fuel your body with customized nutrition plans designed for your unique needs and goals."
+        },
+        "emotional": {
+          "title": "Emotional Wellness",
+          "description": "Cultivate emotional resilience and inner peace through holistic wellness practices."
+        }
+      },
+      "stats": {
+        "clients": "Happy Clients",
+        "success": "Success Rate",
+        "experience": "Years Experience"
+      },
+      "cta": "Start Your Wellness Journey"
+    }
+  },
+  "about": {
+    "showcase": {
+      "title": "Your Complete Health and Wellness Platform",
+      "subtitle": "Personalized wellness programs and expert guidance for your best life.",
+      "connectButton": "Start Your Journey"
+    },
+    "mission": {
+      "title": "Mission & Values",
+      "subtitle": "What drives our health and wellness community",
+      "trust": {
+        "title": "Trust",
+        "description": "Building reliable connections between clients and health professionals with secure consultations and verified credentials."
+      },
+      "quality": {
+        "title": "Quality",
+        "description": "Delivering top-notch wellness services through skilled professionals who take pride in their expertise."
+      },
+      "collaboration": {
+        "title": "Collaboration",
+        "description": "Encouraging open communication, feedback, and teamwork to achieve the best health outcomes."
+      }
+    },
+    "wellnessProcess": {
+      "badge": "WHO WE ARE",
+      "title": "Wellness platform for transformation",
+      "subtitle": "Our health and wellness platform is designed to guide you through a journey of personal transformation. Through mindful practices, personalized guidance, and evidence-based techniques, we help you achieve optimal health, reduce stress, and cultivate lasting wellness habits.",
+      "startButton": "Start Now",
+      "stats": {
+        "experience": {
+          "label": "Years Of Experience"
+        },
+        "coaching": {
+          "label": "Hours Of Coaching"
+        },
+        "courses": {
+          "label": "Completed Courses"
+        }
+      },
+      "steps": {
+        "step1": {
+          "title": "Initial Health Assessment",
+          "description": "We begin with a comprehensive health assessment to understand your current wellness status, lifestyle habits, and personal goals."
+        },
+        "step2": {
+          "title": "Personalized Wellness Plan",
+          "description": "Based on your assessment, we create a detailed wellness plan outlining nutrition strategies, exercise routines, and mindfulness practices."
+        },
+        "step3": {
+          "title": "Ongoing Support & Monitoring",
+          "description": "We provide continuous support through our wellness community, regular check-ins with health professionals, and access to resources and workshops."
+        }
+      }
+    },
+    
+    "wellnessExpert": {
+      "title": "Meet Your Wellness Expert",
+      "subtitle": "I'm here to guide your wellness journey with personalized care and expertise.",
+      "expertName": "Hey, I'm Dr. Sarah Johnson, your Dedicated Wellness Coach",
+      "expertTagline": "I'M HERE TO GUIDE YOUR WELLNESS JOURNEY",
+      "expertDescription1": "With over 15 years of experience in holistic health and wellness, I'm passionate about crafting personalized wellness journeys that transform lives. My approach combines evidence-based nutrition, mindful movement, and stress management techniques to help you achieve optimal health and vitality.",
+      "expertDescription2": "Whether you're dreaming of feeling energized every morning, building sustainable healthy habits, or finding balance in your busy life, I'm here to take the guesswork out of wellness. Together, we'll create a plan that fits your lifestyle and helps you thrive in every aspect of your health journey.",
+      "ctaButton": "HOME ABOUT ME"
+    },
+    "journey": {
+      "title": "Our Journey",
+      "subtitle": "From a small idea to a thriving health and wellness community",
+      "timeline": {
+        "2018": {
+          "year": "2018",
+          "title": "The Idea",
+          "description": "Started as a simple vision to connect individuals with local health professionals."
+        },
+        "2020": {
+          "year": "2020",
+          "title": "Expanding Globally",
+          "description": "Opened doors for international health professionals and wellness experts to collaborate."
+        },
+        "2022": {
+          "year": "2022",
+          "title": "Building Trust",
+          "description": "Launched secure consultations, verification, and reviews for reliability."
+        },
+        "2024": {
+          "year": "2024",
+          "title": "Scaling the Platform",
+          "description": "Empowering thousands of individuals and health professionals to work together seamlessly."
+        }
+      },
+      "exploreButton": "Explore",
+      "whatMeansTitle": "What This Means for You",
+      "benefits": [
+        "Access to a global network of certified health professionals",
+        "Hassle-free and secure wellness consultations",
+        "Verified professionals with proven expertise",
+        "Collaboration tools for personalized wellness plans",
+        "Scalable support for both individual sessions and long-term programs",
+        "Dedicated 24/7 wellness support",
+        "Long-term partnerships for sustainable health transformation"
+      ],
+      "getInTouchButton": "Get in touch"
+    },
+    "healthProfessionals": {
+      "title": "Certified Health Professionals",
+      "subtitle": "Expert guidance for your wellness journey with qualified healthcare providers",
+      "certifiedBadge": "Licensed & Certified",
+      "mainDescription": "Our platform connects you with certified health professionals who provide personalized wellness guidance, nutrition counseling, fitness training, and mental health support to help you achieve your health goals.",
+      "purchaseButton": "Get Started",
+      "categories": {
+        "balanceBodyMind": {
+          "title": "Balance Body & Mind",
+          "description": "Comprehensive wellness programs that integrate physical fitness with mental health practices, meditation, and stress management techniques for holistic well-being."
+        },
+        "healthyDailyLife": {
+          "title": "Healthy Daily Life",
+          "description": "Personalized lifestyle coaching and daily habit formation strategies to help you maintain consistent healthy routines and sustainable wellness practices."
+        },
+        "nutritionStrategies": {
+          "title": "Nutrition Strategies",
+          "description": "Evidence-based nutrition counseling and meal planning services tailored to your specific health goals, dietary preferences, and nutritional requirements."
+        },
+        "workoutRoutines": {
+          "title": "Workout Routines",
+          "description": "Customized fitness programs designed by certified trainers to match your fitness level, goals, and schedule for optimal health and performance outcomes."
+        }
+      }
+    },
+    "ourTeam": {
+      "badge": "Our Professional Team",
+      "headingLine1": "Meet Our Team Of",
+      "headingLine2": "Health Experts",
+      "title": "Our Team",
+      "subtitle": "Meet our certified health professionals dedicated to your wellness journey",
+      "teamMembers": [
+        {
+          "name": "Dr. Arjun Mehta",
+          "role": "Certified Yoga Instructor",
+          "description": "Dr. Arjun specializes in traditional Hatha and Vinyasa yoga practices. With over 10 years of experience, he guides clients through mindful movement, breathwork, and meditation to achieve physical flexibility, mental clarity, and spiritual balance.",
+          "image": "/images/78At1.jpg",
+          "socialLinks": {
+            "twitter": "#",
+            "facebook": "#",
+            "pinterest": "#",
+            "vimeo": "#"
+          }
+        },
+        {
+          "name": "Sarah Mitchell",
+          "role": "Nutrition Counseling Specialist",
+          "description": "Sarah is a registered dietitian and certified nutrition counselor with expertise in creating personalized meal plans. She helps clients achieve optimal health through balanced nutrition, weight management, and sustainable lifestyle changes.",
+          "image": "/images/78At2.jpg",
+          "socialLinks": {
+            "twitter": "#",
+            "facebook": "#",
+            "pinterest": "#",
+            "vimeo": "#"
+          }
+        },
+        {
+          "name": "Dr. Michael Chen",
+          "role": "Mental Health Specialist",
+          "description": "Dr. Chen is a licensed clinical psychologist specializing in cognitive behavioral therapy and mindfulness-based stress reduction. He provides compassionate support for anxiety, depression, and emotional wellness through evidence-based therapeutic approaches.",
+          "image": "/images/78At3.jpg",
+          "socialLinks": {
+            "twitter": "#",
+            "facebook": "#",
+            "pinterest": "#",
+            "vimeo": "#"
+          }
+        },
+        {
+          "name": "Priya Sharma",
+          "role": "Ayurvedic & Theta Healing Practitioner",
+          "description": "Priya combines ancient Ayurvedic wisdom with modern Theta Healing techniques. She specializes in holistic healing, energy balancing, and natural remedies to restore harmony between body, mind, and spirit for complete wellness transformation.",
+          "image": "/images/78At4.jpg",
+          "socialLinks": {
+            "twitter": "#",
+            "facebook": "#",
+            "pinterest": "#",
+            "vimeo": "#"
+          }
+        }
+      ]
+    },
+    "cta": {
+      "tagline": "Ready to Transform Your Health?",
+      "title": "Start Your Wellness Journey",
+      "titleAccent": "Today",
+      "description": "Transform your life with our comprehensive health and wellness programs.",
+      "primaryButton": "Get Started Now",
+      "secondaryButton": "Explore Our Programs",
+      "trustIndicators": {
+        "certifiedProfessionals": {
+          "title": "Certified Professionals",
+          "description": "Licensed healthcare providers and wellness experts"
+        },
+        "provenResults": {
+          "title": "Proven Results",
+          "description": "Evidence-based programs with measurable outcomes"
+        },
+        "personalizedCare": {
+          "title": "Personalized Care",
+          "description": "Tailored programs designed for your unique needs"
+        }
+      },
+      "limitedOffer": {
+        "title": "Limited Time Offer",
+        "description": "Get your first consultation absolutely free! No commitment required.",
+        "button": "Claim Your Free Consultation"
+      }
+    }
+  },
+  "services": {
+    "showcase": {
+      "tagline": "Our Services",
+      "title": "Transform Your Health Journey",
+      "subtitle": "Expert wellness programs designed for your transformation.",
+      "exploreButton": "Explore Programs",
+      "reachOutButton": "Book Consultation"
+    },
+    "video": {
+      "notSupported": "Your browser does not support the video tag."
+    },
+    "becauseYouMatter": {
+      "sectionTitle": "HOW IT WORKS",
+      "title": "Easy To Practise With Our Step By Step",
+      "step1": {
+        "badge": "STEP 1",
+        "title": "Identify The Current Problems With Us",
+        "description": "We begin with a comprehensive health assessment to understand your current challenges, lifestyle factors, and wellness goals. Our certified professionals take the time to listen and evaluate your unique situation."
+      },
+      "step2": {
+        "badge": "STEP 2",
+        "title": "Create A Plan Of Action With Goals Immediately",
+        "description": "Based on your assessment, we develop a personalized action plan with clear, achievable goals. This tailored roadmap includes specific strategies for nutrition, fitness, and overall wellness that fit your lifestyle."
+      },
+      "step3": {
+        "badge": "STEP 3",
+        "title": "Take Action And Implement The Plan",
+        "description": "With ongoing support and guidance from our team, you'll begin implementing your personalized wellness plan. We provide continuous monitoring, adjustments, and motivation to ensure your success every step of the way."
+      }
+    },
+    "features": {
+      "title": "Why Choose Our Platform",
+      "subtitle": "Experience the next level of wellness management with our comprehensive platform",
+      "realTimeProgress": {
+        "title": "Real-time Progress Tracking",
+        "description": "Gain actionable insights with our real-time progress tracking and analytics dashboard"
+      },
+      "customizablePlans": {
+        "title": "Customizable Wellness Plans",
+        "description": "Streamline your wellness journey with personalized and automated wellness programs"
+      },
+      "mobileAccess": {
+        "title": "Mobile Accessibility",
+        "description": "Manage your wellness journey on the go with our fully responsive mobile-friendly platform"
+      },
+      "enhancedSecurity": {
+        "title": "Enhanced Privacy & Security",
+        "description": "Protect your sensitive health data with our state-of-the-art security measures"
+      }
+    },
+    "cta": {
+      "title": "Discover a space where you're heard, valued, and empowered",
+      "subtitle": "Whether you're feeling overwhelmed, stuck, or simply ready to grow, our programs are designed to meet you where you are—with empathy, clarity, and practical tools for change.",
+      "button": "Book Your Free Consultation",
+      "badges": {
+        "personalizedSupport": "Personalized Support",
+        "growthFocusedTools": "Growth‑Focused Tools",
+        "safeConfidential": "Safe & Confidential"
+      },
+      "consultationImage": "Wellness consultation session",
+      "keepGoingOn": "YOUR WELLNESS JOURNEY",
+      "lookingForCoaches": "Transform Your Health With Expert Guidance",
+      "coachesDescription": "Connect with certified wellness professionals for personalized nutrition, fitness, and mental wellness support.",
+      "exploreNow": "Start Your Journey"
+    }
+  },
+  "contact": {
+    "showcase": {
+      "title": "Get In Touch",
+      "subtitle": "Ready to improve your health? Let’s talk about your goals and how we can help.",
+      "contactButton": "Contact"
+    },
+    "hero": {
+      "title": "Personalised Health & Wellness Support",
+      "subtitle": "Work with certified coaches on nutrition, fitness, sleep, stress, and sustainable habits.",
+      "primaryCta": "Start your wellness journey"
+    },
+    "form": {
+      "title": "Get Personalised Health & Wellness Support",
+      "subtitle": "Tell us about your goals and we’ll create a tailored plan for you.",
+      "successMessage": "Thank you! We received your message and will reach out shortly.",
+      "fullName": "Full Name",
+      "fullNamePlaceholder": "e.g., Alex Johnson",
+      "emailAddress": "Email",
+      "emailPlaceholder": "you@example.com",
+      "phoneNumber": "Phone (optional)",
+      "phonePlaceholder": "+1 555 000 1234",
+      "subject": "Wellness Topic",
+      "subjectPlaceholder": "Select a topic",
+      "subjectOptions": {
+        "nutrition": "Nutrition & Diet",
+        "fitness": "Fitness & Training",
+        "mental": "Mental Wellbeing",
+        "sleep": "Sleep & Recovery",
+        "chronic": "Chronic Care",
+        "general": "General Inquiry"
+      },
+      "message": "Tell us about your goals",
+      "messagePlaceholder": "Share any symptoms, goals, preferences, or timelines.",
+      "consent": "I agree to the processing of my information in accordance with the privacy policy. This form is for non-emergency queries.",
+      "sendMessage": "Send Message",
+      "sendingMessage": "Sending…",
+      "avgResponse": "Average response time: under 24 hours",
+      "errors": {
+        "name": "Please enter your full name.",
+        "emailRequired": "Please enter your email address.",
+        "emailInvalid": "Please enter a valid email address.",
+        "subject": "Please select a wellness topic.",
+        "message": "Please describe your needs or questions.",
+        "consent": "Please agree to our privacy policy."
+      }
+    },
+    "why": {
+      "title": "Why reach out?",
+      "subtitle": "Get a plan you can stick to, backed by qualified experts and ongoing support.",
+      "cards": {
+        "plansTitle": "Personalised plans",
+        "plansDesc": "Nutrition, fitness, sleep, and stress strategies tailored to you.",
+        "expertsTitle": "Certified experts",
+        "expertsDesc": "Work with qualified coaches and health professionals.",
+        "followupsTitle": "Flexible follow-ups",
+        "followupsDesc": "Chat, email, or video sessions to keep you on track.",
+        "habitsTitle": "Realistic habits",
+        "habitsDesc": "Actionable steps designed for your lifestyle and constraints."
+      }
+    },
+    "map": {
+      "title": "Find us and get connected",
+      "subtitle": "Join virtual programs worldwide or visit our local partner facilities."
+    },
+    "contactInfo": {
+      "title": "Ways to reach our care team",
+      "subtitle": "Prefer talking to a person? Contact us through the options below.",
+      "phone": "Phone",
+      "phoneNumber": "+1 (800) 555-0134",
+      "phoneHours": "Mon–Sat, 8am–8pm",
+      "email": "Email",
+      "emailAddress": "care@wellness.example",
+      "emailResponse": "We reply within 24 hours",
+      "office": "Office",
+      "officeAddress": "123 Harmony Ave, Wellness District",
+      "officeCity": "Melbourne, VIC"
+    },
+    "ctaBanner": {
+      "tag": "Live Better, Feel Better",
+      "title": "Your Wellness Journey Starts With A Conversation",
+      "desc": "Connect with our health and wellness team to discover personalized solutions for your goals.",
+      "ctaPrimary": "Start Your Journey",
+      "ctaCall": "Call Now",
+      "highlights": {
+        "expertsTitle": "Expert Coaches",
+        "expertsDesc": "Certified professionals",
+        "supportTitle": "24/7 Support",
+        "supportDesc": "Always available",
+        "resultsTitle": "Proven Results",
+        "resultsDesc": "95% success rate",
+        "plansTitle": "Personal Plans",
+        "plansDesc": "Tailored to you"
+      }
+    },
+    "faq": {
+      "tag": "Frequently Asked Questions",
+      "title": "Get Clear Answers About Our Health & Wellness Programs",
+      "subtitle": "Starting your wellness journey can bring up many questions—and that's perfectly normal. Below, we answer some of the most common ones to help you feel informed and confident.",
+      "ctaButton": "Ask A New Question",
+      "bottomTitle": "Still Have Questions?",
+      "bottomText": "Our wellness experts are here to help guide you on your journey to better health.",
+      "questions": [
+        {
+          "question": "What types of health and wellness programs do you offer?",
+          "answer": "We offer comprehensive health and wellness programs including personalized nutrition coaching, mental health support, fitness guidance, stress management, and preventive healthcare. Our programs are tailored to your individual needs and health goals."
+        },
+        {
+          "question": "Do I need a referral from a doctor to join your programs?",
+          "answer": "No referral is required for most of our wellness programs. However, if you have specific health conditions or are taking medications, we may recommend consulting with your healthcare provider before starting certain programs."
+        },
+        {
+          "question": "How do I know which program is right for me?",
+          "answer": "We start with a comprehensive health assessment to understand your current state, goals, and preferences. Based on this evaluation, our certified wellness coaches will recommend the most suitable program for your specific needs."
+        },
+        {
+          "question": "Are your programs covered by insurance?",
+          "answer": "Many of our wellness programs are covered by health insurance plans, and we work with most major insurance providers. We can help you verify your coverage and explore available benefits during your initial consultation."
+        },
+        {
+          "question": "How long do the programs typically last?",
+          "answer": "Program duration varies based on your goals and program type. Our programs range from 8-week intensive programs to ongoing 6-month wellness journeys, with flexibility to adjust based on your progress and needs."
+        }
+      ]
+    },
+    "video": {
+      "notSupported": "Your browser does not support the video tag."
+    }
+  },
+  "spaTherapies": {
+    "showcase": {
+      "title": "Weight Loss Program",
+      "subtitle": "Transform your life with our comprehensive weight loss program combining nutrition, fitness, and lifestyle coaching.",
+      "connectButton": "connect"
+    },
+    "hero": {
+      "tagline": "SPA THERAPIES SERVICES",
+      "title": "Rejuvenate Your Wellbeing",
+      "description": "We specialize in comprehensive spa therapy programs tailored for complete relaxation and wellness. From deep tissue massage to aromatherapy treatments, our therapeutic services are designed to reduce stress, improve circulation, and restore balance — helping you achieve optimal health and inner peace.",
+      "features": {
+        "professionalTherapists": "Professional Therapists",
+        "personalizedTreatments": "Personalized Treatments",
+        "holisticApproach": "Holistic Approach",
+        "relaxingEnvironment": "Relaxing Environment"
+      },
+      "bookSessionButton": "Book Your Session",
+      "learnMoreButton": "Learn More"
+    },
+    "faq": {
+      "tag": "Spa Therapies FAQ",
+      "title": "Spa Therapies FAQ",
+      "subtitle": "",
+      "questions": [
+        {
+          "question": "What types of spa treatments do you offer?",
+          "answer": "We offer a comprehensive range of spa therapies including deep tissue massage, aromatherapy, hot stone therapy, facial treatments, body wraps, reflexology, couples massage, and wellness packages. Each treatment is customized to meet your specific needs and wellness goals."
+        },
+        {
+          "question": "Do I need to book appointments in advance?",
+          "answer": "Yes, we recommend booking appointments in advance to ensure availability, especially for popular treatments like couples massage and wellness packages. You can book online through our website or call us directly to schedule your session."
+        },
+        {
+          "question": "What should I expect during my first spa visit?",
+          "answer": "During your first visit, we'll conduct a brief consultation to understand your wellness goals and any specific areas of concern. Our therapists will explain the treatment process and ensure you're completely comfortable throughout your session."
+        },
+        {
+          "question": "Are your therapists licensed and certified?",
+          "answer": "Absolutely! All our therapists are fully licensed and certified professionals with extensive training in various spa therapy techniques. We maintain the highest standards of safety and professionalism in all our treatments."
+        },
+        {
+          "question": "How long do spa treatments typically last?",
+          "answer": "Treatment duration varies depending on the service. Massage sessions typically range from 60-90 minutes, facial treatments are usually 60 minutes, and wellness packages can last 2-3 hours. We'll discuss timing options when you book your appointment."
+        }
+      ]
+    },
+    "testimonials": {
+      "title": "Client Testimonials",
+      "subtitle": "Hear from our satisfied clients about their transformative spa experiences",
+      "clients": {
+        "client1": {
+          "name": "Sarah Mitchell",
+          "role": "Regular Client",
+          "content": "The deep tissue massage was absolutely incredible. The therapist was professional and really understood my muscle tension issues. I left feeling completely relaxed and rejuvenated."
+        },
+        "client2": {
+          "name": "Jennifer Lee",
+          "role": "Wellness Enthusiast",
+          "content": "The aromatherapy treatment was a game-changer for my stress levels. The calming scents and expert techniques helped me achieve a level of relaxation I haven't felt in years."
+        },
+        "client3": {
+          "name": "Maria Rodriguez",
+          "role": "Couples Package Client",
+          "content": "My husband and I enjoyed the couples massage package, and it was perfect for our anniversary. The romantic setting and synchronized treatments created an unforgettable experience."
+        },
+        "client4": {
+          "name": "Amanda Wilson",
+          "role": "Facial Treatment Client",
+          "content": "The facial treatment left my skin glowing and feeling incredibly soft. The therapist's knowledge of skincare and gentle techniques made it both relaxing and effective."
+        }
+      }
+    },
+      "services": {
+      "title": "Spa Therapy Services",
+      "subtitle": "Professional wellness treatments designed to restore balance and promote healing",
+      "deepTissueMassage": "Deep Tissue Massage",
+      "aromatherapy": "Aromatherapy",
+      "hotStoneTherapy": "Hot Stone Therapy",
+      "facialTreatments": "Facial Treatments",
+      "bodyWraps": "Body Wraps",
+      "reflexology": "Reflexology",
+      "couplesMassage": "Couples Massage",
+      "wellnessPackages": "Wellness Packages"
+    },
+    "cta": {
+      "title": "Let's Restore Your Inner Balance",
+      "subtitle": "From relaxation to rejuvenation, we create spa experiences that nurture your wellbeing.",
+      "startProjectButton": "Book Your Session",
+      "viewServicesButton": "View Services"
+    }
+  },
+  "holisticHealing": {
+    "showcase": {
+      "title": "Holistic Healing",
+      "subtitle": "Transform your mind, body, and spirit through ancient wisdom and modern healing techniques.",
+      "connectButton": "connect",
+      "exploreServicesButton": "Explore Services"
+    },
+    "hero": {
+      "tagline": "HOLISTIC HEALING SERVICES",
+      "title": "Awaken Your Inner Healer",
+      "description": "We specialize in comprehensive holistic healing programs that address the whole person — mind, body, and spirit. From energy healing and chakra balancing to crystal therapy and spiritual guidance, our transformative services are designed to restore balance, promote healing, and awaken your highest potential.",
+      "features": {
+        "energyHealing": "Energy Healing",
+        "chakraBalancing": "Chakra Balancing",
+        "crystalTherapy": "Crystal Therapy",
+        "spiritualGuidance": "Spiritual Guidance"
+      },
+      "getStartedButton": "Begin Your Journey",
+      "viewServicesButton": "View Services",
+      "learnMoreButton": "Learn More"
+    },
+    "faq": {
+      "tag": "Holistic Healing FAQ",
+      "title": "Holistic Healing FAQ",
+      "subtitle": "",
+      "questions": [
+        {
+          "question": "What is holistic healing and how does it work?",
+          "answer": "Holistic healing is an approach that treats the whole person — mind, body, and spirit — rather than just symptoms. It works by addressing the root causes of imbalance through various techniques like energy healing, chakra balancing, crystal therapy, and spiritual guidance to restore harmony and promote natural healing."
+        },
+        {
+          "question": "What types of holistic healing services do you offer?",
+          "answer": "We offer a comprehensive range of holistic healing services including energy healing, chakra balancing, crystal therapy, Reiki healing, meditation guidance, sound therapy, aura cleansing, and spiritual counseling. Each session is personalized to meet your specific needs and healing goals."
+        },
+        {
+          "question": "How long does a typical healing session last?",
+          "answer": "Healing sessions typically last 60-90 minutes, depending on the type of treatment and your specific needs. We begin with a consultation to understand your concerns and goals, then tailor the session accordingly. Some intensive healing packages may last 2-3 hours for deeper transformation work."
+        },
+        {
+          "question": "Do I need to prepare anything before my healing session?",
+          "answer": "We recommend wearing comfortable, loose-fitting clothing and avoiding heavy meals before your session. It's helpful to come with an open mind and clear intentions for your healing. We'll provide guidance on any specific preparations needed for your particular treatment."
+        },
+        {
+          "question": "Are holistic healing practices safe and effective?",
+          "answer": "Yes, holistic healing practices are generally safe when performed by trained practitioners. Our healers are certified and experienced professionals who use gentle, non-invasive techniques. While these practices complement traditional medicine, they should not replace necessary medical treatment."
+        }
+      ]
+    },
+    "testimonials": {
+      "title": "Client Testimonials",
+      "subtitle": "Hear from our clients about their transformative healing experiences",
+      "clients": {
+        "client1": {
+          "name": "Emma Martinez",
+          "role": "Energy Healing Client",
+          "content": "The energy healing session was absolutely transformative. I felt blocked energy moving through my body and left feeling lighter and more balanced. The practitioner was incredibly intuitive and helped me release years of emotional baggage."
+        },
+        "client2": {
+          "name": "James Stone",
+          "role": "Chakra Balancing Client",
+          "content": "After my chakra balancing session, I felt more centered and aligned than I have in years. The practitioner explained everything clearly and I could actually feel the energy shifts happening. It was a profound experience."
+        },
+        "client3": {
+          "name": "Rachel Kim",
+          "role": "Crystal Therapy Client",
+          "content": "The crystal therapy session was incredibly relaxing and healing. The practitioner used different crystals for different energy centers, and I could feel their unique vibrations. My anxiety has significantly decreased since the session."
+        },
+        "client4": {
+          "name": "Lisa Thompson",
+          "role": "Spiritual Counseling Client",
+          "content": "The spiritual counseling helped me find clarity and purpose during a difficult time in my life. The guidance was gentle yet profound, and I left with a renewed sense of direction and inner peace."
+        }
+      }
+    },
+      "services": {
+      "title": "Holistic Healing Services",
+      "subtitle": "Ancient wisdom meets modern healing for complete mind-body-spirit wellness",
+      "energyHealing": "Energy Healing",
+      "chakraBalancing": "Chakra Balancing",
+      "crystalTherapy": "Crystal Therapy",
+      "reikiHealing": "Reiki Healing",
+      "meditationGuidance": "Meditation Guidance",
+      "soundTherapy": "Sound Therapy",
+      "auraCleansing": "Aura Cleansing",
+      "spiritualCounseling": "Spiritual Counseling"
+    },
+    "cta": {
+      "title": "Begin Your Healing Journey Today",
+      "subtitle": "From energy healing to spiritual guidance, we create transformative experiences that awaken your inner healer.",
+      "startProjectButton": "Start Your Journey",
+      "viewServicesButton": "View Services"
+    }
+  },
+  "nutritionPlansPage": {
+    "showcase": {
+      "bookConsultation": "Book Nutrition Consultation"
+    },
+    "hero": {
+      "title": "Personalized Nutrition Plans",
+      "description": "Custom meal plans, macro tracking, and coaching to help you achieve weight loss, muscle building, or metabolic health goals — built around your lifestyle and food preferences.",
+      "benefits": {
+        "dietPlans": "Diet Plans for Every Goal",
+        "macroGuidance": "Macro & Calorie Guidance",
+        "weeklyCheckins": "Weekly Check-ins",
+        "habitBuilding": "Sustainable Habit Building"
+      },
+      "startPlanButton": "Start Your Plan",
+      "learnMoreButton": "Learn More"
+    },
+    "faq": {
+      "badge": "Nutrition FAQ",
+      "title": "Everything You Need to Know",
+      "questions": {
+        "q1": {
+          "question": "What's included in a personalized nutrition plan?",
+          "answer": "Your personalized plan includes: detailed meal plans with recipes, macro and calorie breakdowns, grocery shopping lists, meal prep guidance, portion control tips, and weekly progress tracking with adjustments based on your results."
+        },
+        "q2": {
+          "question": "Can you accommodate dietary restrictions and preferences?",
+          "answer": "Absolutely! We create plans for all dietary needs including vegetarian, vegan, keto, paleo, gluten-free, dairy-free, diabetic-friendly, PCOS-specific, and cultural/regional cuisines like Indian, Mediterranean, or Asian."
+        },
+        "q3": {
+          "question": "How soon will I see results with a nutrition plan?",
+          "answer": "Most clients notice improved energy levels within 1-2 weeks. Visible changes in weight, body composition, or health markers typically appear within 3-4 weeks when following the plan consistently."
+        },
+        "q4": {
+          "question": "Do I need to buy expensive supplements or specialty foods?",
+          "answer": "No! Our plans prioritize whole foods accessible from your local grocery store. Supplements are recommended only when medically necessary or if there are specific deficiencies. We focus on sustainable, real-food-based nutrition."
+        },
+        "q5": {
+          "question": "Will I get ongoing support and plan adjustments?",
+          "answer": "Yes! You receive weekly or bi-weekly check-ins via chat/call, ongoing plan modifications based on your progress, lifestyle changes, and feedback. We adapt your plan as your body and goals evolve."
+        }
+      }
+    },
+    "testimonials": {
+      "title": "Success Stories from Our Clients",
+      "subtitle": "Real transformations from people who trusted us with their nutrition journey",
+      "client1": {
+        "name": "Sarah Patel",
+        "role": "Lost 15kg in 4 months",
+        "content": "The personalized meal plans made all the difference. I never felt deprived, and the weekly check-ins kept me accountable. Best investment in my health!"
+      },
+      "client2": {
+        "name": "Raj Kumar",
+        "role": "Built muscle & improved energy",
+        "content": "As a vegetarian, I struggled to meet my protein goals. The customized plan with Indian meals helped me gain lean muscle while enjoying the food I love."
+      },
+      "client3": {
+        "name": "Maya Ahmed",
+        "role": "Reversed pre-diabetes",
+        "content": "The nutrition guidance was evidence-based and easy to follow. My blood sugar levels normalized in 3 months, and I feel more energetic than ever."
+      },
+      "client4": {
+        "name": "David Lee",
+        "role": "Corporate professional",
+        "content": "With a hectic work schedule, I needed practical solutions. The meal prep guidance and quick recipes fit perfectly into my busy lifestyle."
+      }
+    },
+    "programs": {
+      "title": "Our Specialized Nutrition Programs",
+      "subtitle": "Comprehensive nutrition solutions for every health goal",
+      "list": {
+        "weightLoss": "Weight Loss Meal Plans",
+        "muscleBuilding": "Muscle Building Nutrition",
+        "keto": "Keto & Low-Carb Diets",
+        "diabetic": "Diabetic Diet Plans",
+        "pcos": "PCOS Diet Management",
+        "cardiac": "Cardiac Care Nutrition",
+        "prenatal": "Prenatal Nutrition",
+        "fasting": "Intermittent Fasting Plans"
+      }
+    },
+    "cta": {
+      "title": "Ready to Transform Your Nutrition?",
+      "description": "Get a plan that fits your goals, schedule, and taste. Start feeling better, eating smarter, and living healthier — one meal at a time.",
+      "consultationButton": "Get Your Free Consultation",
+      "servicesButton": "Explore Services"
+    }
+  },
+  "blogPage": {
+    "showcase": {
+      "tagline": "",
+      "title": "Transform Your Health Journey",
+      "subtitle": "Personalized programs, certified experts, and tools to improve your mind and body.",
+      "subscribeButton": "Explore Programs"
+    },
+    "featuredArticles": {
+      "title": "Featured Articles",
+      "subtitle": "Our most popular and insightful posts"
+    },
+  "brands": {
+    "title": "Healthy Brand Growing With Us",
+    "names": [
+      "Mindful Wellness",
+      "Natural Health",
+      "Balance Life",
+      "Growth Path"
+    ]
+  },
+    "latestNews": {
+      "title": "Latest News",
+      "subtitle": "Stay updated with the latest health and wellness insights"
+    },
+    "takeCharge": {
+      "title": "Take Charge Of Your Life",
+      "subtitle": "Transform your wellness journey with proven strategies",
+      "connect": {
+        "title": "Connect",
+        "description": "Build meaningful relationships and connect with your inner self through mindfulness and meditation practices."
+      },
+      "goNatural": {
+        "title": "Go Natural",
+        "description": "Embrace natural nutrition and wholesome foods that nourish your body and support optimal health."
+      },
+      "scheduleExercise": {
+        "title": "Schedule Exercise",
+        "description": "Create consistent fitness routines that fit your lifestyle and help you achieve your wellness goals."
+      },
+      "celebrateSuccess": {
+        "title": "Celebrate Success",
+        "description": "Acknowledge your achievements and milestones on your journey to better health and personal growth."
+      }
+    },
+    "blogPosts": {
+      "takeCharge": {
+        "title": "Take Charge of Your Life",
+        "excerpt": "Discover powerful strategies to transform your health and wellness journey. Learn how to build sustainable habits that lead to lasting change and improved quality of life. Explore evidence-based approaches to mental health, physical fitness, and overall well-being that will help you create the life you truly desire.",
+        "category": "Wellness",
+        "author": "Dr. Maya Patel",
+        "date": "04.02.2016",
+        "readTime": "8 min read"
+      },
+      "getMotivated": {
+        "title": "Ways to Get Motivated",
+        "excerpt": "Explore proven techniques to boost your motivation and maintain momentum in your health goals. From mindset shifts to practical action steps that keep you moving forward. Discover the psychology behind motivation and learn how to create lasting behavioral changes that support your wellness journey and personal growth.",
+        "category": "Motivation",
+        "author": "James Lee, CPT",
+        "date": "04.02.2016",
+        "readTime": "12 min read"
+      },
+      "boostMetabolism": {
+        "title": "Boost Your Metabolism",
+        "excerpt": "Unlock the secrets to naturally increasing your metabolic rate through nutrition, exercise, and lifestyle changes. Science-backed methods for sustainable energy and weight management. Learn about metabolic flexibility, nutrient timing, and the role of sleep and stress management in optimizing your body's energy systems.",
+        "category": "Nutrition",
+        "author": "Nora Alvarez, RD",
+        "date": "04.02.2016",
+        "readTime": "10 min read"
+      }
+    },
+    "categories": {
+      "all": "All Posts",
+      "wellness": "Wellness",
+      "motivation": "Motivation",
+      "nutrition": "Nutrition"
+    },
+    "whyChoosePlatform": {
+      "title": "Why Choose Our Wellness Platform?",
+      "subtitle": "Built for members to learn, grow, and thrive in health",
+      "features": {
+        "globalTalent": {
+          "title": "Certified Experts",
+          "description": "Connect with licensed health professionals and wellness coaches."
+        },
+        "securePayments": {
+          "title": "Secure & Private",
+          "description": "Confidential consultations and secure data handling."
+        },
+        "verifiedClients": {
+          "title": "Evidence-Based",
+          "description": "Programs grounded in proven health and wellness practices."
+        },
+        "support24x7": {
+          "title": "24/7 Support",
+          "description": "We're here around the clock to support your journey."
+        },
+        "skillMatching": {
+          "title": "Personalized Plans",
+          "description": "Tailored programs that fit your goals and lifestyle."
+        },
+        "portfolioShowcase": {
+          "title": "Progress Tracking",
+          "description": "Track your improvements and celebrate milestones."
+        }
+      }
+    },
+    "trendingTopics": {
+      "title": "Trending Topics",
+      "subtitle": "What the health and wellness community is talking about",
+      "topics": [
+        "Mental Health Awareness 2025",
+        "Holistic Wellness Approaches",
+        "Nutrition & Lifestyle Balance",
+        "Mindfulness & Meditation",
+        "Sustainable Health Habits"
+      ]
+    },
+    "authors": {
+      "title": "Meet Our Health & Wellness Experts",
+      "subtitle": "Certified professionals dedicated to your wellness journey",
+      "sarah": {
+        "name": "Dr. Sarah Mitchell",
+        "role": "Certified Nutritionist",
+        "bio": "15+ years helping individuals achieve optimal health through personalized nutrition and lifestyle changes",
+        "expertise": ["Clinical Nutrition", "Weight Management", "Metabolic Health"]
+      },
+      "mike": {
+        "name": "Mike Rodriguez",
+        "role": "Personal Trainer",
+        "bio": "Expert in functional fitness and injury prevention, helping clients build strength and mobility",
+        "expertise": ["Strength Training", "Rehabilitation", "Sports Performance"]
+      },
+      "emma": {
+        "name": "Emma Thompson",
+        "role": "Mental Health Counselor",
+        "bio": "Specialized in stress management, anxiety reduction, and building healthy mental wellness habits",
+        "expertise": ["Stress Management", "Mindfulness", "Cognitive Behavioral Therapy"]
+      }
+    },
+    "cta": {
+      "title": "Transform Your Health & Wellness Today",
+      "description": "Begin your journey to optimal health with expert guidance and personalized wellness programs.",
+      "startButton": "Start Now",
+      "learnMoreButton": "Learn More",
+      "trustIndicator": "50K+ people transformed their health",
+      "imageLabels": {
+        "mainImage": {
+          "title": "Health & Wellness",
+          "subtitle": "Expert Guidance"
+        },
+        "nutrition": "Nutrition",
+        "fitness": "Fitness"
+      }
+    }
+  },
+  "wellnessEvents": {
+    "showcase": {
+      "title": "Wellness Events",
+      "subtitle": "Join our community wellness events designed to inspire healthy habits and foster connections.",
+      "connectButton": "Join Event"
+    },
+    "hero": {
+      "tagline": "WELLNESS EVENTS",
+      "title": "Transform Your Wellness Journey",
+      "description": "Join our vibrant community of wellness enthusiasts through engaging events that promote healthy living, mindfulness, and personal growth. From group fitness sessions to wellness workshops, our events are designed to inspire, educate, and connect you with like-minded individuals on their wellness journey."
+    },
+    "faq": {
+      "tag": "Wellness Events FAQ",
+      "title": "Wellness Events FAQ",
+      "subtitle": "",
+      "questions": [
+        {
+          "question": "What types of wellness events do you offer?",
+          "answer": "We offer a diverse range of wellness events including group fitness classes, mindfulness workshops, nutrition seminars, stress management sessions, yoga retreats, wellness challenges, and community health screenings. Each event is designed to support different aspects of your wellness journey."
+        },
+        {
+          "question": "Do I need to be experienced in wellness to join events?",
+          "answer": "Not at all! Our wellness events welcome participants of all experience levels, from complete beginners to wellness enthusiasts. Our instructors and facilitators are skilled at adapting activities to meet everyone's needs and comfort levels."
+        },
+        {
+          "question": "How often are wellness events held?",
+          "answer": "We host wellness events throughout the week with varying frequencies. Regular events include daily fitness classes, weekly mindfulness sessions, monthly workshops, and seasonal retreats. Check our events calendar for the most up-to-date schedule."
+        },
+        {
+          "question": "What should I bring to wellness events?",
+          "answer": "For most events, comfortable workout clothes and a water bottle are sufficient. For specific events like yoga or meditation, we may recommend bringing a mat. All necessary equipment and materials are typically provided. You'll receive detailed information when you register for an event."
+        },
+        {
+          "question": "Are wellness events suitable for all ages?",
+          "answer": "Most of our wellness events are designed for adults, but we also offer family-friendly events and specialized programs for different age groups. Event descriptions will specify age requirements and recommendations."
+        },
+        {
+          "question": "Can I attend events virtually?",
+          "answer": "Yes! Many of our wellness events are available both in-person and virtually. We use high-quality streaming technology to ensure virtual participants have an engaging and interactive experience."
+        }
+      ]
+    },
+    "eventTypes": {
+      "title": "Event Categories",
+      "subtitle": "Explore our diverse range of wellness events designed to support every aspect of your health journey",
+      "events": [
+        {
+          "name": "Group Fitness",
+          "description": "High-energy group workouts that build strength, endurance, and community spirit."
+        },
+        {
+          "name": "Mindfulness Workshops",
+          "description": "Guided meditation and mindfulness practices for stress reduction and mental clarity."
+        },
+        {
+          "name": "Nutrition Seminars",
+          "description": "Educational sessions on healthy eating habits and nutritional wellness."
+        },
+        {
+          "name": "Yoga Retreats",
+          "description": "Immersive yoga experiences combining physical practice with spiritual growth."
+        },
+        {
+          "name": "Wellness Challenges",
+          "description": "Community-driven challenges that motivate healthy lifestyle changes."
+        },
+        {
+          "name": "Stress Management",
+          "description": "Practical techniques and tools for managing daily stress and building resilience."
+        },
+        {
+          "name": "Health Screenings",
+          "description": "Free health assessments and wellness check-ups for community members."
+        },
+        {
+          "name": "Wellness Coaching",
+          "description": "One-on-one and group coaching sessions for personalized wellness guidance."
+        }
+      ]
+    },
+    "testimonials": {
+      "title": "Event Participant Stories",
+      "subtitle": "Hear from community members who transformed their wellness through our events",
+      "participants": {
+        "participant1": {
+          "name": "Jennifer Martinez",
+          "role": "Wellness Event Participant",
+          "content": "The mindfulness workshops completely changed how I handle stress. I've learned techniques that I use daily, and my overall well-being has improved dramatically. The community support is incredible!"
+        },
+        "participant2": {
+          "name": "Robert Kim",
+          "role": "Fitness Enthusiast",
+          "content": "The group fitness events are amazing! I've made friends, improved my fitness level, and found motivation I never had before. The instructors are knowledgeable and supportive."
+        },
+        "participant3": {
+          "name": "Lisa Thompson",
+          "role": "Yoga Retreat Attendee",
+          "content": "The yoga retreat was life-changing. I learned so much about myself and connected with wonderful people. The peaceful environment and expert guidance made it unforgettable."
+        },
+        "participant4": {
+          "name": "Michael Chen",
+          "role": "Nutrition Seminar Participant",
+          "content": "The nutrition seminars opened my eyes to healthy eating. I've completely transformed my diet and feel more energetic than ever. The practical tips are easy to follow."
+        }
+      }
+    },
+    "cta": {
+      "title": "Join Our Wellness Community",
+      "subtitle": "From individual growth to community connection, we create wellness experiences that inspire transformation.",
+      "startProjectButton": "Join an Event",
+      "viewServicesButton": "View All Events"
+    }
+  },
+  "blogPost1": {
+    "hero": {
+      "category": "Wellness",
+      "readTime": "8 min read",
+      "date": "04.02.2016",
+      "title": "Take Charge of Your Life: A Complete Guide",
+      "author": "Dr. Maya Patel",
+      "authorRole": "Wellness Expert & Health Coach"
+    },
+    "content": {
+      "intro": "Taking charge of your life through health and wellness can be both empowering and transformative. With the right approach, you can build sustainable habits that lead to lasting change, improved quality of life, and personal fulfillment. This comprehensive guide will walk you through every step of your wellness journey.",
+      "section1": {
+        "title": "Understanding Your Wellness Journey",
+        "description": "Health and wellness has evolved significantly in our modern world. What once was considered just physical fitness has now become a holistic approach to living that encompasses mental, emotional, and spiritual well-being. The wellness industry continues to grow, offering opportunities for transformation across every aspect of life."
+      },
+      "section2": {
+        "title": "Key Benefits of Health and Wellness",
+        "benefits": [
+          "Improved physical health and increased energy levels",
+          "Enhanced mental clarity and emotional well-being",
+          "Better stress management and resilience",
+          "Increased self-confidence and personal growth"
+        ]
+      },
+      "section3": {
+        "title": "Step 1: Assess Your Current Wellness State",
+        "description": "Before diving into your wellness journey, it's crucial to evaluate your current health status and understand what areas need attention. This self-assessment will help you create a personalized plan and identify areas for improvement.",
+        "checklistTitle": "Wellness Assessment Checklist",
+        "checklistItems": [
+          "Physical fitness level and exercise habits",
+          "Nutrition and dietary patterns",
+          "Sleep quality and duration",
+          "Stress levels and coping mechanisms",
+          "Mental health and emotional well-being"
+        ]
+      },
+      "section4": {
+        "title": "Step 2: Choose Your Health and Wellness Platform",
+        "description": "There are numerous platforms and resources where you can find wellness support and guidance. Each has its own advantages and target audience. Research and choose the ones that best align with your health goals and lifestyle.",
+        "subtitle": "Popular Health and Wellness Platforms",
+        "platforms": [
+          {
+            "name": "MyFitnessPal",
+            "nameTranslated": "MyFitnessPal",
+            "description": "Great for nutrition tracking and calorie management"
+          },
+          {
+            "name": "Headspace",
+            "nameTranslated": "Headspace",
+            "description": "Meditation and mindfulness app for mental wellness"
+          },
+          {
+            "name": "Peloton",
+            "nameTranslated": "Peloton",
+            "description": "Comprehensive fitness platform with live classes"
+          },
+          {
+            "name": "Calm",
+            "nameTranslated": "Calm",
+            "description": "Premium platform for sleep and relaxation"
+          }
+        ]
+      },
+      "section5": {
+        "title": "Step 3: Create a Personalized Wellness Plan",
+        "description": "Your wellness plan is your roadmap to better health. It's often the foundation of your transformation journey, so make it comprehensive and realistic. A well-crafted plan can significantly increase your chances of achieving your health goals.",
+        "subtitle": "Wellness Plan Optimization Tips",
+        "tips": [
+          {
+            "title": "Set Clear Goals:",
+            "description": "Define specific, measurable, and achievable health objectives."
+          },
+          {
+            "title": "Create a Schedule:",
+            "description": "Establish consistent routines for exercise, meals, and self-care."
+          },
+          {
+            "title": "Track Your Progress:",
+            "description": "Monitor your achievements and adjust your plan as needed."
+          },
+          {
+            "title": "Build Support Systems:",
+            "description": "Connect with friends, family, or professionals who can encourage you."
+          },
+          {
+            "title": "Celebrate Milestones:",
+            "description": "Acknowledge your progress and reward yourself for achievements."
+          }
+        ]
+      },
+      "section6": {
+        "title": "Step 4: Set Realistic Wellness Goals",
+        "description": "Goal setting is one of the most important aspects of wellness. Set your goals too low, and you might not see meaningful progress. Set them too high, and you might become discouraged and give up.",
+        "subtitle": "Goal Setting Considerations",
+        "considerations": [
+          "Research evidence-based approaches for your specific health goals",
+          "Consider your current lifestyle and available time",
+          "Factor in your physical limitations and health conditions",
+          "Start with small, achievable goals and build momentum",
+          "Create different goal tiers for different aspects of wellness"
+        ]
+      },
+      "section7": {
+        "title": "Step 5: Start Your Wellness Journey",
+        "description": "Beginning your wellness journey can be the most challenging part of your transformation. However, with persistence and the right approach, you can overcome this hurdle and start building healthy habits.",
+        "subtitle": "Strategies for Starting Your Wellness Journey",
+        "strategies": [
+          {
+            "title": "Start with Small Changes:",
+            "description": "Begin with simple, manageable adjustments to your daily routine."
+          },
+          {
+            "title": "Find Accountability Partners:",
+            "description": "Connect with friends, family, or professionals who can support your journey."
+          },
+          {
+            "title": "Join Wellness Communities:",
+            "description": "Identify local groups or online communities that share your health goals."
+          },
+          {
+            "title": "Celebrate Small Wins:",
+            "description": "Acknowledge every positive step, no matter how small it may seem."
+          }
+        ]
+      },
+      "section8": {
+        "title": "Building Long-term Wellness Success",
+        "description": "Wellness is not just about achieving individual goals; it's about building a sustainable, healthy lifestyle. Focus on creating lasting habits, maintaining motivation, and continuously improving your well-being.",
+        "subtitle": "Success Principles for Wellness",
+        "principles": [
+          "Consistency is more important than perfection",
+          "Focus on progress, not perfection",
+          "Build a support system of like-minded individuals",
+          "Continuously educate yourself about health and wellness",
+          "Adapt your approach as your needs and circumstances change",
+          "Celebrate your achievements and learn from setbacks"
+        ]
+      },
+      "conclusion": {
+        "title": "Conclusion",
+        "mainText": "Starting your wellness journey requires preparation, patience, and persistence. By following these steps and maintaining a holistic approach, you can build a successful wellness lifestyle that offers the health, happiness, and fulfillment you're looking for.",
+        "finalText": "Remember, every successful wellness journey started exactly where you are now. The key is to take action, learn from your experiences, and never stop improving. Your wellness success story is waiting to be written."
+      }
+    },
+    "author": {
+      "name": "Dr. Maya Patel",
+      "role": "Wellness Expert & Health Coach",
+      "bio": "Dr. Maya Patel is a wellness expert and health coach with over 10 years of experience helping individuals transform their lives through holistic health approaches. She specializes in nutrition, fitness, mental health, and lifestyle optimization.",
+      "expertise": [
+        "Nutrition",
+        "Fitness",
+        "Mental Health",
+        "Lifestyle Coaching"
+      ]
+    },
+    "sidebar": {
+      "relatedPosts": "Related Posts",
+      "post1": {
+        "title": "Ways to Get Motivated",
+        "description": "Explore proven techniques to boost your motivation and maintain momentum in your health goals."
+      },
+      "post2": {
+        "title": "Boost Your Metabolism",
+        "description": "Unlock the secrets to naturally increasing your metabolic rate through nutrition and exercise."
+      }
+    }
+  },
+  "blogPost2": {
+    "hero": {
+      "category": "Motivation",
+      "readTime": "12 min read",
+      "date": "04.02.2016",
+      "title": "Ways to Get Motivated: A Complete Guide",
+      "author": "James Lee, CPT",
+      "authorRole": "Certified Personal Trainer & Wellness Coach"
+    },
+    "content": {
+      "intro": "Motivation is the driving force behind every successful health and wellness journey. Whether you're starting a new fitness routine, changing your eating habits, or working on mental wellness, understanding how to maintain motivation can make the difference between success and giving up. This comprehensive guide explores proven techniques to boost your motivation and maintain momentum in your health goals.",
+      "section1": {
+        "title": "Understanding Motivation in Health and Wellness",
+        "description": "Motivation in health and wellness is more than just feeling excited about your goals. It's about understanding the psychological and emotional factors that drive you to take action, maintain consistency, and overcome obstacles. True motivation comes from within and is sustained by clear purpose, achievable goals, and meaningful progress."
+      },
+      "section2": {
+        "title": "Types of Motivation That Drive Success",
+        "benefits": [
+          "Intrinsic motivation - driven by personal satisfaction and internal rewards",
+          "Extrinsic motivation - influenced by external factors like recognition or rewards",
+          "Goal-oriented motivation - focused on achieving specific health outcomes",
+          "Process-oriented motivation - finding joy in the journey itself"
+        ]
+      },
+      "section3": {
+        "title": "Strategy 1: Set Clear, Achievable Goals",
+        "description": "One of the most powerful ways to maintain motivation is to set clear, specific, and achievable goals. Vague goals like 'get healthy' are hard to measure and maintain motivation for. Instead, create SMART goals that are Specific, Measurable, Achievable, Relevant, and Time-bound.",
+        "checklistTitle": "SMART Goal Setting Checklist",
+        "checklistItems": [
+          "Specific: Define exactly what you want to achieve",
+          "Measurable: Include numbers, dates, or other quantifiable metrics",
+          "Achievable: Ensure your goals are realistic given your current situation",
+          "Relevant: Align goals with your values and long-term health vision",
+          "Time-bound: Set clear deadlines and milestones"
+        ]
+      },
+      "section4": {
+        "title": "Strategy 2: Find Your 'Why'",
+        "description": "Your 'why' is your deeper purpose for pursuing health and wellness. It's the emotional connection to your goals that keeps you going when motivation wanes. Understanding your why helps you stay committed during challenging times and makes your journey more meaningful.",
+        "subtitle": "Discovering Your Why",
+        "tips": [
+          "Reflect on what health and wellness means to you personally",
+          "Consider how achieving your goals will impact your life and relationships",
+          "Think about the legacy you want to leave for your family",
+          "Identify what you're most afraid of if you don't make changes",
+          "Connect your goals to your core values and beliefs"
+        ]
+      },
+      "section5": {
+        "title": "Strategy 3: Build a Support System",
+        "description": "No one achieves their health and wellness goals alone. A strong support system provides encouragement, accountability, and practical help when you need it most. Surround yourself with people who understand your goals and are committed to helping you succeed.",
+        "subtitle": "Creating Your Support Network",
+        "strategies": [
+          "Find an accountability partner with similar health goals",
+          "Join online communities or local groups focused on wellness",
+          "Work with certified health professionals like trainers or nutritionists",
+          "Share your goals with family and friends who can provide encouragement",
+          "Consider hiring a wellness coach for ongoing guidance and support"
+        ]
+      },
+      "section6": {
+        "title": "Strategy 4: Celebrate Small Wins",
+        "description": "Motivation thrives on progress and recognition. Celebrating small wins along your journey helps maintain momentum and reinforces positive behaviors. Every step forward, no matter how small, deserves acknowledgment and celebration.",
+        "subtitle": "Ways to Celebrate Progress",
+        "strategies": [
+          "Track your daily habits and acknowledge consistency",
+          "Take progress photos to visualize your transformation",
+          "Reward yourself with non-food treats for reaching milestones",
+          "Share your achievements with your support network",
+          "Reflect on how far you've come, not just how far you have to go"
+        ]
+      },
+      "conclusion": {
+        "title": "Conclusion",
+        "mainText": "Motivation is not a constant state but a skill that can be developed and maintained through intentional strategies. By setting clear goals, understanding your deeper why, building a strong support system, and celebrating your progress, you can maintain the motivation needed to achieve your health and wellness goals. Remember, motivation is what gets you started, but habits and systems are what keep you going."
+      }
+    },
+    "author": {
+      "name": "James Lee, CPT",
+      "role": "Certified Personal Trainer & Wellness Coach",
+      "bio": "James Lee is a certified personal trainer and wellness coach with over 8 years of experience helping individuals achieve their health and fitness goals. He specializes in motivation psychology, habit formation, and sustainable lifestyle changes.",
+      "expertise": [
+        "Personal Training",
+        "Motivation Psychology",
+        "Habit Formation",
+        "Wellness Coaching"
+      ]
+    },
+    "sidebar": {
+      "relatedPosts": "Related Posts",
+      "post1": {
+        "title": "Take Charge of Your Life",
+        "description": "Discover powerful strategies to transform your health and wellness journey."
+      },
+      "post2": {
+        "title": "Boost Your Metabolism",
+        "description": "Unlock the secrets to naturally increasing your metabolic rate."
+      }
+    }
+  },
+  "admin": {
+    "title": "Admin Dashboard",
+    "welcome": "Welcome to Admin Dashboard",
+    "overview": "System Overview",
+    "users": "All Users",
+    "userManagement": "User Management",
+    "statistics": "Statistics",
+    "recentActivity": "Recent Activity",
+    "totalUsers": "Total Users",
+    "activeUsers": "Active Users",
+    "newRegistrations": "New Registrations",
+    "userDetails": {
+      "id": "ID",
+      "name": "Name",
+      "email": "Email",
+      "loginTime": "Login Time",
+      "logoutTime": "Logout Time",
+      "status": "Status",
+      "actions": "Actions"
+    },
+    "actions": {
+      "view": "View",
+      "edit": "Edit",
+      "delete": "Delete",
+      "export": "Export Data"
+    },
+    "deleteConfirm": {
+      "title": "Delete User",
+      "message": "Are you sure you want to delete {{name}}? This action cannot be undone.",
+      "cancel": "Cancel",
+      "confirm": "Delete User"
+    },
+    "editMode": {
+      "cancel": "Cancel"
+    },
+    "filters": {
+      "all": "All Users",
+      "active": "Active",
+      "inactive": "Inactive",
+      "search": "Search users..."
+    }
+  },
+  "blogPost3": {
+    "hero": {
+      "category": "Nutrition",
+      "readTime": "10 min read",
+      "date": "04.02.2016",
+      "title": "Boost Your Metabolism",
+      "author": "Nora Alvarez, RD",
+      "authorRole": "Registered Dietitian"
+    },
+    "content": {
+      "intro": "Your metabolism is the engine that powers your body, converting food into energy and regulating countless physiological processes. While genetics play a role, there are numerous evidence-based strategies you can implement to naturally boost your metabolic rate and optimize your body's energy systems for better health and vitality.",
+      "section1": {
+        "title": "Understanding Your Metabolism",
+        "description": "Metabolism encompasses all the chemical processes that occur in your body to maintain life. Your basal metabolic rate (BMR) is the energy your body needs at rest, accounting for 60-75% of your daily calorie burn. Understanding how to optimize these processes is key to improving your overall health and energy levels.",
+        "subtitle": "Common Metabolism Myths",
+        "pitfalls": [
+          "Eating very few calories will boost metabolism",
+          "All calories are created equal for metabolism",
+          "Metabolism slows down permanently with age",
+          "Supplements alone can significantly boost metabolism"
+        ]
+      },
+      "section2": {
+        "title": "Strategy 1: Optimize Your Nutrition",
+        "description": "What you eat directly impacts your metabolic rate. Certain foods and eating patterns can increase your metabolism through the thermic effect of food (TEF) and other metabolic processes. Focus on nutrient-dense foods that support metabolic health.",
+        "matrixTitle": "Metabolism-Boosting Foods",
+        "matrixItems": [
+          {
+            "title": "Protein-Rich Foods",
+            "description": "Lean meats, fish, eggs, and legumes increase TEF by 20-30%"
+          },
+          {
+            "title": "Spicy Foods",
+            "description": "Capsaicin in peppers can temporarily boost metabolism by 8-20%"
+          },
+          {
+            "title": "Green Tea",
+            "description": "EGCG and caffeine combination supports fat oxidation"
+          },
+          {
+            "title": "Cold Water",
+            "description": "Drinking cold water can increase metabolism by 4-30% for 1-1.5 hours"
+          }
+        ],
+        "factorsTitle": "Key Nutritional Factors for Metabolism",
+        "factors": [
+          {
+            "title": "Protein Intake",
+            "description": "Aim for 0.8-1.2g per kg body weight to support muscle mass"
+          },
+          {
+            "title": "Meal Timing",
+            "description": "Regular meal patterns help maintain stable blood sugar and metabolism"
+          },
+          {
+            "title": "Hydration",
+            "description": "Even mild dehydration can slow metabolism by 2-3%"
+          },
+          {
+            "title": "Micronutrients",
+            "description": "B vitamins, iron, and magnesium are essential for metabolic processes"
+          },
+          {
+            "title": "Fiber",
+            "description": "Soluble fiber supports gut health and metabolic function"
+          }
+        ]
+      },
+      "section3": {
+        "title": "Strategy 2: Build and Maintain Muscle Mass",
+        "description": "Muscle tissue is metabolically active, burning more calories at rest than fat tissue. Building and maintaining muscle mass is one of the most effective ways to boost your metabolism long-term. Resistance training and adequate protein intake are essential components.",
+        "subtitle": "Muscle-Building Strategies",
+        "blocks": [
+          {
+            "title": "Resistance Training",
+            "description": "Aim for 2-3 strength training sessions per week targeting major muscle groups."
+          },
+          {
+            "title": "Progressive Overload",
+            "description": "Gradually increase weight, reps, or sets to continue building muscle."
+          },
+          {
+            "title": "Protein Timing",
+            "description": "Consume protein within 2 hours post-workout for optimal muscle synthesis."
+          },
+          {
+            "title": "Recovery",
+            "description": "Allow adequate rest between training sessions for muscle repair and growth."
+          }
+        ]
+      },
+      "section4": {
+        "title": "Strategy 3: Optimize Sleep and Stress Management",
+        "description": "Sleep quality and stress levels significantly impact metabolic health. Poor sleep and chronic stress can disrupt hormones that regulate metabolism, appetite, and energy expenditure. Prioritizing sleep and stress management is crucial for metabolic optimization.",
+        "subtitle": "Sleep and Stress Optimization Tools",
+        "tools": [
+          {
+            "name": "Sleep Hygiene",
+            "description": "Consistent bedtime routine and 7-9 hours of quality sleep"
+          },
+          {
+            "name": "Stress Reduction",
+            "description": "Meditation, deep breathing, and mindfulness practices"
+          },
+          {
+            "name": "Circadian Rhythm",
+            "description": "Natural light exposure and consistent meal timing"
+          },
+          {
+            "name": "Relaxation Techniques",
+            "description": "Yoga, progressive muscle relaxation, and nature exposure"
+          }
+        ]
+      },
+      "section5": {
+        "title": "Strategy 4: Incorporate High-Intensity Exercise",
+        "description": "High-intensity interval training (HIIT) and other forms of vigorous exercise can create an 'afterburn effect' where your metabolism remains elevated for hours after exercise. This excess post-exercise oxygen consumption (EPOC) can significantly boost daily calorie burn.",
+        "boundariesTitle": "HIIT Guidelines for Metabolism",
+        "boundaries": [
+          "Start with 1-2 HIIT sessions per week",
+          "Work at 80-90% of maximum heart rate during intervals",
+          "Include 1:2 or 1:3 work-to-rest ratios",
+          "Allow 48 hours between intense sessions",
+          "Combine with moderate-intensity exercise for balance"
+        ],
+        "expectationsTitle": "Exercise Expectations",
+        "expectationsDescription": "While exercise is important for metabolism, it's only one piece of the puzzle. Focus on consistency over intensity, and remember that nutrition, sleep, and stress management are equally important for metabolic health."
+      },
+      "section6": {
+        "title": "Strategy 5: Stay Consistently Active",
+        "description": "Non-exercise activity thermogenesis (NEAT) accounts for a significant portion of daily calorie burn. Simple activities like standing, walking, and fidgeting can add up to hundreds of calories burned throughout the day. Focus on increasing your daily movement.",
+        "subtitle": "NEAT Enhancement Examples",
+        "examples": [
+          {
+            "title": "Standing Desk",
+            "description": "Use a standing desk or take standing breaks every hour."
+          },
+          {
+            "title": "Walking Meetings",
+            "description": "Conduct phone calls or meetings while walking."
+          },
+          {
+            "title": "Stair Climbing",
+            "description": "Take stairs instead of elevators whenever possible."
+          },
+          {
+            "title": "Active Commuting",
+            "description": "Walk or bike to work, or park farther away from destinations."
+          }
+        ]
+      },
+      "section7": {
+        "title": "Strategy 6: Manage Your Environment",
+        "description": "Your environment significantly influences your metabolic health. Temperature, light exposure, and social factors can all impact your metabolism. Creating a metabolism-friendly environment can support your health goals.",
+        "subtitle": "Environment Optimization Factors",
+        "reasons": [
+          "Cold exposure can activate brown fat and boost metabolism",
+          "Natural light exposure supports circadian rhythm and metabolic health",
+          "Social connections and community support improve adherence to healthy habits",
+          "Reducing exposure to endocrine disruptors supports hormonal balance"
+        ]
+      },
+      "section8": {
+        "title": "Strategy 7: Track and Monitor Progress",
+        "description": "Monitoring your metabolic health helps you understand what's working and what needs adjustment. Regular tracking of key metrics can guide your approach and help you make informed decisions about your health strategies.",
+        "checklistTitle": "Metabolic Health Monitoring Checklist",
+        "checklistItems": [
+          "Track energy levels throughout the day",
+          "Monitor sleep quality and duration",
+          "Assess hunger and satiety patterns",
+          "Measure body composition changes",
+          "Evaluate exercise performance and recovery"
+        ]
+      },
+      "section9": {
+        "title": "Long-Term Metabolic Health",
+        "description": "Boosting your metabolism is a long-term commitment that requires consistency and patience. Focus on sustainable lifestyle changes rather than quick fixes. Remember that small, consistent improvements compound over time to create significant health benefits.",
+        "subtitle": "Sustainable Metabolism Strategies",
+        "strategies": [
+          {
+            "title": "Gradual Changes",
+            "description": "Implement one new habit at a time to ensure long-term success."
+          },
+          {
+            "title": "Consistency Over Perfection",
+            "description": "Focus on doing healthy behaviors most of the time, not all of the time."
+          },
+          {
+            "title": "Regular Assessment",
+            "description": "Periodically evaluate and adjust your approach based on results."
+          },
+          {
+            "title": "Professional Support",
+            "description": "Work with healthcare providers to optimize your metabolic health safely."
+          }
+        ]
+      },
+      "conclusion": {
+        "title": "Conclusion",
+        "mainText": "Boosting your metabolism is about creating a comprehensive approach to health that includes nutrition, exercise, sleep, stress management, and environmental optimization. By implementing these evidence-based strategies consistently, you can enhance your metabolic health and improve your overall well-being.",
+        "finalText": "Remember, metabolism is highly individual, and what works for one person may not work for another. Focus on finding the combination of strategies that work best for your lifestyle and health goals. With patience and consistency, you can optimize your metabolism and enjoy the benefits of improved energy, better health, and enhanced vitality."
+      }
+    },
+    "author": {
+      "name": "Nora Alvarez, RD",
+      "bio": "Nora Alvarez is a registered dietitian with over 10 years of experience in clinical nutrition and metabolic health. She specializes in helping individuals optimize their metabolism through evidence-based nutrition and lifestyle interventions.",
+      "expertise": ["Clinical Nutrition", "Metabolic Health", "Weight Management", "Sports Nutrition"]
+    },
+    "sidebar": {
+      "relatedPosts": "Related Articles",
+      "post1": {
+        "title": "Take Charge of Your Life",
+        "description": "Discover powerful strategies to transform your health and wellness journey."
+      },
+      "post2": {
+        "title": "Ways to Get Motivated",
+        "description": "Explore proven techniques to boost your motivation and maintain momentum."
+      }
+    }
+  },
+  "bmi": {
+    "title": "BMI & BMR Calculator",
+    "subtitle": "Calculate your Body Mass Index and Basal Metabolic Rate",
+    "description": "Your BMR calculator generates the number of calories your body burns per day at rest. Your BMR with activity factor is the number of calories your body burns per day based on the activity factor you selected.",
+    "form": {
+      "height": "Height / cm",
+      "weight": "Weight / kg",
+      "age": "Age",
+      "sex": "Sex",
+      "activityFactor": "Activity Factor",
+      "male": "Male",
+      "female": "Female",
+      "calculate": "Calculate BMI & BMR",
+      "reset": "Reset"
+    },
+    "activityFactors": {
+      "sedentary": "Sedentary (little or no exercise)",
+      "lightly": "Lightly active (light exercise/sports 1-3 days/week)",
+      "moderately": "Moderately active (moderate exercise/sports 3-5 days/week)",
+      "very": "Very active (hard exercise/sports 6-7 days a week)",
+      "extra": "Extra active (very hard exercise/sports & physical job)"
+    },
+    "results": {
+      "bmi": "BMI",
+      "bmr": "BMR",
+      "bmiWithActivity": "BMR with Activity Factor",
+      "status": "Status",
+      "underweight": "Underweight",
+      "healthy": "Healthy",
+      "overweight": "Overweight",
+      "obese": "Obese",
+      "caloriesPerDay": "calories per day",
+      "bmiChart": "BMI Chart",
+      "below": "Below 18.5",
+      "normal": "18.5 - 24.9",
+      "above": "25.0 - 29.9",
+      "obeseAbove": "30.0 - and Above",
+      "yourResults": "Your Results"
+    },
+    "errors": {
+      "fillAllFields": "Please fill in all fields to calculate BMI and BMR",
+      "invalidInput": "Please enter valid numbers for height, weight, and age"
+    }
+  },
+  "wellnessServices": {
+    "eyebrow": "Explore our wellness services",
+    "title": "See what our members share",
+    "subtitle": "Discover how our clients reach their wellness goals with us.",
+    "viewButton": "View",
+    "yoga": {
+      "title": "Yoga",
+      "description": "Mindful yoga practices to enhance flexibility, balance, and inner peace with expert-guided sessions."
+    },
+    "weightLoss": {
+      "title": "Weight Loss Program",
+      "description": "Comprehensive weight management plans designed to help you achieve sustainable and healthy weight loss goals."
+    },
+    "nutritionCounseling": {
+      "title": "Nutrition Counseling",
+      "description": "Expert guidance on meal planning and dietary choices to optimize your health and wellness journey."
+    },
+    "mentalHealth": {
+      "title": "Protect Your Mental Health",
+      "description": "Comprehensive mental wellness programs with counseling, mindfulness practices, and stress management techniques."
+    },
+    "ayurvedicTreatments": {
+      "title": "Ayurvedic Treatments",
+      "description": "Traditional holistic healing therapies that balance mind, body, and spirit through ancient wellness practices."
+    },
+    "thetaHealing": {
+      "title": "Theta Healing",
+      "description": "Energy healing techniques to release emotional blocks and promote deep mental and spiritual wellness."
+    },
+    "sportsTraining": {
+      "title": "Yoga",
+      "description": "Tailored wellness programs to build strength, mobility, and posture."
+    },
+    "spaTherapies": {
+      "title": "Weight Loss Program",
+      "description": "Transform your body with our comprehensive weight loss program."
+    },
+    "holisticHealing": {
+      "title": "Holistic Healing",
+      "description": "Comprehensive wellness care to enhance your health, confidence, and vitality."
+    },
+    "nutritionPlans": {
+      "title": "Nutrition Plans",
+      "description": "Meal plans to help you reach your health and fitness goals."
+    },
+    "mindfulLiving": {
+      "title": "Mindful Living",
+      "description": "Guided practices to balance mind, body, and spirit daily."
+    },
+    "wellnessEvents": {
+      "title": "Wellness Events",
+      "description": "Group events that inspire healthy habits and community."
+    }
+  },
+  "wellnessProgress": {
+    "title": "Improve Your Life",
+    "description": "Building healthy habits across movement, balance, and nutrition improves energy, reduces stress, and supports long‑term wellness. Track your weekly progress and keep momentum.",
+    "items": {
+      "bodyBalance": "Body Balance",
+      "dailyExercise": "Daily Exercise",
+      "physicalActivity": "Physical Activity",
+      "nutritionPlan": "Nutrition Plan"
+    }
+  },
+  "classesTimetable": {
+    "title": "Classes Timetable",
+    "subtitle": "Plan your week with our curated wellness schedule",
+    "categories": {
+      "all": "All Events",
+      "dance": "Dance Lessons",
+      "nutrition": "Nutrition",
+      "stretching": "Stretching",
+      "workout": "Workout"
+    },
+    "days": {
+      "monday": "Monday",
+      "tuesday": "Tuesday",
+      "wednesday": "Wednesday",
+      "thursday": "Thursday",
+      "friday": "Friday",
+      "saturday": "Saturday",
+      "sunday": "Sunday"
+    },
+    "classes": {
+      "zumba": "Zumba",
+      "powerDance": "Power Dance",
+      "pilates": "Pilates",
+      "yogaWorkout": "Yoga Workout"
+    }
+  },
+  "pricing": {
+    "title": "Because You Matter",
+    "subtitle": "Choose a wellness plan that fits your goals. Flexible, supportive, and designed for real results.",
+    "perMonth": "per month",
+    "plans": [
+      {
+        "name": "Basic Wellness",
+        "price": 33,
+        "features": [
+          "Body, hand, and foot massage",
+          "Spa therapy",
+          "Relaxation guidance"
+        ],
+        "cta": "Get Started"
+      },
+      {
+        "name": "Professional",
+        "price": 59,
+        "features": [
+          "Body, hand, and foot massage",
+          "Spa therapy with manicure",
+          "Personal wellness tips"
+        ],
+        "featured": true,
+        "cta": "Get Started"
+      },
+      {
+        "name": "Exclusive",
+        "price": 75,
+        "features": [
+          "Premium massage package",
+          "Spa therapy",
+          "Nail styling & care"
+        ],
+        "cta": "Get Started"
+      }
+    ]
+  },
+  "pricingSection": {
+    "label": "OUR PRICING",
+    "title": "Choose The Best Plan",
+    "titleLine2": "That You Want",
+    "description": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et.",
+    "monthly": "Monthly",
+    "annually": "Annually",
+    "month": "Monthly",
+    "year": "Yearly",
+    "popular": "POPULAR",
+    "startNow": "Start Now",
+    "plans": {
+      "standard": {
+        "name": "Standard Plan",
+        "subtitle": "Best For Beginners"
+      },
+      "personal": {
+        "name": "Personal Plan",
+        "subtitle": "Best For Beginners"
+      },
+      "premium": {
+        "name": "Premium Plan",
+        "subtitle": "Best For Beginners"
+      }
+    },
+    "features": {
+      "coaching": "Coaching and Training",
+      "obstacle": "Obstacle Standing",
+      "advice": "Specific Advice Situation",
+      "workbooks": "Includes all Workbooks",
+      "individual": "Individual Coaching With Professioner"
+    }
+  },
+  "sportsTraining": {
+    "showcase": {
+      "title": "Discover Inner Peace & Strength Through Yoga",
+      "subtitle": "Personalized programs for body, mind, and spirit",
+      "startButton": "Start Now"
+    },
+    "hero": {
+      "title": "Unlock Your Athletic Potential",
+      "description": "Our sports training programs are designed as a holistic wellness service to improve your overall health, boost your fitness levels, enhance mental clarity, and help you achieve a balanced lifestyle. Experience the transformative power of structured athletic training for complete mind-body wellness.",
+      "benefits": {
+        "physicalHealth": "Improve Physical Health",
+        "mentalWellness": "Boost Mental Wellness",
+        "healthyHabits": "Build Healthy Habits",
+        "overallWellbeing": "Enhance Overall Wellbeing"
+      },
+      "getStartedButton": "Get Started",
+      "learnMoreButton": "Learn More"
+    },
+    "faq": {
+      "badge": "Health & Wellness FAQ",
+      "title": "Frequently Asked Questions",
+      "questions": [
+        {
+          "question": "What sports do you provide training for?",
+          "answer": "We provide comprehensive training for a wide range of sports including football, basketball, tennis, swimming, track and field, martial arts, and many more. Our programs are tailored to each specific sport's requirements and your individual goals."
+        },
+        {
+          "question": "Do I need to be an experienced athlete to start training?",
+          "answer": "Not at all! Our training programs are designed for athletes of all levels, from complete beginners to professional competitors. We assess your current fitness level and create a personalized program that matches your skill level and goals."
+        },
+        {
+          "question": "How often should I train to see results?",
+          "answer": "Training frequency depends on your sport, goals, and current fitness level. Generally, we recommend 3-5 sessions per week for optimal results. We'll work with you to create a sustainable training schedule that fits your lifestyle."
+        },
+        {
+          "question": "What equipment do I need for training?",
+          "answer": "Equipment requirements vary by sport and training phase. We provide most training equipment at our facility, and we'll guide you on any personal equipment you might need. We focus on using proper equipment to ensure safety and effectiveness."
+        },
+        {
+          "question": "How do you prevent training injuries?",
+          "answer": "Injury prevention is a core part of our training philosophy. We include proper warm-ups, cool-downs, technique training, and progressive overload in all programs. Our trainers are certified in injury prevention and first aid."
+        }
+      ]
+    },
+    "testimonials": {
+      "title": "Wellness Success Stories",
+      "subtitle": "Real transformations from our training programs",
+      "clients": {
+        "athlete1": {
+          "name": "Marcus Thompson",
+          "role": "Professional Basketball Player",
+          "content": "The personalized training program took my game to the next level. I improved my vertical jump by 4 inches and increased my shooting accuracy significantly. The coaches are world-class!"
+        },
+        "athlete2": {
+          "name": "Sarah Chen",
+          "role": "Tennis Champion",
+          "content": "After 6 months of training, I won my first regional tournament. The technical coaching and mental preparation techniques were game-changers for my performance."
+        },
+        "athlete3": {
+          "name": "David Rodriguez",
+          "role": "Track & Field Athlete",
+          "content": "The strength and conditioning program helped me break my personal records in both 100m and 200m sprints. The recovery protocols are exceptional."
+        },
+        "athlete4": {
+          "name": "Emma Wilson",
+          "role": "Swimming Champion",
+          "content": "The swimming technique refinement and endurance training improved my times dramatically. I qualified for nationals thanks to this program!"
+        }
+      }
+    },
+    "programs": {
+      "title": "Our Training Programs",
+      "subtitle": "Designed for your health and wellness goals",
+      "list": [
+        { "name": "Strength Training" },
+        { "name": "Cardio Training" },
+        { "name": "Flexibility" },
+        { "name": "Sports Nutrition" },
+        { "name": "Mental Training" },
+        { "name": "Recovery" },
+        { "name": "Performance Analysis" },
+        { "name": "Team Sports" }
+      ]
+    },
+    "cta": {
+      "title": "Transform Your Health Today",
+      "subtitle": "Personalized training for a healthier, stronger you",
+      "getStartedButton": "Get Started",
+      "viewServicesButton": "View All Services"
+    }
+  }
+}
