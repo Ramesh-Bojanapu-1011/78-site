@@ -2824,5 +2824,99 @@
       "subtitle": "Transform your life with personalized yoga practices designed to harmonize your mind, body, and spirit.",
       "button": "Book Your Consultation"
     }
+  },
+  "digitalMarketing": {
+    "showcase": {
+      "title": "Authentic Ayurvedic Healing",
+      "subtitle": "Experience traditional Ayurvedic treatments for holistic wellness and natural healing",
+      "cta": "Start Your Healing Journey"
+    },
+    "hero": {
+      "title": "Traditional Ayurvedic Treatment Therapies",
+      "subtitle": "Experience authentic Ayurvedic healing to restore balance and wellness."
+    },
+    "treatments": [
+      {
+        "title": "ABHYANGA",
+        "image": "/images/78S5img1.jpg",
+        "alt": "Abhyanga Therapy",
+        "description": "A traditional full-body massage with warm herbal oils that deeply nourishes tissues, improves circulation, eliminates toxins, and promotes deep relaxation and rejuvenation."
+      },
+      {
+        "title": "SHIRODHARA",
+        "image": "/images/78S5img2.jpg",
+        "alt": "Shirodhara Therapy",
+        "description": "A calming therapy where warm oil flows continuously over the forehead, inducing profound relaxation, reducing stress, anxiety, and mental fatigue while enhancing mental clarity."
+      },
+      {
+        "title": "PANCHAKARMA",
+        "image": "/images/78S5img3.jpg",
+        "alt": "Panchakarma Therapy",
+        "description": "A comprehensive detoxification program using five cleansing procedures to eliminate deep-seated toxins, restore dosha balance, and rejuvenate the entire body system."
+      },
+      {
+        "title": "NASYA",
+        "image": "/images/78S5img4.jpg",
+        "alt": "Nasya Therapy",
+        "description": "A nasal therapy involving medicated oil administration to cleanse sinuses, improve respiratory health, enhance mental clarity, and treat headaches and neurological conditions."
+      }
+    ],
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "subtitle": "Find answers to common questions about our Ayurvedic treatments and wellness programs",
+      "questions": [
+        {
+          "question": "What are the three Doshas in Ayurveda?",
+          "answer": "Ayurveda identifies three fundamental bio-energies called Doshas: Vata (air and space), Pitta (fire and water), and Kapha (earth and water). These doshas govern all physical and mental processes in our body. Understanding your unique dosha constitution helps us create personalized treatment plans for optimal health and balance."
+        },
+        {
+          "question": "What is Panchakarma therapy?",
+          "answer": "Panchakarma is a comprehensive Ayurvedic detoxification and rejuvenation program consisting of five therapeutic procedures designed to cleanse the body and restore balance."
+        }
+      ]
+    },
+    "testimonials": {
+      "title": "What our\ncustomers are\nsaying",
+      "items": [
+        {
+          "text": "My wellness journey has been incredible. The personalized Ayurvedic treatments and mindful practices have transformed my health.",
+          "name": "Karan",
+          "time": "3 weeks ago",
+          "image": "/images/78S5t1.jpg"
+        },
+        {
+          "text": "I love the holistic approach and the customer service is excellent.",
+          "name": "Catherine",
+          "time": "10 days ago",
+          "image": "/images/78S5t2.jpg"
+        },
+        {
+          "text": "Visited for yoga therapy sessions and was particularly impressed with the peaceful environment and expert guidance.",
+          "name": "Priya",
+          "time": "2 weeks ago",
+          "image": "/images/78S5t3.jpg"
+        },
+        {
+          "text": "The Ayurvedic treatments here are authentic and effective. I've seen remarkable improvements in my overall well-being and energy levels.",
+          "name": "Rajesh",
+          "time": "1 month ago",
+          "image": "/images/78S5t4.jpg"
+        }
+      ]
+    },
+    "benefits": {
+      "title": "Ayurvedic Healing Benefits",
+      "items": [
+        "Holistic Balance: Ayurvedic treatments work to balance your body's three doshas (Vata, Pitta, and Kapha), promoting harmony between mind, body, and spirit for complete wellness and vitality.",
+        "Natural Detoxification: Experience Panchakarma therapies that cleanse toxins from deep within your tissues, rejuvenating your entire system and boosting natural immunity.",
+        "Stress Relief & Mental Clarity: Ancient Ayurvedic practices including meditation, breathing exercises, and therapeutic massages help reduce stress, enhance mental clarity, and restore emotional balance.",
+        "Personalized Healing: Every Ayurvedic treatment is customized to your unique constitution and health needs, ensuring targeted healing that addresses the root cause rather than just symptoms."
+      ]
+    },
+    "cta": {
+      "title": "Begin Your Ayurvedic Healing Journey Today",
+      "subtitle": "Transform your health with personalized Ayurvedic care.",
+      "button": "Book Your Consultation"
+    }
   }
 }

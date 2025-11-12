@@ -4,43 +4,63 @@ import { getCurrentUser, isAuthenticated } from "../utils/auth";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import ScrollAnimation from "../components/ScrollAnimation";
+import { useTranslation } from "react-i18next";
 
 export default function DigitalMarketing() {
   const [user, setUser] = useState(null);
   const [isDark, setIsDark] = useState(
-    document.documentElement.classList.contains("dark"),
+    document.documentElement.classList.contains("dark")
   );
   const [openIndex, setOpenIndex] = useState(0);
   const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
-  // Testimonials data
+  // Load structured content from locales (defensive handling)
+  const treatmentsRaw = t("digitalMarketing.treatments", {
+    returnObjects: true,
+  });
+  const treatments = Array.isArray(treatmentsRaw)
+    ? treatmentsRaw
+    : Object.values(treatmentsRaw || {});
+
+  const faqsRaw = t("digitalMarketing.faq.questions", { returnObjects: true });
+  const faqs = Array.isArray(faqsRaw) ? faqsRaw : Object.values(faqsRaw || {});
+
   const testimonials = [
     {
-      text: "My wellness journey has been incredible. The personalized Ayurvedic treatments and mindful practices have transformed my health. Very good performance and results!",
-      name: "Karan",
-      time: "3 weeks ago",
+      text:  t("digitalMarketing.testimonials.items.0.text"),
+      name: t("digitalMarketing.testimonials.items.0.name"),
+      time:  t("digitalMarketing.testimonials.items.0.time"),
       image: "/images/78S5t1.jpg",
     },
     {
-      text: "I love the holistic approach and the customer service is excellent. They respond in a timely manner with personalized wellness plans and comprehensive support.",
-      name: "Catherine",
-      time: "10 days ago",
+      text:  t("digitalMarketing.testimonials.items.1.text"),
+      name:  t("digitalMarketing.testimonials.items.1.name"),
+      time:  t("digitalMarketing.testimonials.items.1.time"),
       image: "/images/78S5t2.jpg",
     },
     {
-      text: "Visited for yoga therapy sessions and was particularly impressed with the peaceful environment and expert guidance. The entire team went over and beyond. Very satisfied!",
-      name: "Priya",
-      time: "2 weeks ago",
+      text:  t("digitalMarketing.testimonials.items.2.text"),
+      name:  t("digitalMarketing.testimonials.items.2.name"),
+      time:  t("digitalMarketing.testimonials.items.2.time"),
       image: "/images/78S5t3.jpg",
     },
     {
-      text: "The Ayurvedic treatments here are authentic and effective. I've seen remarkable improvements in my overall well-being and energy levels. Highly recommend!",
-      name: "Rajesh",
-      time: "1 month ago",
-      image: "/images/78S5t4.jpg",
+      text:  t("digitalMarketing.testimonials.items.3.text"),
+      name:  t("digitalMarketing.testimonials.items.3.name"),
+      time:  t("digitalMarketing.testimonials.items.3.time"),
+      image: "/images/78S5t4.jpg",  
     },
+     
   ];
+
+  const benefitsRaw = t("digitalMarketing.benefits.items", {
+    returnObjects: true,
+  });
+  const benefits = Array.isArray(benefitsRaw)
+    ? benefitsRaw
+    : Object.values(benefitsRaw || {});
 
   const handlePrevTestimonial = () => {
     setCurrentTestimonialIndex((prev) => (prev === 0 ? 1 : 0));
@@ -109,13 +129,12 @@ export default function DigitalMarketing() {
         <div className="relative z-10 max-w-4xl px-6">
           <ScrollAnimation animation="fade-in" stagger="scroll-stagger-1">
             <h1 className="text-3xl font-extrabold leading-tight text-white md:text-4xl whitespace-nowrap">
-              Authentic Ayurvedic Healing
+              {t("digitalMarketing.showcase.title")}
             </h1>
           </ScrollAnimation>
           <ScrollAnimation animation="fade-in" stagger="scroll-stagger-2">
             <p className="max-w-2xl mx-auto mt-6 text-base leading-relaxed text-gray-200 md:text-lg whitespace-nowrap">
-              Experience traditional Ayurvedic treatments for holistic wellness
-              and natural healing
+              {t("digitalMarketing.showcase.subtitle")}
             </p>
           </ScrollAnimation>
           <ScrollAnimation animation="fade-in" stagger="scroll-stagger-3">
@@ -125,7 +144,7 @@ export default function DigitalMarketing() {
                 className="px-6 py-3 text-base font-bold text-white transition-all duration-300 rounded-lg shadow-lg btn-animate-strong hover:shadow-xl whitespace-nowrap"
                 style={{ backgroundColor: "#0A5950" }}
               >
-                Start Your Healing Journey
+                {t("digitalMarketing.showcase.cta")}
               </a>
             </div>
           </ScrollAnimation>
@@ -145,134 +164,58 @@ export default function DigitalMarketing() {
           <div className="mb-4 text-center">
             <ScrollAnimation animation="fade-in" stagger="scroll-stagger-1">
               <h1
-                className={`text-3xl md:text-4xl font-bold mb-3 ${isDark ? "text-white" : "text-gray-800"}`}
+                className={`text-3xl md:text-4xl font-bold mb-3 ${
+                  isDark ? "text-white" : "text-gray-800"
+                }`}
               >
-                Traditional Ayurvedic Treatment Therapies
+                {t("digitalMarketing.hero.title")}
               </h1>
             </ScrollAnimation>
             <ScrollAnimation animation="fade-in" stagger="scroll-stagger-2">
               <p
-                className={`text-base max-w-4xl mx-auto ${isDark ? "text-gray-300" : "text-gray-600"}`}
+                className={`text-base max-w-4xl mx-auto ${
+                  isDark ? "text-gray-300" : "text-gray-600"
+                }`}
               >
-                Experience authentic Ayurvedic healing to restore balance and
-                wellness.
+                {t("digitalMarketing.hero.subtitle")}
               </p>
             </ScrollAnimation>
           </div>
 
           {/* Four Ayurvedic Treatment Types Grid */}
           <div className="grid grid-cols-1 gap-8 mt-12 sm:grid-cols-2 lg:grid-cols-4">
-            {/* Abhyanga */}
-            <ScrollAnimation animation="fade-in" stagger="scroll-stagger-4">
-              <div className="text-center">
-                <h3
-                  className="mb-6 text-xl font-bold"
-                  style={{ color: "#0A5950" }}
-                >
-                  ABHYANGA
-                </h3>
-                <div className="flex justify-center mb-6">
-                  <div className="relative w-48 h-48 overflow-hidden border-4 border-white rounded-full shadow-xl">
-                    <img
-                      src="/images/78S5img1.jpg"
-                      alt="Abhyanga Therapy"
-                      className="object-cover w-full h-full"
-                    />
+            {treatments.map((treat, idx) => (
+              <ScrollAnimation
+                key={idx}
+                animation="fade-in"
+                stagger={`scroll-stagger-${4 + idx}`}
+              >
+                <div className="text-center">
+                  <h3
+                    className="mb-6 text-xl font-bold"
+                    style={{ color: "#0A5950" }}
+                  >
+                    {treat.title}
+                  </h3>
+                  <div className="flex justify-center mb-6">
+                    <div className="relative w-48 h-48 overflow-hidden border-4 border-white rounded-full shadow-xl">
+                      <img
+                        src={treat.image}
+                        alt={treat.alt || treat.title}
+                        className="object-cover w-full h-full"
+                      />
+                    </div>
                   </div>
+                  <p
+                    className={`text-sm leading-relaxed ${
+                      isDark ? "text-gray-300" : "text-gray-600"
+                    }`}
+                  >
+                    {treat.description}
+                  </p>
                 </div>
-                <p
-                  className={`text-sm leading-relaxed ${isDark ? "text-gray-300" : "text-gray-600"}`}
-                >
-                  A traditional full-body massage with warm herbal oils that
-                  deeply nourishes tissues, improves circulation, eliminates
-                  toxins, and promotes deep relaxation and rejuvenation.
-                </p>
-              </div>
-            </ScrollAnimation>
-
-            {/* Shirodhara */}
-            <ScrollAnimation animation="fade-in" stagger="scroll-stagger-5">
-              <div className="text-center">
-                <h3
-                  className="mb-6 text-xl font-bold"
-                  style={{ color: "#0A5950" }}
-                >
-                  SHIRODHARA
-                </h3>
-                <div className="flex justify-center mb-6">
-                  <div className="relative w-48 h-48 overflow-hidden border-4 border-white rounded-full shadow-xl">
-                    <img
-                      src="/images/78S5img2.jpg"
-                      alt="Shirodhara Therapy"
-                      className="object-cover w-full h-full"
-                    />
-                  </div>
-                </div>
-                <p
-                  className={`text-sm leading-relaxed ${isDark ? "text-gray-300" : "text-gray-600"}`}
-                >
-                  A calming therapy where warm oil flows continuously over the
-                  forehead, inducing profound relaxation, reducing stress,
-                  anxiety, and mental fatigue while enhancing mental clarity.
-                </p>
-              </div>
-            </ScrollAnimation>
-
-            {/* Panchakarma */}
-            <ScrollAnimation animation="fade-in" stagger="scroll-stagger-6">
-              <div className="text-center">
-                <h3
-                  className="mb-6 text-xl font-bold"
-                  style={{ color: "#0A5950" }}
-                >
-                  PANCHAKARMA
-                </h3>
-                <div className="flex justify-center mb-6">
-                  <div className="relative w-48 h-48 overflow-hidden border-4 border-white rounded-full shadow-xl">
-                    <img
-                      src="/images/78S5img3.jpg"
-                      alt="Panchakarma Therapy"
-                      className="object-cover w-full h-full"
-                    />
-                  </div>
-                </div>
-                <p
-                  className={`text-sm leading-relaxed ${isDark ? "text-gray-300" : "text-gray-600"}`}
-                >
-                  A comprehensive detoxification program using five cleansing
-                  procedures to eliminate deep-seated toxins, restore dosha
-                  balance, and rejuvenate the entire body system.
-                </p>
-              </div>
-            </ScrollAnimation>
-
-            {/* Nasya */}
-            <ScrollAnimation animation="fade-in" stagger="scroll-stagger-7">
-              <div className="text-center">
-                <h3
-                  className="mb-6 text-xl font-bold"
-                  style={{ color: "#0A5950" }}
-                >
-                  NASYA
-                </h3>
-                <div className="flex justify-center mb-6">
-                  <div className="relative w-48 h-48 overflow-hidden border-4 border-white rounded-full shadow-xl">
-                    <img
-                      src="/images/78S5img4.jpg"
-                      alt="Nasya Therapy"
-                      className="object-cover w-full h-full"
-                    />
-                  </div>
-                </div>
-                <p
-                  className={`text-sm leading-relaxed ${isDark ? "text-gray-300" : "text-gray-600"}`}
-                >
-                  A nasal therapy involving medicated oil administration to
-                  cleanse sinuses, improve respiratory health, enhance mental
-                  clarity, and treat headaches and neurological conditions.
-                </p>
-              </div>
-            </ScrollAnimation>
+              </ScrollAnimation>
+            ))}
           </div>
         </div>
       </section>
@@ -284,69 +227,41 @@ export default function DigitalMarketing() {
           <div className="mb-16 text-center">
             <ScrollAnimation animation="fade-in" stagger="scroll-stagger-1">
               <h2
-                className={`text-4xl md:text-5xl font-bold mb-4 ${isDark ? "text-white" : "text-gray-900"}`}
+                className={`text-4xl md:text-5xl font-bold mb-4 ${
+                  isDark ? "text-white" : "text-gray-900"
+                }`}
               >
-                Frequently Asked Questions
+                {t("digitalMarketing.faq.title")}
               </h2>
             </ScrollAnimation>
             <ScrollAnimation animation="fade-in" stagger="scroll-stagger-3">
               <p
-                className={`text-lg max-w-2xl mx-auto ${isDark ? "text-gray-300" : "text-gray-600"}`}
+                className={`text-lg max-w-2xl mx-auto ${
+                  isDark ? "text-gray-300" : "text-gray-600"
+                }`}
               >
-                Find answers to common questions about our Ayurvedic treatments
-                and wellness programs
+                {t("digitalMarketing.faq.subtitle")}
               </p>
             </ScrollAnimation>
           </div>
 
           {/* FAQ Grid */}
           <div className="grid gap-6 md:grid-cols-2">
-            {[
-              {
-                question: "What are the three Doshas in Ayurveda?",
-                answer:
-                  "Ayurveda identifies three fundamental bio-energies called Doshas: Vata (air and space), Pitta (fire and water), and Kapha (earth and water). These doshas govern all physical and mental processes in our body. Understanding your unique dosha constitution helps us create personalized treatment plans for optimal health and balance.",
-              },
-              {
-                question: "What is Panchakarma therapy?",
-                answer:
-                  "Panchakarma is a comprehensive Ayurvedic detoxification and rejuvenation program consisting of five therapeutic procedures. It includes Vamana (therapeutic vomiting), Virechana (purgation), Basti (medicated enema), Nasya (nasal administration), and Raktamokshana (bloodletting). This deep cleansing removes toxins from the body's tissues and restores balance to the doshas.",
-              },
-              {
-                question:
-                  "How long does an Ayurvedic treatment take to show results?",
-                answer:
-                  "Results vary based on the condition being treated and individual constitution. Acute conditions may show improvement within 2-4 weeks, while chronic ailments typically require 3-6 months of consistent treatment. Ayurveda focuses on addressing root causes rather than just symptoms, which ensures lasting healing and prevention of recurrence.",
-              },
-              {
-                question: "Are Ayurvedic medicines safe and natural?",
-                answer:
-                  "Yes, Ayurvedic medicines are derived from natural herbs, minerals, and plant extracts that have been used safely for thousands of years. All our formulations are prepared according to classical Ayurvedic texts under expert guidance. We use high-quality, tested ingredients and follow strict quality standards to ensure safety and effectiveness.",
-              },
-              {
-                question: "What conditions can be treated with Ayurveda?",
-                answer:
-                  "Ayurveda effectively treats a wide range of conditions including digestive disorders, stress and anxiety, arthritis, skin diseases, respiratory issues, hormonal imbalances, chronic pain, diabetes, hypertension, and lifestyle disorders. It's particularly effective for chronic conditions that require holistic healing and long-term wellness management.",
-              },
-              {
-                question:
-                  "What should I expect during my first Ayurvedic consultation?",
-                answer:
-                  "During your first visit, our experienced Ayurvedic practitioner will conduct a detailed consultation including Prakriti (body constitution) analysis through pulse diagnosis (Nadi Pariksha), tongue examination, and lifestyle assessment. We'll discuss your health concerns, dietary habits, and daily routine to create a personalized treatment plan including herbal medicines, diet recommendations, and lifestyle modifications. The initial session typically lasts 60-90 minutes.",
-              },
-            ].map((faq, index) => (
+            {faqs.map((faq, index) => (
               <ScrollAnimation
                 key={index}
                 animation="fade-in"
                 stagger={`scroll-stagger-${index + 4}`}
               >
                 <div
-                  className={`group relative ${isDark ? "bg-gray-800" : "bg-white"} rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 ${
+                  className={`group relative ${
+                    isDark ? "bg-gray-800" : "bg-white"
+                  } rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 ${
                     openIndex === index
                       ? "scale-[1.02]"
                       : isDark
-                        ? "border-gray-700"
-                        : "border-gray-200"
+                      ? "border-gray-700"
+                      : "border-gray-200"
                   }`}
                   style={{
                     borderColor: openIndex === index ? "#0A5950" : undefined,
@@ -360,7 +275,9 @@ export default function DigitalMarketing() {
                     className="w-full text-left"
                   >
                     <h3
-                      className={`text-lg font-bold mb-3 pr-8 ${isDark ? "text-white" : "text-gray-900"} transition-colors`}
+                      className={`text-lg font-bold mb-3 pr-8 ${
+                        isDark ? "text-white" : "text-gray-900"
+                      } transition-colors`}
                       style={{
                         color: openIndex === index ? "#0A5950" : undefined,
                       }}
@@ -378,7 +295,9 @@ export default function DigitalMarketing() {
                     }`}
                   >
                     <p
-                      className={`leading-relaxed mt-2 ${isDark ? "text-gray-300" : "text-gray-600"}`}
+                      className={`leading-relaxed mt-2 ${
+                        isDark ? "text-gray-300" : "text-gray-600"
+                      }`}
                     >
                       {faq.answer}
                     </p>
@@ -393,8 +312,8 @@ export default function DigitalMarketing() {
                       openIndex === index
                         ? "text-white"
                         : isDark
-                          ? "bg-gray-700 text-gray-400"
-                          : "bg-gray-100 text-gray-500"
+                        ? "bg-gray-700 text-gray-400"
+                        : "bg-gray-100 text-gray-500"
                     } transition-all duration-300 hover:scale-110`}
                     style={{
                       backgroundColor:
@@ -465,11 +384,7 @@ export default function DigitalMarketing() {
                 </div>
 
                 <h2 className="text-3xl font-bold leading-tight text-white">
-                  What our
-                  <br />
-                  customers are
-                  <br />
-                  saying
+                  {t("digitalMarketing.testimonials.title")}
                 </h2>
 
                 {/* Navigation Arrows */}
@@ -650,101 +565,28 @@ export default function DigitalMarketing() {
                 style={{ backgroundColor: "#0A5950" }}
               >
                 <h2 className="mb-8 font-serif text-4xl text-white">
-                  Ayurvedic Healing Benefits
+                  {t("digitalMarketing.benefits.title")}
                 </h2>
 
                 <div className="space-y-6">
-                  {/* Benefit 1 */}
-                  <div className="flex items-start space-x-4">
-                    <svg
-                      className="w-6 h-6 mt-1 text-white shrink-0"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M17 8l4 4m0 0l-4 4m4-4H3"
-                      />
-                    </svg>
-                    <p className="leading-relaxed text-white">
-                      <strong>Holistic Balance:</strong> Ayurvedic treatments
-                      work to balance your body's three doshas (Vata, Pitta, and
-                      Kapha), promoting harmony between mind, body, and spirit
-                      for complete wellness and vitality.
-                    </p>
-                  </div>
-
-                  {/* Benefit 2 */}
-                  <div className="flex items-start space-x-4">
-                    <svg
-                      className="w-6 h-6 mt-1 text-white shrink-0"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M17 8l4 4m0 0l-4 4m4-4H3"
-                      />
-                    </svg>
-                    <p className="leading-relaxed text-white">
-                      <strong>Natural Detoxification:</strong> Experience
-                      Panchakarma therapies that cleanse toxins from deep within
-                      your tissues, rejuvenating your entire system and boosting
-                      natural immunity through time-tested herbal remedies.
-                    </p>
-                  </div>
-
-                  {/* Benefit 3 */}
-                  <div className="flex items-start space-x-4">
-                    <svg
-                      className="w-6 h-6 mt-1 text-white shrink-0"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M17 8l4 4m0 0l-4 4m4-4H3"
-                      />
-                    </svg>
-                    <p className="leading-relaxed text-white">
-                      <strong>Stress Relief & Mental Clarity:</strong> Ancient
-                      Ayurvedic practices including meditation, breathing
-                      exercises, and therapeutic massages help reduce stress,
-                      enhance mental clarity, and restore emotional balance.
-                    </p>
-                  </div>
-
-                  {/* Benefit 4 */}
-                  <div className="flex items-start space-x-4">
-                    <svg
-                      className="w-6 h-6 mt-1 text-white shrink-0"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M17 8l4 4m0 0l-4 4m4-4H3"
-                      />
-                    </svg>
-                    <p className="leading-relaxed text-white">
-                      <strong>Personalized Healing:</strong> Every Ayurvedic
-                      treatment is customized to your unique constitution and
-                      health needs, ensuring targeted healing that addresses the
-                      root cause rather than just symptoms.
-                    </p>
-                  </div>
+                  {benefits.map((b, i) => (
+                    <div key={i} className="flex items-start space-x-4">
+                      <svg
+                        className="w-6 h-6 mt-1 text-white shrink-0"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M17 8l4 4m0 0l-4 4m4-4H3"
+                        />
+                      </svg>
+                      <p className="leading-relaxed text-white">{b}</p>
+                    </div>
+                  ))}
                 </div>
               </div>
             </ScrollAnimation>
@@ -766,12 +608,12 @@ export default function DigitalMarketing() {
         <div className="relative z-10 max-w-5xl px-6 mx-auto text-center">
           <ScrollAnimation animation="fade-in" stagger="scroll-stagger-1">
             <h2 className="mb-6 text-3xl font-extrabold leading-tight text-white md:text-4xl">
-              Begin Your Ayurvedic Healing Journey Today
+              {t("digitalMarketing.cta.title")}
             </h2>
           </ScrollAnimation>
           <ScrollAnimation animation="fade-in" stagger="scroll-stagger-2">
             <p className="max-w-2xl mx-auto mb-10 text-base text-white md:text-lg">
-              Transform your health with personalized Ayurvedic care.
+              {t("digitalMarketing.cta.subtitle")}
             </p>
           </ScrollAnimation>
           <ScrollAnimation animation="fade-in" stagger="scroll-stagger-3">
@@ -781,7 +623,7 @@ export default function DigitalMarketing() {
                 className="px-10 py-4 text-lg font-bold text-white transition-all duration-300 transform rounded-lg shadow-lg btn-animate-strong hover:shadow-2xl hover:scale-105"
                 style={{ backgroundColor: "#0A5950" }}
               >
-                Book Your Consultation
+                {t("digitalMarketing.cta.button")}
               </button>
             </div>
           </ScrollAnimation>
