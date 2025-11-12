@@ -90,12 +90,12 @@ export default function NutritionPlans() {
         <div className="absolute inset-0 bg-black/50"></div>
         <div className="relative z-10 max-w-4xl px-6">
           <ScrollAnimation animation="fade-in" stagger="scroll-stagger-1">
-            <h1 className="text-3xl font-extrabold leading-tight text-white md:text-4xl whitespace-nowrap">
+            <h1 className="text-3xl font-extrabold leading-tight text-white md:text-4xl ">
               {t("nutritionPlans.showcase.title")}
             </h1>
           </ScrollAnimation>
           <ScrollAnimation animation="fade-in" stagger="scroll-stagger-2">
-            <p className="max-w-2xl mx-auto mt-6 text-base leading-relaxed text-gray-200 md:text-lg whitespace-nowrap">
+            <p className="mx-auto mt-6 text-base leading-relaxed text-gray-200 md:text-lg">
               {t("nutritionPlans.showcase.subtitle")}
             </p>
           </ScrollAnimation>
