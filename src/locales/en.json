@@ -2172,10 +2172,7 @@
       "title": "Theta Healing",
       "description": "Energy healing techniques to release emotional blocks and promote deep mental and spiritual wellness."
     },
-    "sportsTraining": {
-      "title": "Yoga",
-      "description": "Tailored wellness programs to build strength, mobility, and posture."
-    },
+
     "spaTherapies": {
       "title": "Weight Loss Program",
       "description": "Transform your body with our comprehensive weight loss program."
@@ -2502,6 +2499,112 @@
       "title": "Start Your Weight Loss Journey Today",
       "subtitle": "Get personalized support and expert guidance to achieve your weight loss goals.",
       "button": "Join Our Program"
+    }
+  },
+  "sportsTrainingPage": {
+    "showcase": {
+      "title": "Discover Inner Peace & Strength Through Yoga",
+      "subtitle": "Experience transformative yoga practices that harmonize mind, body, and spirit for complete wellness",
+      "connectButton": "Begin Your Yoga Journey"
+    },
+    "hero": {
+      "title": "Comprehensive Yoga & Wellness Programs",
+      "subtitle": "Experience ancient yogic practices designed to enhance your flexibility, mental clarity, and overall wellness through mindful movement and breathwork."
+    },
+    "programs": {
+      "hatha": {
+        "title": "HATHA YOGA",
+        "description": "Build foundational strength and balance through traditional yoga postures, breathing techniques, and meditation for holistic mind-body wellness."
+      },
+      "vinyasa": {
+        "title": "VINYASA FLOW",
+        "description": "Experience dynamic flowing sequences that synchronize breath with movement, building cardiovascular endurance and mental focus."
+      },
+      "yin": {
+        "title": "YIN YOGA",
+        "description": "Deep stretching and restorative poses held longer to release tension, enhance flexibility, and promote deep relaxation and inner peace."
+      },
+      "meditation": {
+        "title": "MEDITATION & PRANAYAMA",
+        "description": "Master breath control and meditation techniques to reduce stress, enhance mental clarity, and cultivate mindfulness for daily life."
+      }
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "subtitle": "Find answers to common questions about our yoga programs and holistic wellness approach",
+      "questions": [
+        {
+          "question": "What types of yoga programs do you offer?",
+          "answer": "We offer diverse yoga styles including Hatha Yoga, Vinyasa Flow, Yin Yoga, and Meditation & Pranayama. Each program is tailored to your experience level and wellness goals."
+        },
+        {
+          "question": "How does yoga integrate with holistic wellness?",
+          "answer": "Our yoga approach integrates asana practice with pranayama, meditation, mindfulness, and lifestyle guidance to support mind-body balance."
+        },
+        {
+          "question": "Do I need prior yoga experience to join?",
+          "answer": "No. Our programs welcome beginners to advanced practitioners. We provide modifications and personalized guidance."
+        },
+        {
+          "question": "How long does it take to see results from yoga?",
+          "answer": "Many practitioners notice increased flexibility and reduced stress within a few weeks; deeper changes unfold over months with consistent practice."
+        }
+      ]
+    },
+    "testimonials": {
+      "title": "What our\ncustomers are\nsaying",
+      "items": [
+        {
+          "text": "Yoga has completely transformed my life. The practice has brought me inner peace, improved my flexibility, and helped me manage stress better.",
+          "name": "Michael Thompson",
+          "time": "2 weeks ago",
+          "image": "/images/78S1t1.jpg"
+        },
+        {
+          "text": "I love the holistic approach to yoga here. It's not just about the poses, but about breathing, meditation, and mindfulness.",
+          "name": "Sarah Chen",
+          "time": "1 month ago",
+          "image": "/images/78S1t2.jpg"
+        },
+        {
+          "text": "The yoga programs are exceptional! I've gained strength, flexibility, and mental clarity.",
+          "name": "David Rodriguez",
+          "time": "3 weeks ago",
+          "image": "/images/78S1t3.jpg"
+        },
+        {
+          "text": "Practicing yoga here has improved my overall wellbeing significantly. From reduced anxiety to better sleep and increased energy.",
+          "name": "Emma Wilson",
+          "time": "2 months ago",
+          "image": "/images/78S1t4.jpg"
+        }
+      ]
+    },
+    "benefits": {
+      "title": "Yoga Practice Benefits",
+      "items": [
+        {
+          "title": "Enhanced Flexibility & Strength:",
+          "description": "Develop greater range of motion, build lean muscle, and improve posture through mindful asana practice."
+        },
+        {
+          "title": "Stress Reduction & Mental Clarity:",
+          "description": "Calm your mind, reduce anxiety, and enhance focus through meditation and pranayama."
+        },
+        {
+          "title": "Improved Breathing & Energy:",
+          "description": "Master pranayama techniques that enhance lung capacity and promote better oxygenation for sustained energy."
+        },
+        {
+          "title": "Mind-Body-Spirit Connection:",
+          "description": "Experience holistic transformation that integrates physical practice with spiritual awareness."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Begin Your Yoga Journey Today",
+      "subtitle": "Transform your life with personalized yoga practices designed to harmonize your mind, body, and spirit.",
+      "button": "Book Your Consultation"
     }
   }
 }

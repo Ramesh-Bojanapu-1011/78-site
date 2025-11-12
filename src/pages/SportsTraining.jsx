@@ -4,6 +4,7 @@ import { getCurrentUser, isAuthenticated } from "../utils/auth";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import ScrollAnimation from "../components/ScrollAnimation";
+import { useTranslation } from "react-i18next";
 
 export default function SportsTraining() {
   const [user, setUser] = useState(null);
@@ -13,34 +14,29 @@ export default function SportsTraining() {
   const [openIndex, setOpenIndex] = useState(0);
   const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
-  // Testimonials data
-  const testimonials = [
-    {
-      text: "Yoga has completely transformed my life. The practice has brought me inner peace, improved my flexibility, and helped me manage stress better. The instructors are incredibly knowledgeable and supportive!",
-      name: "Michael Thompson",
-      time: "2 weeks ago",
-      image: "/images/78S1t1.jpg",
-    },
-    {
-      text: "I love the holistic approach to yoga here. It's not just about the poses, but about breathing, meditation, and mindfulness. I feel more balanced and centered than ever before!",
-      name: "Sarah Chen",
-      time: "1 month ago",
-      image: "/images/78S1t2.jpg",
-    },
-    {
-      text: "The yoga programs are exceptional! I've gained strength, flexibility, and mental clarity. The blend of traditional wisdom with modern techniques makes every session transformative!",
-      name: "David Rodriguez",
-      time: "3 weeks ago",
-      image: "/images/78S1t3.jpg",
-    },
-    {
-      text: "Practicing yoga here has improved my overall wellbeing significantly. From reduced anxiety to better sleep and increased energy, the benefits are truly life-changing. Highly recommend!",
-      name: "Emma Wilson",
-      time: "2 months ago",
-      image: "/images/78S1t4.jpg",
-    },
-  ];
+  // Load translated testimonials
+  const rawTestimonials = t("sportsTrainingPage.testimonials.items", {
+    returnObjects: true,
+  });
+  const testimonials = Array.isArray(rawTestimonials)
+    ? rawTestimonials
+    : Object.values(rawTestimonials || {});
+
+  // Load translated FAQs
+  const rawFaqs = t("sportsTrainingPage.faq.questions", {
+    returnObjects: true,
+  });
+  const faqs = Array.isArray(rawFaqs) ? rawFaqs : Object.values(rawFaqs || {});
+
+  // Load translated benefits
+  const rawBenefits = t("sportsTrainingPage.benefits.items", {
+    returnObjects: true,
+  });
+  const benefits = Array.isArray(rawBenefits)
+    ? rawBenefits
+    : Object.values(rawBenefits || {});
 
   const handlePrevTestimonial = () => {
     setCurrentTestimonialIndex((prev) => (prev === 0 ? 1 : 0));
@@ -103,19 +99,18 @@ export default function SportsTraining() {
           className="absolute inset-0 object-cover w-full h-full"
         >
           <source src="/78S1v.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
+          {t("common.videoNotSupported")}
         </video>
         <div className="absolute inset-0 bg-black/50"></div>
         <div className="relative z-10 max-w-4xl px-6">
           <ScrollAnimation animation="fade-in" stagger="scroll-stagger-1">
             <h1 className="text-3xl font-extrabold leading-tight text-white md:text-4xl whitespace-nowrap">
-              Discover Inner Peace & Strength Through Yoga
+              {t("sportsTrainingPage.showcase.title")}
             </h1>
           </ScrollAnimation>
           <ScrollAnimation animation="fade-in" stagger="scroll-stagger-2">
             <p className="max-w-2xl mx-auto mt-6 text-base leading-relaxed text-gray-200 md:text-lg whitespace-nowrap">
-              Experience transformative yoga practices that harmonize mind,
-              body, and spirit for complete wellness
+              {t("sportsTrainingPage.showcase.subtitle")}
             </p>
           </ScrollAnimation>
           <ScrollAnimation animation="fade-in" stagger="scroll-stagger-3">
@@ -125,7 +120,7 @@ export default function SportsTraining() {
                 className="px-6 py-3 text-base font-bold text-white transition-all duration-300 rounded-lg shadow-lg btn-animate-strong hover:shadow-xl whitespace-nowrap"
                 style={{ backgroundColor: "#0A5950" }}
               >
-                Begin Your Yoga Journey
+                {t("sportsTrainingPage.showcase.connectButton")}
               </a>
             </div>
           </ScrollAnimation>
@@ -147,16 +142,14 @@ export default function SportsTraining() {
               <h1
                 className={`text-3xl md:text-4xl font-bold mb-3 ${isDark ? "text-white" : "text-gray-800"}`}
               >
-                Comprehensive Yoga & Wellness Programs
+                {t("sportsTrainingPage.hero.title")}
               </h1>
             </ScrollAnimation>
             <ScrollAnimation animation="fade-in" stagger="scroll-stagger-2">
               <p
                 className={`text-base max-w-4xl mx-auto ${isDark ? "text-gray-300" : "text-gray-600"}`}
               >
-                Experience ancient yogic practices designed to enhance your
-                flexibility, mental clarity, and overall wellness through
-                mindful movement and breathwork.
+                {t("sportsTrainingPage.hero.subtitle")}
               </p>
             </ScrollAnimation>
           </div>
@@ -170,13 +163,13 @@ export default function SportsTraining() {
                   className="mb-6 text-xl font-bold"
                   style={{ color: "#0A5950" }}
                 >
-                  HATHA YOGA
+                  {t("sportsTrainingPage.programs.hatha.title")}
                 </h3>
                 <div className="flex justify-center mb-6">
                   <div className="relative w-48 h-48 overflow-hidden border-4 border-white rounded-full shadow-xl">
                     <img
                       src="/images/63S31.jpg"
-                      alt="Hatha Yoga"
+                      alt={t("sportsTrainingPage.programs.hatha.title")}
                       className="object-cover w-full h-full"
                     />
                   </div>
@@ -184,9 +177,7 @@ export default function SportsTraining() {
                 <p
                   className={`text-sm leading-relaxed ${isDark ? "text-gray-300" : "text-gray-600"}`}
                 >
-                  Build foundational strength and balance through traditional
-                  yoga postures, breathing techniques, and meditation for
-                  holistic mind-body wellness.
+                  {t("sportsTrainingPage.programs.hatha.description")}
                 </p>
               </div>
             </ScrollAnimation>
@@ -198,13 +189,13 @@ export default function SportsTraining() {
                   className="mb-6 text-xl font-bold"
                   style={{ color: "#0A5950" }}
                 >
-                  VINYASA FLOW
+                  {t("sportsTrainingPage.programs.vinyasa.title")}
                 </h3>
                 <div className="flex justify-center mb-6">
                   <div className="relative w-48 h-48 overflow-hidden border-4 border-white rounded-full shadow-xl">
                     <img
                       src="/images/63S32.jpg"
-                      alt="Vinyasa Flow"
+                      alt={t("sportsTrainingPage.programs.vinyasa.title")}
                       className="object-cover w-full h-full"
                     />
                   </div>
@@ -212,9 +203,7 @@ export default function SportsTraining() {
                 <p
                   className={`text-sm leading-relaxed ${isDark ? "text-gray-300" : "text-gray-600"}`}
                 >
-                  Experience dynamic flowing sequences that synchronize breath
-                  with movement, building cardiovascular endurance and mental
-                  focus.
+                  {t("sportsTrainingPage.programs.vinyasa.description")}
                 </p>
               </div>
             </ScrollAnimation>
@@ -226,13 +215,13 @@ export default function SportsTraining() {
                   className="mb-6 text-xl font-bold"
                   style={{ color: "#0A5950" }}
                 >
-                  YIN YOGA
+                  {t("sportsTrainingPage.programs.yin.title")}
                 </h3>
                 <div className="flex justify-center mb-6">
                   <div className="relative w-48 h-48 overflow-hidden border-4 border-white rounded-full shadow-xl">
                     <img
                       src="/images/63S51.jpg"
-                      alt="Yin Yoga"
+                      alt={t("sportsTrainingPage.programs.yin.title")}
                       className="object-cover w-full h-full"
                     />
                   </div>
@@ -240,9 +229,7 @@ export default function SportsTraining() {
                 <p
                   className={`text-sm leading-relaxed ${isDark ? "text-gray-300" : "text-gray-600"}`}
                 >
-                  Deep stretching and restorative poses held longer to release
-                  tension, enhance flexibility, and promote deep relaxation and
-                  inner peace.
+                  {t("sportsTrainingPage.programs.yin.description")}
                 </p>
               </div>
             </ScrollAnimation>
@@ -254,13 +241,13 @@ export default function SportsTraining() {
                   className="mb-6 text-xl font-bold"
                   style={{ color: "#0A5950" }}
                 >
-                  MEDITATION & PRANAYAMA
+                  {t("sportsTrainingPage.programs.meditation.title")}
                 </h3>
                 <div className="flex justify-center mb-6">
                   <div className="relative w-48 h-48 overflow-hidden border-4 border-white rounded-full shadow-xl">
                     <img
                       src="/images/63S52.jpg"
-                      alt="Meditation & Pranayama"
+                      alt={t("sportsTrainingPage.programs.meditation.title")}
                       className="object-cover w-full h-full"
                     />
                   </div>
@@ -268,9 +255,7 @@ export default function SportsTraining() {
                 <p
                   className={`text-sm leading-relaxed ${isDark ? "text-gray-300" : "text-gray-600"}`}
                 >
-                  Master breath control and meditation techniques to reduce
-                  stress, enhance mental clarity, and cultivate mindfulness for
-                  daily life.
+                  {t("sportsTrainingPage.programs.meditation.description")}
                 </p>
               </div>
             </ScrollAnimation>
@@ -287,53 +272,21 @@ export default function SportsTraining() {
               <h2
                 className={`text-4xl md:text-5xl font-bold mb-4 ${isDark ? "text-white" : "text-gray-900"}`}
               >
-                Frequently Asked Questions
+                {t("sportsTrainingPage.faq.title")}
               </h2>
             </ScrollAnimation>
             <ScrollAnimation animation="fade-in" stagger="scroll-stagger-3">
               <p
                 className={`text-lg max-w-2xl mx-auto ${isDark ? "text-gray-300" : "text-gray-600"}`}
               >
-                Find answers to common questions about our yoga programs and
-                holistic wellness approach
+                {t("sportsTrainingPage.faq.subtitle")}
               </p>
             </ScrollAnimation>
           </div>
 
           {/* FAQ Grid */}
           <div className="grid gap-6 md:grid-cols-2">
-            {[
-              {
-                question: "What types of yoga programs do you offer?",
-                answer:
-                  "We offer diverse yoga styles including Hatha Yoga for foundational practice, Vinyasa Flow for dynamic movement, Yin Yoga for deep stretching and relaxation, and Meditation & Pranayama for breath control and mindfulness. Each program is tailored to your experience level and wellness goals, ensuring a personalized journey toward inner peace and physical vitality.",
-              },
-              {
-                question: "How does yoga integrate with holistic wellness?",
-                answer:
-                  "Our yoga approach encompasses mind, body, and spirit integration. We combine asana practice with pranayama (breathwork), meditation, mindfulness techniques, and lifestyle guidance including nutrition and stress management. We believe true wellness comes from harmonizing all aspects of your being, not just physical flexibility.",
-              },
-              {
-                question: "Do I need prior yoga experience to join?",
-                answer:
-                  "Absolutely not! Our yoga programs welcome everyone from complete beginners to advanced practitioners. We start with a personalized assessment to understand your current flexibility, strength, and wellness goals. Our experienced instructors provide modifications and progressions so you can practice safely and confidently at your own pace.",
-              },
-              {
-                question: "How long does it take to see results from yoga?",
-                answer:
-                  "Many practitioners notice increased flexibility, reduced stress, and improved energy within 2-3 weeks of regular practice. Deeper transformations in strength, mental clarity, and overall wellbeing typically emerge within 2-3 months. Results vary based on practice frequency, dedication, and individual starting points, but every session brings benefits.",
-              },
-              {
-                question: "What makes your yoga programs different?",
-                answer:
-                  "Unlike typical yoga studios, we emphasize the complete yogic lifestyle beyond just physical postures. Our certified instructors combine traditional yoga wisdom with modern wellness science, offering personalized guidance, therapeutic modifications, holistic nutrition advice, and comprehensive support for your entire wellness journey, creating lasting transformation.",
-              },
-              {
-                question: "How are yoga sessions structured?",
-                answer:
-                  "Each session begins with centering and breath awareness, flows through carefully sequenced asanas (postures), incorporates pranayama (breathing exercises), and concludes with meditation and relaxation. Sessions last 60-90 minutes and are customized to your needs. We also offer guidance on developing a home practice and integrating yogic principles into daily life.",
-              },
-            ].map((faq, index) => (
+            {faqs.map((faq, index) => (
               <ScrollAnimation
                 key={index}
                 animation="fade-in"
@@ -463,12 +416,11 @@ export default function SportsTraining() {
                   </svg>
                 </div>
 
-                <h2 className="text-3xl font-bold leading-tight text-white">
-                  What our
-                  <br />
-                  customers are
-                  <br />
-                  saying
+                <h2
+                  className="text-3xl font-bold leading-tight text-white"
+                  style={{ whiteSpace: "pre-line" }}
+                >
+                  {t("sportsTrainingPage.testimonials.title")}
                 </h2>
 
                 {/* Navigation Arrows */}
@@ -649,101 +601,30 @@ export default function SportsTraining() {
                 style={{ backgroundColor: "#0A5950" }}
               >
                 <h2 className="mb-8 font-serif text-4xl text-white">
-                  Yoga Practice Benefits
+                  {t("sportsTrainingPage.benefits.title")}
                 </h2>
 
                 <div className="space-y-6">
-                  {/* Benefit 1 */}
-                  <div className="flex items-start space-x-4">
-                    <svg
-                      className="w-6 h-6 mt-1 text-white shrink-0"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M17 8l4 4m0 0l-4 4m4-4H3"
-                      />
-                    </svg>
-                    <p className="leading-relaxed text-white">
-                      <strong>Enhanced Flexibility & Strength:</strong> Develop
-                      greater range of motion, build lean muscle, and improve
-                      posture through mindful asana practice that balances
-                      strength and flexibility for optimal physical health.
-                    </p>
-                  </div>
-
-                  {/* Benefit 2 */}
-                  <div className="flex items-start space-x-4">
-                    <svg
-                      className="w-6 h-6 mt-1 text-white shrink-0"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M17 8l4 4m0 0l-4 4m4-4H3"
-                      />
-                    </svg>
-                    <p className="leading-relaxed text-white">
-                      <strong>Stress Reduction & Mental Clarity:</strong> Calm
-                      your mind, reduce anxiety, and enhance focus through
-                      meditation, pranayama, and mindfulness practices that
-                      cultivate inner peace and emotional balance.
-                    </p>
-                  </div>
-
-                  {/* Benefit 3 */}
-                  <div className="flex items-start space-x-4">
-                    <svg
-                      className="w-6 h-6 mt-1 text-white shrink-0"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M17 8l4 4m0 0l-4 4m4-4H3"
-                      />
-                    </svg>
-                    <p className="leading-relaxed text-white">
-                      <strong>Improved Breathing & Energy:</strong> Master
-                      pranayama techniques that enhance lung capacity, increase
-                      vitality, and promote better oxygenation throughout your
-                      body for sustained energy and wellbeing.
-                    </p>
-                  </div>
-
-                  {/* Benefit 4 */}
-                  <div className="flex items-start space-x-4">
-                    <svg
-                      className="w-6 h-6 mt-1 text-white shrink-0"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M17 8l4 4m0 0l-4 4m4-4H3"
-                      />
-                    </svg>
-                    <p className="leading-relaxed text-white">
-                      <strong>Mind-Body-Spirit Connection:</strong> Experience
-                      holistic transformation that integrates physical practice
-                      with spiritual awareness, creating harmony between your
-                      inner self and outer life for complete wellness.
-                    </p>
-                  </div>
+                  {benefits.map((b, idx) => (
+                    <div key={idx} className="flex items-start space-x-4">
+                      <svg
+                        className="w-6 h-6 mt-1 text-white shrink-0"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M17 8l4 4m0 0l-4 4m4-4H3"
+                        />
+                      </svg>
+                      <p className="leading-relaxed text-white">
+                        <strong>{b.title}</strong> {b.description}
+                      </p>
+                    </div>
+                  ))}
                 </div>
               </div>
             </ScrollAnimation>
@@ -765,13 +646,12 @@ export default function SportsTraining() {
         <div className="relative z-10 max-w-5xl px-6 mx-auto text-center">
           <ScrollAnimation animation="fade-in" stagger="scroll-stagger-1">
             <h2 className="mb-6 text-3xl font-extrabold leading-tight text-white md:text-4xl">
-              Begin Your Yoga Journey Today
+              {t("sportsTrainingPage.cta.title")}
             </h2>
           </ScrollAnimation>
           <ScrollAnimation animation="fade-in" stagger="scroll-stagger-2">
             <p className="max-w-2xl mx-auto mb-10 text-base text-white md:text-lg">
-              Transform your life with personalized yoga practices designed to
-              harmonize your mind, body, and spirit.
+              {t("sportsTrainingPage.cta.subtitle")}
             </p>
           </ScrollAnimation>
           <ScrollAnimation animation="fade-in" stagger="scroll-stagger-3">
@@ -781,7 +661,7 @@ export default function SportsTraining() {
                 className="px-10 py-4 text-lg font-bold text-white transition-all duration-300 transform rounded-lg shadow-lg btn-animate-strong hover:shadow-2xl hover:scale-105"
                 style={{ backgroundColor: "#0A5950" }}
               >
-                Book Your Consultation
+                {t("sportsTrainingPage.cta.button")}
               </button>
             </div>
           </ScrollAnimation>
