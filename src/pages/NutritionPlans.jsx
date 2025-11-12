@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import { getCurrentUser, isAuthenticated } from "../utils/auth";
 import Navbar from "../components/Navbar";
@@ -13,34 +14,15 @@ export default function NutritionPlans() {
   const [openIndex, setOpenIndex] = useState(0);
   const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
-  // Testimonials data
-  const testimonials = [
-    {
-      text: "The mental health-focused meal plan changed my life! My anxiety has reduced significantly, I sleep better, and my mood is more stable. I never realized how much food affected my mental well-being until now.",
-      name: "Sarah Parker",
-      time: "2 weeks ago",
-      image: "/images/78S4t1.jpg",
-    },
-    {
-      text: "I struggled with depression for years. The brain-boosting foods and mood-stabilizing meal plan have been incredible. I feel more focused, energetic, and emotionally balanced than I have in years!",
-      name: "Robert Kumar",
-      time: "1 month ago",
-      image: "/images/78S4t2.jpg",
-    },
-    {
-      text: "The stress-reducing diet has been a game-changer for managing my work anxiety. I'm calmer, sleep through the night, and handle stressful situations so much better. Highly recommend!",
-      name: "Maria Anderson",
-      time: "3 weeks ago",
-      image: "/images/78S4t3.jpg",
-    },
-    {
-      text: "This program helped me understand the gut-brain connection. My cognitive function improved, brain fog disappeared, and I feel mentally sharper. The support throughout the journey was amazing!",
-      name: "David Lee",
-      time: "10 days ago",
-      image: "/images/78S4t4.jpg",
-    },
-  ];
+  // Testimonials loaded from translations (supports arrays or keyed objects)
+  const rawTestimonials = t("nutritionPlans.testimonials.items", {
+    returnObjects: true,
+  });
+  const testimonials = Array.isArray(rawTestimonials)
+    ? rawTestimonials
+    : Object.values(rawTestimonials || {});
 
   const handlePrevTestimonial = () => {
     setCurrentTestimonialIndex((prev) => (prev === 0 ? 1 : 0));
@@ -103,19 +85,18 @@ export default function NutritionPlans() {
           className="absolute inset-0 object-cover w-full h-full"
         >
           <source src="/78S3v.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
+          {t("common.videoNotSupported")}
         </video>
         <div className="absolute inset-0 bg-black/50"></div>
         <div className="relative z-10 max-w-4xl px-6">
           <ScrollAnimation animation="fade-in" stagger="scroll-stagger-1">
             <h1 className="text-3xl font-extrabold leading-tight text-white md:text-4xl whitespace-nowrap">
-              Nourish Your Mind Through Nutrition
+              {t("nutritionPlans.showcase.title")}
             </h1>
           </ScrollAnimation>
           <ScrollAnimation animation="fade-in" stagger="scroll-stagger-2">
             <p className="max-w-2xl mx-auto mt-6 text-base leading-relaxed text-gray-200 md:text-lg whitespace-nowrap">
-              Discover how proper nutrition supports mental wellness, reduces
-              stress, and enhances cognitive function
+              {t("nutritionPlans.showcase.subtitle")}
             </p>
           </ScrollAnimation>
           <ScrollAnimation animation="fade-in" stagger="scroll-stagger-3">
@@ -125,7 +106,7 @@ export default function NutritionPlans() {
                 className="px-6 py-3 text-base font-bold text-white transition-all duration-300 rounded-lg shadow-lg btn-animate-strong hover:shadow-xl whitespace-nowrap"
                 style={{ backgroundColor: "#0A5950" }}
               >
-                Start Your Mental Wellness Journey
+                {t("nutritionPlans.showcase.button")}
               </a>
             </div>
           </ScrollAnimation>
@@ -147,15 +128,14 @@ export default function NutritionPlans() {
               <h1
                 className={`text-3xl md:text-4xl font-bold mb-3 ${isDark ? "text-white" : "text-gray-800"}`}
               >
-                Mental Health Through Nutrition Programs
+                {t("nutritionPlans.hero.title")}
               </h1>
             </ScrollAnimation>
             <ScrollAnimation animation="fade-in" stagger="scroll-stagger-2">
               <p
                 className={`text-base max-w-4xl mx-auto ${isDark ? "text-gray-300" : "text-gray-600"}`}
               >
-                Support brain health, emotional balance, and stress reduction
-                through specialized nutrition strategies.
+                {t("nutritionPlans.hero.subtitle")}
               </p>
             </ScrollAnimation>
           </div>
@@ -169,13 +149,13 @@ export default function NutritionPlans() {
                   className="mb-6 text-xl font-bold"
                   style={{ color: "#0A5950" }}
                 >
-                  BRAIN-BOOSTING FOODS
+                  {t("nutritionPlans.features.plan1.title")}
                 </h3>
                 <div className="flex justify-center mb-6">
                   <div className="relative w-48 h-48 overflow-hidden border-4 border-white rounded-full shadow-xl">
                     <img
                       src="/images/78S4img1.jpg"
-                      alt="Brain-Boosting Foods"
+                      alt={t("nutritionPlans.features.plan1.imageAlt")}
                       className="object-cover w-full h-full"
                     />
                   </div>
@@ -183,10 +163,7 @@ export default function NutritionPlans() {
                 <p
                   className={`text-sm leading-relaxed ${isDark ? "text-gray-300" : "text-gray-600"}`}
                 >
-                  Nutrient-rich foods that enhance cognitive function, memory,
-                  and focus. Our plans include omega-3 fatty acids,
-                  antioxidants, and vitamins essential for optimal brain health
-                  and mental clarity.
+                  {t("nutritionPlans.features.plan1.description")}
                 </p>
               </div>
             </ScrollAnimation>
@@ -198,13 +175,13 @@ export default function NutritionPlans() {
                   className="mb-6 text-xl font-bold"
                   style={{ color: "#0A5950" }}
                 >
-                  MOOD-STABILIZING NUTRITION
+                  {t("nutritionPlans.features.plan2.title")}
                 </h3>
                 <div className="flex justify-center mb-6">
                   <div className="relative w-48 h-48 overflow-hidden border-4 border-white rounded-full shadow-xl">
                     <img
                       src="/images/78S4img2.jpg"
-                      alt="Mood-Stabilizing Nutrition"
+                      alt={t("nutritionPlans.features.plan2.imageAlt")}
                       className="object-cover w-full h-full"
                     />
                   </div>
@@ -212,10 +189,7 @@ export default function NutritionPlans() {
                 <p
                   className={`text-sm leading-relaxed ${isDark ? "text-gray-300" : "text-gray-600"}`}
                 >
-                  Balanced meal plans that regulate blood sugar, boost
-                  serotonin, and support emotional well-being. Combat anxiety,
-                  depression, and mood swings through strategic nutritional
-                  choices.
+                  {t("nutritionPlans.features.plan2.description")}
                 </p>
               </div>
             </ScrollAnimation>
@@ -227,13 +201,13 @@ export default function NutritionPlans() {
                   className="mb-6 text-xl font-bold"
                   style={{ color: "#0A5950" }}
                 >
-                  STRESS-REDUCING DIETS
+                  {t("nutritionPlans.features.plan3.title")}
                 </h3>
                 <div className="flex justify-center mb-6">
                   <div className="relative w-48 h-48 overflow-hidden border-4 border-white rounded-full shadow-xl">
                     <img
                       src="/images/78S4img3.jpg"
-                      alt="Stress-Reducing Diets"
+                      alt={t("nutritionPlans.features.plan3.imageAlt")}
                       className="object-cover w-full h-full"
                     />
                   </div>
@@ -241,9 +215,7 @@ export default function NutritionPlans() {
                 <p
                   className={`text-sm leading-relaxed ${isDark ? "text-gray-300" : "text-gray-600"}`}
                 >
-                  Anti-inflammatory foods and adaptogens that lower cortisol
-                  levels and calm the nervous system. Reduce chronic stress and
-                  anxiety through targeted nutrition therapy and mindful eating.
+                  {t("nutritionPlans.features.plan3.description")}
                 </p>
               </div>
             </ScrollAnimation>
@@ -255,13 +227,13 @@ export default function NutritionPlans() {
                   className="mb-6 text-xl font-bold"
                   style={{ color: "#0A5950" }}
                 >
-                  SLEEP & MENTAL RECOVERY
+                  {t("nutritionPlans.features.plan4.title")}
                 </h3>
                 <div className="flex justify-center mb-6">
                   <div className="relative w-48 h-48 overflow-hidden border-4 border-white rounded-full shadow-xl">
                     <img
                       src="/images/78S4img4.jpg"
-                      alt="Sleep & Mental Recovery"
+                      alt={t("nutritionPlans.features.plan4.imageAlt")}
                       className="object-cover w-full h-full"
                     />
                   </div>
@@ -269,10 +241,7 @@ export default function NutritionPlans() {
                 <p
                   className={`text-sm leading-relaxed ${isDark ? "text-gray-300" : "text-gray-600"}`}
                 >
-                  Nutrition plans optimized for quality sleep and mental
-                  restoration. Foods rich in magnesium, tryptophan, and
-                  melatonin precursors help regulate sleep cycles and enhance
-                  mental recovery.
+                  {t("nutritionPlans.features.plan4.description")}
                 </p>
               </div>
             </ScrollAnimation>
@@ -289,155 +258,128 @@ export default function NutritionPlans() {
               <h2
                 className={`text-4xl md:text-5xl font-bold mb-4 ${isDark ? "text-white" : "text-gray-900"}`}
               >
-                Mental Health FAQs
+                {t("nutritionPlans.faq.title")}
               </h2>
             </ScrollAnimation>
             <ScrollAnimation animation="fade-in" stagger="scroll-stagger-3">
               <p
                 className={`text-lg max-w-2xl mx-auto ${isDark ? "text-gray-300" : "text-gray-600"}`}
               >
-                Discover how food impacts mental health and find answers to your
-                questions about the mind-body connection
+                {t("nutritionPlans.faq.subtitle")}
               </p>
             </ScrollAnimation>
           </div>
 
           {/* FAQ Grid */}
           <div className="grid gap-6 md:grid-cols-2">
-            {[
-              {
-                question: "How does nutrition affect mental health?",
-                answer:
-                  "Nutrition plays a crucial role in mental health by influencing brain chemistry, neurotransmitter production, and inflammation levels. Essential nutrients like omega-3 fatty acids, B vitamins, magnesium, and amino acids support serotonin and dopamine production, which regulate mood, anxiety, and stress responses. A balanced diet can significantly improve mental clarity, emotional stability, and overall psychological well-being.",
-              },
-              {
-                question: "Can diet help with anxiety and depression?",
-                answer:
-                  "Yes! Studies show that specific dietary patterns can reduce symptoms of anxiety and depression. Anti-inflammatory foods, omega-3 rich fish, fermented foods for gut health, and complex carbohydrates that stabilize blood sugar all contribute to better mental health. Our plans include mood-boosting nutrients like tryptophan, magnesium, and B vitamins that support neurotransmitter balance and emotional regulation.",
-              },
-              {
-                question:
-                  "What foods are best for brain health and cognitive function?",
-                answer:
-                  "Brain-boosting foods include fatty fish rich in omega-3s, berries with antioxidants, leafy greens with folate, nuts and seeds for vitamin E, whole grains for steady glucose, and dark chocolate with flavonoids. These foods enhance memory, concentration, and mental processing speed while protecting against cognitive decline. We create personalized plans featuring these cognitive enhancers based on your preferences.",
-              },
-              {
-                question:
-                  "How long before I notice mental health improvements?",
-                answer:
-                  "Many clients report improved mood and energy within 1-2 weeks of dietary changes. Enhanced sleep quality often appears within the first week. More significant improvements in anxiety, depression symptoms, and cognitive function typically become noticeable after 4-6 weeks as neurotransmitter levels stabilize. Long-term mental health benefits continue to develop over 2-3 months with consistent nutrition.",
-              },
-              {
-                question: "Can nutrition help with stress management?",
-                answer:
-                  "Absolutely! Strategic nutrition can significantly reduce stress by lowering cortisol levels and supporting adrenal function. We incorporate adaptogenic foods, magnesium-rich options, vitamin C sources, and anti-inflammatory ingredients that calm the nervous system. Regular meal timing prevents blood sugar crashes that exacerbate stress, while specific nutrients help your body's stress response system function optimally.",
-              },
-              {
-                question:
-                  "Do you work with people taking mental health medications?",
-                answer:
-                  "Yes! We work collaboratively with your mental health providers to ensure nutritional plans complement your treatment. Certain foods can interact with medications or affect their absorption, so we carefully consider your prescriptions. Our goal is to support your mental health treatment through optimal nutrition while respecting medical protocols. We never recommend stopping medications and always coordinate care with your healthcare team.",
-              },
-            ].map((faq, index) => (
-              <ScrollAnimation
-                key={index}
-                animation="fade-in"
-                stagger={`scroll-stagger-${index + 4}`}
-              >
-                <div
-                  className={`group relative ${isDark ? "bg-gray-800" : "bg-white"} rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 ${
-                    openIndex === index
-                      ? "scale-[1.02]"
-                      : isDark
-                        ? "border-gray-700"
-                        : "border-gray-200"
-                  }`}
-                  style={{
-                    borderColor: openIndex === index ? "#0A5950" : undefined,
-                  }}
+            {(() => {
+              const rawFaqs = t("nutritionPlans.faq.questions", {
+                returnObjects: true,
+              });
+              const faqs = Array.isArray(rawFaqs)
+                ? rawFaqs
+                : Object.values(rawFaqs || {});
+              return faqs.map((faq, index) => (
+                <ScrollAnimation
+                  key={index}
+                  animation="fade-in"
+                  stagger={`scroll-stagger-${index + 4}`}
                 >
-                  {/* Question */}
-                  <button
-                    onClick={() =>
-                      setOpenIndex(openIndex === index ? -1 : index)
-                    }
-                    className="w-full text-left"
-                  >
-                    <h3
-                      className={`text-lg font-bold mb-3 pr-8 ${isDark ? "text-white" : "text-gray-900"} transition-colors`}
-                      style={{
-                        color: openIndex === index ? "#0A5950" : undefined,
-                      }}
-                    >
-                      {faq.question}
-                    </h3>
-                  </button>
-
-                  {/* Answer */}
                   <div
-                    className={`overflow-hidden transition-all duration-500 ${
+                    className={`group relative ${isDark ? "bg-gray-800" : "bg-white"} rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 ${
                       openIndex === index
-                        ? "max-h-96 opacity-100"
-                        : "max-h-0 opacity-0"
-                    }`}
-                  >
-                    <p
-                      className={`leading-relaxed mt-2 ${isDark ? "text-gray-300" : "text-gray-600"}`}
-                    >
-                      {faq.answer}
-                    </p>
-                  </div>
-
-                  {/* Plus/Minus Icon */}
-                  <button
-                    onClick={() =>
-                      setOpenIndex(openIndex === index ? -1 : index)
-                    }
-                    className={`absolute top-8 right-8 w-8 h-8 rounded-full flex items-center justify-center ${
-                      openIndex === index
-                        ? "text-white"
+                        ? "scale-[1.02]"
                         : isDark
-                          ? "bg-gray-700 text-gray-400"
-                          : "bg-gray-100 text-gray-500"
-                    } transition-all duration-300 hover:scale-110`}
+                          ? "border-gray-700"
+                          : "border-gray-200"
+                    }`}
                     style={{
-                      backgroundColor:
-                        openIndex === index ? "#0A5950" : undefined,
+                      borderColor: openIndex === index ? "#0A5950" : undefined,
                     }}
                   >
-                    {openIndex === index ? (
-                      <svg
-                        className="w-4 h-4"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
+                    {/* Question */}
+                    <button
+                      onClick={() =>
+                        setOpenIndex(openIndex === index ? -1 : index)
+                      }
+                      className="w-full text-left"
+                    >
+                      <h3
+                        className={`text-lg font-bold mb-3 pr-8 ${isDark ? "text-white" : "text-gray-900"} transition-colors`}
+                        style={{
+                          color: openIndex === index ? "#0A5950" : undefined,
+                        }}
                       >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M20 12H4"
-                        />
-                      </svg>
-                    ) : (
-                      <svg
-                        className="w-4 h-4"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
+                        {faq.question}
+                      </h3>
+                    </button>
+
+                    {/* Answer */}
+                    <div
+                      className={`overflow-hidden transition-all duration-500 ${
+                        openIndex === index
+                          ? "max-h-96 opacity-100"
+                          : "max-h-0 opacity-0"
+                      }`}
+                    >
+                      <p
+                        className={`leading-relaxed mt-2 ${isDark ? "text-gray-300" : "text-gray-600"}`}
                       >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M12 4v16m8-8H4"
-                        />
-                      </svg>
-                    )}
-                  </button>
-                </div>
-              </ScrollAnimation>
-            ))}
+                        {faq.answer}
+                      </p>
+                    </div>
+
+                    {/* Plus/Minus Icon */}
+                    <button
+                      onClick={() =>
+                        setOpenIndex(openIndex === index ? -1 : index)
+                      }
+                      className={`absolute top-8 right-8 w-8 h-8 rounded-full flex items-center justify-center ${
+                        openIndex === index
+                          ? "text-white"
+                          : isDark
+                            ? "bg-gray-700 text-gray-400"
+                            : "bg-gray-100 text-gray-500"
+                      } transition-all duration-300 hover:scale-110`}
+                      style={{
+                        backgroundColor:
+                          openIndex === index ? "#0A5950" : undefined,
+                      }}
+                    >
+                      {openIndex === index ? (
+                        <svg
+                          className="w-4 h-4"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M20 12H4"
+                          />
+                        </svg>
+                      ) : (
+                        <svg
+                          className="w-4 h-4"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M12 4v16m8-8H4"
+                          />
+                        </svg>
+                      )}
+                    </button>
+                  </div>
+                </ScrollAnimation>
+              ));
+            })()}
           </div>
         </div>
       </section>
@@ -469,11 +411,7 @@ export default function NutritionPlans() {
                 </div>
 
                 <h2 className="text-3xl font-bold leading-tight text-white">
-                  What our
-                  <br />
-                  customers are
-                  <br />
-                  saying
+                  {t("nutritionPlans.testimonials.title")}
                 </h2>
 
                 {/* Navigation Arrows */}
@@ -654,105 +592,40 @@ export default function NutritionPlans() {
                 style={{ backgroundColor: "#0A5950" }}
               >
                 <h2 className="mb-8 font-serif text-4xl text-white">
-                  Mental Health Benefits
+                  {t("nutritionPlans.benefits.title")}
                 </h2>
 
                 <div className="space-y-6">
-                  {/* Benefit 1 */}
-                  <div className="flex items-start space-x-4">
-                    <svg
-                      className="w-6 h-6 mt-1 text-white shrink-0"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M17 8l4 4m0 0l-4 4m4-4H3"
-                      />
-                    </svg>
-                    <p className="leading-relaxed text-white">
-                      <strong>Reduced Anxiety & Stress:</strong> Experience
-                      calmer nerves and lower stress levels through foods that
-                      regulate cortisol production and support your nervous
-                      system. Strategic nutrient timing helps maintain emotional
-                      balance throughout challenging days.
-                    </p>
-                  </div>
-
-                  {/* Benefit 2 */}
-                  <div className="flex items-start space-x-4">
-                    <svg
-                      className="w-6 h-6 mt-1 text-white shrink-0"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M17 8l4 4m0 0l-4 4m4-4H3"
-                      />
-                    </svg>
-                    <p className="leading-relaxed text-white">
-                      <strong>Enhanced Mood & Emotional Stability:</strong>{" "}
-                      Boost serotonin and dopamine levels naturally through
-                      targeted nutrition. Say goodbye to mood swings and hello
-                      to consistent emotional well-being with foods that support
-                      neurotransmitter production.
-                    </p>
-                  </div>
-
-                  {/* Benefit 3 */}
-                  <div className="flex items-start space-x-4">
-                    <svg
-                      className="w-6 h-6 mt-1 text-white shrink-0"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M17 8l4 4m0 0l-4 4m4-4H3"
-                      />
-                    </svg>
-                    <p className="leading-relaxed text-white">
-                      <strong>Improved Cognitive Function:</strong> Sharpen your
-                      memory, focus, and mental clarity with brain-nourishing
-                      foods rich in omega-3s and antioxidants. Combat brain fog
-                      and enhance mental processing speed for peak cognitive
-                      performance.
-                    </p>
-                  </div>
-
-                  {/* Benefit 4 */}
-                  <div className="flex items-start space-x-4">
-                    <svg
-                      className="w-6 h-6 mt-1 text-white shrink-0"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M17 8l4 4m0 0l-4 4m4-4H3"
-                      />
-                    </svg>
-                    <p className="leading-relaxed text-white">
-                      <strong>Better Sleep & Mental Recovery:</strong> Achieve
-                      restorative sleep through foods that support melatonin
-                      production and circadian rhythm regulation. Wake up
-                      refreshed with improved mental resilience and emotional
-                      regulation for lasting wellness.
-                    </p>
-                  </div>
+                  {(() => {
+                    const rawBenefits = t("nutritionPlans.benefits.items", {
+                      returnObjects: true,
+                    });
+                    const benefits = Array.isArray(rawBenefits)
+                      ? rawBenefits
+                      : Object.values(rawBenefits || {});
+                    return benefits.map((b, bi) => (
+                      <div className="flex items-start space-x-4" key={bi}>
+                        <svg
+                          className="w-6 h-6 mt-1 text-white shrink-0"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M17 8l4 4m0 0l-4 4m4-4H3"
+                          />
+                        </svg>
+                        <p className="leading-relaxed text-white">
+                          {b.title ? <strong>{b.title}</strong> : null}
+                          {b.title ? " " : null}
+                          {b.description}
+                        </p>
+                      </div>
+                    ));
+                  })()}
                 </div>
               </div>
             </ScrollAnimation>
@@ -774,12 +647,12 @@ export default function NutritionPlans() {
         <div className="relative z-10 max-w-5xl px-6 mx-auto text-center">
           <ScrollAnimation animation="fade-in" stagger="scroll-stagger-1">
             <h2 className="mb-6 text-3xl font-extrabold leading-tight text-white md:text-4xl">
-              Transform Your Mental Health Through Food
+              {t("nutritionPlans.cta.title")}
             </h2>
           </ScrollAnimation>
           <ScrollAnimation animation="fade-in" stagger="scroll-stagger-2">
             <p className="max-w-2xl mx-auto mb-10 text-base text-white md:text-lg">
-              Boost your well-being with personalized nutrition strategies.
+              {t("nutritionPlans.cta.subtitle")}
             </p>
           </ScrollAnimation>
           <ScrollAnimation animation="fade-in" stagger="scroll-stagger-3">
@@ -789,7 +662,7 @@ export default function NutritionPlans() {
                 className="px-10 py-4 text-lg font-bold text-white transition-all duration-300 transform rounded-lg shadow-lg btn-animate-strong hover:shadow-2xl hover:scale-105"
                 style={{ backgroundColor: "#0A5950" }}
               >
-                Begin Your Mental Wellness Journey
+                {t("nutritionPlans.cta.button")}
               </button>
             </div>
           </ScrollAnimation>

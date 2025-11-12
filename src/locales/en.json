@@ -2182,10 +2182,7 @@
       "title": "Holistic Healing",
       "description": "Comprehensive wellness care to enhance your health, confidence, and vitality."
     },
-    "nutritionPlans": {
-      "title": "Nutrition Plans",
-      "description": "Meal plans to help you reach your health and fitness goals."
-    },
+
     "mindfulLiving": {
       "title": "Mindful Living",
       "description": "Guided practices to balance mind, body, and spirit daily."
@@ -2500,6 +2497,116 @@
       "title": "Start Your Weight Loss Journey Today",
       "subtitle": "Get personalized support and expert guidance to achieve your weight loss goals.",
       "button": "Join Our Program"
+    }
+  },
+  "nutritionPlans": {
+    "showcase": {
+      "title": "Nourish Your Mind Through Nutrition",
+      "subtitle": "Discover how proper nutrition supports mental wellness, reduces stress, and enhances cognitive function.",
+      "button": "Start Your Mental Wellness Journey"
+    },
+    "hero": {
+      "title": "Mental Health Through Nutrition Programs",
+      "subtitle": "Support brain health, emotional balance, and stress reduction through specialized nutrition strategies."
+    },
+    "features": {
+      "plan1": {
+        "title": "BRAIN-BOOSTING FOODS",
+        "imageAlt": "Brain-Boosting Foods",
+        "description": "Nutrient-rich foods that enhance cognitive function, memory, and focus. Our plans include omega-3s, antioxidants, and vitamins essential for optimal brain health."
+      },
+      "plan2": {
+        "title": "MOOD-STABILIZING NUTRITION",
+        "imageAlt": "Mood-Stabilizing Nutrition",
+        "description": "Balanced meal plans that regulate blood sugar, boost serotonin, and support emotional well-being."
+      },
+      "plan3": {
+        "title": "STRESS-REDUCING DIETS",
+        "imageAlt": "Stress-Reducing Diets",
+        "description": "Anti-inflammatory foods and adaptogens that lower cortisol and calm the nervous system."
+      },
+      "plan4": {
+        "title": "SLEEP & MENTAL RECOVERY",
+        "imageAlt": "Sleep & Mental Recovery",
+        "description": "Nutrition plans optimized for quality sleep and mental restoration."
+      }
+    },
+    "faq": {
+      "title": "Mental Health FAQs",
+      "subtitle": "Discover how food impacts mental health and find answers to your questions.",
+      "questions": [
+        {
+          "question": "How does nutrition affect mental health?",
+          "answer": "Nutrition influences brain chemistry, neurotransmitter production, and inflammation. Essential nutrients like omega-3s, B vitamins, magnesium, and amino acids support mood and cognitive function."
+        },
+        {
+          "question": "Can diet help with anxiety and depression?",
+          "answer": "Yes — anti-inflammatory foods, omega-3s, fermented foods and stable blood sugar all contribute to better mental health."
+        },
+        {
+          "question": "What foods are best for brain health?",
+          "answer": "Fatty fish, berries, leafy greens, nuts, whole grains, and dark chocolate support memory, concentration, and cognitive processing."
+        },
+        {
+          "question": "How long before I notice improvements?",
+          "answer": "Many clients report mood and energy improvements within 1-2 weeks; larger changes appear over 4-12 weeks with consistent adherence."
+        }
+      ]
+    },
+    "testimonials": {
+      "title": "What our customers are saying",
+      "items": [
+        {
+          "text": "The mental health-focused meal plan changed my life! My anxiety has reduced significantly, I sleep better, and my mood is more stable.",
+          "name": "Sarah Parker",
+          "time": "2 weeks ago",
+          "image": "/images/78S4t1.jpg"
+        },
+        {
+          "text": "I struggled with depression for years. The brain-boosting foods and mood-stabilizing meal plan have been incredible.",
+          "name": "Robert Kumar",
+          "time": "1 month ago",
+          "image": "/images/78S4t2.jpg"
+        },
+        {
+          "text": "The stress-reducing diet has been a game-changer for managing my work anxiety.",
+          "name": "Maria Anderson",
+          "time": "3 weeks ago",
+          "image": "/images/78S4t3.jpg"
+        },
+        {
+          "text": "This program helped me understand the gut-brain connection. My cognitive function improved and brain fog disappeared.",
+          "name": "David Lee",
+          "time": "10 days ago",
+          "image": "/images/78S4t4.jpg"
+        }
+      ]
+    },
+    "benefits": {
+      "title": "Mental Health Benefits",
+      "items": [
+        {
+          "title": "Reduced Anxiety & Stress:",
+          "description": "Calmer nerves and lower stress through foods that regulate cortisol and support the nervous system."
+        },
+        {
+          "title": "Enhanced Mood & Stability:",
+          "description": "Boost serotonin and dopamine naturally through targeted nutrition."
+        },
+        {
+          "title": "Improved Cognitive Function:",
+          "description": "Sharper memory, focus, and clarity with brain-nourishing foods."
+        },
+        {
+          "title": "Better Sleep & Recovery:",
+          "description": "Support melatonin production and circadian health for restorative sleep."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Transform Your Mental Health Through Food",
+      "subtitle": "Boost your well-being with personalized nutrition strategies.",
+      "button": "Begin Your Mental Wellness Journey"
     }
   },
   "nutritionCounseling": {
