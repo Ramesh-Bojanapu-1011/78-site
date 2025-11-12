@@ -792,6 +792,7 @@
         }
       ]
     },
+
     "cta": {
       "tagline": "Ready to Transform Your Health?",
       "title": "Start Your Wellness Journey",
@@ -2499,6 +2500,116 @@
       "title": "Start Your Weight Loss Journey Today",
       "subtitle": "Get personalized support and expert guidance to achieve your weight loss goals.",
       "button": "Join Our Program"
+    }
+  },
+  "nutritionCounseling": {
+    "showcase": {
+      "title": "Transform Your Health with Smart Nutrition",
+      "subtitle": "Personalized meal plans, expert consultations, and progress tracking to support lasting wellness.",
+      "button": "Start Your Nutrition Journey"
+    },
+    "hero": {
+      "title": "Comprehensive Nutrition Counseling Platform",
+      "subtitle": "AI-powered meal planning meets certified nutritionist guidance to help you achieve sustainable health results."
+    },
+    "features": {
+      "plan1": {
+        "title": "Personalized Meal Plans",
+        "description": "Customized nutrition plans tailored to your goals, preferences, and lifestyle—balanced, delicious, and easy to follow.",
+        "imageAlt": "Personalized Meal Plans"
+      },
+      "plan2": {
+        "title": "Nutrition Tracking",
+        "description": "Monitor calories, macros, and micronutrients with intuitive tracking and insightful analytics.",
+        "imageAlt": "Nutrition Tracking"
+      },
+      "plan3": {
+        "title": "Expert Consultations",
+        "description": "Connect with certified nutritionists via video for personalized guidance and plan adjustments.",
+        "imageAlt": "Expert Consultations"
+      },
+      "plan4": {
+        "title": "Progress Monitoring",
+        "description": "Track weight trends, body measurements, and health markers with visual reports to celebrate milestones.",
+        "imageAlt": "Progress Monitoring"
+      }
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "subtitle": "Find answers to common questions about our nutrition counseling services.",
+      "questions": [
+        {
+          "question": "How does the nutrition counseling platform work?",
+          "answer": "We combine AI-driven meal planning with one-on-one nutritionist support to create personalized plans that match your goals and lifestyle."
+        },
+        {
+          "question": "Can I customize plans for dietary restrictions?",
+          "answer": "Yes—our plans accommodate vegetarian, vegan, keto, gluten-free, dairy-free, and other dietary needs."
+        },
+        {
+          "question": "How often can I consult with a nutritionist?",
+          "answer": "Consultation frequency depends on your plan—options include weekly, bi-weekly, or ad-hoc sessions."
+        },
+        {
+          "question": "Is the platform suitable for medical conditions?",
+          "answer": "Yes. Our nutritionists work with many common conditions like diabetes and PCOS, but we recommend coordinating with your healthcare provider when needed."
+        }
+      ]
+    },
+    "testimonials": {
+      "items": [
+        {
+          "text": "This platform transformed how I eat—easy plans and real results.",
+          "name": "Emma Rodriguez",
+          "time": "2 weeks ago",
+          "image": "/images/78S3t1.jpg"
+        },
+        {
+          "text": "As a diabetic, the meal plans helped me stabilize my blood sugar.",
+          "name": "James Chen",
+          "time": "3 weeks ago",
+          "image": "/images/78S3t2.jpg"
+        },
+        {
+          "text": "The nutritionists were supportive and practical—I saw improvements fast.",
+          "name": "Priya Sharma",
+          "time": "1 month ago",
+          "image": "/images/78S3t3.jpg"
+        },
+        {
+          "text": "Great combination of tech and human expertise—convenient and effective.",
+          "name": "Michael Thompson",
+          "time": "3 weeks ago",
+          "image": "/images/78S3t4.jpg"
+        }
+      ]
+    },
+    "platformBenefits": {
+      "title": "Nutrition Platform Benefits",
+      "imageAlt": "Nutrition Platform Benefits",
+      "items": [
+        {
+          "title": "AI-Powered Personalization:",
+          "description": "Experience cutting-edge nutrition planning powered by artificial intelligence. Our platform analyzes your unique health profile, goals, and preferences to create optimal meal plans that adapt as you progress, ensuring maximum results."
+        },
+        {
+          "title": "Expert Support Network:",
+          "description": "Access a team of certified nutritionists, registered dietitians, and wellness coaches available via video consultations. Get personalized guidance, meal plan adjustments, and professional answers to all your nutrition questions in real-time."
+        },
+        {
+          "title": "Comprehensive Tracking System:",
+          "description": "Monitor every aspect of your nutrition journey with intuitive dashboards. Track calories, macros, micronutrients, water intake, weight trends, body measurements, and receive actionable insights to optimize your progress and stay motivated."
+        },
+        {
+          "title": "Seamless Mobile Experience:",
+          "description": "Take your nutrition journey anywhere with our feature-rich mobile apps. Scan barcodes for instant food logging, set meal reminders, access recipes, connect with your nutritionist, and sync data across all devices for ultimate convenience."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Start Your Nutrition Transformation Today",
+      "subtitle": "Get personalized meal plans and expert guidance to reach your health goals.",
+      "button": "Get Your Free Consultation"
     }
   },
   "sportsTrainingPage": {

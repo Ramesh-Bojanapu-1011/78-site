@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 
 import { useNavigate } from "react-router-dom";
 import Footer from "../components/Footer";
@@ -14,34 +15,23 @@ export default function NutritionCounseling() {
   const [openIndex, setOpenIndex] = useState(0);
   const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
-  // Testimonials data
-  const testimonials = [
-    {
-      text: "This nutrition platform has been a game-changer for my weight loss journey. The personalized meal plans are easy to follow, and my nutritionist's guidance keeps me motivated. I've lost 25 pounds in 3 months!",
-      name: "Emma Rodriguez",
-      time: "2 weeks ago",
-      image: "/images/78S3t1.jpg",
-    },
-    {
-      text: "As a diabetic, I struggled with meal planning. This platform and the expert consultations helped me manage my blood sugar levels effectively. The tracking features make it so easy to stay on top of my nutrition goals.",
-      name: "James Chen",
-      time: "3 weeks ago",
-      image: "/images/78S3t2.jpg",
-    },
-    {
-      text: "The nutritionists are incredibly knowledgeable and supportive. They customized my plan for PCOS management, and I've seen significant improvements in just 2 months. The mobile app makes tracking super convenient!",
-      name: "Priya Sharma",
-      time: "1 month ago",
-      image: "/images/78S3t3.jpg",
-    },
-    {
-      text: "I love how the platform combines technology with human expertise. The meal plans fit my busy lifestyle, and the video consultations are so helpful. I've gained muscle and lost fat exactly as planned!",
-      name: "Michael Thompson",
-      time: "3 weeks ago",
-      image: "/images/78S3t4.jpg",
-    },
-  ];
+  // Testimonials loaded from translations (supports arrays or keyed objects)
+  const rawTestimonials = t("nutritionCounseling.testimonials.items", {
+    returnObjects: true,
+  });
+  const testimonials = Array.isArray(rawTestimonials)
+    ? rawTestimonials
+    : Object.values(rawTestimonials || {});
+
+  // Platform benefits loaded from translations (supports arrays or keyed objects)
+  const rawPlatformBenefits = t("nutritionCounseling.platformBenefits.items", {
+    returnObjects: true,
+  });
+  const platformBenefits = Array.isArray(rawPlatformBenefits)
+    ? rawPlatformBenefits
+    : Object.values(rawPlatformBenefits || {});
 
   const handlePrevTestimonial = () => {
     setCurrentTestimonialIndex((prev) => (prev === 0 ? 1 : 0));
@@ -104,19 +94,18 @@ export default function NutritionCounseling() {
           className="absolute inset-0 object-cover w-full h-full"
         >
           <source src="/78S4v.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
+          {t("common.videoNotSupported")}
         </video>
         <div className="absolute inset-0 bg-black/50"></div>
         <div className="relative z-10 max-w-4xl px-6">
           <ScrollAnimation animation="fade-in" stagger="scroll-stagger-1">
             <h1 className="text-3xl font-extrabold leading-tight text-white md:text-4xl whitespace-nowrap">
-              Transform Your Health with Smart Nutrition
+              {t("nutritionCounseling.showcase.title")}
             </h1>
           </ScrollAnimation>
           <ScrollAnimation animation="fade-in" stagger="scroll-stagger-2">
             <p className="max-w-2xl mx-auto mt-6 text-base leading-relaxed text-gray-200 md:text-lg whitespace-nowrap">
-              AI-powered meal planning meets expert nutritionist guidance for
-              optimal wellness results
+              {t("nutritionCounseling.showcase.subtitle")}
             </p>
           </ScrollAnimation>
           <ScrollAnimation animation="fade-in" stagger="scroll-stagger-3">
@@ -126,7 +115,7 @@ export default function NutritionCounseling() {
                 className="px-6 py-3 text-base font-bold text-white transition-all duration-300 rounded-lg shadow-lg btn-animate-strong hover:shadow-xl whitespace-nowrap"
                 style={{ backgroundColor: "#0A5950" }}
               >
-                Start Your Nutrition Journey
+                {t("nutritionCounseling.showcase.button")}
               </a>
             </div>
           </ScrollAnimation>
@@ -148,15 +137,14 @@ export default function NutritionCounseling() {
               <h1
                 className={`text-3xl md:text-4xl font-bold mb-3 ${isDark ? "text-white" : "text-gray-800"}`}
               >
-                Comprehensive Nutrition Counseling Platform
+                {t("nutritionCounseling.hero.title")}
               </h1>
             </ScrollAnimation>
             <ScrollAnimation animation="fade-in" stagger="scroll-stagger-2">
               <p
                 className={`text-base max-w-4xl mx-auto ${isDark ? "text-gray-300" : "text-gray-600"}`}
               >
-                Transform your health with personalized nutrition plans and
-                expert guidance.
+                {t("nutritionCounseling.hero.subtitle")}
               </p>
             </ScrollAnimation>
           </div>
@@ -170,13 +158,13 @@ export default function NutritionCounseling() {
                   className="mb-6 text-xl font-bold"
                   style={{ color: "#0A5950" }}
                 >
-                  PERSONALIZED MEAL PLANS
+                  {t("nutritionCounseling.features.plan1.title")}
                 </h3>
                 <div className="flex justify-center mb-6">
                   <div className="relative w-48 h-48 overflow-hidden border-4 border-white rounded-full shadow-xl">
                     <img
                       src="/images/78S3img1.jpg"
-                      alt="Personalized Meal Plans"
+                      alt={t("nutritionCounseling.features.plan1.imageAlt")}
                       className="object-cover w-full h-full"
                     />
                   </div>
@@ -184,10 +172,7 @@ export default function NutritionCounseling() {
                 <p
                   className={`text-sm leading-relaxed ${isDark ? "text-gray-300" : "text-gray-600"}`}
                 >
-                  Get customized nutrition plans tailored to your specific
-                  health goals, dietary preferences, and lifestyle. Our
-                  AI-powered system creates meal plans that fit your unique
-                  needs and taste preferences.
+                  {t("nutritionCounseling.features.plan1.description")}
                 </p>
               </div>
             </ScrollAnimation>
@@ -199,13 +184,13 @@ export default function NutritionCounseling() {
                   className="mb-6 text-xl font-bold"
                   style={{ color: "#0A5950" }}
                 >
-                  NUTRITION TRACKING
+                  {t("nutritionCounseling.features.plan2.title")}
                 </h3>
                 <div className="flex justify-center mb-6">
                   <div className="relative w-48 h-48 overflow-hidden border-4 border-white rounded-full shadow-xl">
                     <img
                       src="/images/78S3img2.jpg"
-                      alt="Nutrition Tracking"
+                      alt={t("nutritionCounseling.features.plan2.imageAlt")}
                       className="object-cover w-full h-full"
                     />
                   </div>
@@ -213,9 +198,7 @@ export default function NutritionCounseling() {
                 <p
                   className={`text-sm leading-relaxed ${isDark ? "text-gray-300" : "text-gray-600"}`}
                 >
-                  Monitor your daily intake of calories, macros, vitamins, and
-                  minerals with our intuitive tracking system. Visualize your
-                  progress with detailed analytics and insights.
+                  {t("nutritionCounseling.features.plan2.description")}
                 </p>
               </div>
             </ScrollAnimation>
@@ -227,13 +210,13 @@ export default function NutritionCounseling() {
                   className="mb-6 text-xl font-bold"
                   style={{ color: "#0A5950" }}
                 >
-                  EXPERT CONSULTATIONS
+                  {t("nutritionCounseling.features.plan3.title")}
                 </h3>
                 <div className="flex justify-center mb-6">
                   <div className="relative w-48 h-48 overflow-hidden border-4 border-white rounded-full shadow-xl">
                     <img
                       src="/images/78S3img3.jpg"
-                      alt="Expert Consultations"
+                      alt={t("nutritionCounseling.features.plan3.imageAlt")}
                       className="object-cover w-full h-full"
                     />
                   </div>
@@ -241,10 +224,7 @@ export default function NutritionCounseling() {
                 <p
                   className={`text-sm leading-relaxed ${isDark ? "text-gray-300" : "text-gray-600"}`}
                 >
-                  Connect with certified nutritionists and dietitians through
-                  video consultations. Receive professional guidance, answer
-                  your questions, and adjust your plans based on expert
-                  recommendations.
+                  {t("nutritionCounseling.features.plan3.description")}
                 </p>
               </div>
             </ScrollAnimation>
@@ -256,13 +236,13 @@ export default function NutritionCounseling() {
                   className="mb-6 text-xl font-bold"
                   style={{ color: "#0A5950" }}
                 >
-                  PROGRESS MONITORING
+                  {t("nutritionCounseling.features.plan4.title")}
                 </h3>
                 <div className="flex justify-center mb-6">
                   <div className="relative w-48 h-48 overflow-hidden border-4 border-white rounded-full shadow-xl">
                     <img
                       src="/images/78S3img4.jpg"
-                      alt="Progress Monitoring"
+                      alt={t("nutritionCounseling.features.plan4.imageAlt")}
                       className="object-cover w-full h-full"
                     />
                   </div>
@@ -270,10 +250,7 @@ export default function NutritionCounseling() {
                 <p
                   className={`text-sm leading-relaxed ${isDark ? "text-gray-300" : "text-gray-600"}`}
                 >
-                  Track your wellness journey with comprehensive progress
-                  reports, body measurements, weight trends, and health markers.
-                  Celebrate milestones and stay motivated with visual progress
-                  charts.
+                  {t("nutritionCounseling.features.plan4.description")}
                 </p>
               </div>
             </ScrollAnimation>
@@ -290,155 +267,128 @@ export default function NutritionCounseling() {
               <h2
                 className={`text-4xl md:text-5xl font-bold mb-4 ${isDark ? "text-white" : "text-gray-900"}`}
               >
-                Frequently Asked Questions
+                {t("nutritionCounseling.faq.title")}
               </h2>
             </ScrollAnimation>
             <ScrollAnimation animation="fade-in" stagger="scroll-stagger-3">
               <p
                 className={`text-lg max-w-2xl mx-auto ${isDark ? "text-gray-300" : "text-gray-600"}`}
               >
-                Find answers to common questions about our nutrition counseling
-                platform and services
+                {t("nutritionCounseling.faq.subtitle")}
               </p>
             </ScrollAnimation>
           </div>
 
           {/* FAQ Grid */}
           <div className="grid gap-6 md:grid-cols-2">
-            {[
-              {
-                question: "How does the nutrition counseling platform work?",
-                answer:
-                  "Our platform combines AI-powered meal planning with expert nutritionist guidance. After completing your health assessment, we create a personalized nutrition plan tailored to your goals, dietary preferences, and lifestyle. You'll have access to meal tracking tools, progress monitoring, video consultations with certified nutritionists, and a comprehensive food database to help you stay on track and achieve your wellness goals.",
-              },
-              {
-                question:
-                  "Can I customize my meal plans based on dietary restrictions?",
-                answer:
-                  "Absolutely! Our platform accommodates various dietary needs including vegetarian, vegan, keto, paleo, gluten-free, dairy-free, and more. During your initial assessment, you'll specify your dietary preferences, allergies, and restrictions. Our AI system and nutritionists will create meal plans that respect these requirements while ensuring you receive balanced, nutritious meals that support your health goals.",
-              },
-              {
-                question: "How often can I consult with a nutritionist?",
-                answer:
-                  "Consultation frequency depends on your subscription plan. Our basic plan includes bi-weekly consultations, while premium plans offer weekly sessions. You can also schedule additional consultations as needed. Each session lasts 30-45 minutes and can be conducted via video call at your convenience. Our nutritionists are available to answer questions, adjust your meal plans, and provide ongoing support throughout your wellness journey.",
-              },
-              {
-                question:
-                  "What kind of progress tracking features are available?",
-                answer:
-                  "Our platform offers comprehensive tracking including daily calorie and macro intake, weight trends, body measurements, energy levels, and health markers. You'll see visual charts and graphs showing your progress over time. The system also tracks meal adherence, water intake, and provides insights on nutrient deficiencies. Weekly and monthly reports help you understand your patterns and celebrate your achievements.",
-              },
-              {
-                question:
-                  "Is the platform suitable for specific health conditions?",
-                answer:
-                  "Yes! Our nutritionists specialize in various health conditions including diabetes, PCOS, heart disease, digestive disorders, and more. During your consultation, inform us about any health conditions, and we'll create a medically-appropriate nutrition plan. However, our service complements but doesn't replace medical treatment. Always consult your healthcare provider for medical advice and inform them about your nutrition plans.",
-              },
-              {
-                question: "Can I access the platform on mobile devices?",
-                answer:
-                  "Yes, our platform is fully responsive and accessible on smartphones, tablets, and desktop computers. We also offer dedicated mobile apps for iOS and Android with features like barcode scanning for easy food logging, meal reminders, water tracking, and quick access to your nutritionist. Sync your data across all devices and manage your nutrition plan wherever you are.",
-              },
-            ].map((faq, index) => (
-              <ScrollAnimation
-                key={index}
-                animation="fade-in"
-                stagger={`scroll-stagger-${index + 4}`}
-              >
-                <div
-                  className={`group relative ${isDark ? "bg-gray-800" : "bg-white"} rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 ${
-                    openIndex === index
-                      ? "scale-[1.02]"
-                      : isDark
-                        ? "border-gray-700"
-                        : "border-gray-200"
-                  }`}
-                  style={{
-                    borderColor: openIndex === index ? "#0A5950" : undefined,
-                  }}
+            {(() => {
+              const rawFaqs = t("nutritionCounseling.faq.questions", {
+                returnObjects: true,
+              });
+              const faqs = Array.isArray(rawFaqs)
+                ? rawFaqs
+                : Object.values(rawFaqs || {});
+              return faqs.map((faq, index) => (
+                <ScrollAnimation
+                  key={index}
+                  animation="fade-in"
+                  stagger={`scroll-stagger-${index + 4}`}
                 >
-                  {/* Question */}
-                  <button
-                    onClick={() =>
-                      setOpenIndex(openIndex === index ? -1 : index)
-                    }
-                    className="w-full text-left"
-                  >
-                    <h3
-                      className={`text-lg font-bold mb-3 pr-8 ${isDark ? "text-white" : "text-gray-900"} transition-colors`}
-                      style={{
-                        color: openIndex === index ? "#0A5950" : undefined,
-                      }}
-                    >
-                      {faq.question}
-                    </h3>
-                  </button>
-
-                  {/* Answer */}
                   <div
-                    className={`overflow-hidden transition-all duration-500 ${
+                    className={`group relative ${isDark ? "bg-gray-800" : "bg-white"} rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 ${
                       openIndex === index
-                        ? "max-h-96 opacity-100"
-                        : "max-h-0 opacity-0"
-                    }`}
-                  >
-                    <p
-                      className={`leading-relaxed mt-2 ${isDark ? "text-gray-300" : "text-gray-600"}`}
-                    >
-                      {faq.answer}
-                    </p>
-                  </div>
-
-                  {/* Plus/Minus Icon */}
-                  <button
-                    onClick={() =>
-                      setOpenIndex(openIndex === index ? -1 : index)
-                    }
-                    className={`absolute top-8 right-8 w-8 h-8 rounded-full flex items-center justify-center ${
-                      openIndex === index
-                        ? "text-white"
+                        ? "scale-[1.02]"
                         : isDark
-                          ? "bg-gray-700 text-gray-400"
-                          : "bg-gray-100 text-gray-500"
-                    } transition-all duration-300 hover:scale-110`}
+                          ? "border-gray-700"
+                          : "border-gray-200"
+                    }`}
                     style={{
-                      backgroundColor:
-                        openIndex === index ? "#0A5950" : undefined,
+                      borderColor: openIndex === index ? "#0A5950" : undefined,
                     }}
                   >
-                    {openIndex === index ? (
-                      <svg
-                        className="w-4 h-4"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
+                    {/* Question */}
+                    <button
+                      onClick={() =>
+                        setOpenIndex(openIndex === index ? -1 : index)
+                      }
+                      className="w-full text-left"
+                    >
+                      <h3
+                        className={`text-lg font-bold mb-3 pr-8 ${isDark ? "text-white" : "text-gray-900"} transition-colors`}
+                        style={{
+                          color: openIndex === index ? "#0A5950" : undefined,
+                        }}
                       >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M20 12H4"
-                        />
-                      </svg>
-                    ) : (
-                      <svg
-                        className="w-4 h-4"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
+                        {faq.question}
+                      </h3>
+                    </button>
+
+                    {/* Answer */}
+                    <div
+                      className={`overflow-hidden transition-all duration-500 ${
+                        openIndex === index
+                          ? "max-h-96 opacity-100"
+                          : "max-h-0 opacity-0"
+                      }`}
+                    >
+                      <p
+                        className={`leading-relaxed mt-2 ${isDark ? "text-gray-300" : "text-gray-600"}`}
                       >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M12 4v16m8-8H4"
-                        />
-                      </svg>
-                    )}
-                  </button>
-                </div>
-              </ScrollAnimation>
-            ))}
+                        {faq.answer}
+                      </p>
+                    </div>
+
+                    {/* Plus/Minus Icon */}
+                    <button
+                      onClick={() =>
+                        setOpenIndex(openIndex === index ? -1 : index)
+                      }
+                      className={`absolute top-8 right-8 w-8 h-8 rounded-full flex items-center justify-center ${
+                        openIndex === index
+                          ? "text-white"
+                          : isDark
+                            ? "bg-gray-700 text-gray-400"
+                            : "bg-gray-100 text-gray-500"
+                      } transition-all duration-300 hover:scale-110`}
+                      style={{
+                        backgroundColor:
+                          openIndex === index ? "#0A5950" : undefined,
+                      }}
+                    >
+                      {openIndex === index ? (
+                        <svg
+                          className="w-4 h-4"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M20 12H4"
+                          />
+                        </svg>
+                      ) : (
+                        <svg
+                          className="w-4 h-4"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M12 4v16m8-8H4"
+                          />
+                        </svg>
+                      )}
+                    </button>
+                  </div>
+                </ScrollAnimation>
+              ));
+            })()}
           </div>
         </div>
       </section>
@@ -639,7 +589,7 @@ export default function NutritionCounseling() {
                 <div className="absolute inset-0 transform bg-linear-to-br from-gray-200 to-gray-300 rounded-3xl -rotate-6"></div>
                 <img
                   src="/images/78S3img6.jpg"
-                  alt="Nutrition Platform Benefits"
+                  alt={t("nutritionCounseling.platformBenefits.imageAlt")}
                   className="relative object-cover w-full h-full shadow-2xl rounded-3xl"
                 />
               </div>
@@ -655,108 +605,32 @@ export default function NutritionCounseling() {
                 style={{ backgroundColor: "#0A5950" }}
               >
                 <h2 className="mb-8 font-serif text-4xl text-white">
-                  Nutrition Platform Benefits
+                  {t("nutritionCounseling.platformBenefits.title")}
                 </h2>
 
                 <div className="space-y-6">
-                  {/* Benefit 1 */}
-                  <div className="flex items-start space-x-4">
-                    <svg
-                      className="w-6 h-6 mt-1 text-white shrink-0"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M17 8l4 4m0 0l-4 4m4-4H3"
-                      />
-                    </svg>
-                    <p className="leading-relaxed text-white">
-                      <strong>AI-Powered Personalization:</strong> Experience
-                      cutting-edge nutrition planning powered by artificial
-                      intelligence. Our platform analyzes your unique health
-                      profile, goals, and preferences to create optimal meal
-                      plans that adapt as you progress, ensuring maximum
-                      results.
-                    </p>
-                  </div>
-
-                  {/* Benefit 2 */}
-                  <div className="flex items-start space-x-4">
-                    <svg
-                      className="w-6 h-6 mt-1 text-white shrink-0"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M17 8l4 4m0 0l-4 4m4-4H3"
-                      />
-                    </svg>
-                    <p className="leading-relaxed text-white">
-                      <strong>Expert Support Network:</strong> Access a team of
-                      certified nutritionists, registered dietitians, and
-                      wellness coaches available via video consultations. Get
-                      personalized guidance, meal plan adjustments, and
-                      professional answers to all your nutrition questions in
-                      real-time.
-                    </p>
-                  </div>
-
-                  {/* Benefit 3 */}
-                  <div className="flex items-start space-x-4">
-                    <svg
-                      className="w-6 h-6 mt-1 text-white shrink-0"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M17 8l4 4m0 0l-4 4m4-4H3"
-                      />
-                    </svg>
-                    <p className="leading-relaxed text-white">
-                      <strong>Comprehensive Tracking System:</strong> Monitor
-                      every aspect of your nutrition journey with intuitive
-                      dashboards. Track calories, macros, micronutrients, water
-                      intake, weight trends, body measurements, and receive
-                      actionable insights to optimize your progress and stay
-                      motivated.
-                    </p>
-                  </div>
-
-                  {/* Benefit 4 */}
-                  <div className="flex items-start space-x-4">
-                    <svg
-                      className="w-6 h-6 mt-1 text-white shrink-0"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M17 8l4 4m0 0l-4 4m4-4H3"
-                      />
-                    </svg>
-                    <p className="leading-relaxed text-white">
-                      <strong>Seamless Mobile Experience:</strong> Take your
-                      nutrition journey anywhere with our feature-rich mobile
-                      apps. Scan barcodes for instant food logging, set meal
-                      reminders, access recipes, connect with your nutritionist,
-                      and sync data across all devices for ultimate convenience.
-                    </p>
-                  </div>
+                  {platformBenefits.map((b, i) => (
+                    <div className="flex items-start space-x-4" key={i}>
+                      <svg
+                        className="w-6 h-6 mt-1 text-white shrink-0"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M17 8l4 4m0 0l-4 4m4-4H3"
+                        />
+                      </svg>
+                      <p className="leading-relaxed text-white">
+                        {b.title ? <strong>{b.title}</strong> : null}
+                        {b.title ? " " : null}
+                        {b.description}
+                      </p>
+                    </div>
+                  ))}
                 </div>
               </div>
             </ScrollAnimation>
@@ -778,13 +652,12 @@ export default function NutritionCounseling() {
         <div className="relative z-10 max-w-5xl px-6 mx-auto text-center">
           <ScrollAnimation animation="fade-in" stagger="scroll-stagger-1">
             <h2 className="mb-6 text-3xl font-extrabold leading-tight text-white md:text-4xl">
-              Start Your Nutrition Transformation Today
+              {t("nutritionCounseling.cta.title")}
             </h2>
           </ScrollAnimation>
           <ScrollAnimation animation="fade-in" stagger="scroll-stagger-2">
             <p className="max-w-2xl mx-auto mb-10 text-base text-white md:text-lg">
-              Get personalized meal plans and expert nutritionist guidance to
-              achieve your health goals.
+              {t("nutritionCounseling.cta.subtitle")}
             </p>
           </ScrollAnimation>
           <ScrollAnimation animation="fade-in" stagger="scroll-stagger-3">
@@ -794,7 +667,7 @@ export default function NutritionCounseling() {
                 className="px-10 py-4 text-lg font-bold text-white transition-all duration-300 transform rounded-lg shadow-lg btn-animate-strong hover:shadow-2xl hover:scale-105"
                 style={{ backgroundColor: "#0A5950" }}
               >
-                Get Your Free Consultation
+                {t("nutritionCounseling.cta.button")}
               </button>
             </div>
           </ScrollAnimation>
