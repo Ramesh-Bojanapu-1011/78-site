@@ -153,7 +153,7 @@ export default function Home2() {
       <section
         id="why-choose-health-coach"
         className={`py-24 transition-colors duration-300 ${
-          isDark ? "bg-gray-800" : "bg-gradient-to-b from-gray-50 to-white"
+          isDark ? "bg-gray-800" : "bg-linear-to-b from-gray-50 to-white"
         }`}
       >
         <div className="px-4 mx-auto max-w-7xl">
@@ -598,7 +598,7 @@ export default function Home2() {
                 className={`p-8 rounded-2xl transition-all duration-300 ${
                   isDark
                     ? "bg-gray-800 hover:bg-gray-750"
-                    : "bg-gradient-to-br from-gray-50 to-white hover:shadow-xl"
+                    : "bg-linear-to-br from-gray-50 to-white hover:shadow-xl"
                 }`}
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}

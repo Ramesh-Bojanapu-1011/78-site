@@ -547,7 +547,7 @@ export default function Blog() {
                       {/* Hover Glow Effect */}
                       <div className="absolute inset-0 transition-opacity duration-500 opacity-0 pointer-events-none rounded-3xl group-hover:opacity-100">
                         <div
-                          className={`absolute inset-0 rounded-3xl blur-xl bg-gradient-to-br ${item.gradient} opacity-20`}
+                          className={`absolute inset-0 rounded-3xl blur-xl bg-linear-to-br ${item.gradient} opacity-20`}
                         ></div>
                       </div>
                     </div>

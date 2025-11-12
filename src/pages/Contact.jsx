@@ -659,7 +659,7 @@ export default function Contact() {
         ></div>
 
         {/* Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40"></div>
+        <div className="absolute inset-0 bg-linear-to-r from-black/80 via-black/60 to-black/40"></div>
 
         {/* Content */}
         <div className="relative z-10 px-4 mx-auto max-w-7xl">

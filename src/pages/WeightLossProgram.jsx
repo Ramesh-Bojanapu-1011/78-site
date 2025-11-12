@@ -18,39 +18,32 @@ export default function WeightLossProgram() {
   const { t } = useTranslation();
 
   // Testimonials data
-  const testimonials = [
-    {
-      text: "I've lost 45 pounds in 6 months with this program! The personalized meal plans were easy to follow, and my trainer kept me motivated every step of the way. I finally feel confident and healthy. This program changed my life!",
-      name: "Sarah Mitchell",
-      time: "2 weeks ago",
-      image: "/images/78S2t1.jpg",
-    },
-    {
-      text: "After trying countless diets that didn't work, this program was a game-changer. The metabolic assessment helped identify why I struggled before. Down 32 pounds and maintaining it easily with the habits I learned!",
-      name: "James Lee",
-      time: "1 month ago",
-      image: "/images/78S2t2.jpg",
-    },
-    {
-      text: "The lifestyle coaching was incredible. I learned to manage emotional eating and develop a healthy relationship with food. Lost 28 pounds and gained so much confidence. The support team truly cares about your success!",
-      name: "Maria Rodriguez",
-      time: "3 weeks ago",
-      image: "/images/78S2t3.jpg",
-    },
-    {
-      text: "My wife and I joined together and we've both transformed our lives! Combined we've lost over 60 pounds. The fitness training was challenging but fun, and we love our new active lifestyle. Best decision we ever made!",
-      name: "Alex Wong",
-      time: "10 days ago",
-      image: "/images/78S2t4.jpg",
-    },
-  ];
+  // Load translated testimonials and program content
+  const rawTestimonials = t("weightLossProgram.testimonials.items", {
+    returnObjects: true,
+  });
+  const testimonials = Array.isArray(rawTestimonials)
+    ? rawTestimonials
+    : Object.values(rawTestimonials || {});
+
+  // Benefits data
+  const rawBenefits = t("weightLossProgram.benefits.items", {
+    returnObjects: true,
+  });
+  const benefits = Array.isArray(rawBenefits)
+    ? rawBenefits
+    : Object.values(rawBenefits || {});
 
   const handlePrevTestimonial = () => {
-    setCurrentTestimonialIndex((prev) => (prev === 0 ? 1 : 0));
+    setCurrentTestimonialIndex((prev) =>
+      prev === 0 ? Math.max(0, testimonials.length - 1) : prev - 1,
+    );
   };
 
   const handleNextTestimonial = () => {
-    setCurrentTestimonialIndex((prev) => (prev === 0 ? 1 : 0));
+    setCurrentTestimonialIndex((prev) =>
+      prev === testimonials.length - 1 ? 0 : prev + 1,
+    );
   };
 
   useEffect(() => {
@@ -111,12 +104,12 @@ export default function WeightLossProgram() {
         <div className="absolute inset-0 bg-black/50"></div>
         <div className="relative z-10 max-w-4xl px-6">
           <ScrollAnimation animation="fade-in" stagger="scroll-stagger-1">
-            <h1 className="text-3xl font-extrabold leading-tight text-white md:text-4xl whitespace-nowrap">
+            <h1 className="text-3xl font-extrabold leading-tight text-white md:text-4xl ">
               {t("spaTherapies.showcase.title")}
             </h1>
           </ScrollAnimation>
           <ScrollAnimation animation="fade-in" stagger="scroll-stagger-2">
-            <p className="max-w-2xl mx-auto mt-6 text-base leading-relaxed text-gray-200 md:text-lg whitespace-nowrap">
+            <p className="mx-auto mt-6 text-base leading-relaxed text-gray-200 md:text-lg ">
               {t("spaTherapies.showcase.subtitle")}
             </p>
           </ScrollAnimation>
@@ -149,16 +142,14 @@ export default function WeightLossProgram() {
               <h1
                 className={`text-3xl md:text-4xl font-bold mb-3 ${isDark ? "text-white" : "text-gray-800"}`}
               >
-                Comprehensive Weight Loss Program
+                {t("weightLossProgram.hero.title")}
               </h1>
             </ScrollAnimation>
             <ScrollAnimation animation="fade-in" stagger="scroll-stagger-2">
               <p
                 className={`text-base max-w-4xl mx-auto ${isDark ? "text-gray-300" : "text-gray-600"}`}
               >
-                Achieve sustainable weight loss with personalized nutrition,
-                fitness training, and lifestyle coaching designed for your
-                success.
+                {t("weightLossProgram.hero.subtitle")}
               </p>
             </ScrollAnimation>
           </div>
@@ -172,7 +163,7 @@ export default function WeightLossProgram() {
                   className="mb-6 text-xl font-bold"
                   style={{ color: "#0A5950" }}
                 >
-                  PERSONALIZED NUTRITION
+                  {t("weightLossProgram.programs.personalizedNutrition.title")}
                 </h3>
                 <div className="flex justify-center mb-6">
                   <div className="relative w-48 h-48 overflow-hidden border-4 border-white rounded-full shadow-xl">
@@ -186,10 +177,9 @@ export default function WeightLossProgram() {
                 <p
                   className={`text-sm leading-relaxed ${isDark ? "text-gray-300" : "text-gray-600"}`}
                 >
-                  Custom meal plans tailored to your body type, lifestyle, and
-                  weight loss goals. Our nutritionists create balanced,
-                  delicious diets that promote sustainable fat loss while
-                  ensuring optimal energy and nutrition.
+                  {t(
+                    "weightLossProgram.programs.personalizedNutrition.description",
+                  )}
                 </p>
               </div>
             </ScrollAnimation>
@@ -201,7 +191,7 @@ export default function WeightLossProgram() {
                   className="mb-6 text-xl font-bold"
                   style={{ color: "#0A5950" }}
                 >
-                  FITNESS TRAINING
+                  {t("weightLossProgram.programs.fitnessTraining.title")}
                 </h3>
                 <div className="flex justify-center mb-6">
                   <div className="relative w-48 h-48 overflow-hidden border-4 border-white rounded-full shadow-xl">
@@ -215,10 +205,7 @@ export default function WeightLossProgram() {
                 <p
                   className={`text-sm leading-relaxed ${isDark ? "text-gray-300" : "text-gray-600"}`}
                 >
-                  Expert-guided exercise programs combining cardio, strength
-                  training, and flexibility workouts. Our certified trainers
-                  design personalized routines that maximize calorie burn and
-                  build lean muscle for lasting results.
+                  {t("weightLossProgram.programs.fitnessTraining.description")}
                 </p>
               </div>
             </ScrollAnimation>
@@ -230,7 +217,7 @@ export default function WeightLossProgram() {
                   className="mb-6 text-xl font-bold"
                   style={{ color: "#0A5950" }}
                 >
-                  LIFESTYLE COACHING
+                  {t("weightLossProgram.programs.lifestyleCoaching.title")}
                 </h3>
                 <div className="flex justify-center mb-6">
                   <div className="relative w-48 h-48 overflow-hidden border-4 border-white rounded-full shadow-xl">
@@ -244,10 +231,9 @@ export default function WeightLossProgram() {
                 <p
                   className={`text-sm leading-relaxed ${isDark ? "text-gray-300" : "text-gray-600"}`}
                 >
-                  Behavioral modification and motivation strategies to transform
-                  your habits. Our coaches help you overcome emotional eating,
-                  manage stress, improve sleep, and develop a positive mindset
-                  for long-term success.
+                  {t(
+                    "weightLossProgram.programs.lifestyleCoaching.description",
+                  )}
                 </p>
               </div>
             </ScrollAnimation>
@@ -259,7 +245,7 @@ export default function WeightLossProgram() {
                   className="mb-6 text-xl font-bold"
                   style={{ color: "#0A5950" }}
                 >
-                  METABOLIC ASSESSMENT
+                  {t("weightLossProgram.programs.metabolicAssessment.title")}
                 </h3>
                 <div className="flex justify-center mb-6">
                   <div className="relative w-48 h-48 overflow-hidden border-4 border-white rounded-full shadow-xl">
@@ -273,10 +259,9 @@ export default function WeightLossProgram() {
                 <p
                   className={`text-sm leading-relaxed ${isDark ? "text-gray-300" : "text-gray-600"}`}
                 >
-                  Comprehensive body composition analysis and metabolic rate
-                  testing. Advanced diagnostics help us understand your unique
-                  metabolism, identify barriers to weight loss, and optimize
-                  your program for maximum effectiveness.
+                  {t(
+                    "weightLossProgram.programs.metabolicAssessment.description",
+                  )}
                 </p>
               </div>
             </ScrollAnimation>
@@ -293,158 +278,122 @@ export default function WeightLossProgram() {
               <h2
                 className={`text-4xl md:text-5xl font-bold mb-4 ${isDark ? "text-white" : "text-gray-900"}`}
               >
-                Frequently Asked Questions
+                {t("weightLossProgram.faq.title")}
               </h2>
             </ScrollAnimation>
             <ScrollAnimation animation="fade-in" stagger="scroll-stagger-3">
               <p
                 className={`text-lg max-w-2xl mx-auto ${isDark ? "text-gray-300" : "text-gray-600"}`}
               >
-                Find answers to common questions about our weight loss program
-                and how it can help you achieve your goals
+                {t("weightLossProgram.faq.subtitle")}
               </p>
             </ScrollAnimation>
           </div>
 
           {/* FAQ Grid */}
           <div className="grid gap-6 md:grid-cols-2">
-            {[
-              {
-                question:
-                  "How much weight can I expect to lose with your program?",
-                answer:
-                  "Weight loss results vary based on individual factors like starting weight, metabolism, and commitment level. On average, participants lose 1-2 pounds per week, which is considered healthy and sustainable. Many clients lose 15-30 pounds in the first 3 months. Our program focuses on sustainable fat loss, not quick fixes, ensuring long-term success and improved overall health.",
-              },
-              {
-                question:
-                  "What makes your weight loss program different from others?",
-                answer:
-                  "Our program takes a comprehensive, science-based approach combining personalized nutrition, supervised fitness training, behavioral coaching, and metabolic assessment. Unlike one-size-fits-all diets, we customize every aspect to your unique body, lifestyle, and goals. We provide ongoing support, accountability, and adjustments to ensure sustainable results without extreme restrictions or unrealistic expectations.",
-              },
-              {
-                question:
-                  "Do I need to follow a strict diet or give up my favorite foods?",
-                answer:
-                  "No extreme restrictions! We believe in sustainable, balanced eating. Your personalized meal plan includes foods you enjoy while creating a caloric deficit for weight loss. We teach portion control, smart food choices, and how to enjoy treats in moderation. The goal is to develop healthy eating habits you can maintain for life, not temporary deprivation.",
-              },
-              {
-                question:
-                  "How much time do I need to commit to exercise each week?",
-                answer:
-                  "We recommend 3-5 workout sessions per week, typically 30-60 minutes each. Your fitness plan is tailored to your current fitness level and schedule. Beginners start with manageable routines that gradually increase in intensity. Our trainers offer flexible options including gym workouts, home exercises, and outdoor activities to fit your lifestyle and preferences.",
-              },
-              {
-                question:
-                  "Will I gain the weight back after completing the program?",
-                answer:
-                  "Our program is designed for lasting results, not temporary fixes. We focus on building sustainable habits, teaching you proper nutrition, exercise techniques, and behavioral strategies to maintain your weight loss long-term. Many clients continue with maintenance programs, and our ongoing support ensures you have the tools and knowledge to keep the weight off permanently.",
-              },
-              {
-                question:
-                  "Is the program suitable for people with medical conditions?",
-                answer:
-                  "Yes, we work with individuals with various medical conditions including diabetes, hypertension, PCOS, and thyroid disorders. Our team includes nutritionists and trainers experienced in managing health conditions through weight loss. We coordinate with your healthcare provider when necessary and modify the program to ensure it's safe and effective for your specific health needs.",
-              },
-            ].map((faq, index) => (
-              <ScrollAnimation
-                key={index}
-                animation="fade-in"
-                stagger={`scroll-stagger-${index + 4}`}
-              >
-                <div
-                  className={`group relative ${isDark ? "bg-gray-800" : "bg-white"} rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 ${
-                    openIndex === index
-                      ? "scale-[1.02]"
-                      : isDark
-                        ? "border-gray-700"
-                        : "border-gray-200"
-                  }`}
-                  style={{
-                    borderColor: openIndex === index ? "#0A5950" : undefined,
-                  }}
+            {t("weightLossProgram.faq.questions", { returnObjects: true }).map(
+              (faq, index) => (
+                <ScrollAnimation
+                  key={index}
+                  animation="fade-in"
+                  stagger={`scroll-stagger-${index + 4}`}
                 >
-                  {/* Question */}
-                  <button
-                    onClick={() =>
-                      setOpenIndex(openIndex === index ? -1 : index)
-                    }
-                    className="w-full text-left"
-                  >
-                    <h3
-                      className={`text-lg font-bold mb-3 pr-8 ${isDark ? "text-white" : "text-gray-900"} transition-colors`}
-                      style={{
-                        color: openIndex === index ? "#0A5950" : undefined,
-                      }}
-                    >
-                      {faq.question}
-                    </h3>
-                  </button>
-
-                  {/* Answer */}
                   <div
-                    className={`overflow-hidden transition-all duration-500 ${
+                    className={`group relative ${isDark ? "bg-gray-800" : "bg-white"} rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 border-2 ${
                       openIndex === index
-                        ? "max-h-96 opacity-100"
-                        : "max-h-0 opacity-0"
-                    }`}
-                  >
-                    <p
-                      className={`leading-relaxed mt-2 ${isDark ? "text-gray-300" : "text-gray-600"}`}
-                    >
-                      {faq.answer}
-                    </p>
-                  </div>
-
-                  {/* Plus/Minus Icon */}
-                  <button
-                    onClick={() =>
-                      setOpenIndex(openIndex === index ? -1 : index)
-                    }
-                    className={`absolute top-8 right-8 w-8 h-8 rounded-full flex items-center justify-center ${
-                      openIndex === index
-                        ? "text-white"
+                        ? "scale-[1.02]"
                         : isDark
-                          ? "bg-gray-700 text-gray-400"
-                          : "bg-gray-100 text-gray-500"
-                    } transition-all duration-300 hover:scale-110`}
+                          ? "border-gray-700"
+                          : "border-gray-200"
+                    }`}
                     style={{
-                      backgroundColor:
-                        openIndex === index ? "#0A5950" : undefined,
+                      borderColor: openIndex === index ? "#0A5950" : undefined,
                     }}
                   >
-                    {openIndex === index ? (
-                      <svg
-                        className="w-4 h-4"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
+                    {/* Question */}
+                    <button
+                      onClick={() =>
+                        setOpenIndex(openIndex === index ? -1 : index)
+                      }
+                      className="w-full text-left"
+                    >
+                      <h3
+                        className={`text-lg font-bold mb-3 pr-8 ${isDark ? "text-white" : "text-gray-900"} transition-colors`}
+                        style={{
+                          color: openIndex === index ? "#0A5950" : undefined,
+                        }}
                       >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M20 12H4"
-                        />
-                      </svg>
-                    ) : (
-                      <svg
-                        className="w-4 h-4"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
+                        {faq.question}
+                      </h3>
+                    </button>
+
+                    {/* Answer */}
+                    <div
+                      className={`overflow-hidden transition-all duration-500 ${
+                        openIndex === index
+                          ? "max-h-96 opacity-100"
+                          : "max-h-0 opacity-0"
+                      }`}
+                    >
+                      <p
+                        className={`leading-relaxed mt-2 ${isDark ? "text-gray-300" : "text-gray-600"}`}
                       >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M12 4v16m8-8H4"
-                        />
-                      </svg>
-                    )}
-                  </button>
-                </div>
-              </ScrollAnimation>
-            ))}
+                        {faq.answer}
+                      </p>
+                    </div>
+
+                    {/* Plus/Minus Icon */}
+                    <button
+                      onClick={() =>
+                        setOpenIndex(openIndex === index ? -1 : index)
+                      }
+                      className={`absolute top-8 right-8 w-8 h-8 rounded-full flex items-center justify-center ${
+                        openIndex === index
+                          ? "text-white"
+                          : isDark
+                            ? "bg-gray-700 text-gray-400"
+                            : "bg-gray-100 text-gray-500"
+                      } transition-all duration-300 hover:scale-110`}
+                      style={{
+                        backgroundColor:
+                          openIndex === index ? "#0A5950" : undefined,
+                      }}
+                    >
+                      {openIndex === index ? (
+                        <svg
+                          className="w-4 h-4"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M20 12H4"
+                          />
+                        </svg>
+                      ) : (
+                        <svg
+                          className="w-4 h-4"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M12 4v16m8-8H4"
+                          />
+                        </svg>
+                      )}
+                    </button>
+                  </div>
+                </ScrollAnimation>
+              ),
+            )}
           </div>
         </div>
       </section>
@@ -475,12 +424,11 @@ export default function WeightLossProgram() {
                   </svg>
                 </div>
 
-                <h2 className="text-3xl font-bold leading-tight text-white">
-                  What our
-                  <br />
-                  customers are
-                  <br />
-                  saying
+                <h2
+                  className="text-3xl font-bold leading-tight text-white"
+                  style={{ whiteSpace: "pre-line" }}
+                >
+                  {t("weightLossProgram.testimonials.title")}
                 </h2>
 
                 {/* Navigation Arrows */}
@@ -661,107 +609,30 @@ export default function WeightLossProgram() {
                 style={{ backgroundColor: "#0A5950" }}
               >
                 <h2 className="mb-8 font-serif text-4xl text-white">
-                  Weight Loss Program Benefits
+                  {t("weightLossProgram.benefits.title")}
                 </h2>
 
                 <div className="space-y-6">
-                  {/* Benefit 1 */}
-                  <div className="flex items-start space-x-4">
-                    <svg
-                      className="w-6 h-6 mt-1 text-white shrink-0"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M17 8l4 4m0 0l-4 4m4-4H3"
-                      />
-                    </svg>
-                    <p className="leading-relaxed text-white">
-                      <strong>Improved Health Markers:</strong> Our
-                      comprehensive program helps reduce blood pressure, lower
-                      cholesterol levels, and improve blood sugar control.
-                      Experience significant improvements in cardiovascular
-                      health, reduced risk of chronic diseases, and enhanced
-                      overall physical wellness.
-                    </p>
-                  </div>
-
-                  {/* Benefit 2 */}
-                  <div className="flex items-start space-x-4">
-                    <svg
-                      className="w-6 h-6 mt-1 text-white shrink-0"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M17 8l4 4m0 0l-4 4m4-4H3"
-                      />
-                    </svg>
-                    <p className="leading-relaxed text-white">
-                      <strong>Increased Energy & Vitality:</strong> Shed excess
-                      weight and feel more energized throughout your day. Proper
-                      nutrition and regular exercise boost your metabolism,
-                      improve sleep quality, and enhance stamina, allowing you
-                      to enjoy life with renewed vigor and enthusiasm.
-                    </p>
-                  </div>
-
-                  {/* Benefit 3 */}
-                  <div className="flex items-start space-x-4">
-                    <svg
-                      className="w-6 h-6 mt-1 text-white shrink-0"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M17 8l4 4m0 0l-4 4m4-4H3"
-                      />
-                    </svg>
-                    <p className="leading-relaxed text-white">
-                      <strong>Enhanced Mental Well-being:</strong> Weight loss
-                      success boosts self-confidence and reduces anxiety and
-                      depression. Regular exercise releases endorphins,
-                      improving mood and mental clarity, while achieving your
-                      goals provides a sense of accomplishment and empowerment.
-                    </p>
-                  </div>
-
-                  {/* Benefit 4 */}
-                  <div className="flex items-start space-x-4">
-                    <svg
-                      className="w-6 h-6 mt-1 text-white shrink-0"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M17 8l4 4m0 0l-4 4m4-4H3"
-                      />
-                    </svg>
-                    <p className="leading-relaxed text-white">
-                      <strong>Sustainable Lifestyle Changes:</strong> Learn
-                      healthy habits that last a lifetime. Our program equips
-                      you with knowledge about nutrition, exercise, and
-                      behavioral strategies, ensuring you maintain your weight
-                      loss and continue thriving long after completing the
-                      program.
-                    </p>
-                  </div>
+                  {benefits.map((b, i) => (
+                    <div key={i} className="flex items-start space-x-4">
+                      <svg
+                        className="w-6 h-6 mt-1 text-white shrink-0"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M17 8l4 4m0 0l-4 4m4-4H3"
+                        />
+                      </svg>
+                      <p className="leading-relaxed text-white">
+                        <strong>{b.title}</strong> {b.description}
+                      </p>
+                    </div>
+                  ))}
                 </div>
               </div>
             </ScrollAnimation>
@@ -783,13 +654,12 @@ export default function WeightLossProgram() {
         <div className="relative z-10 max-w-5xl px-6 mx-auto text-center">
           <ScrollAnimation animation="fade-in" stagger="scroll-stagger-1">
             <h2 className="mb-6 text-3xl font-extrabold leading-tight text-white md:text-4xl">
-              Start Your Weight Loss Journey Today
+              {t("weightLossProgram.cta.title")}
             </h2>
           </ScrollAnimation>
           <ScrollAnimation animation="fade-in" stagger="scroll-stagger-2">
             <p className="max-w-2xl mx-auto mb-10 text-base text-white md:text-lg">
-              Get personalized support and expert guidance to achieve your
-              weight loss goals today.
+              {t("weightLossProgram.cta.subtitle")}
             </p>
           </ScrollAnimation>
           <ScrollAnimation animation="fade-in" stagger="scroll-stagger-3">
@@ -799,7 +669,7 @@ export default function WeightLossProgram() {
                 className="px-10 py-4 text-lg font-bold text-white transition-all duration-300 transform rounded-lg shadow-lg btn-animate-strong hover:shadow-2xl hover:scale-105"
                 style={{ backgroundColor: "#0A5950" }}
               >
-                Join Our Program
+                {t("weightLossProgram.cta.button")}
               </button>
             </div>
           </ScrollAnimation>

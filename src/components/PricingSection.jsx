@@ -140,7 +140,7 @@ export default function PricingSection() {
   ];
 
   return (
-    <section className="py-20 transition-colors duration-300 bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
+    <section className="py-20 transition-colors duration-300 bg-linear-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
       <div className="px-4 mx-auto max-w-7xl">
         {/* Header */}
         <ScrollAnimation animation="fade-up">
@@ -284,7 +284,7 @@ export default function PricingSection() {
                   {plan.features.map((feature, idx) => (
                     <li key={idx} className="flex items-start">
                       <div
-                        className={`flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center mr-3 ${
+                        className={`shrink-0 w-6 h-6 rounded-full flex items-center justify-center mr-3 ${
                           feature.included
                             ? "bg-white"
                             : plan.featured

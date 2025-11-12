@@ -96,7 +96,7 @@ export default function Register() {
         >
           <div className="flex items-center justify-between max-w-6xl px-4 py-3 mx-auto">
             {/* Logo */}
-            <div className="flex-shrink-0">
+            <div className="shrink-0">
               <Link
                 to="/"
                 className="flex items-center gap-3 transition-opacity hover:opacity-80"

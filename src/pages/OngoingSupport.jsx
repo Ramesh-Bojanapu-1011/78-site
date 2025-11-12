@@ -520,7 +520,7 @@ export default function OngoingSupport() {
             {/* Right Side - Testimonial Cards */}
             <div className="overflow-hidden">
               <div
-                className="flex transition-transform duration-[1200ms] ease-in-out"
+                className="flex transition-transform ease-in-out duration-1200"
                 style={{
                   transform: `translateX(-${currentTestimonialIndex * 100}%)`,
                 }}
@@ -632,7 +632,7 @@ export default function OngoingSupport() {
               stagger="scroll-stagger-1"
             >
               <div className="relative">
-                <div className="absolute inset-0 transform bg-gradient-to-br from-gray-200 to-gray-300 rounded-3xl -rotate-6"></div>
+                <div className="absolute inset-0 transform bg-linear-to-br from-gray-200 to-gray-300 rounded-3xl -rotate-6"></div>
                 <img
                   src="/images/78S6img6.jpg"
                   alt="Theta Healing Benefits"
@@ -658,7 +658,7 @@ export default function OngoingSupport() {
                   {/* Benefit 1 */}
                   <div className="flex items-start space-x-4">
                     <svg
-                      className="flex-shrink-0 w-6 h-6 mt-1 text-white"
+                      className="w-6 h-6 mt-1 text-white shrink-0"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -682,7 +682,7 @@ export default function OngoingSupport() {
                   {/* Benefit 2 */}
                   <div className="flex items-start space-x-4">
                     <svg
-                      className="flex-shrink-0 w-6 h-6 mt-1 text-white"
+                      className="w-6 h-6 mt-1 text-white shrink-0"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -706,7 +706,7 @@ export default function OngoingSupport() {
                   {/* Benefit 3 */}
                   <div className="flex items-start space-x-4">
                     <svg
-                      className="flex-shrink-0 w-6 h-6 mt-1 text-white"
+                      className="w-6 h-6 mt-1 text-white shrink-0"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -730,7 +730,7 @@ export default function OngoingSupport() {
                   {/* Benefit 4 */}
                   <div className="flex items-start space-x-4">
                     <svg
-                      className="flex-shrink-0 w-6 h-6 mt-1 text-white"
+                      className="w-6 h-6 mt-1 text-white shrink-0"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"

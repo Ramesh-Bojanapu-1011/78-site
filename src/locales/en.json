@@ -2394,5 +2394,114 @@
       "getStartedButton": "Get Started",
       "viewServicesButton": "View All Services"
     }
+  },
+  "weightLossProgram": {
+    "hero": {
+      "title": "Comprehensive Weight Loss Program",
+      "subtitle": "Achieve sustainable weight loss with personalized nutrition, fitness training, and lifestyle coaching designed for your success."
+    },
+    "programs": {
+      "personalizedNutrition": {
+        "title": "PERSONALIZED NUTRITION",
+        "description": "Custom meal plans tailored to your body type, lifestyle, and goals. Our nutritionists create balanced, delicious diets that promote sustainable fat loss while ensuring optimal energy and nutrition."
+      },
+      "fitnessTraining": {
+        "title": "FITNESS TRAINING",
+        "description": "Expert-guided exercise programs combining cardio, strength training, and flexibility workouts. Certified trainers design personalized routines that maximize calorie burn and build lean muscle."
+      },
+      "lifestyleCoaching": {
+        "title": "LIFESTYLE COACHING",
+        "description": "Behavioral modification and motivation strategies to transform habits. Coaches help you overcome emotional eating, manage stress, improve sleep, and develop a positive mindset for long-term success."
+      },
+      "metabolicAssessment": {
+        "title": "METABOLIC ASSESSMENT",
+        "description": "Comprehensive body composition analysis and metabolic rate testing. Advanced diagnostics help us understand your unique metabolism and optimize your program for maximum effectiveness."
+      }
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "subtitle": "Find answers to common questions about our weight loss program and how it can help you achieve your goals",
+      "questions": [
+        {
+          "question": "How much weight can I expect to lose with your program?",
+          "answer": "Results vary, but participants commonly lose 1-2 pounds per week with sustained adherence. Many clients lose 15-30 pounds in the first 3 months depending on starting point and commitment."
+        },
+        {
+          "question": "What makes your weight loss program different from others?",
+          "answer": "We use a comprehensive, science-based approach combining personalized nutrition, supervised fitness training, behavioral coaching, and metabolic assessment — all tailored to you."
+        },
+        {
+          "question": "Do I need to follow a strict diet or give up my favorite foods?",
+          "answer": "No — we focus on sustainable, balanced eating. Plans include foods you enjoy while teaching portion control and moderation."
+        },
+        {
+          "question": "How much time do I need to commit to exercise each week?",
+          "answer": "We recommend 3-5 sessions per week, typically 30-60 minutes each, customized to your fitness level and schedule."
+        },
+        {
+          "question": "Will I gain the weight back after completing the program?",
+          "answer": "Our emphasis is on sustainable habits and maintenance strategies. Many clients continue with a maintenance plan or periodic check-ins to keep results long-term."
+        },
+        {
+          "question": "Is the program suitable for people with medical conditions?",
+          "answer": "Yes — we adapt plans for common medical conditions and coordinate with healthcare providers when necessary to ensure safety and effectiveness."
+        }
+      ]
+    },
+    "testimonials": {
+      "title": "What our customers are saying",
+      "items": [
+        {
+          "text": "I've lost 45 pounds in 6 months with this program! The personalized meal plans were easy to follow, and my trainer kept me motivated every step of the way.",
+          "name": "Sarah Mitchell",
+          "time": "2 weeks ago",
+          "image": "/images/78S2t1.jpg"
+        },
+        {
+          "text": "After trying countless diets that didn't work, this program was a game-changer. The metabolic assessment helped identify why I struggled before.",
+          "name": "James Lee",
+          "time": "1 month ago",
+          "image": "/images/78S2t2.jpg"
+        },
+        {
+          "text": "The lifestyle coaching was incredible. I learned to manage emotional eating and develop a healthy relationship with food.",
+          "name": "Maria Rodriguez",
+          "time": "3 weeks ago",
+          "image": "/images/78S2t3.jpg"
+        },
+        {
+          "text": "My wife and I joined together and we've both transformed our lives! Combined we've lost over 60 pounds.",
+          "name": "Alex Wong",
+          "time": "10 days ago",
+          "image": "/images/78S2t4.jpg"
+        }
+      ]
+    },
+    "benefits": {
+      "title": "Program Benefits",
+      "items": [
+        {
+          "title": "Improved Health Markers:",
+          "description": "Our comprehensive program helps reduce blood pressure, lower cholesterol levels, and improve blood sugar control. Experience significant improvements in cardiovascular health, reduced risk of chronic diseases, and enhanced overall physical wellness."
+        },
+        {
+          "title": "Increased Energy & Vitality:",
+          "description": "Shed excess weight and feel more energized throughout your day. Proper nutrition and regular exercise boost your metabolism, improve sleep quality, and enhance stamina, allowing you to enjoy life with renewed vigor and enthusiasm."
+        },
+        {
+          "title": "Enhanced Mental Well-being:",
+          "description": "Weight loss success boosts self-confidence and reduces anxiety and depression. Regular exercise releases endorphins, improving mood and mental clarity, while achieving your goals provides a sense of accomplishment and empowerment."
+        },
+        {
+          "title": "Sustainable Lifestyle Changes:",
+          "description": "Learn healthy habits that last a lifetime. Our program equips you with knowledge about nutrition, exercise, and behavioral strategies, ensuring you maintain your weight loss and continue thriving long after completing the program."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Start Your Weight Loss Journey Today",
+      "subtitle": "Get personalized support and expert guidance to achieve your weight loss goals.",
+      "button": "Join Our Program"
+    }
   }
 }

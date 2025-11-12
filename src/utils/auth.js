@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 export const USERS_KEY = "users";
 export const AUTH_KEY = "authUser";
 

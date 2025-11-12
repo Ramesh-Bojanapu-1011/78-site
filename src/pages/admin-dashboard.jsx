@@ -354,8 +354,8 @@ export default function AdminDashboard() {
     <div
       className={`min-h-screen ${
         isDark
-          ? "bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700"
-          : "bg-gradient-to-br from-slate-50 via-green-50 to-emerald-50"
+          ? "bg-linear-to-br from-gray-900 via-gray-800 to-gray-700"
+          : "bg-linear-to-br from-slate-50 via-green-50 to-emerald-50"
       }`}
     >
       {/* Header - Updated */}
@@ -439,8 +439,8 @@ export default function AdminDashboard() {
               <div
                 className={`mt-4 p-4 rounded-lg border ${
                   isDark
-                    ? "bg-gradient-to-r from-[#0A5950]/30 to-[#0A5950]/20 border-[#0A5950]"
-                    : "bg-gradient-to-r from-[#E6F4F3] to-[#D4EFED] border-[#0A5950]/30"
+                    ? "bg-linear-to-r from-[#0A5950]/30 to-[#0A5950]/20 border-[#0A5950]"
+                    : "bg-linear-to-r from-[#E6F4F3] to-[#D4EFED] border-[#0A5950]/30"
                 }`}
               >
                 <div className="flex items-center space-x-3">
@@ -1192,7 +1192,7 @@ export default function AdminDashboard() {
                 : "bg-white border-slate-200"
             }`}
           >
-            <div className="flex-shrink-0">
+            <div className="shrink-0">
               <div className="h-10 w-10 rounded-full bg-[#0A5950]/20 flex items-center justify-center">
                 <Download className="h-5 w-5 text-[#0A5950]" />
               </div>
@@ -1215,7 +1215,7 @@ export default function AdminDashboard() {
             </div>
             <button
               onClick={() => setShowExportSuccess(false)}
-              className={`flex-shrink-0 rounded-lg p-1 transition-colors ${
+              className={`shrink-0 rounded-lg p-1 transition-colors ${
                 isDark
                   ? "hover:bg-gray-700 text-gray-400"
                   : "hover:bg-slate-100 text-slate-400"

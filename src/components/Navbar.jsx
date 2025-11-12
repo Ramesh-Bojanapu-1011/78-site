@@ -48,7 +48,7 @@ export default function Navbar({ user }) {
     >
       <nav className="flex items-center justify-between max-w-6xl px-4 py-3 mx-auto">
         {/* Logo - Fixed Left */}
-        <div className="flex-shrink-0">
+        <div className="shrink-0">
           <a href="#hero" className="flex items-center gap-3">
             <img src="/Logo.jpg" alt="Logo" className="w-auto h-8" />
             <span className="sr-only">Home</span>

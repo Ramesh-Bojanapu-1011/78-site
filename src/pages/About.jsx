@@ -398,7 +398,7 @@ export default function About() {
                       alt="Wellness Expert"
                       className="object-cover w-full h-96"
                     />
-                    <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
+                    <div className="absolute bottom-0 left-0 right-0 p-6 bg-linear-to-t from-black/80 to-transparent">
                       <h3 className="mb-1 text-2xl font-bold text-white">
                         {t("about.wellnessExpert.expertName")}
                       </h3>
@@ -657,7 +657,7 @@ export default function About() {
                       />
 
                       {/* Gradient Overlay */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                      <div className="absolute inset-0 bg-linear-to-t from-black/80 via-black/40 to-transparent"></div>
 
                       {/* Member Info Overlay */}
                       <div className="absolute bottom-0 left-0 right-0 p-6 text-center text-white">

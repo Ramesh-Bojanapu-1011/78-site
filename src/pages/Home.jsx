@@ -655,7 +655,7 @@ export default function Home() {
                   >
                     <div className="flex items-center space-x-3">
                       <div
-                        className="flex items-center justify-center flex-shrink-0 w-8 h-8 rounded-full"
+                        className="flex items-center justify-center w-8 h-8 rounded-full shrink-0"
                         style={{ backgroundColor: "#0A5950" }}
                       >
                         <svg
@@ -689,7 +689,7 @@ export default function Home() {
                   >
                     <div className="flex items-center space-x-3">
                       <div
-                        className="flex items-center justify-center flex-shrink-0 w-8 h-8 rounded-full"
+                        className="flex items-center justify-center w-8 h-8 rounded-full shrink-0"
                         style={{ backgroundColor: "#0A5950" }}
                       >
                         <svg
@@ -723,7 +723,7 @@ export default function Home() {
                   >
                     <div className="flex items-center space-x-3">
                       <div
-                        className="flex items-center justify-center flex-shrink-0 w-8 h-8 rounded-full"
+                        className="flex items-center justify-center w-8 h-8 rounded-full shrink-0"
                         style={{ backgroundColor: "#0A5950" }}
                       >
                         <svg
@@ -757,7 +757,7 @@ export default function Home() {
                   >
                     <div className="flex items-center space-x-3">
                       <div
-                        className="flex items-center justify-center flex-shrink-0 w-8 h-8 rounded-full"
+                        className="flex items-center justify-center w-8 h-8 rounded-full shrink-0"
                         style={{ backgroundColor: "#0A5950" }}
                       >
                         <svg
@@ -852,7 +852,7 @@ export default function Home() {
         id="testimonials"
         className={`relative overflow-hidden border-t transition-colors duration-300 ${
           isDark
-            ? "bg-gradient-to-br from-gray-900 via-black to-gray-800 text-white border-gray-700"
+            ? "bg-linear-to-br from-gray-900 via-black to-gray-800 text-white border-gray-700"
             : "bg-gray-50 text-black border-black/10"
         }`}
       >

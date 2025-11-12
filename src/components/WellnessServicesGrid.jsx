@@ -80,7 +80,7 @@ export default function WellnessServicesGrid({
               className="block overflow-hidden transition-all duration-300 bg-white shadow-lg group dark:bg-gray-800 rounded-3xl hover:shadow-2xl hover:-translate-y-2"
             >
               <article>
-                <div className="relative aspect-[4/3] overflow-hidden">
+                <div className="relative overflow-hidden aspect-4/3">
                   <img
                     src={c.img}
                     alt={t(c.titleKey)}

@@ -584,7 +584,7 @@ export default function Blog() {
                         />
                         {/* Gradient Overlay */}
                         <div
-                          className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-70 group-hover:opacity-80 transition-opacity duration-500`}
+                          className={`absolute inset-0 bg-linear-to-br ${item.gradient} opacity-70 group-hover:opacity-80 transition-opacity duration-500`}
                         ></div>
 
                         {/* Icon Badge */}
@@ -607,7 +607,7 @@ export default function Blog() {
                         </h3>
 
                         {/* Decorative Line */}
-                        <div className="w-12 h-1 mb-4 transition-all duration-500 rounded-full bg-gradient-to-r from-green-500 to-transparent group-hover:w-20"></div>
+                        <div className="w-12 h-1 mb-4 transition-all duration-500 rounded-full bg-linear-to-r from-green-500 to-transparent group-hover:w-20"></div>
 
                         {/* Description */}
                         <p
@@ -639,7 +639,7 @@ export default function Blog() {
                       {/* Hover Glow Effect */}
                       <div className="absolute inset-0 transition-opacity duration-500 opacity-0 pointer-events-none rounded-3xl group-hover:opacity-100">
                         <div
-                          className={`absolute inset-0 rounded-3xl blur-xl bg-gradient-to-br ${item.gradient} opacity-20`}
+                          className={`absolute inset-0 rounded-3xl blur-xl bg-linear-to-br ${item.gradient} opacity-20`}
                         ></div>
                       </div>
                     </div>
@@ -747,7 +747,7 @@ export default function Blog() {
                       />
 
                       {/* Overlay */}
-                      <div className="absolute inset-0 transition-all duration-500 bg-gradient-to-br from-black/60 via-black/40 to-black/60 group-hover:from-black/40 group-hover:via-black/20 group-hover:to-black/40" />
+                      <div className="absolute inset-0 transition-all duration-500 bg-linear-to-br from-black/60 via-black/40 to-black/60 group-hover:from-black/40 group-hover:via-black/20 group-hover:to-black/40" />
 
                       {/* Main Content - Always Centered */}
                       <div className="relative z-10 flex flex-col items-center justify-center h-full p-6 text-center">
